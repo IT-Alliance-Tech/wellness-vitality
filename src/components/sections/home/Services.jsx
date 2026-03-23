@@ -4,51 +4,57 @@ import Button from '@/components/ui/Button';
 
 const services = [
   {
-    title: 'IV Infusion Therapy',
-    description: 'Optimal nutrient absorption directly into the bloodstream for immunity and energy.',
-    image: '/service_iv.png',
+    title: 'IV Infusions',
+    description: 'Targeted intravenous nutrient therapies designed to support energy, recovery and immune health.',
+    image: '/images/services/iv-infusion.png',
     accent: 'rose'
   },
   {
     title: 'Health Assessments',
-    description: 'Comprehensive clinical assessments and reports delivered at your location.',
-    image: '/service_assess.png',
+    description: 'Comprehensive wellness checks and preventative health screening for aged care and NDIS clients.',
+    image: '/images/services/health-assessment.png',
     accent: 'indigo'
   },
   {
-    title: 'Preventative Health',
-    description: 'Proactive wellness planning and lifestyle strategies to keep illness at bay.',
-    image: '/service_preventative.png',
+    title: 'Preventative Health & Wellness',
+    description: 'Vitamin injections, nutrition guidance and lifestyle health consultations.',
+    image: '/images/services/preventative-health.png',
     accent: 'indigo'
   },
   {
-    title: 'Aged Care & NDIS',
-    description: 'Specialised in-home nursing support for aged care and NDIS participants.',
-    image: '/service_aged.png',
+    title: 'Aged Care & NDIS Nursing',
+    description: 'Professional nursing services supporting ongoing healthcare needs.',
+    image: '/images/services/aged-care.png',
     accent: 'rose'
   },
   {
     title: 'Blood Collection',
-    description: 'Professional pathology and blood draws at your home or workplace.',
-    image: '/service_blood.png',
+    description: 'Convenient blood testing services available at home or care facilities.',
+    image: '/images/services/blood-collection.png',
     accent: 'indigo'
   },
   {
-    title: 'Corporate Health',
-    description: 'Onsite wellness programmes and screenings for your team\'s productivity.',
-    image: '/service_corporate.png',
+    title: 'Corporate Health Services',
+    description: 'Workplace health checks and corporate IV hydration services.',
+    image: '/images/services/corporate-health.png',
     accent: 'indigo'
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-rose/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-indigo mb-4">Our Elite Services</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Experience the pinnacle of personalised healthcare with our comprehensive at-home services, delivered with expertise and empathy.
+          <div className="flex items-center justify-center gap-2 mb-4 font-bold">
+             <div className="w-8 h-px bg-indigo" />
+             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo">Our Expertise</span>
+             <div className="w-8 h-px bg-indigo" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-6">Our Clinical & <span className="text-rose">Wellness Services</span></h2>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            We provide a wide range of healthcare and wellness services delivered by qualified registered nurses.
           </p>
         </div>
         

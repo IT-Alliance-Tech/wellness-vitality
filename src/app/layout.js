@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-white text-[#1A1A1A]">
+      <body className="min-h-full flex flex-col font-sans bg-white text-[#1A1A1A] overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />

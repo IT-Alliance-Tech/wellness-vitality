@@ -57,9 +57,9 @@ const IVTherapy = () => {
                  ))}
                </ul>
 
-               <Button href="/booking" variant={pack.accent === 'rose' ? 'primary' : 'secondary'} className="w-full py-4 text-base rounded-2xl">
-                 Book Appointment
-               </Button>
+                <Button href="/services/iv-infusions" variant={pack.accent === 'rose' ? 'primary' : 'secondary'} className="w-full py-4 text-base rounded-2xl font-bold">
+                  Explore IV Infusions
+                </Button>
             </div>
           ))}
         </div>

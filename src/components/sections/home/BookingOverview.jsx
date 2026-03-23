@@ -44,12 +44,11 @@ const BookingOverview = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-6 leading-tight">
-              Reserve your <br />
-              <span className="text-rose italic font-light">wellness</span> moment.
+              Simple Online <span className="text-rose italic font-light">Booking</span>.
             </h2>
             
-            <p className="text-lg text-gray-500 mb-10 leading-relaxed">
-              Book your IV therapy or wellness treatment instantly through our secure portal — no waiting, no phone calls.
+            <p className="text-lg text-gray-500 mb-10 leading-relaxed font-medium">
+              Book your treatment through our secure online booking system. Wellness Vitality Australia uses Calendly for all appointment scheduling, with Afterpay available for all services.
             </p>
             
             <div className="space-y-5 mb-12">

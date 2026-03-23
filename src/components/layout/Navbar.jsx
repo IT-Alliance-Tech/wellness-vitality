@@ -9,9 +9,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link href="/" className="text-xl sm:text-2xl font-bold text-indigo tracking-tight">
-          Wellness <span className="font-light text-gray-400">& Vitality</span>
+        <Link href="/" className="flex items-center">
+          <img src="/headerlogo.png" alt="Wellness Vitality Australia" className="h-14 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -30,13 +29,20 @@ const Navbar = () => {
             </button>
 
             {/* Dropdown */}
-            <div className="absolute left-0 top-full mt-2 w-44 bg-white border border-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <Link href="/services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                All Services
-              </Link>
-              <Link href="/iv-infusions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                IV Infusions
-              </Link>
+            <div className="absolute left-0 top-full mt-2 w-60 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+              {[
+                { label: 'Health Assessments', href: '/services/health-assessments' },
+                { label: 'Preventative Health & Wellness', href: '/services/preventative-health' },
+                { label: 'Aged Care & NDIS Nursing', href: '/services/aged-care-ndis' },
+                { label: 'IV Infusions', href: '/services/iv-infusions' },
+                { label: 'Blood Collection', href: '/services/blood-collection' },
+                { label: 'Teeth Whitening', href: '/services/teeth-whitening' },
+                { label: 'Corporate Health Services', href: '/services/corporate-health' },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo/5 hover:text-indigo transition-colors">
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
 
