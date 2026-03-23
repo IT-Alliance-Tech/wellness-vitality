@@ -1,59 +1,57 @@
 import React from 'react';
 import Hero from '@/components/sections/services/Hero';
-import ServiceBlock from '@/components/sections/services/ServiceBlock';
 import BookingCTA from '@/components/sections/home/BookingCTA';
+import Button from '@/components/ui/Button';
 
 const services = [
   {
     title: 'Health Assessments',
-    description: 'Comprehensive clinical evaluations tailored for individuals, ensuring proactive health management and detailed insights into your current wellbeing.',
-    benefits: ['General Check-ups', 'Chronic Care Plans', 'Pathology Reviews', 'Vital Statistics'],
-    image: '/service_assess.png',
-    reverse: false
+    description: 'Comprehensive wellness checks and preventative health screening for aged care and NDIS clients.',
+    slug: 'health-assessments',
+    image: '/images/services/health-assessment.png',
+    accent: 'indigo'
   },
   {
     title: 'Preventative Health & Wellness',
-    description: 'Our preventative health strategies focus on long-term wellness, combining clinical expertise with lifestyle planning to prevent illness before it starts.',
-    benefits: ['Lifestyle Coaching', 'Nutritional Guidance', 'Stress Management', 'Immune Optimization'],
-    image: '/service_preventative.png',
-    reverse: true
+    description: 'Vitamin injections, nutrition guidance and lifestyle health consultations.',
+    slug: 'preventative-health',
+    image: '/images/services/preventative-health.png',
+    accent: 'indigo'
   },
   {
-    title: 'Aged Care & NDIS Nursing Services',
-    description: 'Compassionate, professional nursing care specifically designed for NDIS participants and those in aged care, providing comfort and dignity at home.',
-    benefits: ['Wound Management', 'Medication Support', 'Post-Op Recovery', 'Mobility Assistance'],
-    image: '/service_aged.png',
-    reverse: false
+    title: 'Aged Care & NDIS Nursing',
+    description: 'Professional nursing services supporting ongoing healthcare needs.',
+    slug: 'aged-care-ndis',
+    image: '/images/services/aged-care.png',
+    accent: 'rose'
   },
   {
-    title: 'IV Infusion Therapy',
-    description: 'Experience clinical-grade vitamin and nutrient delivery designed for maximum absorption and immediate results in hydration, immunity, and energy.',
-    benefits: ['Immune Support', 'NAD+ Therapy', 'Skin Rejuvenation', 'Rapid Hydration'],
-    image: '/service_iv.png',
-    reverse: true,
-    ctaText: 'View IV Infusions',
-    ctaHref: '/iv-infusions'
+    title: 'IV Infusions',
+    description: 'Targeted intravenous nutrient therapies designed to support energy, recovery and immune health.',
+    slug: 'iv-infusions',
+    image: '/images/services/iv-infusion.png',
+    accent: 'rose'
   },
   {
     title: 'Blood Collection',
-    description: 'Professional pathology and blood draw services conducted in the privacy and comfort of your own home or workplace by certified phlebotomists.',
-    benefits: ['Home Phlebotomy', 'Workplace Screening', 'Accurate Handling', 'Fast Results'],
-    image: '/service_blood.png',
-    reverse: false
+    description: 'Convenient blood testing services available at home or care facilities.',
+    slug: 'blood-collection',
+    image: '/images/services/blood-collection.png',
+    accent: 'indigo'
   },
   {
-    title: 'Professional Teeth Whitening',
-    description: 'Safe, professional-grade cosmetic teeth whitening treatments delivered in your home, ensuring a brighter, more confident smile with clinical precision.',
-    benefits: ['Instant Results', 'Clinical Grade', 'Zero Sensitivity', 'Home Comfort'],
-    image: '/service_teeth.png',
-    reverse: true
+    title: 'Teeth Whitening',
+    description: 'Professional teeth whitening treatments delivered by qualified healthcare professionals.',
+    slug: 'teeth-whitening',
+    image: '/images/services/teeth-whitening.png',
+    accent: 'rose'
   },
   {
-    title: 'Corporate & Workplace Health Services',
-    description: 'Customised health and wellness programmes designed to boost productivity and employee wellbeing through onsite clinical screenings and proactive care.',
-    benefits: ['Flu Vaccinations', 'Health Screenings', 'Ergonomic Review', 'Wellness Seminars'],
-    image: '/service_corporate.png',
-    reverse: false
+    title: 'Corporate Health Services',
+    description: 'Workplace health checks and corporate IV hydration services.',
+    slug: 'corporate-health',
+    image: '/images/services/corporate-health.png',
+    accent: 'indigo'
   }
 ];
 
@@ -62,12 +60,48 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-white">
       <Hero />
       
-      {services.map((service, index) => (
-        <ServiceBlock 
-          key={service.title}
-          {...service}
-        />
-      ))}
+      <section className="py-24 bg-gradient-to-b from-white to-gray-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {services.map((service) => (
+              <div 
+                key={service.slug}
+                className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 flex flex-col h-full"
+              >
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className={`absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest text-${service.accent === 'rose' ? 'rose' : 'indigo'}`}>
+                    Professional Care
+                  </div>
+                </div>
+                
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-indigo mb-4 group-hover:text-rose transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed mb-8 flex-grow font-light">
+                    {service.description}
+                  </p>
+                  
+                  <div className="pt-6 border-t border-gray-50 mt-auto">
+                    <Button 
+                      href={`/services/${service.slug}`} 
+                      variant="outline" 
+                      className="w-full text-xs font-bold py-3 uppercase tracking-widest"
+                    >
+                      View Service Details
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <BookingCTA />
     </main>

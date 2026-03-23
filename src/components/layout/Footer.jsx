@@ -10,9 +10,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                <span className="text-rose">Wellness</span> & Vitality
-              </span>
+              <img src="/footerlogo.png" alt="Wellness Vitality Australia" className="h-20 w-auto" />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-8 pr-4">
               Experience elite diagnostic and therapeutic services from the comfort of your home. Premium healthcare, delivered with a personal touch and clinical precision.

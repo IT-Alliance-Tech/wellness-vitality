@@ -53,13 +53,21 @@ const MobileHealthcare = () => {
                  <div className="w-8 h-[1px] bg-rose" />
                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-rose">Clinical Service</span>
               </div>
-              <h2 className="text-4xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-[0.95]">
+              <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[0.95]">
                 <span className="block text-white brightness-125">Healthcare That</span>
                 <span className="text-rose">Comes To You</span>
               </h2>
-              <p className="text-lg text-white/80 font-medium leading-relaxed max-w-xl">
-                Wellness Vitality Australia provides premium healthcare services delivered at your home, workplace, or facility for ultimate clinical comfort and convenience.
+              <p className="text-lg text-white/80 font-medium leading-relaxed max-w-xl mb-8">
+                Wellness Vitality Australia provides professional healthcare and wellness services designed to support energy, recovery, immune health and overall wellbeing. 
               </p>
+              <div className="flex flex-wrap gap-4 mb-4">
+                {['Home', 'Workplace', 'Aged Care Facility', 'NDIS Residence'].map((loc) => (
+                  <div key={loc} className="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-xs font-bold text-white tracking-widest uppercase flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-rose" />
+                    {loc}
+                  </div>
+                ))}
+              </div>
            </div>
            
            <div className="flex-shrink-0 lg:mb-2">

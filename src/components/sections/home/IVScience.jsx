@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button';
 const points = [
   {
     title: 'Direct Nutrient Delivery',
-    description: 'IV therapy delivers nutrients directly into the bloodstream, bypassing the digestive system for immediate bioavailability.',
+    description: 'IV therapy delivers nutrients directly into the bloodstream, bypassing the digestive system.',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -13,7 +13,7 @@ const points = [
   },
   {
     title: 'Higher Nutrient Levels',
-    description: 'Intravenous delivery achieves higher circulating nutrient concentrations compared with oral supplementation.',
+    description: 'Intravenous delivery can achieve higher circulating nutrient concentrations compared with oral supplementation.',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
@@ -21,8 +21,8 @@ const points = [
     )
   },
   {
-    title: 'Supports Cellular Energy',
-    description: 'IV nutrients support mitochondrial function and cellular metabolism, fuelling recovery at the source.',
+    title: 'Supports Cellular Energy Production',
+    description: 'Many IV nutrients support mitochondrial function and cellular metabolism.',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -72,11 +72,11 @@ const IVScience = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-8 leading-tight">
-              The Science Behind <span className="italic font-light text-rose">Nutrient Delivery</span>
+              Why <span className="italic font-light text-rose">IV Therapy</span>
             </h2>
             
             <p className="text-lg text-gray-600 mb-12 leading-relaxed">
-              Intravenous nutrient delivery provides immediate benefits that conventional supplements cannot match, ensuring your body gets what it needs, when it needs it.
+              IV therapy delivers vitamins, minerals and nutrients directly into the bloodstream, allowing higher nutrient availability compared with oral supplements.
             </p>
             
             <div className="space-y-10 mb-12">

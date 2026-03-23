@@ -13,7 +13,7 @@ const reasons = [
   },
   {
     title: 'Personalised Clinical Care',
-    description: 'Full clinical assessment conducted before every single treatment.',
+    description: 'Full clinical assessment conducted before every single treatment to ensure safety and suitability.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -21,8 +21,8 @@ const reasons = [
     )
   },
   {
-    title: 'Mobile Healthcare',
-    description: 'We come to your home, workplace, or facility — on your schedule.',
+    title: 'Mobile Healthcare Services',
+    description: 'We come to your home, workplace, or facility — on your schedule, wherever you feel most comfortable.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -31,7 +31,7 @@ const reasons = [
   },
   {
     title: 'Aged Care & NDIS Support',
-    description: 'Tailored support for aged care residents and NDIS participants.',
+    description: 'Specialised nursing support tailored for aged care residents and NDIS participants.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -42,21 +42,26 @@ const reasons = [
 
 const WhyChoose = () => {
   return (
-    <section id="why-choose" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-choose" className="py-24 bg-indigo-subtle relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-64 h-64 bg-indigo/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-6 font-bold">
                <div className="w-8 h-px bg-indigo" />
                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo">Why Choose Us</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-8 leading-tight">
-              Healthcare you can <span className="italic font-light text-indigo">trust and rely on</span>
+              Why Choose <span className="text-rose">Wellness Vitality Australia</span>
             </h2>
             
-            <p className="text-base text-gray-500 mb-12 leading-relaxed max-w-xl">
-              Fully qualified, AHPRA-registered Registered Nurses — at your door, on your schedule. We provide premium clinical care with a personal touch.
+            <p className="text-base text-gray-600 mb-12 leading-relaxed max-w-xl font-medium">
+              At Wellness Vitality Australia, your health and safety are our highest priorities. All services are delivered by fully qualified, AHPRA-registered Registered Nurses, ensuring every treatment meets strict Australian healthcare standards.
+            </p>
+
+            <p className="text-sm text-gray-500 mb-12 leading-relaxed max-w-xl">
+              With strong clinical experience and a focus on personalised care, we provide professional services including IV infusions, blood collection, teeth whitening, and wellness checks for aged care and NDIS clients.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-12">

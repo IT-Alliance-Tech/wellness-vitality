@@ -14,33 +14,27 @@ const Hero = () => {
           {/* LEFT CONTENT */}
           <div>
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 font-bold">
                <svg className="w-3 h-3 text-rose" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
                </svg>
-               <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-white">IV Infusion & Wellness</span>
+               <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-white">Mobile Healthcare & IV Wellness</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-8 !text-white">
-              Welcome to Wellness & <span className="text-rose">Vitality</span> Australia.
+            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-8 !text-white italic">
+              Mobile Healthcare & <span className="text-rose not-italic">IV Wellness</span> Services
             </h1>
 
             <p className="text-lg md:text-xl text-white/90 mb-10 max-w-lg leading-relaxed font-medium">
-              Professional mobile healthcare and IV wellness services delivered by AHPRA-registered nurses.
+              Professional IV infusions, wellness checks, and clinical services delivered by qualified registered nurses.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
-              <Button href="/booking" variant="primary" className="px-8 py-4 text-base flex items-center gap-2">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                   <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-                </svg>
-                Book Treatment
+              <Button href="/booking" variant="primary" className="px-8 py-4 text-base flex items-center gap-2 shadow-xl shadow-rose/20">
+                Book IV Infusion
               </Button>
-              <Button href="/services" variant="outlineWhite" className="px-8 py-4 text-base flex items-center gap-2">
-                Our Services
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.976-2.888a1 1 0 00-1.175 0l-3.976 2.888c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                </svg>
+              <Button href="/contact" variant="outlineWhite" className="px-8 py-4 text-base flex items-center gap-2">
+                Enquire Now
               </Button>
             </div>
 
