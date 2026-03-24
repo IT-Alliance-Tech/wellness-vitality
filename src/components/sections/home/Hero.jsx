@@ -17,7 +17,13 @@ const Hero = () => {
           <div>
 
             {/* TAG */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6 font-semibold" style={{ backgroundColor: "rgba(255, 255, 255, 0.05)", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6 font-medium"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.05)",
+                border: "1px solid rgba(255, 255, 255, 0.1)"
+              }}
+            >
               <svg
                 className="w-3 h-3"
                 style={{ color: "rgb(202,18,84)" }}
@@ -27,27 +33,27 @@ const Hero = () => {
                 <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
               </svg>
 
-              <span className="text-[10px] uppercase tracking-[0.3em]" style={{ color: "rgba(255, 255, 255, 0.85)" }}>
+              <span
+                className="text-[10px] uppercase tracking-[0.3em]"
+                style={{ color: "rgba(255, 255, 255, 0.85)" }}
+              >
                 Mobile Healthcare & IV Wellness
               </span>
             </div>
 
             {/* HEADING */}
-            <h1 
-              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] mb-6"
+            <h1
+              className="text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.1] mb-6"
               style={{ color: "#FFFFFF" }}
             >
               Welcome to Wellness &{" "}
-              <span
-                className="italic"
-                style={{ color: "rgb(202,18,84)" }}
-              >
+              <span style={{ color: "rgb(202,18,84)" }}>
                 Vitality Australia
               </span>
             </h1>
 
             {/* PARAGRAPH */}
-            <p 
+            <p
               className="text-[16px] sm:text-[17px] md:text-[18px] mb-8 max-w-lg leading-relaxed"
               style={{ color: "rgba(255, 255, 255, 0.85)" }}
             >
@@ -60,7 +66,7 @@ const Hero = () => {
               <Button
                 href="/booking"
                 variant="primary"
-                className="px-6 py-3 text-[15px] flex items-center gap-2"
+                className="px-6 py-3 text-[15px] flex items-center gap-2 !rounded-none"
                 style={{ boxShadow: "0 10px 30px rgba(202,18,84,0.25)" }}
               >
                 Book Treatment
@@ -69,7 +75,7 @@ const Hero = () => {
               <Button
                 href="/services"
                 variant="outlineWhite"
-                className="px-6 py-3 text-[15px] flex items-center gap-2"
+                className="px-6 py-3 text-[15px] flex items-center gap-2 !rounded-none"
               >
                 Our Services
               </Button>

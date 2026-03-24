@@ -1,10 +1,10 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 
 const Newsletter = () => {
   return (
-    <section className="py-16 md:py-20 relative">
+    <section className="py-10 md:py-14 relative">
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 

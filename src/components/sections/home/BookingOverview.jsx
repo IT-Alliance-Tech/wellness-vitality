@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Button from '@/components/ui/Button';
 
 const features = [
@@ -9,7 +9,7 @@ const features = [
 
 const BookingOverview = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-10 md:py-16 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
 
         <div className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-xl border border-gray-100 overflow-hidden flex flex-col lg:flex-row">

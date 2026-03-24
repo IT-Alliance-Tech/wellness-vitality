@@ -52,11 +52,11 @@ const CareSection = () => {
     };
 
     return (
-        <section className="py-24">
+        <section className="py-10 md:py-16">
 
             <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
 
-                {/* 🔥 MOBILE SLIDER */}
+                {/* MOBILE */}
                 <div
                     ref={scrollRef}
                     onScroll={handleScroll}
@@ -68,17 +68,11 @@ const CareSection = () => {
                             className="min-w-full snap-center p-8 rounded-xl"
                             style={{ backgroundColor: '#f5f5f5' }}
                         >
-                            <div
-                                className="mb-6"
-                                style={{ color: 'rgb(202,18,84)' }}
-                            >
+                            <div className="mb-6" style={{ color: 'rgb(202,18,84)' }}>
                                 {item.icon}
                             </div>
 
-                            <h3
-                                className="text-lg font-semibold mb-3"
-                                style={{ color: 'rgb(59,63,105)' }}
-                            >
+                            <h3 className="text-lg font-medium mb-3" style={{ color: 'rgb(59,63,105)' }}>
                                 {item.title}
                             </h3>
 
@@ -89,22 +83,20 @@ const CareSection = () => {
                     ))}
                 </div>
 
-                {/* 🔥 DOTS */}
+                {/* DOTS */}
                 <div className="flex justify-center gap-2 mb-10 md:hidden">
                     {features.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => scrollToIndex(index)}
-                            className={`h-1.5 w-6 rounded-full transition-all ${index === active
-                                ? 'bg-[rgb(59,63,105)]'
-                                : 'bg-gray-300'
+                            className={`h-1.5 w-6 ${index === active ? 'bg-[rgb(59,63,105)]' : 'bg-gray-300'
                                 }`}
                         />
                     ))}
                 </div>
 
-                {/* 💻 DESKTOP GRID */}
-                <div className="hidden md:grid grid-cols-3 gap-8 mb-16">
+                {/* ✅ DESKTOP (SLIGHTLY WIDER - PERFECT BALANCE) */}
+                <div className="hidden md:grid grid-cols-3 gap-8 mb-10 max-w-6xl mx-auto">
 
                     {features.map((item, index) => (
                         <div
@@ -112,17 +104,11 @@ const CareSection = () => {
                             className="p-10 rounded-xl"
                             style={{ backgroundColor: '#f5f5f5' }}
                         >
-                            <div
-                                className="mb-8"
-                                style={{ color: 'rgb(202,18,84)' }}
-                            >
+                            <div className="mb-8" style={{ color: 'rgb(202,18,84)' }}>
                                 {item.icon}
                             </div>
 
-                            <h3
-                                className="text-xl font-semibold mb-4"
-                                style={{ color: 'rgb(59,63,105)' }}
-                            >
+                            <h3 className="text-xl font-medium mb-4" style={{ color: 'rgb(59,63,105)' }}>
                                 {item.title}
                             </h3>
 
@@ -134,14 +120,16 @@ const CareSection = () => {
 
                 </div>
 
-                {/* 🔥 QUOTE */}
-                <div
-                    className="text-center py-6 px-4 rounded-md"
-                    style={{ backgroundColor: 'rgb(202,18,84)' }}
-                >
-                    <p className="text-white text-lg md:text-xl font-medium">
-                        This is <span className="italic font-semibold">personalised care</span>. This is <span className="italic font-semibold">Wellness Vitality Australia</span>.
-                    </p>
+                {/* ✅ QUOTE (MATCHED WIDTH) */}
+                <div className="max-w-6xl mx-auto">
+                    <div
+                        className="text-center py-6 px-6 rounded-md"
+                        style={{ backgroundColor: 'rgb(202,18,84)' }}
+                    >
+                        <p className="text-white text-lg md:text-xl font-medium">
+                            This is <span className="italic font-semibold">personalised care</span>. This is <span className="italic font-semibold">Wellness Vitality Australia</span>.
+                        </p>
+                    </div>
                 </div>
 
             </div>
