@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -8,23 +8,28 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-3 md:py-4">
 
-      {/* ✅ UPDATED CONTAINER */}
+      {/* CONTAINER */}
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center justify-between">
 
+        {/* LOGO (responsive size) */}
         <Link href="/" className="flex items-center">
-          <img src="/logoheader.png" alt="Wellness Vitality Australia" className="h-20 w-auto" />
+          <img
+            src="/logoheader.png"
+            alt="Wellness Vitality Australia"
+            className="h-14 md:h-20 w-auto"
+          />
         </Link>
 
-        {/* Desktop Nav */}
+        {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center space-x-8">
 
           <Link href="/" className="text-sm font-medium text-gray-700 hover:text-rose transition">
             Home
           </Link>
 
-          {/* Services Dropdown */}
+          {/* SERVICES DROPDOWN */}
           <div className="relative group">
             <button className="text-sm font-medium text-gray-700 hover:text-rose transition flex items-center gap-1">
               Services
@@ -33,7 +38,6 @@ const Navbar = () => {
               </svg>
             </button>
 
-            {/* Dropdown */}
             <div className="absolute left-0 top-full mt-2 w-60 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
               {[
                 { label: 'Health Assessments', href: '/services/health-assessments' },
@@ -44,7 +48,11 @@ const Navbar = () => {
                 { label: 'Teeth Whitening', href: '/services/teeth-whitening' },
                 { label: 'Corporate Health Services', href: '/services/corporate-health' },
               ].map((item) => (
-                <Link key={item.href} href={item.href} className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo/5 hover:text-indigo transition-colors">
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo/5 hover:text-indigo transition-colors"
+                >
                   {item.label}
                 </Link>
               ))}
@@ -68,13 +76,19 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* CTA */}
-        <div className="flex items-center space-x-3">
-          <Button href="/booking" variant="primary" className="px-5 py-2.5">
+        {/* CTA + MENU */}
+        <div className="flex items-center gap-2 md:gap-3">
+
+          {/* 🔥 RESPONSIVE BUTTON */}
+          <Button
+            href="/booking"
+            variant="primary"
+            className="px-2.5 py-1 text-[11px] md:px-5 md:py-2.5 md:text-base"
+          >
             Book Now
           </Button>
 
-          {/* Mobile Menu Icon */}
+          {/* MOBILE MENU ICON */}
           <button
             className="md:hidden p-2 text-indigo"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -92,16 +106,12 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* MOBILE MENU */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl overflow-auto" style={{ maxHeight: 'calc(100vh - 80px)' }}>
           <div className="px-4 py-6 space-y-6">
 
-            <Link
-              href="/"
-              className="block text-base font-medium text-gray-800 hover:text-rose"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <Link href="/" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
               Home
             </Link>
 
@@ -131,35 +141,19 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Link
-              href="/training"
-              className="block text-base font-medium text-gray-800 hover:text-rose"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <Link href="/training" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
               Training
             </Link>
 
-            <Link
-              href="/booking"
-              className="block text-base font-medium text-gray-800 hover:text-rose"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <Link href="/booking" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
               Booking
             </Link>
 
-            <Link
-              href="/about"
-              className="block text-base font-medium text-gray-800 hover:text-rose"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <Link href="/about" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
               About Us
             </Link>
 
-            <Link
-              href="/contact"
-              className="block text-base font-medium text-gray-800 hover:text-rose"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <Link href="/contact" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
               Contact Us
             </Link>
 

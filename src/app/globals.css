@@ -3,27 +3,37 @@
 :root {
   --background: #FFFFFF;
   --foreground: #1A1A1A;
-  --primary: #3B3969;
-  --secondary: #CB154E;
+
+  /* ONLY 2 BRAND COLORS */
+  --primary: #3b3f69;
+  --secondary: #ca1254;
+
   --text-main: #1A1A1A;
   --text-muted: #4B4B4B;
+
   color-scheme: light;
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-indigo: #3B3969;
-  --color-rose: #CB154E;
+
+  /* STRICT COLORS */
+  --color-indigo: #3b3f69;
+  --color-rose: #ca1254;
+
   --font-sans: var(--font-inter);
 }
 
+/* ❌ Removed gradients / color-mix */
+/* ✅ Replaced with solid subtle backgrounds */
+
 @utility bg-indigo-subtle {
-  background-color: color-mix(in srgb, #3B3969 5%, transparent);
+  background-color: #3b3f69;
 }
 
 @utility bg-rose-subtle {
-  background-color: color-mix(in srgb, #CB154E 5%, transparent);
+  background-color: #ca1254;
 }
 
 html,
@@ -57,6 +67,7 @@ h6 {
   font-weight: 700;
 }
 
+/* Animations (unchanged) */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -103,7 +114,7 @@ h6 {
   }
 }
 
-/* Animations that run on load by default */
+/* Animations */
 .reveal-up {
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -141,8 +152,6 @@ h6 {
   to {
     transform: translateX(calc(-50% - 12px));
   }
-
-  /* 12px is half the gap (24px) */
 }
 
 @keyframes marquee-right {
@@ -161,4 +170,18 @@ h6 {
 
 @utility animate-marquee-right {
   animation: marquee-right 200s linear infinite;
+}
+
+/* Hide scrollbar but keep scroll */
+.no-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none !important;
+  background: transparent !important;
 }

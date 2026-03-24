@@ -1,118 +1,113 @@
-﻿import React from 'react';
-import Button from '@/components/ui/Button';
+"use client";
 
-const reasons = [
+import React from 'react';
+import Link from 'next/link';
+
+const cards = [
   {
     title: 'AHPRA-Registered Professionals',
-    description: 'Every nurse meets strict Australian healthcare registration standards — no exceptions.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    )
+    description: 'Every nurse meets strict Australian healthcare registration standards.',
+    image: '/about1.png',
+    link: '/about/ahpra',
   },
   {
     title: 'Personalised Clinical Care',
-    description: 'Full clinical assessment conducted before every single treatment to ensure safety and suitability.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    )
+    description: 'Every treatment is tailored based on a full clinical assessment.',
+    image: '/about2.png',
+    link: '/about/personalised-care',
   },
   {
-    title: 'Mobile Healthcare Services',
-    description: 'We come to your home, workplace, or facility — on your schedule, wherever you feel most comfortable.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    )
+    title: 'Mobile Healthcare',
+    description: 'We bring healthcare to your home, workplace or care facility.',
+    image: '/about3.png',
+    link: '/about/mobile-healthcare',
   },
   {
     title: 'Aged Care & NDIS Support',
-    description: 'Specialised nursing support tailored for aged care residents and NDIS participants.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    )
+    description: 'Dedicated care for aged care residents and NDIS participants.',
+    image: '/about4.png',
+    link: '/about/ndis-care',
   },
 ];
 
-const WhyChoose = () => {
+const AboutSection = () => {
   return (
-    <section id="why-choose" className="py-24 bg-indigo-subtle relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-64 h-64 bg-indigo/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-56 h-56 bg-rose/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+    <section className="py-16 md:py-24">
 
-      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
 
-          <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-px bg-indigo" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo">Why Choose Us</span>
-            </div>
+        {/* HEADER */}
+        <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
+          <h2
+            className="text-2xl md:text-5xl font-bold mb-4 md:mb-6"
+            style={{ color: 'rgb(59,63,105)' }}
+          >
+            What We Do
+          </h2>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-8 leading-tight">
-              Why Choose <span className="text-rose">Wellness Vitality Australia</span>
-            </h2>
+          <p className="text-sm md:text-lg text-gray-600 leading-relaxed">
+            Professional healthcare and wellness services delivered by AHPRA-registered nurses,
+            focused on personalised care, safety, and convenience.
+          </p>
+        </div>
 
-            <p className="text-base text-gray-600 mb-6 leading-relaxed max-w-xl font-medium">
-              At Wellness Vitality Australia, your health and safety are our highest priorities. All services are delivered by fully qualified, AHPRA-registered Registered Nurses, ensuring every treatment meets strict Australian healthcare standards.
-            </p>
+        {/* 🔥 RESPONSIVE GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
 
-            <p className="text-sm text-gray-500 mb-12 leading-relaxed max-w-xl">
-              With strong clinical experience and a focus on personalised care, we provide professional services including IV infusions, blood collection, teeth whitening, and wellness checks for aged care and NDIS clients.
-            </p>
+          {cards.map((card, index) => (
+            <Link key={index} href={card.link} className="group block">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 mb-12">
-              {reasons.map((reason) => (
-                <div key={reason.title} className="group flex flex-col gap-3 p-4 rounded-2xl hover:bg-white hover:shadow-sm hover:shadow-indigo/5 transition-all duration-300">
-                  <div className="w-10 h-10 bg-indigo/5 group-hover:bg-indigo/10 rounded-xl flex items-center justify-center text-indigo transition-colors duration-300">
-                    {reason.icon}
-                  </div>
+              {/* CARD */}
+              <div className="relative rounded-lg md:rounded-xl overflow-hidden">
+
+                {/* IMAGE */}
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-[160px] md:h-[260px] lg:h-[320px] object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                {/* OVERLAY */}
+                <div
+                  className="absolute inset-0 z-20 flex flex-col justify-between p-3 md:p-6 opacity-0 group-hover:opacity-100 transition duration-300"
+                  style={{ backgroundColor: 'rgb(202,18,84)' }}
+                >
                   <div>
-                    <h3 className="text-base font-bold text-indigo mb-2">{reason.title}</h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">{reason.description}</p>
+                    <h3 className="text-white text-sm md:text-lg font-bold mb-2 md:mb-3">
+                      {card.title}
+                    </h3>
+
+                    <p className="text-white text-xs md:text-sm leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <span className="border border-white px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm text-white inline-flex items-center gap-2">
+                      Learn More →
+                    </span>
                   </div>
                 </div>
-              ))}
-            </div>
 
-            <Button href="/booking" variant="primary" className="px-8 py-3.5 group inline-flex items-center">
-              Book an Appointment
-              <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Button>
-          </div>
-
-          <div className="relative">
-            <div className="absolute inset-0 rounded-[3rem] border border-indigo/8 translate-x-3 translate-y-3 -z-10" />
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl shadow-indigo/10 relative">
-              <img
-                src="https://images.unsplash.com/photo-1576091160550-217359f42f8c?auto=format&fit=crop&q=80&w=800"
-                alt="Healthcare Team"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
-
-              <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-rose flex items-center justify-center text-white shadow-lg shadow-rose/25">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-xl font-bold text-white">100%</div>
-                  <div className="text-[10px] text-white/80 uppercase font-bold tracking-widest leading-tight">AHPRA-Registered Nurses</div>
-                </div>
               </div>
-            </div>
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-rose/5 rounded-full blur-3xl -z-10" />
-          </div>
+
+              {/* TITLE BELOW */}
+              <div className="mt-2 md:mt-4 text-center group-hover:hidden transition duration-200">
+                <h3
+                  className="text-sm md:text-lg font-semibold"
+                  style={{ color: 'rgb(59,63,105)' }}
+                >
+                  {card.title}
+                </h3>
+
+                <div
+                  className="mt-1 md:mt-2 h-[2px] w-8 md:w-12 mx-auto"
+                  style={{ backgroundColor: 'rgb(59,63,105)' }}
+                />
+              </div>
+
+            </Link>
+          ))}
 
         </div>
       </div>
@@ -120,4 +115,4 @@ const WhyChoose = () => {
   );
 };
 
-export default WhyChoose;
+export default AboutSection;
