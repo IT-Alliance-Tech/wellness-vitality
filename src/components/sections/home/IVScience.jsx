@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Button from '@/components/ui/Button';
 
 const points = [
@@ -34,7 +34,7 @@ const points = [
 const IVScience = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           {/* Left Side: Image with Badge */}

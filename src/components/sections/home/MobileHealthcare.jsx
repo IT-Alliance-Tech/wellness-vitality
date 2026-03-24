@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Button from '@/components/ui/Button';
 
 const pillars = [
@@ -44,7 +44,7 @@ const MobileHealthcare = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.01] -skew-x-12 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-rose/5 rounded-full blur-[100px] -translate-x-1/2" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
         
         {/* Header - Side by Side (Reduced Gap & Enhanced Visibility) */}
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-10 gap-8">

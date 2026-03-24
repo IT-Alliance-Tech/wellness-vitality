@@ -1,16 +1,20 @@
-'use client';
+﻿'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+
+      {/* âœ… UPDATED CONTAINER */}
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center justify-between">
 
         <Link href="/" className="flex items-center">
-          <img src="/headerlogo.png" alt="Wellness Vitality Australia" className="h-14 w-auto" />
+          <img src="/logoheader.png" alt="Wellness Vitality Australia" className="h-20 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -62,13 +66,79 @@ const Navbar = () => {
           </Button>
 
           {/* Mobile Menu Icon */}
-          <button className="md:hidden p-2 text-indigo">
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
+          <button
+            className="md:hidden p-2 text-indigo"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl overflow-auto" style={{ maxHeight: 'calc(100vh - 80px)' }}>
+          <div className="px-4 py-6 space-y-6">
+            <Link
+              href="/about"
+              className="block text-base font-medium text-gray-800 hover:text-rose"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
+
+            <div className="space-y-4">
+              <div className="text-base font-medium text-gray-800 border-b border-gray-100 pb-2">
+                Services
+              </div>
+              <div className="pl-4 space-y-4">
+                {[
+                  { label: 'Health Assessments', href: '/services/health-assessments' },
+                  { label: 'Preventative Health & Wellness', href: '/services/preventative-health' },
+                  { label: 'Aged Care & NDIS Nursing', href: '/services/aged-care-ndis' },
+                  { label: 'IV Infusions', href: '/services/iv-infusions' },
+                  { label: 'Blood Collection', href: '/services/blood-collection' },
+                  { label: 'Teeth Whitening', href: '/services/teeth-whitening' },
+                  { label: 'Corporate Health Services', href: '/services/corporate-health' },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block text-sm text-gray-600 hover:text-indigo"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link
+              href="/booking"
+              className="block text-base font-medium text-gray-800 hover:text-rose"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Booking
+            </Link>
+
+            <Link
+              href="/contact"
+              className="block text-base font-medium text-gray-800 hover:text-rose"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,9 +1,9 @@
-import React from 'react';
+﻿import React from 'react';
 
 const AboutIntro = () => {
   return (
     <section className="py-24 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           {/* Content Side */}

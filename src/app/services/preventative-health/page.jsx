@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
@@ -62,7 +62,7 @@ export default function PreventativeHealthPage() {
 
       {/* Image & About Section */}
       <section className="py-24 bg-gradient-to-br from-white to-rose/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-50 rounded-full blur-3xl" />
@@ -102,7 +102,7 @@ export default function PreventativeHealthPage() {
 
       {/* Services Included */}
       <section className="py-24 bg-gradient-to-br from-[#f0faf5] to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-indigo" />
@@ -154,7 +154,7 @@ export default function PreventativeHealthPage() {
 
       {/* How It Works */}
       <section className="py-24 bg-gradient-to-br from-white to-rose/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-indigo">Your Path to Wellness</h2>
           </div>
@@ -172,7 +172,7 @@ export default function PreventativeHealthPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-indigo">Questions & Answers</h2>
           </div>

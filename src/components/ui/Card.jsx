@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const Card = ({ title, description, image, accentColor = 'indigo', children }) => {
   return (

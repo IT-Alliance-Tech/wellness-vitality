@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Button from '@/components/ui/Button';
 
 export default function ContactPage() {
@@ -7,7 +7,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-20 bg-indigo text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-rose/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">Have a Question?</h1>
             <p className="text-xl text-white/80 leading-relaxed font-light">
@@ -19,7 +19,7 @@ export default function ContactPage() {
 
       {/* Contact Content */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
             {/* Contact Information & WhatsApp */}
@@ -104,7 +104,7 @@ export default function ContactPage() {
 
       {/* Clinical Disclaimer */}
       <section className="py-12 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-400 italic font-light">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16text-center text-xs text-gray-400 italic font-light">
           Professional clinical nursing team. All enquiries are handled confidentially and in accordance with Australian healthcare privacy standards.
         </div>
       </section>

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
@@ -14,7 +14,7 @@ const benefits = [
   { title: 'Promotes Employee Wellbeing', desc: 'Healthy employees are more engaged and satisfied.' },
   { title: 'Improves Productivity', desc: 'Preventative health supports better performance at work.' },
   { title: 'Supports Workplace Safety', desc: 'Reduce risk and liability through professional health services.' },
-  { title: 'Convenient On-Site Services', desc: 'No time lost to offsite clinic visits — we come to you.' },
+  { title: 'Convenient On-Site Services', desc: 'No time lost to offsite clinic visits â€” we come to you.' },
 ];
 
 const steps = [
@@ -53,7 +53,7 @@ export default function CorporateHealthPage() {
 
       {/* Image & About Section */}
       <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 mb-6">
@@ -86,10 +86,10 @@ export default function CorporateHealthPage() {
         </div>
       </section>
 
-      {/* Services — Corporate grid */}
+      {/* Services â€” Corporate grid */}
       <section className="py-24 bg-gradient-to-b from-[#f4f6f9] to-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo/[0.03] -skew-x-12 translate-x-1/2" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-indigo">Our Workplace Solutions</h2>
           </div>
@@ -111,7 +111,7 @@ export default function CorporateHealthPage() {
 
       {/* Corporate Process Section */}
       <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-indigo" />
@@ -135,7 +135,7 @@ export default function CorporateHealthPage() {
       {/* Benefits Section */}
       <section className="py-24 bg-gradient-to-br from-indigo to-[#1e1c3f] text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-80 h-80 bg-rose/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold">Organizational Benefits</h2>
           </div>
@@ -157,7 +157,7 @@ export default function CorporateHealthPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-indigo">Corporate FAQ</h2>
           </div>

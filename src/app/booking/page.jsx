@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Button from '@/components/ui/Button';
 
 export default function BookingPage() {
@@ -7,7 +7,7 @@ export default function BookingPage() {
       {/* Hero Section */}
       <section className="py-20 bg-indigo text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-rose/5 blur-[120px] rounded-full translate-x-1/4 -translate-y-1/4 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-black !text-white mb-6 tracking-tighter">Book Your <span className="text-rose italic">IV Infusion</span></h1>
             <p className="text-xl !text-white/90 leading-relaxed font-light mb-8 max-w-2xl">
@@ -19,7 +19,7 @@ export default function BookingPage() {
 
       {/* Booking Integration Section */}
       <section className="py-24 bg-gradient-to-br from-white to-indigo/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             
             {/* Left Column: Info & Payment */}
@@ -99,7 +99,7 @@ export default function BookingPage() {
 
       {/* Support CTA */}
       <section className="py-12 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col md:flex-row items-center justify-center gap-6">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16text-center flex flex-col md:flex-row items-center justify-center gap-6">
           <p className="text-sm text-gray-500 font-medium">Need help with your booking?</p>
           <div className="flex gap-4">
             <Button href="/contact" variant="outline" className="px-6 py-2.5 text-xs">Send Enquiry</Button>

@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 
 const Newsletter = () => {
   return (
     <section className="relative py-24 bg-white overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-16z-10">
         <div className="relative bg-indigo rounded-[2.5rem] p-10 md:p-16 shadow-2xl overflow-hidden">
           
           {/* Inner Decorative Elements */}
