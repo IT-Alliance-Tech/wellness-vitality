@@ -108,7 +108,7 @@ const IVScience = () => {
             {/* Button */}
             <Button
               href="/booking"
-              className="px-10 py-4 bg-[rgb(202,18,84)] text-white rounded-xl"
+              className="px-10 py-4 bg-[rgb(202,18,84)] text-white"
             >
               Book a Session Now
             </Button>

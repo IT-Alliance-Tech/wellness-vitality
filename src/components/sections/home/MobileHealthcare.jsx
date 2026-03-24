@@ -71,7 +71,7 @@ const IVTherapySlider = () => {
 
             <Button
               href="/services/iv-infusions"
-              className="bg-[rgb(202,18,84)] text-white px-6 md:px-8 py-3 md:py-4 rounded-xl"
+              className="bg-[rgb(202,18,84)] text-white px-6 md:px-8 py-3 md:py-4"
             >
               Book Now
             </Button>

@@ -52,7 +52,7 @@ const BookingOverview = () => {
 
             <Button
               href="/booking"
-              className="px-6 md:px-10 py-3 md:py-4 bg-[rgb(202,18,84)] text-white rounded-xl w-full sm:w-auto"
+              className="px-6 md:px-10 py-3 md:py-4 bg-[rgb(202,18,84)] text-white w-full sm:w-auto"
             >
               Book Appointment
             </Button>

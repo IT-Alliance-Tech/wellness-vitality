@@ -83,7 +83,7 @@ const Navbar = () => {
           <Button
             href="/booking"
             variant="primary"
-            className="px-3 py-1.5 text-xs md:px-5 md:py-2.5 md:text-base"
+            className="w-[130px] md:w-[158px] px-2 py-4 text-xs md:py-1.5 md:text-sm"
           >
             Book Now
           </Button>

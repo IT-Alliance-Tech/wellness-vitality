@@ -44,13 +44,13 @@ const Newsletter = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full sm:min-w-[240px] px-4 py-3 rounded-lg border border-gray-300 bg-white text-[rgb(59,63,105)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[rgb(202,18,84)] text-sm transition"
+                  className="w-full sm:min-w-[240px] px-4 py-3 border border-gray-300 bg-white text-[rgb(59,63,105)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[rgb(202,18,84)] text-sm transition"
                   required
                 />
 
                 <button
                   type="submit"
-                  className="px-5 py-3 rounded-lg bg-[rgb(202,18,84)] text-white font-semibold hover:shadow-lg hover:-translate-y-[1px] transition text-sm"
+                  className="px-5 py-3 bg-[rgb(202,18,84)] text-white font-semibold hover:shadow-lg hover:-translate-y-[1px] transition text-sm"
                 >
                   Subscribe
                 </button>
