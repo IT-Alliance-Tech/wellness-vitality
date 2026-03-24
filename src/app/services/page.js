@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Hero from '@/components/sections/services/Hero';
 import BookingCTA from '@/components/sections/home/BookingCTA';
 import Button from '@/components/ui/Button';
@@ -60,7 +60,7 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-white">
       <Hero />
       
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50/50">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service) => (
@@ -68,19 +68,19 @@ export default function ServicesPage() {
                 key={service.slug}
                 className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 flex flex-col h-full"
               >
-                <div className="aspect-[4/3] overflow-hidden relative">
+                <div className="aspect-[4/3] overflow-hidden relative border-b border-gray-50">
                   <img 
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className={`absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest text-${service.accent === 'rose' ? 'rose' : 'indigo'}`}>
+                  <div className={`absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm ${service.accent === 'rose' ? 'text-[#ca1254]' : 'text-[#3b3f69]'}`}>
                     Professional Care
                   </div>
                 </div>
                 
                 <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-indigo mb-4 group-hover:text-rose transition-colors">
+                  <h3 className={`text-xl font-bold mb-4 transition-colors ${service.accent === 'rose' ? 'text-[#3b3f69] group-hover:text-[#ca1254]' : 'text-[#3b3f69] group-hover:text-[#3b3f69]'}`}>
                     {service.title}
                   </h3>
                   <p className="text-sm text-gray-500 leading-relaxed mb-8 flex-grow font-light">

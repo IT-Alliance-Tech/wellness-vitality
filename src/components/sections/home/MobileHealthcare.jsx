@@ -1,112 +1,144 @@
-﻿import React from 'react';
+﻿"use client";
+import React, { useState, useEffect } from 'react';
 import Button from '@/components/ui/Button';
 
-const pillars = [
+const slides = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-      </svg>
-    ),
-    title: 'Patient Preference',
-    stat: '80%',
-    description: 'Of patients prefer healthcare services delivered at home for ultimate comfort.',
-    color: 'rose'
+    title: "Immune Defence IV",
+    description:
+      "A high-dose blend of Vitamin C, Zinc, and antioxidants to support your immune system.",
+    points: ["Immune Support", "Antioxidant Rich", "Recovery Boost"]
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: 'Efficiency',
-    stat: 'Reduce',
-    description: 'Clinic visits and waiting times significantly with our on-demand mobile care.',
-    color: 'indigo'
+    title: "Energy & Performance IV",
+    description:
+      "Boost energy and reduce fatigue with B-complex vitamins and amino acids.",
+    points: ["Energy Boost", "Metabolic Support", "Performance"]
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
-    title: 'Total Access',
-    stat: 'Global',
-    description: 'Available at homes, workplaces, and care facilities across Australia.',
-    color: 'rose'
+    title: "Beauty & Skin Glow IV",
+    description:
+      "Promotes radiant skin with glutathione and collagen support.",
+    points: ["Skin Glow", "Collagen Support", "Detox"]
   }
 ];
 
-const MobileHealthcare = () => {
+const IVTherapySlider = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   return (
-    <section className="py-20 bg-indigo relative overflow-hidden">
-      {/* Background Accents - Toned down for better text visibility */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.01] -skew-x-12 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-rose/5 rounded-full blur-[100px] -translate-x-1/2" />
-      
-      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
-        
-        {/* Header - Side by Side (Reduced Gap & Enhanced Visibility) */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-10 gap-8">
-           <div className="max-w-2xl">
-              <div className="flex items-center gap-3 mb-4">
-                 <div className="w-8 h-[1px] bg-rose" />
-                 <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-rose">Clinical Service</span>
-              </div>
-              <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[0.95]">
-                <span className="block text-white brightness-125">Healthcare That</span>
-                <span className="text-rose">Comes To You</span>
-              </h2>
-              <p className="text-lg text-white/80 font-medium leading-relaxed max-w-xl mb-8">
-                Wellness Vitality Australia provides professional healthcare and wellness services designed to support energy, recovery, immune health and overall wellbeing. 
-              </p>
-              <div className="flex flex-wrap gap-4 mb-4">
-                {['Home', 'Workplace', 'Aged Care Facility', 'NDIS Residence'].map((loc) => (
-                  <div key={loc} className="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-xs font-bold text-white tracking-widest uppercase flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-rose" />
-                    {loc}
-                  </div>
-                ))}
-              </div>
-           </div>
-           
-           <div className="flex-shrink-0 lg:mb-2">
-              <Button href="/booking" variant="primary" className="px-12 py-5 text-lg shadow-xl shadow-rose/20">
-                 Book a Home Visit
-              </Button>
-           </div>
-        </div>
+    <section className="py-16 md:py-24 bg-[rgb(59,63,105)] text-white">
 
-        {/* The Pillars Grid - Tighter Gap */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-           {pillars.map((pillar) => (
-             <div key={pillar.title} className="bg-white p-8 rounded-3xl shadow-2xl border border-white/5 hover:scale-[1.02] transition-all duration-300 group">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${pillar.color === 'rose' ? 'bg-rose/10 text-rose' : 'bg-indigo/10 text-indigo'}`}>
-                   {pillar.icon}
-                </div>
-                
-                <div className="flex items-baseline gap-2 mb-3">
-                   <span className={`text-4xl font-black tracking-tighter ${pillar.color === 'rose' ? 'text-rose' : 'text-indigo'}`}>{pillar.stat}</span>
-                   <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{pillar.title}</span>
-                </div>
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
 
-                <p className="text-sm text-gray-500 font-medium leading-relaxed">
-                   {pillar.description}
+        {/* STACK ON MOBILE */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+
+          {/* LEFT */}
+          <div className="text-center lg:text-left">
+            <p className="text-sm text-white/70 mb-3 md:mb-4">
+              IV Therapy Services
+            </p>
+
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight mb-4 md:mb-6">
+              <span className="block text-white">
+                Experience Premium
+              </span>
+              <span className="block text-[rgb(202,18,84)]">
+                IV Infusion Therapy
+              </span>
+            </h2>
+
+            <p className="text-white/80 mb-6 md:mb-8 max-w-md mx-auto lg:mx-0 text-sm md:text-base">
+              Professional IV treatments designed to support recovery, energy,
+              and overall wellness delivered by qualified nurses.
+            </p>
+
+            <Button
+              href="/services/iv-infusions"
+              className="bg-[rgb(202,18,84)] text-white px-6 md:px-8 py-3 md:py-4 rounded-xl"
+            >
+              Book Now
+            </Button>
+          </div>
+
+          {/* RIGHT */}
+          <div className="relative">
+
+            {/* CARD */}
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-2xl text-[rgb(59,63,105)] min-h-[260px] md:h-[320px] flex flex-col justify-between transition-all duration-500">
+
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
+                  {slides[current].title}
+                </h3>
+
+                <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3">
+                  {slides[current].description}
                 </p>
-             </div>
-           ))}
-        </div>
 
-        {/* Minimal Footer */}
-        <div className="text-center">
-           <p className="text-[9px] font-bold text-white/10 uppercase tracking-[0.6em]">
-              Professional Australian Nursing Care
-           </p>
-        </div>
+                <ul className="space-y-2 md:space-y-3">
+                  {slides[current].points.map((p) => (
+                    <li key={p} className="flex items-center gap-2 text-xs md:text-sm">
+                      <div className="w-2 h-2 bg-[rgb(202,18,84)] rounded-full" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
+            </div>
+
+            {/* ARROWS (ONLY DESKTOP) */}
+            <button
+              onClick={prevSlide}
+              className="hidden md:flex absolute -left-15 top-1/2 -translate-y-1/2 bg-white text-[rgb(59,63,105)] w-10 h-10 rounded-full shadow-lg items-center justify-center hover:scale-110 transition"
+            >
+              ‹
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="hidden md:flex absolute -right-15 top-1/2 -translate-y-1/2 bg-white text-[rgb(59,63,105)] w-10 h-10 rounded-full shadow-lg items-center justify-center hover:scale-110 transition"
+            >
+              ›
+            </button>
+
+            {/* DOTS */}
+            <div className="flex justify-center gap-2 mt-4 md:mt-6">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    current === i
+                      ? "w-6 bg-[rgb(202,18,84)]"
+                      : "w-2 bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default MobileHealthcare;
+export default IVTherapySlider;

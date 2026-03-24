@@ -5,16 +5,14 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-indigo via-[#2d2b55] to-[#1e1c3f] overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-[#3b3f69] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-rose/8 rounded-full blur-[120px] -translate-x-1/3" />
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-indigo/30 rounded-full blur-[100px]" />
         </div>
         
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
-            <div className="w-2 h-2 rounded-full bg-rose animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-[#ca1254] animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Contact Team</span>
           </div>
           
@@ -27,7 +25,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-12 w-24 h-1.5 bg-white/10 mx-auto rounded-full overflow-hidden">
-            <div className="h-full bg-rose w-1/3 animate-[slide_2s_infinite_linear]" />
+            <div className="h-full bg-[#ca1254] w-1/3 animate-[slide_2s_infinite_linear]" />
           </div>
         </div>
       </section>

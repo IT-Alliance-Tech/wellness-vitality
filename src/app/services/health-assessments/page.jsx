@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
@@ -51,32 +51,31 @@ export default function HealthAssessmentsPage() {
         ctaHref="/contact"
         secondaryCtaLabel="Book Now"
         secondaryCtaHref="/booking"
-        accentColor="from-[#2a4a6b] via-[#1e3a55] to-[#162d42]"
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-gradient-to-br from-white to-rose/5 overflow-hidden">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              <div>
               <div className="inline-flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-rose" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">About This Service</span>
+                <div className="w-8 h-px bg-[#ca1254]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">About This Service</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-8 leading-tight">Proactive Care for <span className="text-rose">Long-Term Health</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-8 leading-tight">Proactive Care for <span className="text-[#ca1254]">Long-Term Health</span></h2>
               <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
                 Our health assessments are designed to support ongoing monitoring and preventative care for aged care and NDIS clients, ensuring early detection and better health management. We bring professional clinical oversight directly to you.
               </p>
               <div className="space-y-4">
                 {benefits.slice(0, 2).map((b) => (
-                  <div key={b.title} className="flex gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-sm">
-                    <div className="w-10 h-10 rounded-full bg-indigo/10 flex items-center justify-center flex-shrink-0 text-indigo">
+                  <div key={b.title} className="flex gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-[#3b3f69] flex items-center justify-center flex-shrink-0 text-white">
                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
-                      <div className="font-bold text-indigo">{b.title}</div>
+                      <div className="font-bold text-[#3b3f69]">{b.title}</div>
                       <div className="text-xs text-gray-500">{b.desc}</div>
                     </div>
                   </div>
@@ -84,10 +83,9 @@ export default function HealthAssessmentsPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo/5 rounded-full blur-3xl" />
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl -skew-y-1 border border-gray-100">
                 <Image 
-                  src="/images/services/health-assessment.png" 
+                   src="/images/services/health-assessment.png" 
                   alt="Health Assessment" 
                   width={800} 
                   height={1000}
@@ -100,19 +98,19 @@ export default function HealthAssessmentsPage() {
       </section>
 
       {/* Services Included */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-indigo" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo">Services Included</span>
+                <div className="w-8 h-px bg-[#3b3f69]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#3b3f69]">Services Included</span>
               </div>
-              <h2 className="text-4xl font-bold text-indigo mb-8">What's Included</h2>
+              <h2 className="text-4xl font-bold text-[#3b3f69] mb-8">What's Included</h2>
               <ul className="space-y-4">
                 {services.map((s) => (
-                  <li key={s} className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-indigo/20 transition-all">
-                    <div className="w-8 h-8 rounded-full bg-indigo flex items-center justify-center flex-shrink-0">
+                  <li key={s} className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-[#3b3f69]/20 transition-all">
+                    <div className="w-8 h-8 rounded-full bg-[#3b3f69] flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
@@ -122,18 +120,17 @@ export default function HealthAssessmentsPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-indigo text-white rounded-[3rem] p-12 relative overflow-hidden shadow-2xl">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-rose/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="bg-[#3b3f69] text-white rounded-[3rem] p-12 relative overflow-hidden shadow-2xl">
               <div className="flex items-center gap-2 mb-8 relative z-10">
-                <div className="w-8 h-px bg-rose" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Why It Matters</span>
+                <div className="w-8 h-px bg-[#ca1254]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Why It Matters</span>
               </div>
               <h3 className="text-2xl font-bold mb-6 relative z-10">Key Benefits</h3>
               <div className="space-y-6 relative z-10">
                 {benefits.map((b) => (
                   <div key={b.title}>
-                    <div className="font-bold text-rose mb-1">{b.title}</div>
-                    <div className="text-sm text-white/70 font-light leading-relaxed">{b.desc}</div>
+                    <div className="font-bold text-[#ca1254] mb-1">{b.title}</div>
+                    <div className="text-sm text-white/90 font-light leading-relaxed">{b.desc}</div>
                   </div>
                 ))}
               </div>
@@ -143,23 +140,23 @@ export default function HealthAssessmentsPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-gradient-to-br from-white to-indigo/5">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
              <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-rose" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Our Method</span>
-              <div className="w-8 h-px bg-rose" />
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Our Method</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
             </div>
-            <h2 className="text-4xl font-bold text-indigo">The Assessment Process</h2>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">The Assessment Process</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, i) => (
-              <div key={step.title} className="p-8 bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 rounded-2xl bg-indigo text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-indigo/20">
+              <div key={step.title} className="p-8 bg-white border border-gray-100 rounded-3xl space-y-4 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 rounded-2xl bg-[#3b3f69] text-white flex items-center justify-center font-bold text-xl shadow-lg">
                   {i + 1}
                 </div>
-                <h3 className="text-xl font-bold text-indigo">{step.title}</h3>
+                <h3 className="text-xl font-bold text-[#3b3f69]">{step.title}</h3>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -168,15 +165,15 @@ export default function HealthAssessmentsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-indigo">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-[#3b3f69]">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div key={faq.q} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
-                <h3 className="font-bold text-indigo mb-2">{faq.q}</h3>
+                <h3 className="font-bold text-[#3b3f69] mb-2">{faq.q}</h3>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
               </div>
             ))}

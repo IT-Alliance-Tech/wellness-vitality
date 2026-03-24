@@ -16,22 +16,22 @@ const Navbar = () => {
         {/* LOGO (responsive size) */}
         <Link href="/" className="flex items-center">
           <img
-            src="/logoheader.png"
+            src="/header.png"
             alt="Wellness Vitality Australia"
-            className="h-14 md:h-20 w-auto"
+            className="h-10 md:h-15 w-auto"
           />
         </Link>
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center space-x-8">
 
-          <Link href="/" className="text-sm font-medium text-gray-700 hover:text-rose transition">
+          <Link href="/" className="text-sm font-medium text-gray-700 hover:text-[#ca1254] transition">
             Home
           </Link>
 
           {/* SERVICES DROPDOWN */}
           <div className="relative group">
-            <button className="text-sm font-medium text-gray-700 hover:text-rose transition flex items-center gap-1">
+            <button className="text-sm font-medium text-gray-700 hover:text-[#ca1254] transition flex items-center gap-1">
               Services
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -51,7 +51,7 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo/5 hover:text-indigo transition-colors"
+                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#3b3f69]/5 hover:text-[#3b3f69] transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -59,19 +59,19 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link href="/training" className="text-sm font-medium text-gray-700 hover:text-rose transition">
+          <Link href="/training" className="text-sm font-medium text-gray-700 hover:text-[#ca1254] transition">
             Training
           </Link>
 
-          <Link href="/booking" className="text-sm font-medium text-gray-700 hover:text-rose transition">
+          <Link href="/booking" className="text-sm font-medium text-gray-700 hover:text-[#ca1254] transition">
             Booking
           </Link>
 
-          <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-rose transition">
+          <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-[#ca1254] transition">
             About Us
           </Link>
 
-          <Link href="/contact" className="text-sm font-medium text-gray-700 hover:text-rose transition">
+          <Link href="/contact" className="text-sm font-medium text-gray-700 hover:text-[#ca1254] transition">
             Contact Us
           </Link>
         </div>
@@ -90,7 +90,7 @@ const Navbar = () => {
 
           {/* MOBILE MENU ICON */}
           <button
-            className="md:hidden p-2 text-indigo"
+            className="md:hidden p-2 text-[#3b3f69]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -111,7 +111,7 @@ const Navbar = () => {
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl overflow-auto" style={{ maxHeight: 'calc(100vh - 80px)' }}>
           <div className="px-4 py-6 space-y-6">
 
-            <Link href="/" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
               Home
             </Link>
 
@@ -132,7 +132,7 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block text-sm text-gray-600 hover:text-indigo"
+                    className="block text-sm text-gray-600 hover:text-[#3b3f69]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -141,19 +141,19 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Link href="/training" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/training" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
               Training
             </Link>
 
-            <Link href="/booking" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/booking" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
               Booking
             </Link>
 
-            <Link href="/about" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/about" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
               About Us
             </Link>
 
-            <Link href="/contact" className="block text-base font-medium text-gray-800 hover:text-rose" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/contact" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
               Contact Us
             </Link>
 

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Button from '@/components/ui/Button';
 
 const ServiceCTA = ({
@@ -11,9 +11,7 @@ const ServiceCTA = ({
   dark = true,
 }) => {
   return dark ? (
-    <section className="py-20 bg-gradient-to-br from-indigo via-[#2d2b55] to-[#1e1c3f] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-80 h-80 bg-rose/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
+    <section className="py-20 bg-[#3b3f69] relative overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold !text-white mb-4">{heading}</h2>
         {text && <p className="text-white/80 text-lg font-light mb-10 max-w-2xl mx-auto">{text}</p>}

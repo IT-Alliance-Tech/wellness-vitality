@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
@@ -43,16 +43,14 @@ export default function TeethWhiteningPage() {
         ctaHref="/contact"
         secondaryCtaLabel="Book Now"
         secondaryCtaHref="/booking"
-        accentColor="from-[#2d5a5a] via-[#204a4a] to-[#153636]"
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-gradient-to-br from-white to-rose/5 overflow-hidden">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-teal-50 rounded-full blur-3xl" />
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl -skew-x-1 border border-teal-50">
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl -skew-x-1 border border-gray-100">
                 <Image 
                   src="/images/services/teeth-whitening.png" 
                   alt="Professional Teeth Whitening Results" 
@@ -64,22 +62,22 @@ export default function TeethWhiteningPage() {
             </div>
             <div>
               <div className="inline-flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-rose" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Premium Aesthetic</span>
+                <div className="w-8 h-px bg-[#ca1254]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Premium Aesthetic</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-8 leading-tight">Brighter Smile, <span className="text-rose">Better Confidence</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-8 leading-tight">Brighter Smile, <span className="text-[#ca1254]">Better Confidence</span></h2>
               <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
                 Our clinical teeth whitening treatments are designed to provide immediate results while maintaining the highest standards of safety and comfort. We use professional-grade systems that are more effective than over-the-counter alternatives.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {benefits.slice(0, 4).map((b) => (
-                  <div key={b.title} className="flex items-center gap-3 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-teal-100 shadow-sm">
-                    <div className="w-5 h-5 rounded-full bg-rose flex items-center justify-center flex-shrink-0">
+                  <div key={b.title} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="w-5 h-5 rounded-full bg-[#ca1254] flex items-center justify-center flex-shrink-0">
                       <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-sm font-medium text-indigo leading-tight">{b.title}</span>
+                    <span className="text-sm font-medium text-[#3b3f69] leading-tight">{b.title}</span>
                   </div>
                 ))}
               </div>
@@ -89,21 +87,20 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* Results Section â€” visual focused */}
-      <section className="py-24 bg-gradient-to-br from-indigo to-[#1e1c3f] text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-rose/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10 text-center">
+      <section className="py-24 bg-[#3b3f69] text-white overflow-hidden relative">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center">
           <h2 className="text-3xl font-bold mb-12">The Whitening Difference</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-10 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-md">
-              <div className="text-5xl font-bold text-rose mb-4">8+</div>
+            <div className="p-10 bg-white/5 rounded-3xl border border-white/10">
+              <div className="text-5xl font-bold text-[#ca1254] mb-4">8+</div>
               <div className="text-sm text-white/60 uppercase tracking-widest font-light">Shades Whiter</div>
             </div>
-            <div className="p-10 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-md">
-              <div className="text-5xl font-bold text-rose mb-4">60m</div>
+            <div className="p-10 bg-white/5 rounded-3xl border border-white/10">
+              <div className="text-5xl font-bold text-[#ca1254] mb-4">60m</div>
               <div className="text-sm text-white/60 uppercase tracking-widest font-light">Treatment Time</div>
             </div>
-            <div className="p-10 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-md">
-               <div className="text-5xl font-bold text-rose mb-4">0</div>
+            <div className="p-10 bg-white/5 rounded-3xl border border-white/10">
+               <div className="text-5xl font-bold text-[#ca1254] mb-4">0</div>
                <div className="text-sm text-white/60 uppercase tracking-widest font-light">Downtime</div>
             </div>
           </div>
@@ -111,18 +108,18 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* The Experience (Process) */}
-      <section className="py-24 bg-gradient-to-br from-white to-indigo/5 relative overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
+      <section className="py-24 bg-white relative overflow-hidden border-t border-gray-50">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-indigo">The Whitening Experience</h2>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">The Whitening Experience</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {steps.map((step, i) => (
               <div key={step.title} className="text-center group">
-                 <div className="w-20 h-20 rounded-[2.5rem] bg-indigo/5 text-indigo flex items-center justify-center text-3xl font-bold mx-auto mb-8 group-hover:bg-rose group-hover:text-white transition-all duration-500 shadow-sm">
+                 <div className="w-20 h-20 rounded-[2.5rem] bg-white border border-gray-100 text-[#3b3f69] flex items-center justify-center text-3xl font-bold mx-auto mb-8 group-hover:bg-[#ca1254] group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-md">
                    0{i + 1}
                  </div>
-                 <h3 className="text-xl font-bold text-indigo mb-4">{step.title}</h3>
+                 <h3 className="text-xl font-bold text-[#3b3f69] mb-4">{step.title}</h3>
                  <p className="text-sm text-gray-500 font-light leading-relaxed max-w-xs mx-auto">{step.desc}</p>
               </div>
             ))}
@@ -131,15 +128,15 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-indigo">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-[#3b3f69]">Frequently Asked Questions</h2>
           </div>
           <div className="grid grid-cols-1 gap-4">
             {faqs.map((faq) => (
               <div key={faq.q} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-indigo mb-3 text-lg">{faq.q}</h3>
+                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg">{faq.q}</h3>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
               </div>
             ))}
