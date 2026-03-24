@@ -1,10 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-28 bg-indigo overflow-hidden">
+    <section className="relative pt-32 pb-20 bg-indigo overflow-hidden">
       {/* Background Accent */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-rose/10 to-transparent pointer-events-none" />
 

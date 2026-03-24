@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -40,7 +40,9 @@ const Footer = () => {
                 { label: 'About Us', path: '/about' },
                 { label: 'Services', path: '/services' },
                 { label: 'Booking', path: '/booking' },
-                { label: 'Contact Us', path: '/contact' }
+                { label: 'Contact Us', path: '/contact' },
+                { label: 'FAQ', path: '/faq' },
+                { label: 'Testimonials', path: '/testimonials' }
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.path} className="text-white/70 hover:text-rose hover:translate-x-1 block transition-all text-sm font-medium">

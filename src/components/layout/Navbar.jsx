@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -14,11 +14,14 @@ const Navbar = () => {
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center justify-between">
 
         <Link href="/" className="flex items-center">
-          <img src="/logoheader.png" alt="Wellness Vitality Australia" className="h-20 w-auto" />
+          <img src="/logoheader.png" alt="Wellness Vitality Australia" className="h-15 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
+          <Link href="/" className="text-sm font-medium text-gray-700 hover:text-rose transition">
+            Home
+          </Link>
           <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-rose transition">
             About Us
           </Link>
@@ -57,6 +60,10 @@ const Navbar = () => {
           <Link href="/contact" className="text-sm font-medium text-gray-700 hover:text-rose transition">
             Contact Us
           </Link>
+
+          <Link href="/training" className="text-sm font-medium text-gray-700 hover:text-rose transition">
+            Training
+          </Link>
         </div>
 
         {/* CTA */}
@@ -87,6 +94,14 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl overflow-auto" style={{ maxHeight: 'calc(100vh - 80px)' }}>
           <div className="px-4 py-6 space-y-6">
+            <Link
+              href="/"
+              className="block text-base font-medium text-gray-800 hover:text-rose"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+
             <Link
               href="/about"
               className="block text-base font-medium text-gray-800 hover:text-rose"
@@ -127,6 +142,14 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Booking
+            </Link>
+
+            <Link
+              href="/training"
+              className="block text-base font-medium text-gray-800 hover:text-rose"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Training
             </Link>
 
             <Link
