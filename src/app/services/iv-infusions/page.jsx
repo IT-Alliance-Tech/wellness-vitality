@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
@@ -37,14 +37,14 @@ const row1 = nutrients.slice(0, midPoint);
 const row2 = nutrients.slice(midPoint);
 
 const iconColors = {
-  blue: 'bg-blue-50 text-blue-500',
-  amber: 'bg-amber-50 text-amber-500',
-  emerald: 'bg-emerald-50 text-emerald-500',
-  purple: 'bg-purple-50 text-purple-500',
-  rose: 'bg-rose-50 text-rose-500',
+  blue: 'bg-[#3b3f69] text-white',
+  amber: 'bg-[#ca1254] text-white',
+  emerald: 'bg-[#3b3f69] text-white',
+  purple: 'bg-[#ca1254] text-white',
+  rose: 'bg-[#ca1254] text-white',
 };
 
-const benefits = [
+const benefits = [+
   'Direct nutrient delivery',
   'Higher nutrient absorption',
   'Supports cellular energy production',
@@ -95,15 +95,13 @@ export default function IVInfusionsPage() {
         ctaHref="/booking"
         secondaryCtaLabel="Enquire Now"
         secondaryCtaHref="/contact"
-        accentColor="from-indigo via-[#2d2b55] to-[#1e1c3f]"
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-gradient-to-br from-white to-rose/5 overflow-hidden">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-rose/5 rounded-full blur-3xl" />
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl skew-y-1">
                 <Image
                   src="/images/services/iv-infusion.png"
@@ -113,34 +111,34 @@ export default function IVInfusionsPage() {
                   className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-rose/10 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-rose" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100">
+                <div className="w-12 h-12 rounded-full bg-[#3b3f69] flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-indigo">Premium Care</div>
+                  <div className="text-sm font-bold text-[#3b3f69]">Premium Care</div>
                   <div className="text-xs text-gray-500">Qualified Nursing</div>
                 </div>
               </div>
             </div>
             <div>
               <div className="inline-flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-rose" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">About This Service</span>
+                <div className="w-8 h-px bg-[#ca1254]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">About This Service</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-8 leading-tight">Fast-Acting Results Through <span className="text-rose">Direct Absorption</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-8 leading-tight">Fast-Acting Results Through <span className="text-[#ca1254]">Direct Absorption</span></h2>
               <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
                 IV infusion therapy delivers essential vitamins, minerals, and nutrients directly into the bloodstream for optimal absorption. This method supports faster recovery, improved energy levels, and enhanced immune function, bypassing the digestive system for 100% bioavailability.
               </p>
               <div className="grid grid-cols-2 gap-6">
-                <div className="p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20">
-                  <div className="text-2xl font-bold text-indigo mb-1">100%</div>
+                <div className="p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-[#3b3f69] mb-1">100%</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wider">Absorption</div>
                 </div>
-                <div className="p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20">
-                  <div className="text-2xl font-bold text-indigo mb-1">AHPRA</div>
+                <div className="p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-[#3b3f69] mb-1">AHPRA</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wider">Registered</div>
                 </div>
               </div>
@@ -150,11 +148,10 @@ export default function IVInfusionsPage() {
       </section>
 
       {/* Nutrients Section (Infinite Marquee) */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,57,105,0.03)_0,transparent_100%)] pointer-events-none" />
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
+      <section className="py-24 bg-white relative overflow-hidden border-t border-gray-50">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-4">
               Nutrients Used in Infusions
             </h2>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto">
@@ -170,7 +167,7 @@ export default function IVInfusionsPage() {
                     {n.icon}
                   </div>
                   <div>
-                    <h3 className="text-indigo font-bold text-lg mb-1">{n.name}</h3>
+                    <h3 className="text-[#3b3f69] font-bold text-lg mb-1">{n.name}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
                   </div>
                 </div>
@@ -184,7 +181,7 @@ export default function IVInfusionsPage() {
                     {n.icon}
                   </div>
                   <div>
-                    <h3 className="text-indigo font-bold text-lg mb-1">{n.name}</h3>
+                    <h3 className="text-[#3b3f69] font-bold text-lg mb-1">{n.name}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
                   </div>
                 </div>
@@ -193,8 +190,8 @@ export default function IVInfusionsPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-indigo/5 border border-indigo/10 text-indigo text-[10px] font-bold tracking-[0.3em] uppercase">
-              <svg className="w-4 h-4 text-rose" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white border border-gray-100 text-[#3b3f69] text-[10px] font-bold tracking-[0.3em] uppercase shadow-sm">
+              <svg className="w-4 h-4 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               Highest Clinical Standards
             </div>
           </div>
@@ -202,23 +199,22 @@ export default function IVInfusionsPage() {
       </section>
 
       {/* Treatments & Pricing */}
-      <section className="py-24 bg-[#3B3969] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
+      <section className="py-24 bg-[#3b3f69] relative overflow-hidden">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-rose" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Treatments & Pricing</span>
-              <div className="w-8 h-px bg-rose" />
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Treatments & Pricing</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
             </div>
-            <h2 className="text-5xl md:text-6xl font-extrabold !text-white tracking-tight">IV Infusion Treatments</h2>
+            <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight">IV Infusion Treatments</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {treatments.map((t) => (
               <div key={t.name} className="group bg-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-bold text-indigo group-hover:text-rose transition-colors duration-300 leading-snug">{t.name}</h3>
-                  <span className="text-sm font-bold text-rose bg-rose/5 px-3 py-1 rounded-full whitespace-nowrap ml-3">{t.price}</span>
+                  <h3 className="text-lg font-bold text-[#3b3f69] group-hover:text-[#ca1254] transition-colors duration-300 leading-snug">{t.name}</h3>
+                  <span className="text-sm font-bold text-[#ca1254] bg-[#ca1254]/5 px-3 py-1 rounded-full whitespace-nowrap ml-3">{t.price}</span>
                 </div>
                 <p className="text-sm text-gray-600 font-light leading-relaxed">{t.desc}</p>
               </div>
@@ -228,21 +224,21 @@ export default function IVInfusionsPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-gradient-to-br from-white to-indigo/5">
+      <section className="py-24 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-rose" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Process</span>
-              <div className="w-8 h-px bg-rose" />
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Process</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
             </div>
-            <h2 className="text-4xl font-bold text-indigo">How It Works</h2>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">How It Works</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, i) => (
-              <div key={step.title} className="relative p-8 bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 hover:border-rose/20 transition-all group shadow-sm hover:shadow-md">
-                <div className="text-5xl font-bold text-indigo/10 mb-6 group-hover:text-indigo/20 transition-colors">0{i + 1}</div>
-                <h3 className="text-xl font-bold text-indigo mb-4">{step.title}</h3>
+              <div key={step.title} className="relative p-8 bg-white rounded-3xl border border-gray-100 hover:border-[#ca1254]/20 transition-all group shadow-sm hover:shadow-md">
+                <div className="text-5xl font-bold text-[#3b3f69]/10 mb-6 group-hover:text-[#3b3f69]/20 transition-colors">0{i + 1}</div>
+                <h3 className="text-xl font-bold text-[#3b3f69] mb-4">{step.title}</h3>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -251,37 +247,36 @@ export default function IVInfusionsPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 bg-gradient-to-br from-indigo to-[#1e1c3f] text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-rose/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
+      <section className="py-24 bg-[#3b3f69] text-white overflow-hidden relative">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-rose" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Why Choose IV Therapy</span>
+                <div className="w-8 h-px bg-[#ca1254]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Why Choose IV Therapy</span>
               </div>
               <h2 className="text-4xl font-bold text-white mb-8">Clinical Benefits</h2>
               <ul className="space-y-4">
                 {benefits.map((b) => (
                   <li key={b} className="flex items-center gap-4">
                     <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-4 h-4 text-rose" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-4 h-4 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="!text-white/95 font-medium">{b}</span>
+                    <span className="text-white font-medium">{b}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center border border-white/10 backdrop-blur-sm">
-                <div className="text-4xl font-bold text-rose mb-2">30m</div>
-                <div className="text-[10px] font-bold !text-white/40 uppercase tracking-widest leading-relaxed">Typical Session</div>
+              <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center border border-white/10">
+                <div className="text-4xl font-bold text-[#ca1254] mb-2">30m</div>
+                <div className="text-[10px] font-bold text-white/60 uppercase tracking-widest leading-relaxed">Typical Session</div>
               </div>
-              <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center border border-white/10 backdrop-blur-sm">
-                <div className="text-4xl font-bold text-rose mb-2">100%</div>
-                <div className="text-[10px] font-bold !text-white/40 uppercase tracking-widest leading-relaxed">Absorption</div>
+              <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center border border-white/10">
+                <div className="text-4xl font-bold text-[#ca1254] mb-2">100%</div>
+                <div className="text-[10px] font-bold text-white/60 uppercase tracking-widest leading-relaxed">Absorption</div>
               </div>
             </div>
           </div>
@@ -289,15 +284,15 @@ export default function IVInfusionsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-indigo">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-[#3b3f69]">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-6">
             {faqs.map((faq) => (
               <div key={faq.q} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-indigo mb-3">{faq.q}</h3>
+                <h3 className="font-bold text-[#3b3f69] mb-3">{faq.q}</h3>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
               </div>
             ))}

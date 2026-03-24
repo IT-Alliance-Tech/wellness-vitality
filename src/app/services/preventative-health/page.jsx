@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
@@ -57,15 +57,13 @@ export default function PreventativeHealthPage() {
         ctaHref="/contact"
         secondaryCtaLabel="Book Now"
         secondaryCtaHref="/booking"
-        accentColor="from-[#3b5a4a] via-[#2d4a3a] to-[#1e3328]"
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-gradient-to-br from-white to-rose/5 overflow-hidden">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-50 rounded-full blur-3xl" />
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl skew-x-1 border border-gray-100">
                 <Image 
                   src="/images/services/preventative-health.png" 
@@ -78,17 +76,17 @@ export default function PreventativeHealthPage() {
             </div>
             <div>
               <div className="inline-flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-rose" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Our Philosophy</span>
+                <div className="w-8 h-px bg-[#ca1254]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Our Philosophy</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-8 leading-tight">Empowering Your <span className="text-rose">Best Self</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-8 leading-tight">Empowering Your <span className="text-[#ca1254]">Best Self</span></h2>
               <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
                 Our preventative health services focus on improving overall wellbeing through targeted vitamin support and professional lifestyle guidance. We believe in a proactive approach to health that starts from within.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {benefits.map((b) => (
-                  <div key={b} className="flex items-center gap-3 text-indigo font-medium bg-white/60 backdrop-blur-sm p-3 rounded-xl border border-green-100 shadow-sm">
-                    <svg className="w-5 h-5 text-rose" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div key={b} className="flex items-center gap-3 text-[#3b3f69] font-medium bg-white p-3 rounded-xl border border-gray-100 shadow-sm">
+                    <svg className="w-5 h-5 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-sm">{b}</span>
@@ -101,21 +99,21 @@ export default function PreventativeHealthPage() {
       </section>
 
       {/* Services Included */}
-      <section className="py-24 bg-gradient-to-br from-[#f0faf5] to-white">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-indigo" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo">Services Included</span>
-              <div className="w-8 h-px bg-indigo" />
+              <div className="w-8 h-px bg-[#3b3f69]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#3b3f69]">Services Included</span>
+              <div className="w-8 h-px bg-[#3b3f69]" />
             </div>
-            <h2 className="text-4xl font-bold text-indigo">Wellness Support</h2>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">Wellness Support</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-bold text-indigo mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-rose/10 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-rose" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <h3 className="text-xl font-bold text-[#3b3f69] mb-6 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#ca1254]/10 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
                 </div>
@@ -124,16 +122,16 @@ export default function PreventativeHealthPage() {
               <ul className="space-y-3">
                 {vitaminServices.map((s) => (
                   <li key={s} className="flex items-center gap-3 text-gray-600 font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-rose flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#ca1254] flex-shrink-0" />
                     {s}
                   </li>
                 ))}
               </ul>
             </div>
             <div className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-bold text-indigo mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo/10 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-indigo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <h3 className="text-xl font-bold text-[#3b3f69] mb-6 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#3b3f69]/10 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-[#3b3f69]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </div>
@@ -142,7 +140,7 @@ export default function PreventativeHealthPage() {
               <ul className="space-y-3">
                 {lifestyleServices.map((s) => (
                   <li key={s} className="flex items-center gap-3 text-gray-600 font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#3b3f69] flex-shrink-0" />
                     {s}
                   </li>
                 ))}
@@ -153,16 +151,16 @@ export default function PreventativeHealthPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-gradient-to-br from-white to-rose/5">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-indigo">Your Path to Wellness</h2>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">Your Path to Wellness</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, i) => (
-              <div key={step.title} className="relative p-10 bg-white/80 backdrop-blur-sm border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                <div className="absolute top-0 right-0 p-6 text-6xl font-black text-rose/5 select-none">{i + 1}</div>
-                <h3 className="text-xl font-bold text-indigo mb-4 relative z-10">{step.title}</h3>
+              <div key={step.title} className="relative p-10 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+                <div className="absolute top-0 right-0 p-6 text-6xl font-black text-[#ca1254]/5 select-none">{i + 1}</div>
+                <h3 className="text-xl font-bold text-[#3b3f69] mb-4 relative z-10">{step.title}</h3>
                 <p className="text-sm text-gray-500 font-light leading-relaxed relative z-10">{step.desc}</p>
               </div>
             ))}
@@ -171,15 +169,15 @@ export default function PreventativeHealthPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-24 bg-white border-t border-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-indigo">Questions & Answers</h2>
+            <h2 className="text-3xl font-bold text-[#3b3f69]">Questions & Answers</h2>
           </div>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div key={faq.q} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-indigo mb-2">{faq.q}</h3>
+                <h3 className="font-bold text-[#3b3f69] mb-2">{faq.q}</h3>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
               </div>
             ))}

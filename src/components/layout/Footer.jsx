@@ -3,14 +3,14 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-indigo text-white pt-24 pb-12 mt-auto border-t border-indigo/20">
+    <footer className="bg-[#3b3f69] text-white pt-24 pb-12 mt-auto border-t border-[#3b3f69]/20">
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
 
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-block mb-6">
-              <img src="/logofooter.png" alt="Wellness Vitality Australia" className="h-20 w-auto" />
+              <img src="/footer.png" alt="Wellness Vitality Australia" className="h-20 w-auto" />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-8 pr-4">
               Experience elite diagnostic and therapeutic services from the comfort of your home. Premium healthcare, delivered with a personal touch and clinical precision.
@@ -24,7 +24,7 @@ const Footer = () => {
                 { name: 'LinkedIn', icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg> },
                 { name: 'X', icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z" /></svg> }
               ].map((social) => (
-                <Link key={social.name} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-rose hover:text-white transition-all duration-300">
+                <Link key={social.name} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#ca1254] hover:text-white transition-all duration-300">
                   {social.icon}
                 </Link>
               ))}
@@ -45,7 +45,7 @@ const Footer = () => {
                 { label: 'Testimonials', path: '/testimonials' }
               ].map((item) => (
                 <li key={item.label}>
-                  <Link href={item.path} className="text-white/70 hover:text-rose hover:translate-x-1 block transition-all text-sm font-medium">
+                  <Link href={item.path} className="text-white/70 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
                     {item.label}
                   </Link>
                 </li>
@@ -66,7 +66,7 @@ const Footer = () => {
                 'Corporate Health Services'
               ].map((item) => (
                 <li key={item}>
-                  <Link href="/services" className="text-white/70 hover:text-rose hover:translate-x-1 block transition-all text-sm font-medium">
+                  <Link href="/services" className="text-white/70 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
                     {item}
                   </Link>
                 </li>
@@ -80,7 +80,7 @@ const Footer = () => {
             <ul className="space-y-5">
               <li className="flex gap-4 text-white/70 text-sm items-start">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-rose" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  <svg className="w-4 h-4 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 </div>
                 <div className="pt-1.5">
                   <div className="font-semibold text-white">1300 VITALITY</div>
@@ -89,15 +89,15 @@ const Footer = () => {
               </li>
               <li className="flex gap-4 text-white/70 text-sm items-start">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-rose flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  <svg className="w-4 h-4 text-[#ca1254] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div className="pt-1.5">
-                  <a href="mailto:care@wellnessvitality.com.au" className="font-semibold text-white hover:text-rose transition-colors">care@wellnessvitality.com.au</a>
+                  <a href="mailto:care@wellnessvitality.com.au" className="font-semibold text-white hover:text-[#ca1254] transition-colors">care@wellnessvitality.com.au</a>
                 </div>
               </li>
               <li className="flex gap-4 text-white/70 text-sm items-start">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-rose flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  <svg className="w-4 h-4 text-[#ca1254] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div className="pt-1.5 leading-relaxed">
                   Mobile Clinical Services<br />Available Across Australia

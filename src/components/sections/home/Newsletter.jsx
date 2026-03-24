@@ -1,65 +1,68 @@
 ﻿"use client";
 
-import React from 'react';
+import React from "react";
 
 const Newsletter = () => {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
-      <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-16z-10">
-        <div className="relative bg-indigo rounded-[2.5rem] p-10 md:p-16 shadow-2xl overflow-hidden">
-          
-          {/* Inner Decorative Elements */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-[60px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+    <section className="py-16 md:py-20 relative">
 
-          <div className="relative flex flex-col lg:flex-row lg:items-center justify-between gap-12 z-10">
-            
-            {/* Left Side: Content */}
-            <div className="lg:max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-6 shadow-sm backdrop-blur-sm">
-                 Stay Updated
-              </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-                Join our <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose to-pink-400">Wellness Community</span>
-              </h2>
-              <p className="text-white/80 text-lg leading-relaxed font-light">
-                Receive the latest health insights, exclusive mobile clinic schedules, and expert wellness tips delivered straight to your inbox each month.
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div className="relative overflow-hidden rounded-2xl border border-[rgb(59,63,105)]/20 bg-[rgb(59,63,105)]/5 backdrop-blur-sm px-6 py-6 md:px-8 md:py-7 shadow-[0_10px_30px_rgba(59,63,105,0.15)]">
+
+          {/* subtle glow */}
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-[rgb(202,18,84)]/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[rgb(59,63,105)]/10 rounded-full blur-3xl" />
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
+
+            {/* LEFT */}
+            <div className="text-center lg:text-left max-w-xl">
+
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-[rgb(59,63,105)]/60 mb-2">
+                Stay Updated
               </p>
+
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[rgb(59,63,105)] leading-snug">
+                Join our Wellness Community
+              </h2>
+
+              <p className="text-sm text-gray-500 mt-1">
+                Monthly health insights & wellness tips.
+              </p>
+
             </div>
 
-            {/* Right Side: Form */}
-            <div className="flex-shrink-0 w-full lg:w-auto">
-              <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
-                <div className="relative flex-grow min-w-0 sm:min-w-[350px]">
-                  <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
-                    <svg className="w-5 h-5 text-indigo/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="w-full pl-12 pr-6 py-4 rounded-xl bg-white text-indigo placeholder:text-indigo/50 focus:outline-none focus:ring-4 focus:ring-rose/30 transition-all font-medium shadow-md"
-                    required
-                  />
-                </div>
+            {/* RIGHT */}
+            <div className="w-full lg:w-auto">
+
+              <form
+                className="flex flex-col sm:flex-row items-center gap-3"
+                onSubmit={(e) => e.preventDefault()}
+              >
+
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full sm:min-w-[240px] px-4 py-3 rounded-lg border border-gray-300 bg-white text-[rgb(59,63,105)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[rgb(202,18,84)] text-sm transition"
+                  required
+                />
+
                 <button
                   type="submit"
-                  className="px-8 py-4 rounded-xl bg-rose text-white font-bold hover:bg-[#d9265f] hover:shadow-[0_8px_20px_rgba(203,21,78,0.4)] hover:-translate-y-0.5 active:scale-95 transition-colors w-full sm:w-auto flex justify-center items-center gap-2"
+                  className="px-5 py-3 rounded-lg bg-[rgb(202,18,84)] text-white font-semibold hover:shadow-lg hover:-translate-y-[1px] transition text-sm"
                 >
                   Subscribe
-                  <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
                 </button>
+
               </form>
-              <p className="mt-4 text-xs text-white/50 text-center sm:text-left">
-                We care about your data. Read our <a href="#" className="underline hover:text-white transition-colors">Privacy Policy</a>.
-              </p>
+
             </div>
 
           </div>
+
         </div>
+
       </div>
     </section>
   );

@@ -26,15 +26,7 @@
 }
 
 /* ❌ Removed gradients / color-mix */
-/* ✅ Replaced with solid subtle backgrounds */
-
-@utility bg-indigo-subtle {
-  background-color: #3b3f69;
-}
-
-@utility bg-rose-subtle {
-  background-color: #ca1254;
-}
+/* ✅ Replaced with solid backgrounds */
 
 html,
 body {
