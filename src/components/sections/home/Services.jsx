@@ -44,11 +44,11 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-12 md:py-24 bg-white">
+    <section className="py-10 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADER */}
-        <div className="text-left md:text-center mb-10 md:mb-16">
+        <div className="text-left md:text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-5xl font-semibold text-[#3b3f69] mb-4">
             Our Services
           </h2>
@@ -95,7 +95,7 @@ const Services = () => {
         </div>
 
         {/* VIEW ALL */}
-        <div className="text-center mt-12 md:mt-20">
+        <div className="text-center mt-8 md:mt-12">
           <Button href="/services" className="px-8 md:px-10 py-3">
             View All Services
           </Button>

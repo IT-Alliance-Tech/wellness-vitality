@@ -8,17 +8,17 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-3 md:py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-2 md:py-4">
 
       {/* CONTAINER */}
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center justify-between">
 
-        {/* LOGO (responsive size) */}
+        {/* LOGO */}
         <Link href="/" className="flex items-center">
           <img
             src="/header.png"
             alt="Wellness Vitality Australia"
-            className="h-10 md:h-15 w-auto"
+            className="h-6 md:h-11 w-auto"
           />
         </Link>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#3b3f69]/5 hover:text-[#3b3f69] transition-colors"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#3b3f69]/5 hover:text-[#3b3f69] transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -79,11 +79,11 @@ const Navbar = () => {
         {/* CTA + MENU */}
         <div className="flex items-center gap-2 md:gap-3">
 
-          {/* 🔥 RESPONSIVE BUTTON */}
+          {/* BUTTON */}
           <Button
             href="/booking"
             variant="primary"
-            className="px-2.5 py-1 text-[11px] md:px-5 md:py-2.5 md:text-base"
+            className="px-3 py-1.5 text-xs md:px-5 md:py-2.5 md:text-base"
           >
             Book Now
           </Button>
@@ -108,7 +108,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl overflow-auto" style={{ maxHeight: 'calc(100vh - 80px)' }}>
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl overflow-auto" style={{ maxHeight: 'calc(100vh - 90px)' }}>
           <div className="px-4 py-6 space-y-6">
 
             <Link href="/" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>

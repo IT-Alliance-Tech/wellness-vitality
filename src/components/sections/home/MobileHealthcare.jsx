@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import React, { useState, useEffect } from 'react';
 import Button from '@/components/ui/Button';
 
@@ -42,7 +42,7 @@ const IVTherapySlider = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[rgb(59,63,105)] text-white">
+    <section className="py-10 md:py-16 bg-[rgb(59,63,105)] text-white">
 
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
 

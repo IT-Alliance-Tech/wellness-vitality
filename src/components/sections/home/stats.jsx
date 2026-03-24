@@ -51,23 +51,25 @@ const Counter = ({ target, suffix }) => {
 
 const StatsSection = () => {
     return (
-        <section className="relative py-12 md:py-20 overflow-hidden">
+        <section className="relative py-8 md:py-14 overflow-hidden">
 
             {/* BACKGROUND TEXT */}
             <div
-                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none text-center whitespace-nowrap italic"
                 style={{
-                    fontSize: '120px',
-                    fontWeight: 800,
-                    color: 'rgba(202,18,84,0.05)',
+                    fontSize: '130px',
+                    fontWeight: 400,
+                    letterSpacing: '0.08em',
+                    transform: 'scaleX(1.08)', // subtle width
+                    fontFamily: 'Mackinac, serif', // 🔥 different font style
+                    color: 'rgba(202,18,84,0.08)',
                 }}
             >
-                wellness
+                wellness and vitality
             </div>
 
             <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
 
-                {/* 🔥 3 COL MOBILE */}
                 <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-16 text-center">
 
                     {stats.map((item, index) => (
@@ -75,15 +77,15 @@ const StatsSection = () => {
 
                             {/* NUMBER */}
                             <h3
-                                className="text-3xl md:text-7xl font-bold md:font-extrabold mb-2 md:mb-4 leading-none"
+                                className="text-3xl md:text-6xl font-normal italic tracking-tight mb-2 md:mb-4 leading-none"
                                 style={{ color: 'rgb(59,63,105)' }}
                             >
                                 <Counter target={item.value} suffix={item.suffix} />
                             </h3>
 
-                            {/* TEXT (FULL, but controlled) */}
+                            {/* TEXT */}
                             <p
-                                className="text-[11px] md:text-lg leading-tight md:leading-relaxed font-medium"
+                                className="text-[11px] md:text-lg leading-tight md:leading-relaxed font-normal"
                                 style={{ color: 'rgb(59,63,105)' }}
                             >
                                 {item.text}

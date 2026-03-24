@@ -6,40 +6,48 @@ import Link from 'next/link';
 const cards = [
   {
     title: 'AHPRA-Registered Professionals',
+    subtitle: 'Qualified & Certified Care',
     description: 'Every nurse meets strict Australian healthcare registration standards.',
     image: '/about1.png',
     link: '/about/ahpra',
+    color: 'rgb(211,107,124)',
   },
   {
     title: 'Personalised Clinical Care',
+    subtitle: 'Tailored Treatments',
     description: 'Every treatment is tailored based on a full clinical assessment.',
     image: '/about2.png',
     link: '/about/personalised-care',
+    color: 'rgb(160,166,205)',
   },
   {
     title: 'Mobile Healthcare',
+    subtitle: 'Care At Your Doorstep',
     description: 'We bring healthcare to your home, workplace or care facility.',
     image: '/about3.png',
     link: '/about/mobile-healthcare',
+    color: 'rgb(102,135,125)',
   },
   {
     title: 'Aged Care & NDIS Support',
+    subtitle: 'Dedicated Support Services',
     description: 'Dedicated care for aged care residents and NDIS participants.',
     image: '/about4.png',
     link: '/about/ndis-care',
+    color: 'rgb(180,111,123)',
   },
 ];
 
 const AboutSection = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-10 md:py-16">
 
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
 
         {/* HEADER */}
-        <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-8 md:mb-12 max-w-3xl mx-auto">
           <h2
-            className="text-2xl md:text-5xl font-bold mb-4 md:mb-6"
+            className="text-2xl md:text-5xl font-medium mb-4 md:mb-6"
             style={{ color: 'rgb(59,63,105)' }}
           >
             What We Do
@@ -51,13 +59,12 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* 🔥 RESPONSIVE GRID */}
+        {/* GRID */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
 
           {cards.map((card, index) => (
             <Link key={index} href={card.link} className="group block">
 
-              {/* CARD */}
               <div className="relative rounded-lg md:rounded-xl overflow-hidden">
 
                 {/* IMAGE */}
@@ -69,21 +76,29 @@ const AboutSection = () => {
 
                 {/* OVERLAY */}
                 <div
-                  className="absolute inset-0 z-20 flex flex-col justify-between p-3 md:p-6 opacity-0 group-hover:opacity-100 transition duration-300"
-                  style={{ backgroundColor: 'rgb(202,18,84)' }}
+                  className="absolute inset-0 z-20 flex flex-col justify-between p-3 md:p-6 opacity-0 group-hover:opacity-100 transition duration-300 text-white"
+                  style={{ backgroundColor: card.color }}
                 >
                   <div>
-                    <h3 className="text-white text-sm md:text-lg font-bold mb-2 md:mb-3">
+                    {/* TITLE */}
+                    <h3 className="!text-white text-sm md:text-lg font-medium mb-1">
                       {card.title}
                     </h3>
 
-                    <p className="text-white text-xs md:text-sm leading-relaxed">
+                    {/* SUBTITLE */}
+                    <p className="!text-white text-[11px] md:text-sm mb-2 opacity-90 font-normal">
+                      {card.subtitle}
+                    </p>
+
+                    {/* DESCRIPTION */}
+                    <p className="!text-white text-xs md:text-sm leading-relaxed font-normal">
                       {card.description}
                     </p>
                   </div>
 
-                  <div>
-                    <span className="border border-white px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm text-white inline-flex items-center gap-2">
+                  {/* BUTTON */}
+                  <div className="w-full">
+                    <span className="w-full border border-white px-3 py-2 md:px-4 md:py-2.5 text-xs md:text-sm !text-white flex items-center justify-center gap-2 font-normal">
                       Learn More →
                     </span>
                   </div>
@@ -94,7 +109,7 @@ const AboutSection = () => {
               {/* TITLE BELOW */}
               <div className="mt-2 md:mt-4 text-center group-hover:hidden transition duration-200">
                 <h3
-                  className="text-sm md:text-lg font-semibold"
+                  className="text-sm md:text-lg font-medium"
                   style={{ color: 'rgb(59,63,105)' }}
                 >
                   {card.title}
