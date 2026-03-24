@@ -85,7 +85,7 @@ const Services = () => {
                 </p>
 
                 <a href="/booking">
-                  <button className="bg-[#ca1254] text-white px-4 py-2 text-xs sm:text-sm hover:bg-[#a30f44] transition">
+                  <button className="bg-[#ca1254] text-white px-9 py-2 text-sm sm:text-sm hover:bg-[#a30f44] transition">
                     Book Now →
                   </button>
                 </a>

@@ -44,7 +44,7 @@ const iconColors = {
   rose: 'bg-[#ca1254] text-white',
 };
 
-const benefits = [+
+const benefits = [
   'Direct nutrient delivery',
   'Higher nutrient absorption',
   'Supports cellular energy production',
