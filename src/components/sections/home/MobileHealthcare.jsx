@@ -71,7 +71,7 @@ const IVTherapySlider = () => {
 
             <Button
               href="/services/iv-infusions"
-              className="bg-[rgb(202,18,84)] text-white px-6 md:px-8 py-3 md:py-4 rounded-xl"
+              className="bg-[rgb(202,18,84)] text-white px-6 md:px-8 py-3 md:py-4"
             >
               Book Now
             </Button>
@@ -81,8 +81,7 @@ const IVTherapySlider = () => {
           <div className="relative">
 
             {/* CARD */}
-            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-2xl text-[rgb(59,63,105)] min-h-[260px] md:h-[320px] flex flex-col justify-between transition-all duration-500">
-
+           <div className="mx-auto w-full max-w-[420px] bg-white rounded-3xl p-6 md:p-8 shadow-2xl text-[rgb(59,63,105)] min-h-[260px] md:h-[320px] flex flex-col justify-between transition-all duration-500">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
                   {slides[current].title}
@@ -107,14 +106,14 @@ const IVTherapySlider = () => {
             {/* ARROWS (ONLY DESKTOP) */}
             <button
               onClick={prevSlide}
-              className="hidden md:flex absolute -left-15 top-1/2 -translate-y-1/2 bg-white text-[rgb(59,63,105)] w-10 h-10 rounded-full shadow-lg items-center justify-center hover:scale-110 transition"
+              className="hidden md:flex absolute -left-0 top-1/2 -translate-y-1/2 bg-white text-[rgb(59,63,105)] w-10 h-10 rounded-full shadow-lg items-center justify-center hover:scale-110 transition"
             >
               ‹
             </button>
 
             <button
               onClick={nextSlide}
-              className="hidden md:flex absolute -right-15 top-1/2 -translate-y-1/2 bg-white text-[rgb(59,63,105)] w-10 h-10 rounded-full shadow-lg items-center justify-center hover:scale-110 transition"
+              className="hidden md:flex absolute -right-0 top-1/2 -translate-y-1/2 bg-white text-[rgb(59,63,105)] w-10 h-10 rounded-full shadow-lg items-center justify-center hover:scale-110 transition"
             >
               ›
             </button>
