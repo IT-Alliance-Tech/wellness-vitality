@@ -1,10 +1,10 @@
-import React from 'react';
+﻿import React from 'react';
 import Button from '@/components/ui/Button';
 
 const BookingCTA = () => {
   return (
     <section id="booking" className="py-24 bg-white overflow-hidden border-t border-gray-100">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16text-center relative">
         {/* Decorative elements */}
         <div className="absolute -top-10 left-10 w-20 h-20 bg-rose/5 rounded-full blur-xl" />
         <div className="absolute -bottom-10 right-10 w-32 h-32 bg-indigo/5 rounded-full blur-2xl" />

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Button from '@/components/ui/Button';
 
 const ServiceHero = ({
@@ -20,7 +20,7 @@ const ServiceHero = ({
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-[100px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10 text-center">
         {badge && (
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
             <div className="w-2 h-2 rounded-full bg-rose animate-pulse" />
@@ -28,7 +28,7 @@ const ServiceHero = ({
           </div>
         )}
 
-        <h1 className="text-5xl md:text-6xl font-bold !text-white mb-6 leading-[1.1] tracking-tight max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold !text-white mb-6 leading-[1.1] tracking-tight w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           {heading}
         </h1>
 

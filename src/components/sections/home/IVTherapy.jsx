@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Button from '@/components/ui/Button';
 
 const ivPacks = [
@@ -31,10 +31,10 @@ const IVTherapy = () => {
          <div className="absolute bottom-10 right-10 w-96 h-96 bg-rose rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold !text-white mb-6">IV Infusion Therapy</h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-white/80 w-full px-4 sm:px-6 lg:px-12 xl:px-16leading-relaxed">
             IV therapy delivers vitamins, minerals and nutrients directly into the bloodstream, allowing higher nutrient availability compared with oral supplements.
           </p>
           <div className="mt-8 h-1 w-20 bg-rose mx-auto rounded-full" />

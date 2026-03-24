@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-indigo/30 rounded-full blur-[100px]" />
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal-up">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10 text-center reveal-up">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
           <div className="w-2 h-2 rounded-full bg-rose animate-pulse" />
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Expert Care</span>
@@ -20,7 +20,7 @@ const Hero = () => {
           <span className="text-rose">IV Wellness</span> Services
         </h1>
         
-        <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
+        <p className="text-xl text-white/80 w-full px-4 sm:px-6 lg:px-12 xl:px-16leading-relaxed font-light">
           Wellness Vitality Australia provides professional healthcare and wellness services designed to support energy, recovery, immune health and overall wellbeing.
         </p>
         

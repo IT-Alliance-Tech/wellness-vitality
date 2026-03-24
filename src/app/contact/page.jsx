@@ -3,23 +3,38 @@ import Button from '@/components/ui/Button';
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white pt-20">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-indigo text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-rose/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">Have a Question?</h1>
-            <p className="text-xl text-white/80 leading-relaxed font-light">
-              Our clinical team is here to help with any enquiries regarding our treatments or mobile services.
-            </p>
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-indigo via-[#2d2b55] to-[#1e1c3f] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-rose/8 rounded-full blur-[120px] -translate-x-1/3" />
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-indigo/30 rounded-full blur-[100px]" />
+        </div>
+        
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
+            <div className="w-2 h-2 rounded-full bg-rose animate-pulse" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Contact Team</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold !text-white mb-8 leading-[1.1] tracking-tight">
+            Have a Question?
+          </h1>
+          
+          <p className="text-xl text-white/80 max-w-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light mb-8">
+            Our clinical team is here to help with any enquiries regarding our treatments or mobile services.
+          </p>
+
+          <div className="mt-12 w-24 h-1.5 bg-white/10 mx-auto rounded-full overflow-hidden">
+            <div className="h-full bg-rose w-1/3 animate-[slide_2s_infinite_linear]" />
           </div>
         </div>
       </section>
 
       {/* Contact Content */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
             {/* Contact Information & WhatsApp */}
@@ -104,7 +119,7 @@ export default function ContactPage() {
 
       {/* Clinical Disclaimer */}
       <section className="py-12 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-400 italic font-light">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16text-center text-xs text-gray-400 italic font-light">
           Professional clinical nursing team. All enquiries are handled confidentially and in accordance with Australian healthcare privacy standards.
         </div>
       </section>

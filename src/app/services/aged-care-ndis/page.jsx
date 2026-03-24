@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
@@ -58,7 +58,7 @@ export default function AgedCareNDISPage() {
 
       {/* Image & About Section */}
       <section className="py-24 bg-gradient-to-br from-white to-rose/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-indigo/5 rounded-full blur-3xl" />
@@ -98,7 +98,7 @@ export default function AgedCareNDISPage() {
 
       {/* Services & Benefits */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Services */}
             <div>
@@ -153,7 +153,7 @@ export default function AgedCareNDISPage() {
       {/* Process Section */}
       <section className="py-24 bg-indigo text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-80 h-80 bg-rose/10 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold">Our Care Process</h2>
           </div>
@@ -171,7 +171,7 @@ export default function AgedCareNDISPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-indigo">Care Support FAQ</h2>
           </div>

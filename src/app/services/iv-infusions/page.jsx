@@ -1,51 +1,71 @@
-import React from 'react';
+﻿import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 
 const treatments = [
-  { name: 'Immune Defence IV', price: '$220–$280', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
-  { name: 'Energy & Performance IV', price: '$200–$250', desc: 'B-complex vitamins and amino acids for sustained energy.' },
-  { name: 'Beauty & Skin Glow IV', price: '$260–$320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
-  { name: 'Detox & Liver Support IV', price: '$250–$310', desc: 'Liver-supporting antioxidants and detox nutrients.' },
-  { name: 'Hydration & Recovery IV', price: '$180–$230', desc: 'Electrolytes and minerals for rapid rehydration.' },
-  { name: 'Athlete Recovery IV', price: '$240–$290', desc: 'Targeted nutrients to accelerate muscle recovery.' },
+  { name: 'Immune Defence IV', price: '$220â€“$260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
+  { name: 'Energy & Performance IV', price: '$200â€“$240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
+  { name: 'Beauty & Skin Glow IV', price: '$260â€“$320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
+  { name: 'Detox & Liver Support IV', price: '$250â€“$300', desc: 'Liver-supporting antioxidants and detox nutrients.' },
+  { name: 'Hydration & Recovery IV', price: '$180â€“$220', desc: 'Electrolytes and minerals for rapid rehydration.' },
+  { name: 'Athlete Recovery IV', price: '$220â€“$260', desc: 'Targeted nutrients to accelerate muscle recovery.' },
 ];
 
 const nutrients = [
-  'Vitamin C',
-  'B Complex (B1, B2, B3, B5, B6)',
-  'Vitamin B12',
-  'Magnesium',
-  'Zinc',
-  'Glutathione',
-  'NAD+',
+  { name: 'Vitamin C', desc: 'Supports immune function and antioxidant protection.', icon: 'ðŸ›¡ï¸', color: 'blue' },
+  { name: 'Vitamin D3', desc: 'Essential for bone health and immune regulation.', icon: 'â˜€ï¸', color: 'amber' },
+  { name: 'Biotin', desc: 'Promotes healthy hair, skin, and metabolic function.', icon: 'âœ¨', color: 'emerald' },
+  { name: 'B Complex', desc: 'Fuels energy production and nervous system support.', icon: 'âš¡', color: 'purple' },
+  { name: 'Methylcobalamin', desc: 'Active form of B12 for energy and neurological health.', icon: 'ðŸ§ ', color: 'blue' },
+  { name: 'Magnesium Sulphate', desc: 'Relaxes muscles, supports sleep and nerve function.', icon: 'ðŸŒ¿', color: 'emerald' },
+  { name: 'Zinc', desc: 'Crucial for immune system, wound healing and DNA synthesis.', icon: 'ðŸ”‹', color: 'amber' },
+  { name: 'Selenium', desc: 'Powerful antioxidant supporting thyroid and metabolic function.', icon: 'ðŸ›¡ï¸', color: 'blue' },
+  { name: 'Taurine', desc: 'Supports cardiovascular health and cellular hydration.', icon: 'â¤ï¸', color: 'rose' },
+  { name: 'Arginine', desc: 'Boosts nitric oxide for circulation and recovery.', icon: 'ðŸ©¸', color: 'blue' },
+  { name: 'Glutamine', desc: 'Gut lining repair and immune system fuel source.', icon: 'ðŸ§¬', color: 'emerald' },
+  { name: 'Lysine', desc: 'Collagen synthesis and antiviral immune defence.', icon: 'ðŸ’ª', color: 'blue' },
+  { name: 'Ornithine', desc: 'Supports detoxification and growth hormone release.', icon: 'ðŸ”„', color: 'purple' },
+  { name: 'Glutathione', desc: 'Master antioxidant for liver detox and skin brightening.', icon: 'âœ¨', color: 'amber' },
+  { name: 'Coenzyme Q10', desc: 'Vital cellular energy coenzyme powering repair and metabolism.', icon: 'ðŸ”‹', color: 'emerald' },
+  { name: 'Alpha Lipoic Acid', desc: 'Universal antioxidant supporting nerve health and glucose metabolism.', icon: 'âš¡', color: 'blue' },
+  { name: 'NAD+', desc: 'Critical coenzyme for cellular energy, anti-aging, and DNA repair.', icon: 'ðŸ§¬', color: 'purple' },
 ];
 
+const midPoint = Math.ceil(nutrients.length / 2);
+const row1 = nutrients.slice(0, midPoint);
+const row2 = nutrients.slice(midPoint);
+
+const iconColors = {
+  blue: 'bg-blue-50 text-blue-500',
+  amber: 'bg-amber-50 text-amber-500',
+  emerald: 'bg-emerald-50 text-emerald-500',
+  purple: 'bg-purple-50 text-purple-500',
+  rose: 'bg-rose-50 text-rose-500',
+};
+
 const benefits = [
-  'Direct Nutrient Delivery',
-  'Higher Nutrient Levels',
-  'Supports Cellular Energy Production',
-  'Fast-Acting Recovery Support',
-  'Optimal Hydration',
+  'Direct nutrient delivery',
+  'Higher nutrient absorption',
+  'Supports cellular energy production',
 ];
 
 const steps = [
-  { 
-    title: 'Consultation', 
-    desc: 'Initial clinical assessment with our registered nurse to determine suitability and goals.' 
+  {
+    title: 'Consultation',
+    desc: 'Initial clinical assessment with our registered nurse to determine suitability and goals.'
   },
-  { 
-    title: 'Preparation', 
-    desc: 'Custom formulation of your nutrient therapy based on your individual requirements.' 
+  {
+    title: 'Preparation',
+    desc: 'Custom formulation of your nutrient therapy based on your individual requirements.'
   },
-  { 
-    title: 'Administration', 
-    desc: 'Professional administration by a qualified nurse in a relaxed environment.' 
+  {
+    title: 'Administration',
+    desc: 'Professional administration by a qualified nurse in a relaxed environment.'
   },
-  { 
-    title: 'Recovery', 
-    desc: 'Relax and rehydrate as the nutrients are delivered directly into your bloodstream.' 
+  {
+    title: 'Recovery',
+    desc: 'Relax and rehydrate as the nutrients are delivered directly into your bloodstream.'
   },
 ];
 
@@ -70,7 +90,7 @@ export default function IVInfusionsPage() {
       <ServiceHero
         badge="Intravenous Therapy"
         heading="IV Infusion Therapy"
-        subtext="Targeted intravenous nutrient therapies designed to support energy, recovery, and overall wellbeing."
+        subtext="IV infusions deliver vitamins and nutrients directly into the bloodstream to support recovery, energy and immune health."
         ctaLabel="Book IV Infusion"
         ctaHref="/booking"
         secondaryCtaLabel="Enquire Now"
@@ -80,15 +100,15 @@ export default function IVInfusionsPage() {
 
       {/* Image & About Section */}
       <section className="py-24 bg-gradient-to-br from-white to-rose/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-rose/5 rounded-full blur-3xl" />
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl skew-y-1">
-                <Image 
-                  src="/images/services/iv-infusion.png" 
-                  alt="IV Infusion Wellness" 
-                  width={800} 
+                <Image
+                  src="/images/services/iv-infusion.png"
+                  alt="IV Infusion Wellness"
+                  width={800}
                   height={1000}
                   className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                 />
@@ -129,49 +149,78 @@ export default function IVInfusionsPage() {
         </div>
       </section>
 
-      {/* Nutrients Section */}
-      <section className="py-24 bg-white relative">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-indigo/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Nutrients Section (Infinite Marquee) */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,57,105,0.03)_0,transparent_100%)] pointer-events-none" />
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-indigo" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo">Clinical Ingredients</span>
-              <div className="w-8 h-px bg-indigo" />
-            </div>
-            <h2 className="text-4xl font-bold text-indigo">Nutrients Used in Infusions</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-4">
+              Nutrients Used in Infusions
+            </h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              We use only pharmaceutical-grade vitamins, minerals, and amino acids in our clinical formulations for maximum efficacy.
+            </p>
           </div>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            {nutrients.map((n) => (
-              <div key={n} className="px-8 py-4 bg-indigo-subtle border border-indigo/10 rounded-2xl text-indigo font-bold text-sm hover:bg-rose hover:text-white hover:border-rose transition-all duration-300">
-                {n}
-              </div>
-            ))}
+
+          <div className="relative flex flex-col gap-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+            <div className="flex w-max animate-marquee-left hover:[animation-play-state:paused] gap-6">
+              {[...row1, ...row1, ...row1, ...row1, ...row1].map((n, idx) => (
+                <div key={`${n.name}-${idx}`} className="flex-shrink-0 w-80 bg-white rounded-2xl border border-gray-100 p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl ${iconColors[n.color] || 'bg-gray-50 text-gray-500'}`}>
+                    {n.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-indigo font-bold text-lg mb-1">{n.name}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex w-max animate-marquee-right hover:[animation-play-state:paused] gap-6">
+              {[...row2, ...row2, ...row2, ...row2, ...row2].map((n, idx) => (
+                <div key={`${n.name}-${idx}`} className="flex-shrink-0 w-80 bg-white rounded-2xl border border-gray-100 p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl ${iconColors[n.color] || 'bg-gray-50 text-gray-500'}`}>
+                    {n.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-indigo font-bold text-lg mb-1">{n.name}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-indigo/5 border border-indigo/10 text-indigo text-[10px] font-bold tracking-[0.3em] uppercase">
+              <svg className="w-4 h-4 text-rose" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Highest Clinical Standards
+            </div>
           </div>
         </div>
       </section>
 
       {/* Treatments & Pricing */}
-      <section className="py-24 bg-indigo relative overflow-hidden">
+      <section className="py-24 bg-[#3B3969] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-rose" />
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Treatments & Pricing</span>
               <div className="w-8 h-px bg-rose" />
             </div>
-            <h2 className="text-4xl font-bold text-white">Available Infusions</h2>
+            <h2 className="text-5xl md:text-6xl font-extrabold !text-white tracking-tight">IV Infusion Treatments</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {treatments.map((t) => (
-              <div key={t.name} className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500">
+              <div key={t.name} className="group bg-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-bold text-white group-hover:text-rose transition-colors duration-300 leading-snug">{t.name}</h3>
+                  <h3 className="text-lg font-bold text-indigo group-hover:text-rose transition-colors duration-300 leading-snug">{t.name}</h3>
                   <span className="text-sm font-bold text-rose bg-rose/5 px-3 py-1 rounded-full whitespace-nowrap ml-3">{t.price}</span>
                 </div>
-                <p className="text-sm text-white/50 font-light leading-relaxed">{t.desc}</p>
+                <p className="text-sm text-gray-600 font-light leading-relaxed">{t.desc}</p>
               </div>
             ))}
           </div>
@@ -180,7 +229,7 @@ export default function IVInfusionsPage() {
 
       {/* How It Works */}
       <section className="py-24 bg-gradient-to-br from-white to-indigo/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-rose" />
@@ -192,7 +241,7 @@ export default function IVInfusionsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, i) => (
               <div key={step.title} className="relative p-8 bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 hover:border-rose/20 transition-all group shadow-sm hover:shadow-md">
-                <div className="text-5xl font-bold text-rose/10 mb-6 group-hover:text-rose/20 transition-colors">0{i + 1}</div>
+                <div className="text-5xl font-bold text-indigo/10 mb-6 group-hover:text-indigo/20 transition-colors">0{i + 1}</div>
                 <h3 className="text-xl font-bold text-indigo mb-4">{step.title}</h3>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">{step.desc}</p>
               </div>
@@ -204,7 +253,7 @@ export default function IVInfusionsPage() {
       {/* Benefits */}
       <section className="py-24 bg-gradient-to-br from-indigo to-[#1e1c3f] text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-80 h-80 bg-rose/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-2 mb-6">
@@ -241,7 +290,7 @@ export default function IVInfusionsPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-indigo">Frequently Asked Questions</h2>
           </div>
@@ -258,7 +307,7 @@ export default function IVInfusionsPage() {
 
       <ServiceCTA
         heading="Ready to Book Your IV Infusion?"
-        text="Book your IV infusion through our secure online booking system. Wellness Vitality Australia uses Calendly for all appointment scheduling, with Afterpay available for all services."
+        text="Book your IV infusion through our secure booking system. Calendly booking. Afterpay payment."
         ctaLabel="Book IV Infusion"
         ctaHref="/booking"
         secondaryCtaLabel="Enquire Now"
