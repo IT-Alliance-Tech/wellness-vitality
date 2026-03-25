@@ -8,7 +8,7 @@ import BookingOverview from "@/components/sections/home/BookingOverview";
 import Newsletter from "@/components/sections/home/Newsletter";
 import StatsSection from "@/components/sections/home/stats";
 import CareSection from "@/components/sections/home/CareSection";
-import SocialSection from "@/components/sections/home/SocialSection";
+// import SocialSection from "@/components/sections/home/SocialSection";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       <IVScience />
       <MobileHealthcare />
       <BookingOverview />
-      <SocialSection />
+      {/* <SocialSection /> */}
       <Newsletter />
     </main>
   );

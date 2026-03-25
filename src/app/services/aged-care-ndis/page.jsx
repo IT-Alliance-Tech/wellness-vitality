@@ -27,19 +27,10 @@ const steps = [
   { title: 'Dedicated Care', desc: 'Consistent, professional nursing support delivered at your location.' },
 ];
 
-const faqs = [
-  {
-    q: 'Are your nurses AHPRA registered?',
-    a: 'Yes, all our nursing services are provided by fully qualified and AHPRA-registered healthcare professionals.'
-  },
-  {
-    q: 'Can you coordinate with my GP?',
-    a: 'Absolutely. We believe in collaborative care and will work closely with your GP and other specialists.'
-  },
-  {
-    q: 'Do you provide post-hospital care?',
-    a: 'Yes, we specialise in supporting transition from hospital to home, ensuring your recovery is safe and clinical needs are met.'
-  }
+const careBenefits = [
+  { title: 'Dignified Care', desc: 'Focusing on independence and dignity in every clinical interaction.' },
+  { title: 'Collaborative Approach', desc: 'Working closely with GPs and specialists to ensure care continuity.' },
+  { title: 'Community Focused', desc: 'Building trusted relationships with residents and families.' },
 ];
 
 export default function AgedCareNDISPage() {
@@ -56,8 +47,8 @@ export default function AgedCareNDISPage() {
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl skew-y-2 border border-gray-100">
@@ -95,8 +86,8 @@ export default function AgedCareNDISPage() {
       </section>
 
       {/* Services & Benefits */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Services */}
             <div>
@@ -149,8 +140,8 @@ export default function AgedCareNDISPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-[#3b3f69] text-white overflow-hidden relative">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
+      <section className="py-20 bg-[#3b3f69] text-white overflow-hidden relative">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold">Our Care Process</h2>
           </div>
@@ -167,16 +158,21 @@ export default function AgedCareNDISPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#3b3f69]">Care Support FAQ</h2>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Why Choose Wellness Vitality</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
+            </div>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">Dedicated to Clinical Excellence</h2>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg">{faq.q}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {careBenefits.map((item) => (
+              <div key={item.title} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center">
+                <h3 className="font-bold text-[#3b3f69] mb-4 text-xl">{item.title}</h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

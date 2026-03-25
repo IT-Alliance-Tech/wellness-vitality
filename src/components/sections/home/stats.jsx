@@ -71,11 +71,11 @@ const StatsSection = () => {
                 <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-16 text-center">
 
                     {stats.map((item, index) => (
-                        <div key={index} className="max-w-[110px] mx-auto md:max-w-xs">
+                        <div key={index} className="max-w-[100px] mx-auto md:max-w-xs">
 
                             {/* NUMBER */}
                             <h3
-                                className="text-3xl md:text-6xl font-normal italic tracking-tight mb-2 md:mb-4 leading-none"
+                                className="text-3xl md:text-5xl font-light tracking-tight mb-2 md:mb-4 leading-none"
                                 style={{ color: 'rgb(59,63,105)' }}
                             >
                                 <Counter target={item.value} suffix={item.suffix} />

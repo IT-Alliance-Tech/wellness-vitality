@@ -13,7 +13,7 @@ const ivPacks = [
     accent: "rose",
   },
   {
-    title: "Energy & Performance IV",
+    title: "Energy & Performance Recovery",
     description:
       "Includes B Complex, B12, Magnesium and Vitamin C.",
     points: ["B Complex", "B12", "Magnesium", "Vitamin C"],
@@ -102,10 +102,9 @@ const IVTherapy = () => {
                 transition duration-300 
                 flex flex-col h-full w-full max-w-sm
 
-                ${
-                  index === ivPacks.length - 1
-                    ? "lg:col-span-3 lg:mx-auto"
-                    : ""
+                ${index === ivPacks.length - 1
+                  ? "lg:col-span-3 lg:mx-auto"
+                  : ""
                 }
               `}
             >
@@ -113,11 +112,10 @@ const IVTherapy = () => {
               {/* PRICE BADGE */}
               <div
                 className={`absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-medium shadow-sm
-                ${
-                  pack.accent === "rose"
+                ${pack.accent === "rose"
                     ? "bg-[rgb(202,18,84)] text-white"
                     : "bg-[rgb(59,63,105)] text-white"
-                }`}
+                  }`}
               >
                 {pack.price}
               </div>
@@ -137,9 +135,8 @@ const IVTherapy = () => {
                 {pack.points.map((point, i) => (
                   <li
                     key={point}
-                    className={`flex items-center gap-2 text-xs sm:text-sm text-[rgb(59,63,105)]/80 ${
-                      i > 1 ? "hidden md:flex" : ""
-                    }`}
+                    className={`flex items-center gap-2 text-xs sm:text-sm text-[rgb(59,63,105)]/80 ${i > 1 ? "hidden md:flex" : ""
+                      }`}
                   >
                     <span className="w-1.5 h-1.5 bg-[rgb(202,18,84)]"></span>
                     {point}
@@ -151,11 +148,10 @@ const IVTherapy = () => {
               <Button
                 href="/services/iv-infusions"
                 variant="ghost"
-                className={`mt-auto w-full px-6 sm:px-8 py-3 sm:py-5 text-xs sm:text-base !rounded-none font-medium border tracking-wide transition-all duration-300 ${
-                  pack.accent === "rose"
-                    ? "border-[rgb(202,18,84)] text-[rgb(202,18,84)] hover:bg-[rgb(202,18,84)] hover:text-white"
-                    : "border-[rgb(59,63,105)] text-[rgb(59,63,105)] hover:bg-[rgb(59,63,105)] hover:text-white"
-                }`}
+                className={`mt-auto w-full px-6 sm:px-8 py-3 sm:py-5 text-xs sm:text-base !rounded-none font-medium border tracking-wide transition-all duration-300 ${pack.accent === "rose"
+                  ? "border-[rgb(202,18,84)] text-[rgb(202,18,84)] hover:bg-[rgb(202,18,84)] hover:text-white"
+                  : "border-[rgb(59,63,105)] text-[rgb(59,63,105)] hover:bg-[rgb(59,63,105)] hover:text-white"
+                  }`}
               >
                 Book Now
               </Button>

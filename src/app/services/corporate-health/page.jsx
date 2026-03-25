@@ -24,19 +24,10 @@ const steps = [
   { title: 'Insight', desc: 'Receive aggregated, confidential reporting to help inform your wellness initiatives.' },
 ];
 
-const faqs = [
-  {
-    q: 'How many employees can you screen per day?',
-    a: 'On average, we can screen 15-20 employees per dedicated health station, depending on the level of check-up required.'
-  },
-  {
-    q: 'Do you provide digital reports?',
-    a: 'Yes, both the employee and employer (aggregated/de-identified) receive professional digital health summaries.'
-  },
-  {
-    q: 'What space do you need on-site?',
-    a: 'We only require a standard private meeting room or a quiet office space with table and chairs.'
-  }
+const corporateBenefits = [
+  { title: 'Seamless Integration', desc: 'Minimal disruption to your workplace operations with efficient on-site setup.' },
+  { title: 'Professional Reporting', desc: 'Receive aggregated health insights to inform your organization wellness strategy.' },
+  { title: 'Employee Engagement', desc: 'Boost morale and productivity by showing a genuine commitment to staff health.' },
 ];
 
 export default function CorporateHealthPage() {
@@ -51,8 +42,8 @@ export default function CorporateHealthPage() {
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 mb-6">
@@ -85,8 +76,8 @@ export default function CorporateHealthPage() {
       </section>
 
       {/* Services â€” Corporate grid */}
-      <section className="py-24 bg-[#3b3f69] relative overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
+      <section className="py-20 bg-[#3b3f69] relative overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white">Our Workplace Solutions</h2>
           </div>
@@ -107,8 +98,8 @@ export default function CorporateHealthPage() {
       </section>
 
       {/* Corporate Process Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-[#3b3f69]" />
@@ -130,8 +121,8 @@ export default function CorporateHealthPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-white text-[#3b3f69] overflow-hidden border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
+      <section className="py-20 bg-white text-[#3b3f69] overflow-hidden border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold">Organizational Benefits</h2>
           </div>
@@ -152,16 +143,21 @@ export default function CorporateHealthPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#3b3f69]">Corporate FAQ</h2>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Corporate Standards</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
+            </div>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">Why Partner With Us?</h2>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg leading-snug">{faq.q}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {corporateBenefits.map((item) => (
+              <div key={item.title} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:border-rose/10 transition-all text-center">
+                <h3 className="font-bold text-[#3b3f69] mb-4 text-xl">{item.title}</h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

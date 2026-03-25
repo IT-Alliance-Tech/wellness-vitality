@@ -57,7 +57,7 @@ const Hero = () => {
               className="text-[16px] sm:text-[17px] md:text-[18px] mb-8 max-w-lg leading-relaxed"
               style={{ color: "rgba(255, 255, 255, 0.85)" }}
             >
-              Professional mobile healthcare and IV wellness services delivered by AHPRA-registered nurses.
+             Mobile IV vitamin infusions and wellness services delivered by registered nurses.
             </p>
 
             {/* BUTTONS */}

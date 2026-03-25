@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Hero from '@/components/sections/about/Hero';
 import AboutIntro from '@/components/sections/about/AboutIntro';
 import MissionStatement from '@/components/sections/about/MissionStatement';
@@ -20,9 +20,9 @@ export default function AboutPage() {
       <Newsletter />
 
       {/* Clinical Disclaimer */}
-      <section className="py-12 bg-gray-50 border-t border-gray-100">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16text-center">
-          <p className="text-xs text-gray-400 italic w-full px-4 sm:px-6 lg:px-12 xl:px-16leading-relaxed">
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
+          <p className="text-xs text-gray-400 italic w-full leading-relaxed">
             <span className="font-bold text-gray-500 not-italic block mb-2 uppercase tracking-widest text-[10px]">Clinical Disclaimer</span>
             All treatments are administered by qualified healthcare professionals following appropriate clinical protocols. Individual suitability is determined through clinical assessment. Results may vary and are dependent on individual health requirements.
           </p>

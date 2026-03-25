@@ -54,7 +54,7 @@ const AboutSection = () => {
           </h2>
 
           <p className="text-sm md:text-lg text-gray-600 leading-relaxed">
-            Professional healthcare and wellness services delivered by AHPRA-registered nurses,
+            Professional healthcare and wellness services delivered by Registered nurses,
             focused on personalised care, safety, and convenience.
           </p>
         </div>

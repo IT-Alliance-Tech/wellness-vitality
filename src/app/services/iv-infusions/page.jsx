@@ -4,12 +4,12 @@ import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 
 const treatments = [
-  { name: 'Immune Defence IV', price: '$220â€“$260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
-  { name: 'Energy & Performance IV', price: '$200â€“$240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
-  { name: 'Beauty & Skin Glow IV', price: '$260â€“$320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
-  { name: 'Detox & Liver Support IV', price: '$250â€“$300', desc: 'Liver-supporting antioxidants and detox nutrients.' },
-  { name: 'Hydration & Recovery IV', price: '$180â€“$220', desc: 'Electrolytes and minerals for rapid rehydration.' },
-  { name: 'Athlete Recovery IV', price: '$220â€“$260', desc: 'Targeted nutrients to accelerate muscle recovery.' },
+  { name: 'Immune Defence IV', price: '$220 - $260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
+  { name: 'Energy & Performance IV', price: '$200 - $240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
+  { name: 'Beauty & Skin Glow IV', price: '$260 - $320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
+  { name: 'Detox & Liver Support IV', price: '$250 - $300', desc: 'Liver-supporting antioxidants and detox nutrients.' },
+  { name: 'Hydration & Recovery IV', price: '$180 - $220', desc: 'Electrolytes and minerals for rapid rehydration.' },
+  { name: 'Athlete Recovery IV', price: '$220 - $260', desc: 'Targeted nutrients to accelerate muscle recovery.' },
 ];
 
 const nutrients = [
@@ -69,19 +69,11 @@ const steps = [
   },
 ];
 
-const faqs = [
-  {
-    q: 'Is IV therapy painful?',
-    a: 'Most patients only feel a small pinch during the initial insertion. The rest of the treatment is generally very comfortable and relaxing.'
-  },
-  {
-    q: 'How long does a session take?',
-    a: 'Typically, a session lasts between 30 to 60 minutes, depending on the specific infusion and your individual needs.'
-  },
-  {
-    q: 'How often should I get an infusion?',
-    a: 'Frequency depends on your health goals and initial clinical assessment. Some patients benefit from weekly sessions, while others choose once a month for maintenance.'
-  }
+const suitability = [
+  { group: 'Active Professionals', reason: 'To support energy levels and cognitive function during high-demand periods.' },
+  { group: 'Athletes & Fitness Enthusiasts', reason: 'For rapid rehydration and muscle recovery post-exertion.' },
+  { group: 'Frequent Travellers', reason: 'To combat jet lag, support the immune system and restore hydration.' },
+  { group: 'Overall Wellness Seekers', reason: 'Maintaining optimal nutrient levels for vitality and long-term health.' },
 ];
 
 export default function IVInfusionsPage() {
@@ -98,8 +90,8 @@ export default function IVInfusionsPage() {
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl skew-y-1">
@@ -199,24 +191,29 @@ export default function IVInfusionsPage() {
       </section>
 
       {/* Treatments & Pricing */}
-      <section className="py-24 bg-[#3b3f69] relative overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
+      <section className="py-20 bg-white relative overflow-hidden border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-[#ca1254]" />
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Treatments & Pricing</span>
               <div className="w-8 h-px bg-[#ca1254]" />
             </div>
-            <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight">IV Infusion Treatments</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] tracking-tight">IV Infusion Treatments</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {treatments.map((t) => (
-              <div key={t.name} className="group bg-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-bold text-[#3b3f69] group-hover:text-[#ca1254] transition-colors duration-300 leading-snug">{t.name}</h3>
-                  <span className="text-sm font-bold text-[#ca1254] bg-[#ca1254]/5 px-3 py-1 rounded-full whitespace-nowrap ml-3">{t.price}</span>
+              <div key={t.name} className="group bg-white rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-[#ca1254]/20 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-start justify-between mb-4 gap-4">
+                    <h3 className="text-lg font-bold text-[#3b3f69] group-hover:text-[#ca1254] transition-colors duration-300 leading-snug">{t.name}</h3>
+                  </div>
+                  <p className="text-sm text-gray-500 font-light leading-relaxed mb-6">{t.desc}</p>
                 </div>
-                <p className="text-sm text-gray-600 font-light leading-relaxed">{t.desc}</p>
+                <div className="pt-6 border-t border-gray-50 flex items-center justify-between">
+                  <span className="text-xs font-bold text-[#3b3f69]/40 uppercase tracking-widest">Pricing</span>
+                  <span className="text-lg font-bold text-[#ca1254] bg-[#ca1254]/5 px-4 py-1.5 rounded-full whitespace-nowrap">{t.price}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -247,8 +244,8 @@ export default function IVInfusionsPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 bg-[#3b3f69] text-white overflow-hidden relative">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
+      <section className="py-20 bg-[#3b3f69] text-white overflow-hidden relative">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-2 mb-6">
@@ -272,11 +269,11 @@ export default function IVInfusionsPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center border border-white/10">
                 <div className="text-4xl font-bold text-[#ca1254] mb-2">30m</div>
-                <div className="text-[10px] font-bold text-white/60 uppercase tracking-widest leading-relaxed">Typical Session</div>
+                <div className="text-[10px] font-bold text-white uppercase tracking-widest leading-relaxed">Typical Session</div>
               </div>
               <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center border border-white/10">
                 <div className="text-4xl font-bold text-[#ca1254] mb-2">100%</div>
-                <div className="text-[10px] font-bold text-white/60 uppercase tracking-widest leading-relaxed">Absorption</div>
+                <div className="text-[10px] font-bold text-white uppercase tracking-widest leading-relaxed">Absorption</div>
               </div>
             </div>
           </div>
@@ -284,16 +281,24 @@ export default function IVInfusionsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#3b3f69]">Frequently Asked Questions</h2>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Ideal For</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
+            </div>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">Is IV Therapy for You?</h2>
           </div>
-          <div className="space-y-6">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-[#3b3f69] mb-3">{faq.q}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {suitability.map((item) => (
+              <div key={item.group} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-indigo/10 transition-all">
+                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-rose" />
+                  {item.group}
+                </h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.reason}</p>
               </div>
             ))}
           </div>

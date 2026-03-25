@@ -5,12 +5,12 @@ export default function BookingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-[#3b3f69] overflow-hidden">
+      <section className="relative py-20 bg-[#3b3f69] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
         </div>
         
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#ca1254] animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Secure Booking</span>
@@ -21,7 +21,7 @@ export default function BookingPage() {
             <span className="text-[#ca1254]">IV Infusion</span>
           </h1>
           
-          <p className="text-xl text-white/80 max-w-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light mb-8">
             Schedule your treatment through our secure online booking system. Wellness Vitality Australia uses Calendly for all appointment scheduling.
           </p>
 
@@ -32,8 +32,8 @@ export default function BookingPage() {
       </section>
 
       {/* Booking Integration Section */}
-      <section className="py-24 bg-gradient-to-br from-white to-indigo/5">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             
             {/* Left Column: Info & Payment */}
@@ -112,8 +112,8 @@ export default function BookingPage() {
       </section>
 
       {/* Support CTA */}
-      <section className="py-12 bg-white border-t border-gray-100">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16text-center flex flex-col md:flex-row items-center justify-center gap-6">
+      <section className="py-12 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center flex flex-col md:flex-row items-center justify-center gap-6">
           <p className="text-sm text-gray-500 font-medium">Need help with your booking?</p>
           <div className="flex gap-4">
             <Button href="/contact" variant="outline" className="px-6 py-2.5 text-xs">Send Enquiry</Button>
