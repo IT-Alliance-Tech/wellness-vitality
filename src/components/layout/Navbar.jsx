@@ -16,9 +16,9 @@ const Navbar = () => {
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <img
-            src="/header.png"
+            src="/logo.png"
             alt="Wellness Vitality Australia"
-            className="h-6 md:h-11 w-auto"
+            className="h-9 sm:h-10 md:h-10 lg:h-12 w-auto"
           />
         </Link>
 
@@ -83,7 +83,7 @@ const Navbar = () => {
           <Button
             href="/booking"
             variant="primary"
-            className="w-[130px] md:w-[158px] px-2 py-4 text-xs md:py-1.5 md:text-sm"
+            className="w-[100px] md:w-[130px] px-2 py-1.5 md:px-4 md:py-3 text-[11px] md:text-sm"
           >
             Book Now
           </Button>
