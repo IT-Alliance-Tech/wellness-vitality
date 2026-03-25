@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 const ClinicalExcellence = () => {
   const standards = [
@@ -32,11 +32,11 @@ const ClinicalExcellence = () => {
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50/50 overflow-hidden">
+    <section className="relative py-20 bg-white overflow-hidden">
       {/* Subtle decorative accents */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo/[0.02] rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-rose/[0.02] rounded-full blur-[100px] pointer-events-none" />
-      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16relative z-10">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="w-8 h-px bg-indigo" />

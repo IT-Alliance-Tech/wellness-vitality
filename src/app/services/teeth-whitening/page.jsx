@@ -4,10 +4,10 @@ import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 
 const benefits = [
-  { title: 'Brighter, Whiter Smile', icon: 'âœ¦', desc: 'Achieve a noticeably brighter and more confident smile.' },
-  { title: 'Up to 6â€“8 Shades Lighter', icon: 'â—ˆ', desc: 'Clinically proven whitening that can lighten teeth by 6â€“8 shades.' },
-  { title: 'Safe & Professional', icon: 'âœ“', desc: 'Treatments performed by trained healthcare professionals.' },
-  { title: 'Mobile Service', icon: 'âŒ–', desc: 'Convenient treatment delivered directly to your location.' },
+  { title: 'Brighter, Whiter Smile', icon: '✨', desc: 'Achieve a noticeably brighter and more confident smile.' },
+  { title: 'Up to 6-8 Shades Lighter', icon: '💎', desc: 'Clinically proven whitening that can lighten teeth by 6-8 shades.' },
+  { title: 'Safe & Professional', icon: '✔️', desc: 'Treatments performed by trained healthcare professionals.' },
+  { title: 'Mobile Service', icon: '🏠', desc: 'Convenient treatment delivered directly to your location.' },
 ];
 
 const steps = [
@@ -17,19 +17,10 @@ const steps = [
   { title: 'The Reveal', desc: 'Experience an immediate, noticeably brighter smile in just one session.' },
 ];
 
-const faqs = [
-  {
-    q: 'How long do the results last?',
-    a: 'Results can last between 6 to 12 months, depending on your lifestyle, diet, and oral hygiene habits.'
-  },
-  {
-    q: 'Will it cause tooth sensitivity?',
-    a: 'We use professional-grade formulations designed to minimise sensitivity while providing maximum whitening results.'
-  },
-  {
-    q: 'Can I eat immediately after the treatment?',
-    a: 'We recommend avoiding dark-coloured foods and drinks (like coffee, tea, or red wine) for the first 24-48 hours.'
-  }
+const suitability = [
+  { title: 'Special Occasions', desc: 'Perfect for weddings, anniversaries, or professional photoshoots.' },
+  { title: 'Coffee & Tea Drinkers', desc: 'Effective removal of extrinsic stains from daily habits.' },
+  { title: 'Confidence Boost', desc: 'For anyone looking to enhance their smile and overall self-esteem.' },
 ];
 
 export default function TeethWhiteningPage() {
@@ -46,8 +37,8 @@ export default function TeethWhiteningPage() {
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl -skew-x-1 border border-gray-100">
@@ -87,8 +78,8 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* Results Section â€” visual focused */}
-      <section className="py-24 bg-[#3b3f69] text-white overflow-hidden relative">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center">
+      <section className="py-20 bg-[#3b3f69] text-white overflow-hidden relative">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center">
           <h2 className="text-3xl font-bold mb-12">The Whitening Difference</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-10 bg-white/5 rounded-3xl border border-white/10">
@@ -108,8 +99,8 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* The Experience (Process) */}
-      <section className="py-24 bg-white relative overflow-hidden border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
+      <section className="py-20 bg-white relative overflow-hidden border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#3b3f69]">The Whitening Experience</h2>
           </div>
@@ -128,16 +119,21 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#3b3f69]">Frequently Asked Questions</h2>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Who Is This For</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
+            </div>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">The Perfect Smile for You</h2>
           </div>
-          <div className="grid grid-cols-1 gap-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg">{faq.q}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {suitability.map((item) => (
+              <div key={item.title} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-rose/10 transition-all text-center">
+                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg">{item.title}</h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

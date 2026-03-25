@@ -53,7 +53,7 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-gray-500 max-w-2xl md:mx-auto text-sm md:text-lg leading-relaxed">
-            In-clinic or at-home state-of-the-art lab tests, scans, procedures, vaccines. This is all delivered with radical empathy, clinical excellence and absolutely no judgement.
+            We offer a range of nurse-led services including IV infusions, teeth whitening, blood collection, and clinical nursing reports. Delivered both in-clinic and via our mobile service, our care is safe, convenient, and tailored to your individual needs.
           </p>
         </div>
 

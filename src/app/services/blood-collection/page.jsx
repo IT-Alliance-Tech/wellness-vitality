@@ -24,19 +24,11 @@ const locations = [
   { title: 'NDIS Support Support', desc: 'Accessible pathology for NDIS participants.' },
 ];
 
-const faqs = [
-  {
-    q: 'Do I need a pathology request form?',
-    a: 'Yes, you must have a valid pathology request form from your GP or specialist for us to perform the collection.'
-  },
-  {
-    q: 'How long until I get my results?',
-    a: 'Results are typically sent directly to your referring doctor within 24-48 hours, though some tests may take longer.'
-  },
-  {
-    q: 'Is there an extra fee for home collection?',
-    a: 'We offer professional mobile collection services; please contact us for current pricing and availability in your area.'
-  }
+const advantages = [
+  { title: 'Home Comfort', desc: 'Eliminate the stress of travel and waiting rooms by having our nurse visit you.' },
+  { title: 'Mobility Support', desc: 'Ideal for those with limited mobility or recovering from surgery.' },
+  { title: 'Workplace Efficiency', desc: 'Minimal disruption to your workday with on-site collection for employees.' },
+  { title: 'Aged Care Specialisation', desc: 'Gentle and professional collection tailored for elderly patients.' },
 ];
 
 export default function BloodCollectionPage() {
@@ -53,8 +45,8 @@ export default function BloodCollectionPage() {
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 mb-6">
@@ -94,8 +86,8 @@ export default function BloodCollectionPage() {
       </section>
 
       {/* Service Locations/Types */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#3b3f69]">Services Included</h2>
           </div>
@@ -116,8 +108,8 @@ export default function BloodCollectionPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-[#ca1254]" />
@@ -139,16 +131,24 @@ export default function BloodCollectionPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#3b3f69]">Pathology FAQ</h2>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Mobile Advantages</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
+            </div>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">Why Choose Mobile Collection?</h2>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg">{faq.q}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {advantages.map((item) => (
+              <div key={item.title} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-[#ca1254]/20 transition-all">
+                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-rose" />
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

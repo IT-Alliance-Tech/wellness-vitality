@@ -43,10 +43,10 @@ const Hero = () => {
 
             {/* HEADING */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.1] mb-6"
+              className="text-4xl sm:text-4xl md:text-6xl font-medium leading-[1.1] mb-6"
               style={{ color: "#FFFFFF" }}
             >
-              Welcome to Wellness &{" "}
+              Welcome to Wellness {" "}
               <span style={{ color: "rgb(202,18,84)" }}>
                 Vitality Australia
               </span>
@@ -57,7 +57,7 @@ const Hero = () => {
               className="text-[16px] sm:text-[17px] md:text-[18px] mb-8 max-w-lg leading-relaxed"
               style={{ color: "rgba(255, 255, 255, 0.85)" }}
             >
-              Professional mobile healthcare and IV wellness services delivered by AHPRA-registered nurses.
+             Mobile IV vitamin infusions and wellness services delivered by registered nurses.
             </p>
 
             {/* BUTTONS */}

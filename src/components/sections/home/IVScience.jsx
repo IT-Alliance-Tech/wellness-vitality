@@ -55,7 +55,7 @@ const IVScience = () => {
                 <div>
                   <div className="text-lg font-bold text-[rgb(59,63,105)]">100%</div>
                   <div className="text-[9px] font-bold text-gray-400 uppercase tracking-wide">
-                    Direct Absorption
+                    Bioavailability
                   </div>
                 </div>
               </div>

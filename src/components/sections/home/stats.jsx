@@ -1,25 +1,23 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-
 const stats = [
     {
         value: 100,
         suffix: '%',
-        text: 'personalised clinical care for every patient',
+        text: 'Personalised clinical care for every patient',
     },
     {
         value: 24,
         suffix: '/7',
-        text: 'mobile healthcare support available for your convenience',
+        text: 'Accessible healthcare, wherever you are',
     },
     {
         value: 100,
         suffix: '%',
-        text: 'AHPRA-registered professionals delivering all treatments',
+        text: 'Commitment to safety and quality standards',
     },
 ];
-
 const Counter = ({ target, suffix }) => {
     const [count, setCount] = useState(0);
 
@@ -65,7 +63,7 @@ const StatsSection = () => {
                     color: 'rgba(202,18,84,0.08)',
                 }}
             >
-                wellness and vitality
+                Wellness and Vitality
             </div>
 
             <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
@@ -73,11 +71,11 @@ const StatsSection = () => {
                 <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-16 text-center">
 
                     {stats.map((item, index) => (
-                        <div key={index} className="max-w-[110px] mx-auto md:max-w-xs">
+                        <div key={index} className="max-w-[100px] mx-auto md:max-w-xs">
 
                             {/* NUMBER */}
                             <h3
-                                className="text-3xl md:text-6xl font-normal italic tracking-tight mb-2 md:mb-4 leading-none"
+                                className="text-3xl md:text-5xl font-light tracking-tight mb-2 md:mb-4 leading-none"
                                 style={{ color: 'rgb(59,63,105)' }}
                             >
                                 <Counter target={item.value} suffix={item.suffix} />

@@ -31,19 +31,10 @@ const steps = [
   { title: 'Ongoing Support', desc: 'Regular check-ins and adjustments to keep you on your wellness path.' },
 ];
 
-const faqs = [
-  {
-    q: 'Do I need a prescription for vitamin injections?',
-    a: 'Suitability is determined through a clinical assessment by our registered healthcare professionals.'
-  },
-  {
-    q: 'How quickly will I feel the effects?',
-    a: 'Many patients report an improvement in energy levels within 24-48 hours, though results vary based on individual health status.'
-  },
-  {
-    q: 'Are these services safe?',
-    a: 'Yes, all our treatments are administered by qualified healthcare professionals following strict clinical protocols.'
-  }
+const wellnessFocus = [
+  { title: 'Nutrient Optimisation', desc: 'Targeting specific deficiencies to enhance your daily vitality.' },
+  { title: 'Preventative Strategy', desc: 'A proactive approach to health that reduces long-term risks.' },
+  { title: 'Personalised Wellness', desc: 'Evidence-based advice tailored to your unique lifestyle goals.' },
 ];
 
 export default function PreventativeHealthPage() {
@@ -60,8 +51,8 @@ export default function PreventativeHealthPage() {
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl skew-x-1 border border-gray-100">
@@ -99,8 +90,8 @@ export default function PreventativeHealthPage() {
       </section>
 
       {/* Services Included */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-[#3b3f69]" />
@@ -151,8 +142,8 @@ export default function PreventativeHealthPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#3b3f69]">Your Path to Wellness</h2>
           </div>
@@ -169,16 +160,21 @@ export default function PreventativeHealthPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#3b3f69]">Questions & Answers</h2>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-px bg-[#ca1254]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Wellness Strategy</span>
+              <div className="w-8 h-px bg-[#ca1254]" />
+            </div>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">Your Path to Health</h2>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-[#3b3f69] mb-2">{faq.q}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {wellnessFocus.map((item) => (
+              <div key={item.title} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:border-indigo/10 transition-all text-center">
+                <h3 className="font-bold text-[#3b3f69] mb-4 text-xl">{item.title}</h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

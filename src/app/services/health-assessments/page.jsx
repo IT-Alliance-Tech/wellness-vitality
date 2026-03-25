@@ -25,19 +25,10 @@ const steps = [
   { title: 'Report', desc: 'Receive a detailed health report and recommendations for further care.' },
 ];
 
-const faqs = [
-  {
-    q: 'How long does a health assessment take?',
-    a: 'A typical comprehensive assessment takes between 45 to 60 minutes, ensuring all vital areas are thoroughly checked.'
-  },
-  {
-    q: 'Do I need to prepare anything?',
-    a: 'It is helpful to have a list of your current medications and any recent medical reports available for the nurse.'
-  },
-  {
-    q: 'Can this be done at my home?',
-    a: 'Yes, our mobile service is designed specifically to perform these assessments in the comfort of your own home or aged care facility.'
-  }
+const assessmentsMatter = [
+  { title: 'Early Intervention', desc: 'Identify potential health issues before they escalate into serious complications.' },
+  { title: 'Personalised Care', desc: 'Create a tailored health roadmap based on your unique clinical profile.' },
+  { title: 'PEACE OF MIND', desc: 'Consistent clinical monitoring provides confidence for you and your family.' },
 ];
 
 export default function HealthAssessmentsPage() {
@@ -54,8 +45,8 @@ export default function HealthAssessmentsPage() {
       />
 
       {/* Image & About Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              <div>
               <div className="inline-flex items-center gap-2 mb-6">
@@ -98,8 +89,8 @@ export default function HealthAssessmentsPage() {
       </section>
 
       {/* Services Included */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-2 mb-6">
@@ -140,8 +131,8 @@ export default function HealthAssessmentsPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
              <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-[#ca1254]" />
@@ -165,16 +156,21 @@ export default function HealthAssessmentsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#3b3f69]">Frequently Asked Questions</h2>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-px bg-indigo" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#3b3f69]">Proactive Health</span>
+              <div className="w-8 h-px bg-indigo" />
+            </div>
+            <h2 className="text-4xl font-bold text-[#3b3f69]">Why Assessments Matter</h2>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
-                <h3 className="font-bold text-[#3b3f69] mb-2">{faq.q}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{faq.a}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {assessmentsMatter.map((item) => (
+              <div key={item.title} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-indigo/20 transition-all text-center">
+                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg uppercase tracking-tight">{item.title}</h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
