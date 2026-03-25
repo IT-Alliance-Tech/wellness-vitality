@@ -43,10 +43,10 @@ const Hero = () => {
 
             {/* HEADING */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.1] mb-6"
+              className="text-4xl sm:text-4xl md:text-6xl font-medium leading-[1.1] mb-6"
               style={{ color: "#FFFFFF" }}
             >
-              Welcome to Wellness &{" "}
+              Welcome to Wellness {" "}
               <span style={{ color: "rgb(202,18,84)" }}>
                 Vitality Australia
               </span>

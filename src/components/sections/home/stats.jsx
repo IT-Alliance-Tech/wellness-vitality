@@ -1,25 +1,23 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-
 const stats = [
     {
         value: 100,
         suffix: '%',
-        text: 'personalised clinical care for every patient',
+        text: 'Personalised clinical care for every patient',
     },
     {
         value: 24,
         suffix: '/7',
-        text: 'mobile healthcare support available for your convenience',
+        text: 'Accessible healthcare, wherever you are',
     },
     {
         value: 100,
         suffix: '%',
-        text: 'AHPRA-registered professionals delivering all treatments',
+        text: 'Commitment to safety and quality standards',
     },
 ];
-
 const Counter = ({ target, suffix }) => {
     const [count, setCount] = useState(0);
 
@@ -65,7 +63,7 @@ const StatsSection = () => {
                     color: 'rgba(202,18,84,0.08)',
                 }}
             >
-                wellness and vitality
+                Wellness and Vitality
             </div>
 
             <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
