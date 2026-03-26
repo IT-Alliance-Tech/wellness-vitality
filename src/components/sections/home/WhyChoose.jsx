@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const cards = [
   {
-    title: 'AHPRA-Registered Professionals',
+    title: 'Healthcare professionals',
     subtitle: 'Qualified & Certified Care',
     description: 'Every nurse meets strict Australian healthcare registration standards.',
     image: '/about1.png',

@@ -17,10 +17,10 @@ const services = [
     image: "/images/services/health-assessment.png",
   },
   {
-    title: "Preventative Health & Wellness",
+    title: "Teeth Whitening",
     description:
-      "Vitamin injections, nutrition guidance and lifestyle health consultations.",
-    image: "/images/services/preventative-health.png",
+      "Professional teeth whitening treatments delivered by qualified healthcare professionals. Improves smile appearance and can lighten teeth by up to 6–8 shades.",
+    image: "/images/services/teeth-whitening.png",
   },
   {
     title: "Aged Care & NDIS Nursing",

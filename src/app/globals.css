@@ -1,28 +1,6 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Mackinac';
-  src: url('/fonts/Mackinac-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'Mackinac';
-  src: url('/fonts/Mackinac-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Mackinac';
-  src: url('/fonts/Mackinac-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --background: #FFFFFF;
@@ -46,8 +24,8 @@
   --color-indigo: #3b3f69;
   --color-rose: #ca1254;
 
-  --font-sans: 'Mackinac', Georgia, 'Times New Roman', serif;
-  --font-mackinac: 'Mackinac', Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-mackinac), Georgia, 'Times New Roman', serif;
+  --font-mackinac: var(--font-mackinac), Georgia, 'Times New Roman', serif;
 }
 
 /* ❌ Removed gradients / color-mix */
@@ -65,7 +43,7 @@ body {
 body {
   background: var(--background);
   color: var(--text-main);
-  font-family: 'Mackinac', Georgia, 'Times New Roman', serif;
+  font-family: var(--font-mackinac), Georgia, 'Times New Roman', serif;
 }
 
 main {
@@ -79,7 +57,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Mackinac', Georgia, 'Times New Roman', serif;
+  font-family: var(--font-mackinac), Georgia, 'Times New Roman', serif;
   color: var(--primary);
   font-weight: 700;
 }
