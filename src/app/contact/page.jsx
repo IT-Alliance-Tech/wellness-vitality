@@ -1,11 +1,19 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Button from '@/components/ui/Button';
 
 export default function ContactPage() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-[#3b3f69] overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-[#3b3f69] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
         </div>
@@ -13,14 +21,14 @@ export default function ContactPage() {
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#ca1254] animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Contact Team</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] !text-white">Contact Team</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold !text-white mb-8 leading-[1.1] tracking-tight">
             Have a Question?
           </h1>
           
-          <p className="text-xl text-white max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light mb-8">
+          <p className="text-xl !text-white max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light mb-8">
             Our clinical team is here to help with any enquiries regarding our treatments or mobile services.
           </p>
 
@@ -83,32 +91,56 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form Card */}
-            <div className="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-2xl shadow-indigo/5 relative">
+            <div className="bg-white p-12 pb-14 rounded-[3rem] border border-gray-100 shadow-2xl shadow-indigo/5 relative overflow-visible">
               <div className="absolute top-0 left-10 w-20 h-2 bg-rose rounded-b-full" />
-              <h2 className="text-2xl font-bold text-indigo mb-8">Send an Enquiry</h2>
-              <form className="space-y-6 text-sm">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Your Name</label>
-                    <input type="text" placeholder="Full Name" className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
+              
+              {!isSubmitted ? (
+                <>
+                  <h2 className="text-2xl font-bold text-indigo mb-8">Send an Enquiry</h2>
+                  <form className="space-y-6 text-sm" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Your Name</label>
+                        <input type="text" placeholder="Full Name" required className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Phone Number</label>
+                        <input type="tel" placeholder="0400 000 000" className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Email Address</label>
+                      <input type="email" placeholder="email@example.com" required className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Your Message</label>
+                      <textarea rows="4" placeholder="How can we help you?" required className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all resize-none"></textarea>
+                    </div>
+                    <Button type="submit" variant="primary" className="w-full py-5 text-base font-bold shadow-xl shadow-rose/20">
+                      Send My Enquiry
+                    </Button>
+                  </form>
+                </>
+              ) : (
+                <div className="py-12 text-center reveal-up">
+                  <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-8 border border-green-100">
+                    <svg className="w-10 h-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <div className="space-y-2">
-                    <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Phone Number</label>
-                    <input type="tel" placeholder="0400 000 000" className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
-                  </div>
+                  <h2 className="text-3xl font-bold text-indigo mb-4">Message Sent!</h2>
+                  <p className="text-gray-500 mb-10 leading-relaxed">
+                    Thank you for reaching out. Our clinical team has received your enquiry and will get back to you shortly.
+                  </p>
+                  <Button 
+                    variant="ghost" 
+                    onClick={() => setIsSubmitted(false)}
+                    className="text-indigo font-bold hover:text-rose transition-all"
+                  >
+                    Send Another Message
+                  </Button>
                 </div>
-                <div className="space-y-2">
-                  <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Email Address</label>
-                  <input type="email" placeholder="email@example.com" className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
-                </div>
-                <div className="space-y-2">
-                  <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Your Message</label>
-                  <textarea rows="4" placeholder="How can we help you?" className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all resize-none"></textarea>
-                </div>
-                <Button variant="primary" className="w-full py-5 text-base font-bold shadow-xl shadow-rose/20">
-                  Send My Enquiry
-                </Button>
-              </form>
+              )}
             </div>
 
           </div>

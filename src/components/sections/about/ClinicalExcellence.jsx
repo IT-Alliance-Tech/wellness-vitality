@@ -32,7 +32,7 @@ const ClinicalExcellence = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative py-14 bg-white overflow-hidden">
       {/* Subtle decorative accents */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo/[0.02] rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-rose/[0.02] rounded-full blur-[100px] pointer-events-none" />
