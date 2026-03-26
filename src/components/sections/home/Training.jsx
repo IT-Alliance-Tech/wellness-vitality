@@ -35,7 +35,7 @@ const Training = () => {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
                     <div>
                         <h2 className="text-2xl md:text-4xl font-semibold text-[#3b3f69] mb-2">
-                            Training & Services
+                            Training and Services
                         </h2>
                         <p className="text-gray-500 text-sm md:text-base">
                             Accredited and workplace-focused training programs.
