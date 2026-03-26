@@ -9,6 +9,8 @@ import Newsletter from "@/components/sections/home/Newsletter";
 import StatsSection from "@/components/sections/home/stats";
 import CareSection from "@/components/sections/home/CareSection";
 // import SocialSection from "@/components/sections/home/SocialSection";
+import TeethWhitening from "@/components/sections/home/TeethWhitening";
+import Training from "@/components/sections/home/Training";
 
 export default function Home() {
   return (
@@ -19,8 +21,10 @@ export default function Home() {
       <CareSection />
       <Services />
       <IVTherapy />
+      <Training />
       <IVScience />
       <MobileHealthcare />
+      <TeethWhitening />
       <BookingOverview />
       {/* <SocialSection /> */}
       <Newsletter />

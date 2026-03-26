@@ -59,7 +59,7 @@ const StatsSection = () => {
                     fontWeight: 400,
                     letterSpacing: '0.08em',
                     transform: 'scaleX(1.08)', // subtle width
-                    fontFamily: 'Mackinac, serif', // 🔥 different font style
+                    fontFamily: 'var(--font-mackinac), serif', // 🔥 different font style
                     color: 'rgba(202,18,84,0.08)',
                 }}
             >

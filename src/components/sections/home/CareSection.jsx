@@ -7,7 +7,7 @@ const features = [
     {
         title: 'You are cared for.',
         description:
-            'Every service is delivered by AHPRA-registered nurses, ensuring safe, professional and personalised care at every step.',
+            'Every service is delivered by Registered nurses, ensuring safe, professional and personalised care at every step.',
         icon: <Stethoscope size={56} strokeWidth={1.4} />,
     },
     {
