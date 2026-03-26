@@ -5,22 +5,22 @@ export default function BookingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-[#3b3f69] overflow-hidden">
+      <section className="relative pt-32 md:pt-48 pb-20 md:pb-24 bg-[#3b3f69] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
         </div>
-        
+
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#ca1254] animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Secure Booking</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold !text-white mb-8 leading-[1.1] tracking-tight">
             Book Your <br className="hidden md:block" />
             <span className="text-[#ca1254]">IV Infusion</span>
           </h1>
-          
+
           <p className="text-xl text-white max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light mb-8">
             Schedule your treatment through our secure online booking system. Wellness Vitality Australia uses Calendly for all appointment scheduling.
           </p>
@@ -35,7 +35,7 @@ export default function BookingPage() {
       <section className="py-20 bg-white">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-            
+
             {/* Left Column: Info & Payment */}
             <div className="space-y-8">
               <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-xl shadow-indigo/5">
@@ -70,41 +70,41 @@ export default function BookingPage() {
               {/* Afterpay Section */}
               <div className="bg-gradient-to-br from-[#B2FCE1] to-[#D1FFF0] p-8 rounded-[2rem] border border-[#A0EFD5] shadow-lg shadow-green-200/50 group">
                 <div className="flex items-center gap-3 mb-4">
-                   <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                     <svg className="w-5 h-5 text-[#000000]" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.5 9.5l-3 3-1.5-1.5L10.5 11l1.5 1.5 3-3 1.5 1.5z" />
-                     </svg>
-                   </div>
-                   <span className="font-black text-xs uppercase tracking-widest text-black/40">Payments</span>
+                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                    <svg className="w-5 h-5 text-[#000000]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.5 9.5l-3 3-1.5-1.5L10.5 11l1.5 1.5 3-3 1.5 1.5z" />
+                    </svg>
+                  </div>
+                  <span className="font-black text-xs uppercase tracking-widest text-black/40">Payments</span>
                 </div>
                 <h3 className="text-2xl font-black text-black mb-2">Book now. Pay later.</h3>
                 <p className="text-xs text-black/60 leading-relaxed font-medium mb-6">
                   Experience professional wellness now and spread the cost over 4 interest-free fortnightly payments.
                 </p>
                 <div className="flex items-center gap-2">
-                   <div className="px-3 py-1 bg-black text-[#B2FCE1] text-[10px] font-black rounded-md uppercase tracking-tighter italic">Afterpay</div>
-                   <div className="text-[10px] font-bold text-black/20 uppercase tracking-[0.2em]">Available Online</div>
+                  <div className="px-3 py-1 bg-black text-[#B2FCE1] text-[10px] font-black rounded-md uppercase tracking-tighter italic">Afterpay</div>
+                  <div className="text-[10px] font-bold text-black/20 uppercase tracking-[0.2em]">Available Online</div>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Calendly Placeholder/Widget */}
             <div className="lg:col-span-2 bg-white rounded-[3rem] border border-gray-100 shadow-2xl shadow-indigo/5 min-h-[600px] overflow-hidden relative flex items-center justify-center p-12 text-center group">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-indigo/5 rounded-full blur-3xl group-hover:bg-rose/5 transition-colors" />
-               <div className="relative z-10 max-w-md">
-                 <div className="w-20 h-20 bg-indigo/5 rounded-3xl flex items-center justify-center text-indigo mx-auto mb-8 animate-pulse">
-                   <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                   </svg>
-                 </div>
-                 <h2 className="text-2xl font-bold text-indigo mb-4">Select Your Time</h2>
-                 <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                   Our interactive booking widget is loading. Here you will be able to select your desired treatment and nurse availability instantly.
-                 </p>
-                 <div className="py-4 px-8 bg-gray-50 rounded-full border border-gray-100 text-xs font-bold text-indigo/40 tracking-widest uppercase">
-                   Secure Calendly Integration
-                 </div>
-               </div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo/5 rounded-full blur-3xl group-hover:bg-rose/5 transition-colors" />
+              <div className="relative z-10 max-w-md">
+                <div className="w-20 h-20 bg-indigo/5 rounded-3xl flex items-center justify-center text-indigo mx-auto mb-8 animate-pulse">
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-bold text-indigo mb-4">Select Your Time</h2>
+                <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                  Our interactive booking widget is loading. Here you will be able to select your desired treatment and nurse availability instantly.
+                </p>
+                <div className="py-4 px-8 bg-gray-50 rounded-full border border-gray-100 text-xs font-bold text-indigo/40 tracking-widest uppercase">
+                  Secure Calendly Integration
+                </div>
+              </div>
             </div>
 
           </div>

@@ -2,48 +2,93 @@ import React from 'react';
 
 const AboutIntro = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          
-          {/* Content Side */}
-          <div className="order-2 lg:order-1 reveal-left delay-200">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-px bg-rose" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose">Who We Are</span>
+    <section className="relative py-16 bg-gradient-to-b from-white to-[#f8f9fc] overflow-hidden">
+
+      {/* Background glow elements */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-[#ca1254]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3b3f69]/5 rounded-full blur-3xl" />
+
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Image Side */}
+          <div className="relative group reveal-left">
+            <div className="aspect-[5/4] md:aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+              <img
+                src="/hero_healthcare.png"
+                alt="Healthcare service"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold text-indigo mb-8 leading-tight">
-              Professional Healthcare <br />
-              <span className="italic font-light text-rose/90">at your fingertips</span>
-            </h2>
-            
-            <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light">
-              <p>
-                Our services are delivered with clinical precision and a focus on personalised care. Whether you require an IV infusion to boost your energy or a comprehensive health assessment, our team is dedicated to your wellbeing.
-              </p>
-              <p>
-                Services are available in clinic or delivered to your home, workplace, aged care facility or NDIS residence, ensuring you receive the care you need where you feel most comfortable.
+
+            {/* Floating card */}
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg px-6 py-4 border border-gray-100">
+              <p className="text-sm text-gray-500">Trusted Care</p>
+              <p className="text-lg font-semibold text-[#3b3f69]">
+                AHPRA Registered Nurses
               </p>
             </div>
           </div>
 
-          {/* Image Side */}
-          <div className="order-1 lg:order-2 relative group reveal-right">
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative">
-              <img 
-                src="/hero_healthcare.png" 
-                alt="Professional Healthcare" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-              />
-              <div className="absolute inset-0 bg-indigo/10 group-hover:opacity-0 transition-opacity duration-500" />
+          {/* Content Side */}
+          <div className="reveal-right delay-200">
+
+            {/* Tag */}
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-[2px] bg-[#ca1254]" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#ca1254]">
+                About Us
+              </span>
             </div>
-            
-            {/* Decorative bloom */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-rose/5 rounded-full blur-3xl" />
-            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-indigo/5 rounded-full blur-3xl -z-10" />
+
+            {/* Heading */}
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#3b3f69] mb-6 leading-tight">
+              Personalised Healthcare,
+              <br />
+              <span className="text-[#ca1254] font-medium">
+                Delivered With Care
+              </span>
+            </h2>
+
+            {/* Description */}
+            <div className="space-y-5 text-base md:text-lg text-gray-600 leading-relaxed font-light">
+              <p>
+                Wellness Vitality Australia provides professional healthcare and
+                wellness services delivered by qualified registered nurses,
+                focused on personalised treatments and evidence-based care.
+              </p>
+              <p>
+                Whether in clinic or through our mobile services, we ensure you
+                receive high-quality care in the comfort of your home,
+                workplace, aged care facility or NDIS residence.
+              </p>
+            </div>
+
+            {/* Highlights */}
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              <div className="bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-sm">
+                <p className="text-sm font-medium text-[#3b3f69]">
+                  Personalised Care
+                </p>
+              </div>
+              <div className="bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-sm">
+                <p className="text-sm font-medium text-[#3b3f69]">
+                  Mobile Services
+                </p>
+              </div>
+              <div className="bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-sm">
+                <p className="text-sm font-medium text-[#3b3f69]">
+                  Clinical Excellence
+                </p>
+              </div>
+              <div className="bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-sm">
+                <p className="text-sm font-medium text-[#3b3f69]">
+                  Trusted Professionals
+                </p>
+              </div>
+            </div>
+
           </div>
-          
         </div>
       </div>
     </section>
