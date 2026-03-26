@@ -457,46 +457,56 @@ const TrainingPage = () => {
         </div>
 
         {/* ── CTA ── */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-16 md:py-24 bg-white relative overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            
+            <div className="relative overflow-hidden rounded-2xl border border-[#3b3f69]/20 bg-[#3b3f69]/5 backdrop-blur-sm px-8 py-10 md:px-12 md:py-14 shadow-[0_20px_50px_rgba(59,63,105,0.15)]">
+              
+              {/* Subtle glows (matching Newsletter style) */}
+              <div className="absolute -top-16 -right-16 w-64 h-64 bg-[#ca1254]/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#3b3f69]/10 rounded-full blur-3xl" />
 
-            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+              <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+                
+                {/* LEFT CONTENT */}
+                <div className="max-w-xl text-center lg:text-left">
+                  <p className="text-[#ca1254] text-[11px] font-bold uppercase tracking-[0.25em] mb-4">
+                    Custom Training
+                  </p>
+                  <h3 className="text-3xl md:text-5xl font-bold text-[#3b3f69] mb-6 leading-[1.15]">
+                    Tailored Solutions <br className="hidden md:block" />
+                    for Your <span className="text-[#ca1254]">Organisation</span>
+                  </h3>
+                  <p className="text-gray-600 text-sm md:text-base mb-8 max-w-lg leading-relaxed">
+                    We design flexible training programs based on your organisation’s 
+                    needs, environment, and compliance requirements.
+                  </p>
+                  <a href="/contact" className="inline-flex items-center gap-2 bg-[#ca1254] text-white px-10 py-4 rounded font-semibold hover:bg-[#a30f44] transition-all hover:shadow-lg hover:-translate-y-0.5">
+                    Get in Touch <ArrowRight size={18} />
+                  </a>
+                </div>
 
-              {/* LEFT CONTENT */}
-              <div>
-                <p className="text-[#ca1254] text-xs uppercase tracking-[0.2em] mb-3">
-                  Custom Training
-                </p>
-
-                <h3 className="text-3xl md:text-4xl font-semibold text-[#3b3f69] mb-4 leading-tight">
-                  Tailored Solutions <br /> for Your Organisation
-                </h3>
-
-                <p className="text-gray-500 text-sm md:text-base mb-6 max-w-md">
-                  We design flexible training programs based on your organisation’s
-                  needs, environment, and compliance requirements.
-                </p>
-
-                <a href="/contact">
-                  <button className="bg-[#ca1254] text-white px-8 py-3 rounded-md hover:bg-[#a30f44] transition flex items-center gap-2">
-                    Get in Touch <ArrowRight size={16} />
-                  </button>
-                </a>
-              </div>
-
-              {/* RIGHT CARD */}
-              <div className="bg-[#f9fafc] border border-[#ca1254]/20 rounded-xl p-6 md:p-8 shadow-sm">
-
-                <h4 className="text-lg font-semibold text-[#3b3f69] mb-4">
-                  What We Offer
-                </h4>
-
-                <ul className="space-y-3 text-sm text-gray-600">
-                  <li>• Flexible training formats (online + in-person)</li>
-                  <li>• Industry-specific programs</li>
-                  <li>• Workplace safety compliance</li>
-                  <li>• Scalable team training solutions</li>
-                </ul>
+                {/* RIGHT CONTENT (What We Offer) */}
+                <div className="w-full lg:w-auto min-w-[300px]">
+                  <div className="bg-white/40 backdrop-blur-md border border-white/40 rounded-xl p-8 shadow-sm">
+                    <h4 className="text-sm font-bold text-[#3b3f69] uppercase tracking-wider mb-6 pb-2 border-b border-[#3b3f69]/10">
+                      What We Offer
+                    </h4>
+                    <ul className="space-y-4">
+                      {[
+                        'Flexible training formats (online + in-person)',
+                        'Industry-specific programs',
+                        'Workplace safety compliance',
+                        'Scalable team training solutions'
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-[#3b3f69]/80 group">
+                          <span className="text-[#ca1254] group-hover:scale-125 transition-transform">•</span>
+                          <span className="font-medium">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
 
               </div>
 
