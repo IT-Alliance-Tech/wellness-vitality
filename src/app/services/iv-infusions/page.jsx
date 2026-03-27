@@ -1,72 +1,53 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 
 const treatments = [
-  { name: 'Immune Defence IV', price: '$220 - $260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
-  { name: 'Energy & Performance IV', price: '$200 - $240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
-  { name: 'Beauty & Skin Glow IV', price: '$260 - $320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
-  { name: 'Detox & Liver Support IV', price: '$250 - $300', desc: 'Liver-supporting antioxidants and detox nutrients.' },
-  { name: 'Hydration & Recovery IV', price: '$180 - $220', desc: 'Electrolytes and minerals for rapid rehydration.' },
-  { name: 'Athlete Recovery IV', price: '$220 - $260', desc: 'Targeted nutrients to accelerate muscle recovery.' },
+  { name: 'Immune Defence IV', price: '$220 – $260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
+  { name: 'Energy & Performance IV', price: '$200 – $240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
+  { name: 'Beauty & Skin Glow IV', price: '$260 – $320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
+  { name: 'Detox & Liver Support IV', price: '$250 – $300', desc: 'Liver-supporting antioxidants and detox nutrients.' },
+  { name: 'Hydration & Recovery IV', price: '$180 – $220', desc: 'Electrolytes and minerals for rapid rehydration.' },
+  { name: 'Athlete Recovery IV', price: '$220 – $260', desc: 'Targeted nutrients to accelerate muscle recovery.' },
 ];
 
 const nutrients = [
-  { name: 'Vitamin C', desc: 'Supports immune function and antioxidant protection.', icon: 'ðŸ›¡ï¸', color: 'blue' },
-  { name: 'Vitamin D3', desc: 'Essential for bone health and immune regulation.', icon: 'â˜€ï¸', color: 'amber' },
-  { name: 'Biotin', desc: 'Promotes healthy hair, skin, and metabolic function.', icon: 'âœ¨', color: 'emerald' },
-  { name: 'B Complex', desc: 'Fuels energy production and nervous system support.', icon: 'âš¡', color: 'purple' },
-  { name: 'Methylcobalamin', desc: 'Active form of B12 for energy and neurological health.', icon: 'ðŸ§ ', color: 'blue' },
-  { name: 'Magnesium Sulphate', desc: 'Relaxes muscles, supports sleep and nerve function.', icon: 'ðŸŒ¿', color: 'emerald' },
-  { name: 'Zinc', desc: 'Crucial for immune system, wound healing and DNA synthesis.', icon: 'ðŸ”‹', color: 'amber' },
-  { name: 'Selenium', desc: 'Powerful antioxidant supporting thyroid and metabolic function.', icon: 'ðŸ›¡ï¸', color: 'blue' },
-  { name: 'Taurine', desc: 'Supports cardiovascular health and cellular hydration.', icon: 'â¤ï¸', color: 'rose' },
-  { name: 'Arginine', desc: 'Boosts nitric oxide for circulation and recovery.', icon: 'ðŸ©¸', color: 'blue' },
-  { name: 'Glutamine', desc: 'Gut lining repair and immune system fuel source.', icon: 'ðŸ§¬', color: 'emerald' },
-  { name: 'Lysine', desc: 'Collagen synthesis and antiviral immune defence.', icon: 'ðŸ’ª', color: 'blue' },
-  { name: 'Ornithine', desc: 'Supports detoxification and growth hormone release.', icon: 'ðŸ”„', color: 'purple' },
-  { name: 'Glutathione', desc: 'Master antioxidant for liver detox and skin brightening.', icon: 'âœ¨', color: 'amber' },
-  { name: 'Coenzyme Q10', desc: 'Vital cellular energy coenzyme powering repair and metabolism.', icon: 'ðŸ”‹', color: 'emerald' },
-  { name: 'Alpha Lipoic Acid', desc: 'Universal antioxidant supporting nerve health and glucose metabolism.', icon: 'âš¡', color: 'blue' },
-  { name: 'NAD+', desc: 'Critical coenzyme for cellular energy, anti-aging, and DNA repair.', icon: 'ðŸ§¬', color: 'purple' },
+  { name: 'Vitamin C', desc: 'Supports immune function and antioxidant protection.', accent: 'navy' },
+  { name: 'Vitamin D3', desc: 'Essential for bone health and immune regulation.', accent: 'rose' },
+  { name: 'Biotin', desc: 'Promotes healthy hair, skin, and metabolic function.', accent: 'navy' },
+  { name: 'B Complex', desc: 'Fuels energy production and nervous system support.', accent: 'rose' },
+  { name: 'Methylcobalamin', desc: 'Active form of B12 for energy and neurological health.', accent: 'navy' },
+  { name: 'Magnesium Sulphate', desc: 'Relaxes muscles, supports sleep and nerve function.', accent: 'rose' },
+  { name: 'Zinc', desc: 'Crucial for immune system, wound healing and DNA synthesis.', accent: 'navy' },
+  { name: 'Selenium', desc: 'Powerful antioxidant supporting thyroid and metabolic function.', accent: 'rose' },
+  { name: 'Taurine', desc: 'Supports cardiovascular health and cellular hydration.', accent: 'navy' },
+  { name: 'Arginine', desc: 'Boosts nitric oxide for circulation and recovery.', accent: 'rose' },
+  { name: 'Glutamine', desc: 'Gut lining repair and immune system fuel source.', accent: 'navy' },
+  { name: 'Lysine', desc: 'Collagen synthesis and antiviral immune defence.', accent: 'rose' },
+  { name: 'Ornithine', desc: 'Supports detoxification and growth hormone release.', accent: 'navy' },
+  { name: 'Glutathione', desc: 'Master antioxidant for liver detox and skin brightening.', accent: 'rose' },
+  { name: 'Coenzyme Q10', desc: 'Vital cellular energy coenzyme powering repair and metabolism.', accent: 'navy' },
+  { name: 'Alpha Lipoic Acid', desc: 'Universal antioxidant supporting nerve health and glucose metabolism.', accent: 'rose' },
+  { name: 'NAD+', desc: 'Critical coenzyme for cellular energy, anti-aging, and DNA repair.', accent: 'navy' },
 ];
 
 const midPoint = Math.ceil(nutrients.length / 2);
 const row1 = nutrients.slice(0, midPoint);
 const row2 = nutrients.slice(midPoint);
 
-const iconColors = {
-  blue: 'bg-[#3b3f69] text-white',
-  amber: 'bg-[#ca1254] text-white',
-  emerald: 'bg-[#3b3f69] text-white',
-  purple: 'bg-[#ca1254] text-white',
-  rose: 'bg-[#ca1254] text-white',
-};
-
 const benefits = [
-  'Direct nutrient delivery',
-  'Higher nutrient absorption',
+  'Direct nutrient delivery into the bloodstream',
+  'Higher absorption than oral supplementation',
   'Supports cellular energy production',
 ];
 
 const steps = [
-  {
-    title: 'Consultation',
-    desc: 'Initial clinical assessment with our registered nurse to determine suitability and goals.'
-  },
-  {
-    title: 'Preparation',
-    desc: 'Custom formulation of your nutrient therapy based on your individual requirements.'
-  },
-  {
-    title: 'Administration',
-    desc: 'Professional administration by a qualified nurse in a relaxed environment.'
-  },
-  {
-    title: 'Recovery',
-    desc: 'Relax and rehydrate as the nutrients are delivered directly into your bloodstream.'
-  },
+  { title: 'Consultation', desc: 'Initial clinical assessment with our registered nurse to determine suitability and goals.' },
+  { title: 'Preparation', desc: 'Custom formulation of your nutrient therapy based on your individual requirements.' },
+  { title: 'Administration', desc: 'Professional administration by a qualified nurse in a relaxed environment.' },
+  { title: 'Recovery', desc: 'Relax as nutrients are delivered directly into your bloodstream.' },
 ];
 
 const suitability = [
@@ -76,243 +57,633 @@ const suitability = [
   { group: 'Overall Wellness Seekers', reason: 'Maintaining optimal nutrient levels for vitality and long-term health.' },
 ];
 
+// Nutrient SVG icons — clean, clinical
+const NutrientIcon = ({ accent }) => (
+  <div style={{
+    width: 44, height: 44, borderRadius: 13, flexShrink: 0,
+    background: accent === 'rose' ? 'rgba(202,18,84,0.1)' : 'rgba(59,63,105,0.08)',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+  }}>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+      stroke={accent === 'rose' ? '#ca1254' : '#3b3f69'}
+      strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+    </svg>
+  </div>
+);
+
 export default function IVInfusionsPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <ServiceHero
-        badge="Intravenous Therapy"
-        heading="IV Infusion Therapy"
-        subtext="IV infusions deliver vitamins and nutrients directly into the bloodstream to support recovery, energy and immune health."
-        ctaLabel="Book IV Infusion"
-        ctaHref="/booking"
-        secondaryCtaLabel="Enquire Now"
-        secondaryCtaHref="/contact"
-      />
+    <main className="min-h-screen bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
-      {/* Image & About Section */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl skew-y-1">
-                <Image
-                  src="/images/services/iv-infusion.png"
-                  alt="IV Infusion Wellness"
-                  width={800}
-                  height={1000}
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100">
-                <div className="w-12 h-12 rounded-full bg-[#3b3f69] flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-[#3b3f69]">Premium Care</div>
-                  <div className="text-xs text-gray-500">Qualified Nursing</div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="inline-flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-[#ca1254]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">About This Service</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-8 leading-tight">Fast-Acting Results Through <span className="text-[#ca1254]">Direct Absorption</span></h2>
-              <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
-                IV infusion therapy delivers essential vitamins, minerals, and nutrients directly into the bloodstream for optimal absorption. This method supports faster recovery, improved energy levels, and enhanced immune function, bypassing the digestive system for 100% bioavailability.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-[#3b3f69] mb-1">100%</div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">Absorption</div>
-                </div>
-                <div className="p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-[#3b3f69] mb-1">AHPRA</div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">Registered</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        .iv-page * { box-sizing: border-box; }
 
-      {/* Nutrients Section (Infinite Marquee) */}
-      <section className="py-24 bg-white relative overflow-hidden border-t border-gray-50">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-4">
-              Nutrients Used in Infusions
-            </h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              We use only pharmaceutical-grade vitamins, minerals, and amino acids in our clinical formulations for maximum efficacy.
-            </p>
-          </div>
+        .eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.32em;
+          text-transform: uppercase;
+          margin-bottom: 14px;
+        }
+        .eyebrow-line {
+          display: block;
+          width: 24px;
+          height: 1.5px;
+        }
+        .section-title {
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 600;
+          line-height: 1.12;
+          color: #3b3f69;
+          margin: 0 0 20px;
+        }
+        .container {
+          width: 100%;
+          max-width: 1080px;
+          margin: 0 auto;
+          padding: 0 24px;
+        }
+        .divider {
+          height: 1px;
+          background: linear-gradient(90deg, transparent, #e8e9f0 30%, #e8e9f0 70%, transparent);
+        }
 
-          <div className="relative flex flex-col gap-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
-            <div className="flex w-max animate-marquee-left hover:[animation-play-state:paused] gap-6">
-              {[...row1, ...row1, ...row1, ...row1, ...row1].map((n, idx) => (
-                <div key={`${n.name}-${idx}`} className="flex-shrink-0 w-80 bg-white rounded-2xl border border-gray-100 p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl ${iconColors[n.color] || 'bg-gray-50 text-gray-500'}`}>
-                    {n.icon}
+        /* ── About ── */
+        .about-section {
+          padding: 96px 0;
+          background: #fafafa;
+          position: relative;
+          overflow: hidden;
+        }
+        .about-section::before {
+          content: '';
+          position: absolute;
+          top: -100px; right: -80px;
+          width: 480px; height: 480px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(202,18,84,0.05) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        .about-image-wrap {
+          position: relative;
+          border-radius: 28px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(59,63,105,0.14), 0 4px 16px rgba(59,63,105,0.08);
+        }
+        .about-image-wrap::after {
+          content: '';
+          position: absolute; inset: 0;
+          border-radius: 28px;
+          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+          pointer-events: none;
+        }
+        .stat-pill {
+          position: absolute;
+          bottom: 28px; left: -20px;
+          background: #fff;
+          border-radius: 14px;
+          padding: 14px 20px;
+          box-shadow: 0 8px 32px rgba(59,63,105,0.15);
+          display: flex; align-items: center; gap: 12px;
+          z-index: 10;
+        }
+        .stat-num {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 26px; font-weight: 600; color: #ca1254; line-height: 1;
+        }
+        .stat-label {
+          font-size: 11px; color: #3b3f69; font-weight: 600;
+          line-height: 1.4; max-width: 80px;
+        }
+        .stat-card {
+          padding: 20px 24px;
+          background: #fff;
+          border-radius: 16px;
+          border: 1.5px solid #f0f0f5;
+          transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .stat-card:hover {
+          border-color: rgba(202,18,84,0.2);
+          box-shadow: 0 4px 20px rgba(202,18,84,0.07);
+        }
+
+        /* ── Marquee / Nutrients ── */
+        .nutrients-section {
+          padding: 96px 0;
+          background: #fff;
+          overflow: hidden;
+          position: relative;
+        }
+        @keyframes marquee-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .marquee-left {
+          animation: marquee-left 40s linear infinite;
+        }
+        .marquee-right {
+          animation: marquee-right 40s linear infinite;
+        }
+        .marquee-left:hover,
+        .marquee-right:hover {
+          animation-play-state: paused;
+        }
+        .nutrient-card {
+          flex-shrink: 0;
+          width: 300px;
+          background: #fff;
+          border-radius: 18px;
+          border: 1.5px solid #f0f0f5;
+          padding: 20px;
+          display: flex;
+          align-items: flex-start;
+          gap: 14px;
+          transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .nutrient-card:hover {
+          box-shadow: 0 8px 28px rgba(59,63,105,0.1);
+          border-color: rgba(202,18,84,0.2);
+        }
+
+        /* ── Treatments ── */
+        .treatments-section {
+          padding: 96px 0;
+          background: linear-gradient(160deg, #f9f5f7 0%, #f5f6fa 100%);
+          position: relative;
+          overflow: hidden;
+        }
+        .treatments-section::before {
+          content: 'IV';
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 400px; font-weight: 700;
+          color: rgba(59,63,105,0.03);
+          pointer-events: none;
+          white-space: nowrap;
+          letter-spacing: 0.1em;
+        }
+        .treatment-card {
+          background: #fff;
+          border-radius: 24px;
+          padding: 32px;
+          border: 1.5px solid #f0f0f5;
+          display: flex; flex-direction: column; justify-content: space-between;
+          transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+          position: relative; overflow: hidden;
+        }
+        .treatment-card::before {
+          content: '';
+          position: absolute; top: 0; left: 0; right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #ca1254, #e84d8a);
+          opacity: 0; transition: opacity 0.3s;
+        }
+        .treatment-card:hover {
+          box-shadow: 0 20px 56px rgba(59,63,105,0.1);
+          border-color: transparent;
+          transform: translateY(-4px);
+        }
+        .treatment-card:hover::before { opacity: 1; }
+
+        /* ── Steps ── */
+        .steps-section {
+          padding: 96px 0;
+          background: #fff;
+          position: relative;
+        }
+        .step-card {
+          background: #fff;
+          border-radius: 24px;
+          padding: 36px 30px;
+          border: 1.5px solid #f0f0f5;
+          position: relative; overflow: hidden;
+          transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+        }
+        .step-card:hover {
+          box-shadow: 0 20px 48px rgba(59,63,105,0.12);
+          border-color: rgba(202,18,84,0.15);
+          transform: translateY(-4px);
+        }
+        .step-bg-num {
+          position: absolute; bottom: -10px; right: 12px;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 100px; font-weight: 700; line-height: 1;
+          color: #ca1254; opacity: 0.05;
+          pointer-events: none; user-select: none;
+        }
+        .step-badge {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 32px; height: 32px; border-radius: 10px;
+          background: linear-gradient(135deg, #ca1254, #e84d8a);
+          color: #fff; font-size: 12px; font-weight: 700;
+          margin-bottom: 20px;
+        }
+
+        /* ── Benefits Dark ── */
+        .benefits-section {
+          padding: 96px 0;
+          background: #3b3f69;
+          position: relative; overflow: hidden;
+        }
+        .benefits-section::before {
+          content: '';
+          position: absolute; top: -100px; right: -100px;
+          width: 420px; height: 420px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(202,18,84,0.16) 0%, transparent 65%);
+          pointer-events: none;
+        }
+        .benefits-section::after {
+          content: '';
+          position: absolute; bottom: -80px; left: -80px;
+          width: 320px; height: 320px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(202,18,84,0.08) 0%, transparent 65%);
+          pointer-events: none;
+        }
+        .benefit-row {
+          display: flex; align-items: center; gap: 16px;
+          padding: 16px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .benefit-row:last-child { border-bottom: none; }
+        .benefit-check {
+          width: 34px; height: 34px; border-radius: 10px;
+          background: rgba(202,18,84,0.18);
+          border: 1.5px solid rgba(202,18,84,0.3);
+          display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .stat-block {
+          aspect-ratio: 1;
+          background: rgba(255,255,255,0.05);
+          border-radius: 24px;
+          border: 1.5px solid rgba(255,255,255,0.08);
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          text-align: center; padding: 24px;
+          transition: background 0.3s, border-color 0.3s;
+        }
+        .stat-block:hover {
+          background: rgba(255,255,255,0.09);
+          border-color: rgba(202,18,84,0.35);
+        }
+
+        /* ── Suitability ── */
+        .suitability-section {
+          padding: 96px 0;
+          background: #fafafa;
+          position: relative;
+        }
+        .suit-card {
+          padding: 36px;
+          background: #fff;
+          border-radius: 24px;
+          border: 1.5px solid #f0f0f5;
+          transition: all 0.3s;
+          position: relative; overflow: hidden;
+        }
+        .suit-card::before {
+          content: '';
+          position: absolute; top: 0; left: 0; bottom: 0;
+          width: 3px;
+          background: linear-gradient(180deg, #ca1254, #e84d8a);
+          opacity: 0; transition: opacity 0.3s;
+        }
+        .suit-card:hover {
+          box-shadow: 0 16px 48px rgba(59,63,105,0.1);
+          border-color: rgba(202,18,84,0.18);
+          transform: translateY(-2px);
+        }
+        .suit-card:hover::before { opacity: 1; }
+      `}</style>
+
+      <div className="iv-page">
+        <ServiceHero
+          badge="Intravenous Therapy"
+          heading="IV Infusion Therapy"
+          subtext="IV infusions deliver vitamins and nutrients directly into the bloodstream to support recovery, energy and immune health."
+          ctaLabel="Book IV Infusion"
+          ctaHref="/booking"
+          secondaryCtaLabel="Enquire Now"
+          secondaryCtaHref="/contact"
+        />
+
+        {/* ── About / Image ── */}
+        <section className="about-section">
+          <div className="container">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+              {/* Image */}
+              <div style={{ position: 'relative' }}>
+                <div className="about-image-wrap">
+                  <Image
+                    src="/images/services/iv-infusion.png"
+                    alt="IV Infusion Wellness"
+                    width={800} height={1000}
+                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover', transition: 'transform 0.7s' }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                  />
+                </div>
+                <div className="stat-pill">
+                  <div className="stat-num">100%</div>
+                  <div className="stat-label">Bioavailability guaranteed</div>
+                </div>
+              </div>
+
+              {/* Text */}
+              <div>
+                <div className="eyebrow" style={{ color: '#ca1254' }}>
+                  <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                  About This Service
+                  <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                </div>
+                <h2 className="section-title" style={{ fontSize: 'clamp(36px, 4vw, 52px)', marginBottom: '24px' }}>
+                  Fast-Acting Results Through{' '}
+                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Direct Absorption</em>
+                </h2>
+                <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
+                  IV infusion therapy bypasses the digestive system entirely, delivering essential vitamins, minerals, and nutrients directly into the bloodstream for 100% bioavailability and faster results.
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <div className="stat-card">
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '32px', fontWeight: 600, color: '#3b3f69', lineHeight: 1, marginBottom: '6px' }}>100%</div>
+                    <div style={{ fontSize: '10px', color: 'rgba(59,63,105,0.5)', textTransform: 'uppercase', letterSpacing: '0.18em', fontWeight: 600 }}>Absorption</div>
                   </div>
-                  <div>
-                    <h3 className="text-[#3b3f69] font-bold text-lg mb-1">{n.name}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
+                  <div className="stat-card">
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '32px', fontWeight: 600, color: '#ca1254', lineHeight: 1, marginBottom: '6px' }}>AHPRA</div>
+                    <div style={{ fontSize: '10px', color: 'rgba(202,18,84,0.5)', textTransform: 'uppercase', letterSpacing: '0.18em', fontWeight: 600 }}>Registered Nurses</div>
                   </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex w-max animate-marquee-right hover:[animation-play-state:paused] gap-6">
-              {[...row2, ...row2, ...row2, ...row2, ...row2].map((n, idx) => (
-                <div key={`${n.name}-${idx}`} className="flex-shrink-0 w-80 bg-white rounded-2xl border border-gray-100 p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl ${iconColors[n.color] || 'bg-gray-50 text-gray-500'}`}>
-                    {n.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-[#3b3f69] font-bold text-lg mb-1">{n.name}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white border border-gray-100 text-[#3b3f69] text-[10px] font-bold tracking-[0.3em] uppercase shadow-sm">
-              <svg className="w-4 h-4 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              Highest Clinical Standards
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Treatments & Pricing */}
-      <section className="py-20 bg-white relative overflow-hidden border-t border-gray-50">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-[#ca1254]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Treatments & Pricing</span>
-              <div className="w-8 h-px bg-[#ca1254]" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] tracking-tight">IV Infusion Treatments</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {treatments.map((t) => (
-              <div key={t.name} className="group bg-white rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-[#ca1254]/20 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-start justify-between mb-4 gap-4">
-                    <h3 className="text-lg font-bold text-[#3b3f69] group-hover:text-[#ca1254] transition-colors duration-300 leading-snug">{t.name}</h3>
-                  </div>
-                  <p className="text-sm text-gray-500 font-light leading-relaxed mb-6">{t.desc}</p>
-                </div>
-                <div className="pt-6 border-t border-gray-50 flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#3b3f69]/40 uppercase tracking-widest">Pricing</span>
-                  <span className="text-lg font-bold text-[#ca1254] bg-[#ca1254]/5 px-4 py-1.5 rounded-full whitespace-nowrap">{t.price}</span>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-24 bg-white">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-[#ca1254]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Process</span>
-              <div className="w-8 h-px bg-[#ca1254]" />
             </div>
-            <h2 className="text-4xl font-bold text-[#3b3f69]">How It Works</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, i) => (
-              <div key={step.title} className="relative p-8 bg-white rounded-3xl border border-gray-100 hover:border-[#ca1254]/20 transition-all group shadow-sm hover:shadow-md">
-                <div className="text-5xl font-bold text-[#3b3f69]/10 mb-6 group-hover:text-[#3b3f69]/20 transition-colors">0{i + 1}</div>
-                <h3 className="text-xl font-bold text-[#3b3f69] mb-4">{step.title}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Benefits */}
-      <section className="py-20 bg-[#3b3f69] text-white overflow-hidden relative">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-[#ca1254]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Why Choose IV Therapy</span>
+        {/* ── Nutrients Marquee ── */}
+        <section className="nutrients-section">
+          <div className="divider" />
+          <div style={{ paddingTop: '96px' }}>
+            <div className="container" style={{ marginBottom: '48px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div className="eyebrow" style={{ color: '#3b3f69', justifyContent: 'center' }}>
+                  <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
+                  Clinical Formulations
+                  <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
+                </div>
+                <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: '0 0 12px' }}>
+                  Nutrients Used in Infusions
+                </h2>
+                <p style={{ fontSize: '15px', color: '#9ca3af', fontWeight: 300, maxWidth: '520px', margin: '0 auto' }}>
+                  Pharmaceutical-grade vitamins, minerals, and amino acids in every formulation.
+                </p>
               </div>
-              <h2 className="text-4xl font-bold text-white mb-8">Clinical Benefits</h2>
-              <ul className="space-y-4">
-                {benefits.map((b) => (
-                  <li key={b} className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-4 h-4 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
+            </div>
+
+            {/* Marquee rows */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', overflow: 'hidden', maskImage: 'linear-gradient(to right, transparent, white 8%, white 92%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, white 8%, white 92%, transparent)' }}>
+              {/* Row 1 — left */}
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <div className="marquee-left" style={{ display: 'flex', gap: '16px', width: 'max-content' }}>
+                  {[...row1, ...row1, ...row1, ...row1].map((n, idx) => (
+                    <div key={`r1-${idx}`} className="nutrient-card">
+                      <NutrientIcon accent={n.accent} />
+                      <div>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#3b3f69', marginBottom: '4px' }}>{n.name}</div>
+                        <div style={{ fontSize: '12.5px', color: '#9ca3af', fontWeight: 300, lineHeight: '1.55' }}>{n.desc}</div>
+                      </div>
                     </div>
-                    <span className="text-white font-medium">{b}</span>
-                  </li>
+                  ))}
+                </div>
+              </div>
+              {/* Row 2 — right */}
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <div className="marquee-right" style={{ display: 'flex', gap: '16px', width: 'max-content' }}>
+                  {[...row2, ...row2, ...row2, ...row2].map((n, idx) => (
+                    <div key={`r2-${idx}`} className="nutrient-card">
+                      <NutrientIcon accent={n.accent} />
+                      <div>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#3b3f69', marginBottom: '4px' }}>{n.name}</div>
+                        <div style={{ fontSize: '12.5px', color: '#9ca3af', fontWeight: 300, lineHeight: '1.55' }}>{n.desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Badge */}
+            <div style={{ textAlign: 'center', marginTop: '48px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px', borderRadius: '999px', background: '#fff', border: '1.5px solid #f0f0f5', fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#3b3f69', boxShadow: '0 2px 12px rgba(59,63,105,0.07)' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Highest Clinical Standards
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Treatments & Pricing ── */}
+        <section className="treatments-section">
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+              <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                Treatments & Pricing
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+              </div>
+              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
+                IV Infusion Treatments
+              </h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+              {treatments.map((t) => (
+                <div key={t.name} className="treatment-card">
+                  <div>
+                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', lineHeight: '1.35' }}>{t.name}</h3>
+                    <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.65', margin: 0 }}>{t.desc}</p>
+                  </div>
+                  <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #f5f5f7', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(59,63,105,0.4)', textTransform: 'uppercase', letterSpacing: '0.2em' }}>Pricing</span>
+                    <span style={{ fontSize: '15px', fontWeight: 700, color: '#ca1254', background: 'rgba(202,18,84,0.07)', padding: '6px 14px', borderRadius: '999px' }}>{t.price}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Steps ── */}
+        <section className="steps-section">
+          <div className="divider" />
+          <div className="container" style={{ paddingTop: '96px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+              <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                The Process
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+              </div>
+              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
+                How It Works
+              </h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+              {steps.map((step, i) => (
+                <div key={step.title} className="step-card">
+                  <div className="step-bg-num">{String(i + 1).padStart(2, '0')}</div>
+                  <div className="step-badge">{String(i + 1).padStart(2, '0')}</div>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', position: 'relative', zIndex: 1 }}>{step.title}</h3>
+                  <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.65', margin: 0, position: 'relative', zIndex: 1 }}>{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Clinical Benefits ── */}
+        <section className="benefits-section">
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+              <div>
+                <div className="eyebrow" style={{ color: '#ca1254' }}>
+                  <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.5 }} />
+                  Why Choose IV Therapy
+                </div>
+                <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', color: '#fff', margin: '0 0 32px' }}>
+                  Clinical Benefits
+                </h2>
+                <div>
+                  {benefits.map((b) => (
+                    <div key={b} className="benefit-row">
+                      <div className="benefit-check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span style={{ fontSize: '15px', fontWeight: 500, color: '#fff' }}>{b}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                {[
+                  { val: '30m', label: 'Typical Session' },
+                  { val: '100%', label: 'Absorption Rate' },
+                  { val: 'AHPRA', label: 'Registered Nurses' },
+                  { val: '17+', label: 'Nutrients Available' },
+                ].map((s) => (
+                  <div key={s.val} className="stat-block">
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', fontWeight: 600, color: '#ca1254', lineHeight: 1, marginBottom: '10px' }}>{s.val}</div>
+                    <div style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.2em', lineHeight: '1.5' }}>{s.label}</div>
+                  </div>
                 ))}
-              </ul>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center border border-white/10">
-                <div className="text-4xl font-bold text-[#ca1254] mb-2">30m</div>
-                <div className="text-[10px] font-bold text-white uppercase tracking-widest leading-relaxed">Typical Session</div>
-              </div>
-              <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center border border-white/10">
-                <div className="text-4xl font-bold text-[#ca1254] mb-2">100%</div>
-                <div className="text-[10px] font-bold text-white uppercase tracking-widest leading-relaxed">Absorption</div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-white border-t border-gray-50">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-[#ca1254]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Ideal For</span>
-              <div className="w-8 h-px bg-[#ca1254]" />
-            </div>
-            <h2 className="text-4xl font-bold text-[#3b3f69]">Is IV Therapy for You?</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {suitability.map((item) => (
-              <div key={item.group} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-indigo/10 transition-all">
-                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-rose" />
-                  {item.group}
-                </h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.reason}</p>
+        {/* ── Suitability ── */}
+        <section className="suitability-section">
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+              <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                Ideal For
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
               </div>
-            ))}
+              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
+                Is IV Therapy for You?
+              </h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+              {suitability.map((item) => (
+                <div key={item.group} className="suit-card">
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span style={{ display: 'block', width: 6, height: 6, borderRadius: '50%', background: '#ca1254', flexShrink: 0 }} />
+                    {item.group}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.7', margin: 0, paddingLeft: '16px' }}>
+                    {item.reason}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <ServiceCTA
-        heading="Ready to Book Your IV Infusion?"
-        text="Book your IV infusion through our secure booking system. Calendly booking. Afterpay payment."
-        ctaLabel="Book IV Infusion"
-        ctaHref="/booking"
-        secondaryCtaLabel="Enquire Now"
-        secondaryCtaHref="/contact"
-      />
+        <section className="py-14 sm:py-16 bg-white">
+  <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+
+    <div className="bg-[#3b3f69] rounded-xl sm:rounded-2xl px-6 sm:px-10 py-6 sm:py-8 flex flex-col lg:flex-row items-center justify-between gap-6">
+
+      {/* LEFT CONTENT */}
+      <div className="text-center lg:text-left">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-1">
+          Ready to Book Your IV Infusion?
+        </h2>
+
+        <p className="text-sm sm:text-base text-white/80 max-w-xl">
+          Book your IV infusion through our secure booking system. Calendly booking. Afterpay payment.
+        </p>
+      </div>
+
+      {/* RIGHT ACTIONS */}
+      <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+
+        {/* Primary */}
+        <a
+          href="/booking"
+          className="
+            w-full sm:w-auto
+            px-6 py-3
+            rounded-md
+            bg-[#ca1254]
+            text-white
+            font-semibold
+            text-sm
+            text-center
+            hover:opacity-90
+            transition
+          "
+        >
+          Book IV Infusion
+        </a>
+
+        {/* Secondary */}
+        <a
+          href="/contact"
+          className="
+            w-full sm:w-auto
+            px-6 py-3
+            rounded-md
+            bg-white
+            text-[#3b3f69]
+            font-semibold
+            text-sm
+            text-center
+            hover:opacity-90
+            transition
+          "
+        >
+          Enquire Now
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+      </div>
     </main>
   );
 }

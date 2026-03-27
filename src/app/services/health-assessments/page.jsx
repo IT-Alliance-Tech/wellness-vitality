@@ -11,12 +11,295 @@ const services = [
   'Weight and metabolic assessments',
 ];
 
-const benefits = [
-  { title: 'Early Detection', desc: 'Identify health risks before they become serious concerns.' },
-  { title: 'Ongoing Monitoring', desc: 'Continuous clinical oversight and personalised care.' },
-  { title: 'Personalised Approach', desc: 'Care plans tailored to individual health needs and goals.' },
-  { title: 'Improved Outcomes', desc: 'Better long-term health results through preventative management.' },
+const healthAssessmentServices = [
+  "Comprehensive Wellness Checks",
+  "Vital Signs Monitoring",
+  "Cardiovascular Risk Screening",
+  "Diabetes Risk Screening",
+  "Weight & Metabolic Assessments",
+  "Clinical History Review",
+  "Physical Wellbeing Evaluation",
+  "Personalised Care Recommendations",
 ];
+
+const healthAssessmentBenefits = [
+  { title: "Early Detection", desc: "Identify health risks before they become serious concerns" },
+  { title: "Proactive Care", desc: "Identify and remediate health issues before they escalate" },
+  { title: "Clinical Standards", desc: "Align with leading healthcare frameworks and TGA guidelines" },
+  { title: "Expert Nursing", desc: "Dedicated registered nurses with you at every step of the process" },
+];
+
+function ServicesSection() {
+  return (
+    <section
+      style={{
+        padding: "80px 0 96px",
+        background: "#fff",
+        fontFamily: "'DM Sans', sans-serif",
+      }}
+    >
+      <style>{`
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
+
+      .services-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ── HEADER ── */
+      .services-header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+      .services-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: #ca1254;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .services-eyebrow::before,
+      .services-eyebrow::after {
+        content: '';
+        display: block;
+        width: 28px;
+        height: 1.5px;
+        background: #ca1254;
+        opacity: 0.5;
+      }
+      .services-title {
+        font-family: 'DM Serif Display', serif;
+        font-size: clamp(32px, 4vw, 48px);
+        color: #3b3f69;
+        line-height: 1.15;
+        margin: 0;
+        font-weight: 400;
+      }
+      .services-title span {
+        color: #ca1254;
+      }
+
+      /* ── GRID ── */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+        background: #f0f0f5;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 56px;
+        border: 1.5px solid #e6e7f0;
+      }
+      @media (max-width: 640px) {
+        .services-grid { grid-template-columns: 1fr; }
+      }
+
+      .service-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 22px 24px;
+        background: #fff;
+        transition: background 0.18s;
+        cursor: default;
+      }
+      .service-item:hover {
+        background: #fdf0f5;
+      }
+      .service-num {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: #ca1254;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1px;
+      }
+      .service-text {
+        font-size: 14.5px;
+        color: #3b3f69;
+        font-weight: 500;
+        line-height: 1.5;
+        padding-top: 5px;
+      }
+
+      /* ── BENEFITS ── */
+      .benefits-strip {
+        background: #3b3f69;
+        border-radius: 20px;
+        padding: 48px 40px 52px;
+        position: relative;
+        overflow: hidden;
+      }
+      .benefits-strip::before {
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(202,18,84,0.18) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .benefits-strip::after {
+        content: '';
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(202,18,84,0.1) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .benefits-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .benefits-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: #ca1254;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .benefits-eyebrow::before,
+      .benefits-eyebrow::after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 1.5px;
+        background: #ca1254;
+        opacity: 0.6;
+      }
+      .benefits-title {
+        font-family: 'DM Serif Display', serif;
+        font-size: clamp(22px, 3vw, 30px);
+        color: #fff;
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        position: relative;
+        z-index: 1;
+      }
+      @media (max-width: 900px) {
+        .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 0; }
+      }
+      @media (max-width: 480px) {
+        .benefits-grid { grid-template-columns: 1fr; gap: 28px; }
+        .benefits-strip { padding: 36px 24px 40px; }
+      }
+
+      .benefit-item {
+        text-align: center;
+        padding: 0 20px;
+        border-right: 1px solid rgba(255,255,255,0.1);
+      }
+      .benefit-item:last-child {
+        border-right: none;
+      }
+      @media (max-width: 900px) {
+        .benefit-item { border-right: none; }
+      }
+
+      .benefit-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(202,18,84,0.18);
+        border: 1.5px solid rgba(202,18,84,0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 14px;
+      }
+      .benefit-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: #ca1254;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .benefit-title {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        letter-spacing: 0.01em;
+      }
+      .benefit-desc {
+        color: rgba(255,255,255,0.65);
+        font-size: 12.5px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+    `}</style>
+
+      <div className="services-wrap">
+        {/* HEADER */}
+        <div className="services-header">
+          <div className="services-eyebrow">Services Included</div>
+          <h2 className="services-title">
+            What's Included in <span>Your Assessment</span>
+          </h2>
+        </div>
+
+        {/* SERVICES GRID */}
+        <div className="services-grid">
+          {healthAssessmentServices.map((s, i) => (
+            <div className="service-item" key={s}>
+              <div className="service-num">{String(i + 1).padStart(2, "0")}</div>
+              <div className="service-text">{s}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* BENEFITS */}
+        <div className="benefits-strip">
+          <div className="benefits-header">
+            <div className="benefits-eyebrow">Why It Matters</div>
+            <h3 className="benefits-title">Key Benefits</h3>
+          </div>
+          <div className="benefits-grid">
+            {healthAssessmentBenefits.map((b, i) => (
+              <div className="benefit-item" key={b.title}>
+                <div className="benefit-icon">
+                  {i === 0 && <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>}
+                  {i === 1 && <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>}
+                  {i === 2 && <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" /></svg>}
+                  {i === 3 && <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>}
+                </div>
+                <div className="benefit-title">{b.title}</div>
+                <div className="benefit-desc">{b.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 const steps = [
   { title: 'Booking', desc: 'Schedule a convenient time for your assessment at home or your facility.' },
@@ -25,15 +308,11 @@ const steps = [
   { title: 'Report', desc: 'Receive a detailed health report and recommendations for further care.' },
 ];
 
-const assessmentsMatter = [
-  { title: 'Early Intervention', desc: 'Identify potential health issues before they escalate into serious complications.' },
-  { title: 'Personalised Care', desc: 'Create a tailored health roadmap based on your unique clinical profile.' },
-  { title: 'PEACE OF MIND', desc: 'Consistent clinical monitoring provides confidence for you and your family.' },
-];
-
 export default function HealthAssessmentsPage() {
   return (
     <main className="min-h-screen bg-white">
+
+      {/* HERO */}
       <ServiceHero
         badge="Clinical Assessment"
         heading="Health Assessments"
@@ -44,147 +323,197 @@ export default function HealthAssessmentsPage() {
         secondaryCtaHref="/booking"
       />
 
-      {/* Image & About Section */}
-      <section className="py-20 bg-white overflow-hidden">
+      {/* ABOUT */}
+      <section className="py-14 sm:py-16 lg:py-20 bg-white overflow-hidden">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-             <div>
-              <div className="inline-flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-[#ca1254]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">About This Service</span>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+            {/* TEXT */}
+            <div>
+              <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
+                <div className="w-6 sm:w-8 h-px bg-[#ca1254]" />
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#ca1254]">
+                  About This Service
+                </span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-8 leading-tight">Proactive Care for <span className="text-[#ca1254]">Long-Term Health</span></h2>
-              <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
-                Our health assessments are designed to support ongoing monitoring and preventative care for aged care and NDIS clients, ensuring early detection and better health management. We bring professional clinical oversight directly to you.
+
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3b3f69] mb-6 sm:mb-8 leading-tight">
+                Proactive Care for <span className="text-[#ca1254]">Long-Term Health</span>
+              </h2>
+
+              <p className="text-sm sm:text-base lg:text-lg text-[#3b3f69]/80 leading-relaxed font-light mb-6 sm:mb-8">
+                Our health assessments support preventative care and early detection for aged care and NDIS clients.
               </p>
-              <div className="space-y-4">
-                {benefits.slice(0, 2).map((b) => (
-                  <div key={b.title} className="flex gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                    <div className="w-10 h-10 rounded-full bg-[#3b3f69] flex items-center justify-center flex-shrink-0 text-white">
-                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+
+              <div className="space-y-3 sm:space-y-4">
+                {healthAssessmentBenefits.slice(0, 2).map((b) => (
+                  <div
+                    key={b.title}
+                    className="flex gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-[#3b3f69]/5 to-[#ca1254]/5 shadow-md hover:shadow-lg transition"
+                  >
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#3b3f69] text-white flex items-center justify-center text-sm">
+                      ✔
                     </div>
+
                     <div>
-                      <div className="font-bold text-[#3b3f69]">{b.title}</div>
-                      <div className="text-xs text-gray-500">{b.desc}</div>
+                      <div className="font-semibold text-sm sm:text-base text-[#3b3f69]">{b.title}</div>
+                      <div className="text-xs sm:text-sm text-[#3b3f69]/70">{b.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl -skew-y-1 border border-gray-100">
-                <Image 
-                   src="/images/services/health-assessment.png" 
-                  alt="Health Assessment" 
-                  width={800} 
+
+            {/* IMAGE */}
+            <div className="flex justify-center lg:block">
+              <div className="
+                w-full 
+                max-w-sm sm:max-w-md md:max-w-lg lg:max-w-full
+                rounded-[2rem] lg:rounded-[2.5rem]
+                overflow-hidden 
+                shadow-[0_20px_60px_rgba(59,63,105,0.25)]
+                lg:-skew-y-1
+              ">
+                <Image
+                  src="/images/services/health-assessment.png"
+                  alt="Health Assessment"
+                  width={800}
                   height={1000}
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                  className="
+                    w-full 
+                    h-[260px] sm:h-[320px] md:h-[420px] lg:h-auto
+                    object-cover 
+                    hover:scale-105 
+                    transition duration-700
+                  "
                 />
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Services Included */}
-      <section className="py-20 bg-white border-t border-gray-50">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-[#3b3f69]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#3b3f69]">Services Included</span>
-              </div>
-              <h2 className="text-4xl font-bold text-[#3b3f69] mb-8">What's Included</h2>
-              <ul className="space-y-4">
-                {services.map((s) => (
-                  <li key={s} className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-[#3b3f69]/20 transition-all">
-                    <div className="w-8 h-8 rounded-full bg-[#3b3f69] flex items-center justify-center flex-shrink-0">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 font-medium">{s}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-[#3b3f69] text-white rounded-[3rem] p-12 relative overflow-hidden shadow-2xl">
-              <div className="flex items-center gap-2 mb-8 relative z-10">
-                <div className="w-8 h-px bg-[#ca1254]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Why It Matters</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-6 relative z-10">Key Benefits</h3>
-              <div className="space-y-6 relative z-10">
-                {benefits.map((b) => (
-                  <div key={b.title}>
-                    <div className="font-bold text-[#ca1254] mb-1">{b.title}</div>
-                    <div className="text-sm text-white/90 font-light leading-relaxed">{b.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* SERVICES */}
+      <ServicesSection />
 
-      {/* Process Section */}
-      <section className="py-20 bg-white border-t border-gray-50">
+      {/* PROCESS */}
+      <section className="py-16 sm:py-20 bg-white">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="text-center mb-16">
-             <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-[#ca1254]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Our Method</span>
-              <div className="w-8 h-px bg-[#ca1254]" />
+
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 mb-3 sm:mb-4">
+              <div className="w-6 sm:w-8 h-px bg-[#ca1254]" />
+              <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#ca1254]">
+                Our Method
+              </span>
+              <div className="w-6 sm:w-8 h-px bg-[#ca1254]" />
             </div>
-            <h2 className="text-4xl font-bold text-[#3b3f69]">The Assessment Process</h2>
+
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3b3f69]">
+              The Assessment Process
+            </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {steps.map((step, i) => (
-              <div key={step.title} className="p-8 bg-white border border-gray-100 rounded-3xl space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 rounded-2xl bg-[#3b3f69] text-white flex items-center justify-center font-bold text-xl shadow-lg">
+              <div
+                key={step.title}
+                className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#3b3f69]/5 to-[#ca1254]/5 shadow-md hover:shadow-xl transition"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#3b3f69] text-white flex items-center justify-center font-bold text-lg sm:text-xl">
                   {i + 1}
                 </div>
-                <h3 className="text-xl font-bold text-[#3b3f69]">{step.title}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{step.desc}</p>
+
+                <h3 className="text-lg sm:text-xl font-bold text-[#3b3f69] mt-4">
+                  {step.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-[#3b3f69]/70">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-white border-t border-gray-50">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-indigo" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#3b3f69]">Proactive Health</span>
-              <div className="w-8 h-px bg-indigo" />
+      {/* CTA */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+
+          <div className="
+      rounded-2xl sm:rounded-3xl
+      bg-[#f4f5fa]
+      px-6 sm:px-10 lg:px-14
+      py-8 sm:py-10
+      flex flex-col lg:flex-row items-center justify-between gap-6
+    ">
+
+            {/* LEFT CONTENT */}
+            <div className="text-center lg:text-left max-w-xl">
+              <p className="text-[11px] tracking-[0.3em] uppercase text-[#3b3f69]/60 mb-2">
+                Get Started
+              </p>
+
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#3b3f69] mb-2">
+                Arrange Your Health Assessment
+              </h2>
+
+              <p className="text-sm sm:text-base text-[#3b3f69]/70">
+                Contact us to arrange a health assessment or book directly online.
+              </p>
             </div>
-            <h2 className="text-4xl font-bold text-[#3b3f69]">Why Assessments Matter</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {assessmentsMatter.map((item) => (
-              <div key={item.title} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-indigo/20 transition-all text-center">
-                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg uppercase tracking-tight">{item.title}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+
+            {/* RIGHT ACTIONS */}
+            <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-3">
+
+              {/* Book Now */}
+              <a
+                href="/booking"
+                className="
+            w-full sm:w-auto
+            px-6 py-3
+            rounded-lg
+            bg-[#ca1254]
+            text-white
+            font-semibold
+            text-sm
+            text-center
+            hover:opacity-90
+            transition
+          "
+              >
+                Book Now
+              </a>
+
+              {/* Enquire */}
+              <a
+                href="/contact"
+                className="
+            w-full sm:w-auto
+            px-6 py-3
+            rounded-lg
+            bg-white
+            text-[#3b3f69]
+            font-semibold
+            text-sm
+            text-center
+            hover:opacity-90
+            transition
+          "
+              >
+                Enquire Now
+              </a>
+
+            </div>
+
           </div>
         </div>
       </section>
 
-      <ServiceCTA
-        heading="Arrange a Health Assessment"
-        text="Contact us to arrange a health assessment or book directly online."
-        ctaLabel="Book Now"
-        ctaHref="/booking"
-        secondaryCtaLabel="Enquire Now"
-        secondaryCtaHref="/contact"
-      />
     </main>
   );
 }
