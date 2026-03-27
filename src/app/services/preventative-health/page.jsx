@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
@@ -103,6 +101,12 @@ export default function PreventativeHealthPage() {
           border-radius: 28px;
           overflow: hidden;
           box-shadow: 0 30px 80px rgba(59,63,105,0.14), 0 4px 16px rgba(59,63,105,0.08);
+        }
+        .about-image-wrap img {
+          transition: transform 0.7s ease-in-out !important;
+        }
+        .about-image-wrap:hover img {
+          transform: scale(1.05);
         }
         .about-image-wrap::after {
           content: '';
@@ -367,9 +371,7 @@ export default function PreventativeHealthPage() {
                     alt="Wellness and Vitamin Support"
                     width={800}
                     height={1000}
-                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover', transition: 'transform 0.7s', }}
-                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
-                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
                   />
                 </div>
                 {/* Floating stat pill */}
