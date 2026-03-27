@@ -42,10 +42,10 @@ export default function TeethWhiteningPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl -skew-x-1 border border-gray-100">
-                <Image 
-                  src="/images/services/teeth-whitening.png" 
-                  alt="Professional Teeth Whitening Results" 
-                  width={800} 
+                <Image
+                  src="/images/services/teeth-whitening.png"
+                  alt="Professional Teeth Whitening Results"
+                  width={800}
                   height={1000}
                   className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                 />
@@ -91,8 +91,8 @@ export default function TeethWhiteningPage() {
               <div className="text-sm text-white/60 uppercase tracking-widest font-light">Treatment Time</div>
             </div>
             <div className="p-10 bg-white/5 rounded-3xl border border-white/10">
-               <div className="text-5xl font-bold text-[#ca1254] mb-4">0</div>
-               <div className="text-sm text-white/60 uppercase tracking-widest font-light">Downtime</div>
+              <div className="text-5xl font-bold text-[#ca1254] mb-4">0</div>
+              <div className="text-sm text-white/60 uppercase tracking-widest font-light">Downtime</div>
             </div>
           </div>
         </div>
@@ -107,11 +107,11 @@ export default function TeethWhiteningPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {steps.map((step, i) => (
               <div key={step.title} className="text-center group">
-                 <div className="w-20 h-20 rounded-[2.5rem] bg-white border border-gray-100 text-[#3b3f69] flex items-center justify-center text-3xl font-bold mx-auto mb-8 group-hover:bg-[#ca1254] group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-md">
-                   0{i + 1}
-                 </div>
-                 <h3 className="text-xl font-bold text-[#3b3f69] mb-4">{step.title}</h3>
-                 <p className="text-sm text-gray-500 font-light leading-relaxed max-w-xs mx-auto">{step.desc}</p>
+                <div className="w-20 h-20 rounded-[2.5rem] bg-white border border-gray-100 text-[#3b3f69] flex items-center justify-center text-3xl font-bold mx-auto mb-8 group-hover:bg-[#ca1254] group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-md">
+                  0{i + 1}
+                </div>
+                <h3 className="text-xl font-bold text-[#3b3f69] mb-4">{step.title}</h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed max-w-xs mx-auto">{step.desc}</p>
               </div>
             ))}
           </div>
