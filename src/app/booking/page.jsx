@@ -1,5 +1,7 @@
 import React from 'react';
 import Button from '@/components/ui/Button';
+import CalendlyEmbed from '@/components/booking/CalendlyEmbed';
+
 
 export default function BookingPage() {
   return (
@@ -88,24 +90,11 @@ export default function BookingPage() {
               </div>
             </div>
 
-            {/* Right Column: Calendly Placeholder/Widget */}
-            <div className="lg:col-span-2 bg-white rounded-[3rem] border border-gray-100 shadow-2xl shadow-indigo/5 min-h-[600px] overflow-hidden relative flex items-center justify-center p-12 text-center group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo/5 rounded-full blur-3xl group-hover:bg-rose/5 transition-colors" />
-              <div className="relative z-10 max-w-md">
-                <div className="w-20 h-20 bg-indigo/5 rounded-3xl flex items-center justify-center text-indigo mx-auto mb-8 animate-pulse">
-                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold text-indigo mb-4">Select Your Time</h2>
-                <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                  Our interactive booking widget is loading. Here you will be able to select your desired treatment and nurse availability instantly.
-                </p>
-                <div className="py-4 px-8 bg-gray-50 rounded-full border border-gray-100 text-xs font-bold text-indigo/40 tracking-widest uppercase">
-                  Secure Calendly Integration
-                </div>
-              </div>
+            {/* Right Column: Calendly Widget */}
+            <div className="lg:col-span-2">
+              <CalendlyEmbed url="https://calendly.com/jlavanya0212/iv-infusion-appointment" />
             </div>
+
 
           </div>
         </div>

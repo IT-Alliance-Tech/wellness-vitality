@@ -1,4 +1,4 @@
-﻿import Hero from "@/components/sections/home/Hero";
+import Hero from "@/components/sections/home/Hero";
 import WhyChoose from "@/components/sections/home/WhyChoose";
 import Services from "@/components/sections/home/Services";
 import IVTherapy from "@/components/sections/home/IVTherapy";
@@ -11,12 +11,14 @@ import CareSection from "@/components/sections/home/CareSection";
 // import SocialSection from "@/components/sections/home/SocialSection";
 import TeethWhitening from "@/components/sections/home/TeethWhitening";
 import Training from "@/components/sections/home/Training";
+import PaymentSection from "@/components/sections/home/PaymentSection";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <Hero />
       <StatsSection />
+      {/* <PaymentSection /> */}
       <WhyChoose />
       <CareSection />
       <Services />
@@ -31,3 +33,4 @@ export default function Home() {
     </main>
   );
 }
+
