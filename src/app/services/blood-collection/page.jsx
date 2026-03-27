@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
@@ -18,10 +19,42 @@ const benefits = [
 ];
 
 const locations = [
-  { title: 'Home Blood Collection', desc: 'Comfortable collection in your own residence.' },
-  { title: 'Workplace Testing', desc: 'Convenient services for employees on-site.' },
-  { title: 'Aged Care Services', desc: 'Dedicated collection for aged care residents.' },
-  { title: 'NDIS Support Support', desc: 'Accessible pathology for NDIS participants.' },
+  {
+    title: 'Home Blood Collection',
+    desc: 'Comfortable collection in your own residence.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Workplace Testing',
+    desc: 'Convenient services for employees on-site.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Aged Care Services',
+    desc: 'Dedicated collection for aged care residents.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'NDIS Support',
+    desc: 'Accessible pathology for NDIS participants.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" />
+      </svg>
+    ),
+  },
 ];
 
 const advantages = [
@@ -31,138 +64,563 @@ const advantages = [
   { title: 'Aged Care Specialisation', desc: 'Gentle and professional collection tailored for elderly patients.' },
 ];
 
+const CheckIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <circle cx="8" cy="8" r="8" fill="#ca1254" fillOpacity="0.12" />
+    <path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#ca1254" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 export default function BloodCollectionPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <ServiceHero
-        badge="Pathology Services"
-        heading="Blood Collection Services"
-        subtext="Convenient and professional blood collection delivered to your location."
-        ctaLabel="Enquire Now"
-        ctaHref="/contact"
-        secondaryCtaLabel="Book Now"
-        secondaryCtaHref="/booking"
-      />
+    <main className="min-h-screen bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
-      {/* Image & About Section */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 mb-6">
-                <div className="w-8 h-px bg-[#ca1254]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Professional Pathology</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#3b3f69] mb-8 leading-tight">Accurate Testing, <span className="text-[#ca1254]">Home Convenience</span></h2>
-              <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
-                Our blood collection services are designed to provide a convenient and comfortable experience for patients who prefer testing outside of clinical environments. We handle every sample with clinical precision and transport it immediately to accredited laboratories.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {benefits.map((b) => (
-                  <div key={b} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                    <div className="w-6 h-6 rounded-full bg-[#ca1254] flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
+        .bc-page * { box-sizing: border-box; }
+
+        .eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.32em;
+          text-transform: uppercase;
+          margin-bottom: 14px;
+        }
+        .eyebrow-line {
+          display: block;
+          width: 24px;
+          height: 1.5px;
+        }
+        .section-title {
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 600;
+          line-height: 1.12;
+          color: #3b3f69;
+          margin: 0 0 20px;
+        }
+        .container {
+          width: 100%;
+          max-width: 1080px;
+          margin: 0 auto;
+          padding: 0 24px;
+        }
+
+        /* ── About ── */
+        .about-section {
+          padding: 96px 0;
+          background: #fafafa;
+          position: relative;
+          overflow: hidden;
+        }
+        .about-section::before {
+          content: '';
+          position: absolute;
+          bottom: -100px; left: -80px;
+          width: 480px; height: 480px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(202,18,84,0.05) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        .about-image-wrap {
+          position: relative;
+          border-radius: 28px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(59,63,105,0.14), 0 4px 16px rgba(59,63,105,0.08);
+        }
+        .about-image-wrap::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 28px;
+          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+          pointer-events: none;
+        }
+        .stat-pill {
+          position: absolute;
+          bottom: 28px;
+          right: -20px;
+          background: #fff;
+          border-radius: 14px;
+          padding: 14px 20px;
+          box-shadow: 0 8px 32px rgba(59,63,105,0.15);
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          z-index: 10;
+        }
+        .stat-num {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 28px;
+          font-weight: 600;
+          color: #ca1254;
+          line-height: 1;
+        }
+        .stat-label {
+          font-size: 11px;
+          color: #3b3f69;
+          font-weight: 600;
+          line-height: 1.4;
+          max-width: 80px;
+        }
+        .benefit-tag {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: #fff;
+          border: 1px solid #eee;
+          border-radius: 12px;
+          padding: 12px 16px;
+          font-size: 13.5px;
+          font-weight: 500;
+          color: #3b3f69;
+          transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .benefit-tag:hover {
+          border-color: rgba(202,18,84,0.3);
+          box-shadow: 0 4px 16px rgba(202,18,84,0.07);
+        }
+
+        /* ── Locations ── */
+        .locations-section {
+          padding: 96px 0;
+          background: #fff;
+          position: relative;
+        }
+        .locations-section::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, #e8e9f0 30%, #e8e9f0 70%, transparent);
+        }
+        .location-card {
+          padding: 36px 32px;
+          background: #fff;
+          border-radius: 24px;
+          border: 1.5px solid #f0f0f5;
+          text-align: left;
+          transition: all 0.3s;
+          position: relative;
+          overflow: hidden;
+        }
+        .location-card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #ca1254, #e84d8a);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        .location-card:hover {
+          box-shadow: 0 20px 48px rgba(59,63,105,0.1);
+          border-color: transparent;
+          transform: translateY(-4px);
+        }
+        .location-card:hover::before { opacity: 1; }
+        .location-icon-wrap {
+          width: 48px;
+          height: 48px;
+          border-radius: 14px;
+          background: rgba(202,18,84,0.08);
+          color: #ca1254;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px;
+          transition: background 0.3s;
+        }
+        .location-card:hover .location-icon-wrap {
+          background: #ca1254;
+          color: #fff;
+        }
+
+        /* ── Steps / Process ── */
+        .steps-section {
+          padding: 96px 0;
+          background: linear-gradient(160deg, #f9f5f7 0%, #f5f6fa 100%);
+          position: relative;
+          overflow: hidden;
+        }
+        .steps-section::before {
+          content: 'PATH';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 260px;
+          font-weight: 700;
+          color: rgba(59,63,105,0.03);
+          pointer-events: none;
+          white-space: nowrap;
+          letter-spacing: 0.15em;
+        }
+        .step-card {
+          background: #fff;
+          border-radius: 24px;
+          padding: 36px 30px;
+          position: relative;
+          border: 1.5px solid transparent;
+          transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+          overflow: hidden;
+        }
+        .step-card:hover {
+          box-shadow: 0 20px 48px rgba(59,63,105,0.12);
+          border-color: rgba(202,18,84,0.15);
+          transform: translateY(-4px);
+        }
+        .step-bg-num {
+          position: absolute;
+          bottom: -10px; right: 12px;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 100px;
+          font-weight: 700;
+          line-height: 1;
+          color: #ca1254;
+          opacity: 0.05;
+          pointer-events: none;
+          user-select: none;
+        }
+        .step-badge {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 10px;
+          background: linear-gradient(135deg, #ca1254, #e84d8a);
+          color: #fff;
+          font-size: 12px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          letter-spacing: 0.03em;
+        }
+
+        /* ── Advantages ── */
+        .advantages-section {
+          padding: 96px 0;
+          background: #fff;
+          position: relative;
+        }
+        .advantages-section::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, #e8e9f0 30%, #e8e9f0 70%, transparent);
+        }
+        .advantage-card {
+          padding: 36px;
+          background: #fff;
+          border-radius: 24px;
+          border: 1.5px solid #f0f0f5;
+          transition: all 0.3s;
+          position: relative;
+          overflow: hidden;
+        }
+        .advantage-card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; bottom: 0;
+          width: 3px;
+          background: linear-gradient(180deg, #ca1254, #e84d8a);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        .advantage-card:hover {
+          box-shadow: 0 16px 48px rgba(59,63,105,0.1);
+          border-color: rgba(202,18,84,0.18);
+          transform: translateY(-2px);
+        }
+        .advantage-card:hover::before { opacity: 1; }
+
+        /* ── Inline CTA ── */
+        .inline-cta {
+          padding: 64px 0;
+          background: #fff;
+        }
+        .cta-box {
+          background: #3b3f69;
+          border-radius: 28px;
+          padding: 56px 48px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        .cta-box::before {
+          content: '';
+          position: absolute;
+          top: -80px; right: -80px;
+          width: 320px; height: 320px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(202,18,84,0.18) 0%, transparent 65%);
+          pointer-events: none;
+        }
+        .cta-box::after {
+          content: '';
+          position: absolute;
+          bottom: -60px; left: -60px;
+          width: 240px; height: 240px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(202,18,84,0.1) 0%, transparent 65%);
+          pointer-events: none;
+        }
+        .cta-btn-primary {
+          display: inline-block;
+          padding: 14px 32px;
+          border-radius: 12px;
+          background: #ca1254;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 700;
+          text-decoration: none;
+          letter-spacing: 0.02em;
+          transition: opacity 0.2s, transform 0.2s;
+        }
+        .cta-btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+        .cta-btn-secondary {
+          display: inline-block;
+          padding: 14px 32px;
+          border-radius: 12px;
+          background: rgba(255,255,255,0.1);
+          border: 1.5px solid rgba(255,255,255,0.2);
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          text-decoration: none;
+          letter-spacing: 0.02em;
+          transition: background 0.2s, transform 0.2s;
+        }
+        .cta-btn-secondary:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
+      `}</style>
+
+      <div className="bc-page">
+        <ServiceHero
+          badge="Pathology Services"
+          heading="Blood Collection Services"
+          subtext="Convenient and professional blood collection delivered to your location."
+          ctaLabel="Enquire Now"
+          ctaHref="/contact"
+          secondaryCtaLabel="Book Now"
+          secondaryCtaHref="/booking"
+        />
+
+        {/* ── About / Image ── */}
+        <section className="about-section">
+          <div className="container">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+
+              {/* Text — left side this time */}
+              <div>
+                <div className="eyebrow" style={{ color: '#ca1254' }}>
+                  <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                  Professional Pathology
+                  <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                </div>
+                <h2 className="section-title" style={{ fontSize: 'clamp(36px, 4vw, 52px)', marginBottom: '24px' }}>
+                  Accurate Testing,{' '}
+                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Home Convenience</em>
+                </h2>
+                <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
+                  Designed for patients who prefer testing outside clinical environments — every sample handled with clinical precision and transported immediately to accredited laboratories.
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                  {benefits.map((b) => (
+                    <div key={b} className="benefit-tag">
+                      <CheckIcon />
+                      <span>{b}</span>
                     </div>
-                    <span className="text-sm font-medium text-[#3b3f69]">{b}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="relative">
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl skew-x-1 border border-gray-100">
-                <Image 
-                  src="/images/services/blood-collection.png" 
-                  alt="Professional Blood Collection" 
-                  width={800} 
-                  height={1000}
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Service Locations/Types */}
-      <section className="py-20 bg-white border-t border-gray-50">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#3b3f69]">Services Included</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {locations.map((item) => (
-              <div key={item.title} className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center group">
-                 <div className="w-16 h-16 rounded-2xl bg-[#3b3f69]/5 flex items-center justify-center mx-auto mb-6 group-hover:bg-[#ca1254] group-hover:text-white transition-colors duration-500 text-[#3b3f69]">
-                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                 </div>
-                 <h3 className="text-lg font-bold text-[#3b3f69] mb-2">{item.title}</h3>
-                 <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
+              {/* Image — right side */}
+              <div style={{ position: 'relative' }}>
+                <div className="about-image-wrap">
+                  <Image
+                    src="/images/services/blood-collection.png"
+                    alt="Professional Blood Collection"
+                    width={800}
+                    height={1000}
+                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover', transition: 'transform 0.7s' }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                  />
+                </div>
+                <div className="stat-pill">
+                  <div className="stat-num">AHPRA</div>
+                  <div className="stat-label">Registered nurses only</div>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Process Section */}
-      <section className="py-20 bg-white border-t border-gray-50">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-[#ca1254]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Process</span>
-              <div className="w-8 h-px bg-[#ca1254]" />
             </div>
-            <h2 className="text-4xl font-bold text-[#3b3f69]">Simple Four-Step Journey</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((item) => (
-              <div key={item.step} className="flex flex-col items-center text-center group">
-                <div className="text-4xl font-bold text-[#ca1254]/20 font-mono mb-4 group-hover:text-[#ca1254] transition-colors">{item.step}</div>
-                <h3 className="text-lg font-bold text-[#3b3f69] mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-white border-t border-gray-50">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-[#ca1254]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">Mobile Advantages</span>
-              <div className="w-8 h-px bg-[#ca1254]" />
+        {/* ── Locations / Services Included ── */}
+        <section className="locations-section">
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+              <div className="eyebrow" style={{ color: '#3b3f69', justifyContent: 'center' }}>
+                <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
+                Services Included
+                <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
+              </div>
+              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
+                Where We Collect
+              </h2>
             </div>
-            <h2 className="text-4xl font-bold text-[#3b3f69]">Why Choose Mobile Collection?</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+              {locations.map((item) => (
+                <div key={item.title} className="location-card">
+                  <div className="location-icon-wrap">{item.icon}</div>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '8px' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.65', margin: 0 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {advantages.map((item) => (
-              <div key={item.title} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-[#ca1254]/20 transition-all">
-                <h3 className="font-bold text-[#3b3f69] mb-3 text-lg flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-rose" />
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <ServiceCTA
-        heading="Book a Blood Collection Service"
-        text="Book a convenient blood collection service today or enquire with our team."
-        ctaLabel="Book Now"
-        ctaHref="/booking"
-        secondaryCtaLabel="Enquire Now"
-        secondaryCtaHref="/contact"
-      />
+        {/* ── Process Steps ── */}
+        <section className="steps-section">
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+              <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                The Process
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+              </div>
+              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
+                Simple Four-Step Journey
+              </h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+              {steps.map((item) => (
+                <div key={item.step} className="step-card">
+                  <div className="step-bg-num">{item.step}</div>
+                  <div className="step-badge">{item.step}</div>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', position: 'relative', zIndex: 1 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.65', margin: 0, position: 'relative', zIndex: 1 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Advantages ── */}
+        <section className="advantages-section">
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+              <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                Mobile Advantages
+                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+              </div>
+              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
+                Why Choose Mobile Collection?
+              </h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+              {advantages.map((item) => (
+                <div key={item.title} className="advantage-card">
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span style={{ display: 'block', width: 6, height: 6, borderRadius: '50%', background: '#ca1254', flexShrink: 0 }} />
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.7', margin: 0, paddingLeft: '16px' }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+
+            <div className="
+      rounded-2xl sm:rounded-3xl
+      bg-[#f4f5fa]
+      px-6 sm:px-10 lg:px-14
+      py-8 sm:py-10
+      flex flex-col lg:flex-row items-center justify-between gap-6
+    ">
+
+              {/* LEFT CONTENT */}
+              <div className="text-center lg:text-left max-w-xl">
+                <p className="text-[11px] tracking-[0.3em] uppercase text-[#3b3f69]/60 mb-2">
+                  Quick Booking
+                </p>
+
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#3b3f69] mb-2">
+                  Book a Blood Collection Service
+                </h2>
+
+                <p className="text-sm sm:text-base text-[#3b3f69]/70">
+                  Book a convenient blood collection today or enquire with our team.
+                </p>
+              </div>
+
+              {/* RIGHT ACTIONS */}
+              <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-3">
+
+                <a
+                  href="/booking"
+                  className="
+            w-full sm:w-auto
+            px-6 py-3
+            rounded-lg
+            bg-[#ca1254]
+            text-white
+            font-semibold
+            text-sm
+            text-center
+            hover:opacity-90
+            transition
+          "
+                >
+                  Book Now
+                </a>
+
+                <a
+                  href="/contact"
+                  className="
+            w-full sm:w-auto
+            px-6 py-3
+            rounded-lg
+            bg-white
+            text-[#3b3f69]
+            font-semibold
+            text-sm
+            text-center
+            hover:opacity-90
+            transition
+          "
+                >
+                  Enquire Now
+                </a>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
     </main>
   );
 }

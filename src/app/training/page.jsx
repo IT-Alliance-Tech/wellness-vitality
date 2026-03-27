@@ -459,15 +459,15 @@ const TrainingPage = () => {
         {/* ── CTA ── */}
         <section className="py-16 md:py-24 bg-white relative overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            
+
             <div className="relative overflow-hidden rounded-2xl border border-[#3b3f69]/20 bg-[#3b3f69]/5 backdrop-blur-sm px-8 py-10 md:px-12 md:py-14 shadow-[0_20px_50px_rgba(59,63,105,0.15)]">
-              
+
               {/* Subtle glows (matching Newsletter style) */}
               <div className="absolute -top-16 -right-16 w-64 h-64 bg-[#ca1254]/10 rounded-full blur-3xl" />
               <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#3b3f69]/10 rounded-full blur-3xl" />
 
               <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-                
+
                 {/* LEFT CONTENT */}
                 <div className="max-w-xl text-center lg:text-left">
                   <p className="text-[#ca1254] text-[11px] font-bold uppercase tracking-[0.25em] mb-4">
@@ -478,7 +478,7 @@ const TrainingPage = () => {
                     for Your <span className="text-[#ca1254]">Organisation</span>
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base mb-8 max-w-lg leading-relaxed">
-                    We design flexible training programs based on your organisation’s 
+                    We design flexible training programs based on your organisation’s
                     needs, environment, and compliance requirements.
                   </p>
                   <a href="/contact" className="inline-flex items-center gap-2 bg-[#ca1254] text-white px-10 py-4 rounded font-semibold hover:bg-[#a30f44] transition-all hover:shadow-lg hover:-translate-y-0.5">
