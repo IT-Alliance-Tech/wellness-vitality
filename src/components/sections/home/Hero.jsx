@@ -57,7 +57,7 @@ const Hero = () => {
               className="text-[16px] sm:text-[17px] md:text-[18px] mb-8 max-w-lg leading-relaxed"
               style={{ color: "rgba(255, 255, 255, 0.85)" }}
             >
-             Mobile IV vitamin infusions and wellness services delivered by registered nurses.
+              Mobile IV vitamin infusions and wellness services delivered by registered nurses.
             </p>
 
             {/* BUTTONS */}
@@ -120,9 +120,9 @@ const Hero = () => {
       </div>
 
       {/* RIGHT IMAGE */}
-      <div className="absolute right-[8%] bottom-0 w-[38%] h-[85%] hidden lg:flex items-end justify-end pointer-events-none">
+      <div className="absolute right-[0%] bottom-5 w-[50%] h-[95%] hidden lg:flex items-end justify-end pointer-events-none">
         <img
-          src="/herowomen.png"
+          src="/heroim.png"
           alt="Healthcare Professionals"
           className="w-full h-auto max-h-full object-contain object-bottom object-right"
         />
