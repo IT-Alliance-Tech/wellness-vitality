@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
+import FeatureCards from '@/components/ui/FeatureCards';
 
 const services = [
   { name: 'Workplace Health Checks', desc: 'Comprehensive health assessments for employees.' },
@@ -485,34 +486,20 @@ export default function CorporateHealthPage() {
           </div>
         </section>
 
-        {/* ── Org Benefits ── */}
-        <section className="ch-benefits-section">
-          <div className="ch-container">
-            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-              <div className="ch-eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
-                <span className="ch-eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-                Why It Matters
-                <span className="ch-eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-              </div>
-              <h2 className="ch-section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
-                Organisational Benefits
-              </h2>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
-              {benefits.map((b) => (
-                <div key={b.title} className="ch-benefit-card">
-                  <div className="ch-benefit-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#3b3f69', marginBottom: '8px' }}>{b.title}</h3>
-                  <p style={{ fontSize: '13px', color: '#6b7280', fontWeight: 300, lineHeight: '1.65', margin: 0 }}>{b.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ── Org Benefits — Feature Cards ── */}
+        <FeatureCards
+          heading="Organisational Benefits"
+          cards={benefits.map((b) => ({
+            title: b.title,
+            description: b.desc,
+            icon: (
+              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            ),
+          }))}
+          cols={4}
+        />
 
         {/* ── Partner Section ── */}
         <section className="ch-partner-section">
