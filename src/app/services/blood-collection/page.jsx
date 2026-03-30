@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
+import FeatureCards from '@/components/ui/FeatureCards';
 
 const steps = [
   { step: '01', title: 'Request Service', desc: 'Book online or call us with your pathology request details.' },
@@ -464,34 +465,16 @@ export default function BloodCollectionPage() {
           </div>
         </section>
 
-        {/* ── Locations / Services Included ── */}
-        <section className="locations-section">
-          <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-              <div className="eyebrow" style={{ color: '#3b3f69', justifyContent: 'center' }}>
-                <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
-                Services Included
-                <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
-              </div>
-              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
-                Where We Collect
-              </h2>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
-              {locations.map((item) => (
-                <div key={item.title} className="location-card">
-                  <div className="location-icon-wrap">{item.icon}</div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '8px' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.65', margin: 0 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ── Locations — Feature Cards ── */}
+        <FeatureCards
+          heading="Where We Collect"
+          cards={locations.map((item) => ({
+            title: item.title,
+            description: item.desc,
+            icon: <div className="w-10 h-10" style={{ color: '#ca1254' }}>{item.icon}</div>,
+          }))}
+          cols={4}
+        />
 
         {/* ── Process Steps ── */}
         <section className="steps-section">

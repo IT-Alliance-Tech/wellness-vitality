@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
+import FeatureCards from '@/components/ui/FeatureCards';
 
 const treatments = [
   { name: 'Immune Defence IV', price: '$220 – $260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
@@ -194,10 +195,10 @@ export default function IVInfusionsPage() {
           100% { transform: translateX(0); }
         }
         .marquee-left {
-          animation: marquee-left 40s linear infinite;
+          animation: marquee-left 100s linear infinite;
         }
         .marquee-right {
-          animation: marquee-right 40s linear infinite;
+          animation: marquee-right 100s linear infinite;
         }
         .marquee-left:hover,
         .marquee-right:hover {
@@ -595,58 +596,44 @@ export default function IVInfusionsPage() {
           </div>
         </section>
 
-        {/* ── Suitability ── */}
-        <section className="suitability-section">
-          <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-              <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
-                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-                Ideal For
-                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-              </div>
-              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
-                Is IV Therapy for You?
-              </h2>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              {suitability.map((item) => (
-                <div key={item.group} className="suit-card">
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ display: 'block', width: 6, height: 6, borderRadius: '50%', background: '#ca1254', flexShrink: 0 }} />
-                    {item.group}
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.7', margin: 0, paddingLeft: '16px' }}>
-                    {item.reason}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ── Suitability — Feature Cards ── */}
+        <FeatureCards
+          heading="Is IV Therapy for You?"
+          cards={suitability.map((item) => ({
+            title: item.group,
+            description: item.reason,
+            icon: (
+              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            ),
+          }))}
+          cols={4}
+        />
 
         <section className="py-14 sm:py-16 bg-white">
-  <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
 
-    <div className="bg-[#3b3f69] rounded-xl sm:rounded-2xl px-6 sm:px-10 py-6 sm:py-8 flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="bg-[#3b3f69] rounded-xl sm:rounded-2xl px-6 sm:px-10 py-6 sm:py-8 flex flex-col lg:flex-row items-center justify-between gap-6">
 
-      {/* LEFT CONTENT */}
-      <div className="text-center lg:text-left">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-1">
-          Ready to Book Your IV Infusion?
-        </h2>
+              {/* LEFT CONTENT */}
+              <div className="text-center lg:text-left">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-1">
+                  Ready to Book Your IV Infusion?
+                </h2>
 
-        <p className="text-sm sm:text-base text-white/80 max-w-xl">
-          Book your IV infusion through our secure booking system. Calendly booking. Afterpay payment.
-        </p>
-      </div>
+                <p className="text-sm sm:text-base text-white/80 max-w-xl">
+                  Book your IV infusion through our secure booking system. Calendly booking. Afterpay payment.
+                </p>
+              </div>
 
-      {/* RIGHT ACTIONS */}
-      <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+              {/* RIGHT ACTIONS */}
+              <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
 
-        {/* Primary */}
-        <a
-          href="/booking"
-          className="
+                {/* Primary */}
+                <a
+                  href="/booking"
+                  className="
             w-full sm:w-auto
             px-6 py-3
             rounded-md
@@ -658,14 +645,14 @@ export default function IVInfusionsPage() {
             hover:opacity-90
             transition
           "
-        >
-          Book IV Infusion
-        </a>
+                >
+                  Book IV Infusion
+                </a>
 
-        {/* Secondary */}
-        <a
-          href="/contact"
-          className="
+                {/* Secondary */}
+                <a
+                  href="/contact"
+                  className="
             w-full sm:w-auto
             px-6 py-3
             rounded-md
@@ -677,15 +664,15 @@ export default function IVInfusionsPage() {
             hover:opacity-90
             transition
           "
-        >
-          Enquire Now
-        </a>
+                >
+                  Enquire Now
+                </a>
 
-      </div>
+              </div>
 
-    </div>
-  </div>
-</section>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

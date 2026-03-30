@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
+import FeatureCards from '@/components/ui/FeatureCards';
 
 const vitaminServices = [
   'B12 injections',
@@ -506,50 +507,20 @@ export default function PreventativeHealthPage() {
           </div>
         </section>
 
-        {/* ── Wellness Focus Section ── */}
-        <section className="focus-section">
-          <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-              <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
-                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-                Wellness Strategy
-                <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-              </div>
-              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
-                Our Approach to Health
-              </h2>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
-              {wellnessFocus.map((item, i) => (
-                <div key={item.title} className="focus-card">
-                  <div className="focus-icon-wrap">
-                    {i === 0 && (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="3" /><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
-                      </svg>
-                    )}
-                    {i === 1 && (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                      </svg>
-                    )}
-                    {i === 2 && (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
-                      </svg>
-                    )}
-                  </div>
-                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.7', margin: 0 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ── Wellness Focus — Feature Cards ── */}
+        <FeatureCards
+          heading="Our Approach to Health"
+          cards={wellnessFocus.map((item, i) => ({
+            title: item.title,
+            description: item.desc,
+            icon: [
+              <svg key="0" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><circle cx="12" cy="12" r="3" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" /></svg>,
+              <svg key="1" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
+              <svg key="2" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><path strokeLinecap="round" strokeLinejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+            ][i],
+          }))}
+          cols={3}
+        />
 
         <section className="py-16 sm:py-20 bg-white">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">

@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
+import FeatureCards from '@/components/ui/FeatureCards';
 
 const services = [
   'Comprehensive wellness checks',
@@ -275,26 +276,22 @@ function ServicesSection() {
           ))}
         </div>
 
-        {/* BENEFITS */}
-        <div className="benefits-strip">
-          <div className="benefits-header">
-            <div className="benefits-eyebrow">Why It Matters</div>
-            <h3 className="benefits-title">Key Benefits</h3>
-          </div>
-          <div className="benefits-grid">
-            {healthAssessmentBenefits.map((b, i) => (
-              <div className="benefit-item" key={b.title}>
-                <div className="benefit-icon">
-                  {i === 0 && <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>}
-                  {i === 1 && <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>}
-                  {i === 2 && <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" /></svg>}
-                  {i === 3 && <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>}
-                </div>
-                <div className="benefit-title">{b.title}</div>
-                <div className="benefit-desc">{b.desc}</div>
-              </div>
-            ))}
-          </div>
+        {/* BENEFITS — Feature Cards Pattern */}
+        <div style={{ margin: '0 -24px' }}>
+          <FeatureCards
+            heading="What Makes Our Assessments Different"
+            cards={healthAssessmentBenefits.map((b, i) => ({
+              title: b.title,
+              description: b.desc,
+              icon: [
+                <svg key="0" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 7v5l3 3" /></svg>,
+                <svg key="1" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
+                <svg key="2" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><path strokeLinecap="round" strokeLinejoin="round" d="M9 11l3 3L22 4" /><path strokeLinecap="round" strokeLinejoin="round" d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" /></svg>,
+                <svg key="3" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><path strokeLinecap="round" strokeLinejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" strokeLinecap="round" strokeLinejoin="round" /><path strokeLinecap="round" strokeLinejoin="round" d="M23 21v-2a4 4 0 00-3-3.87" /><path strokeLinecap="round" strokeLinejoin="round" d="M16 3.13a4 4 0 010 7.75" /></svg>,
+              ][i],
+            }))}
+            cols={4}
+          />
         </div>
       </div>
     </section>

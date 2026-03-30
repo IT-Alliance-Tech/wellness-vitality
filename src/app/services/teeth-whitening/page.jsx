@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
+import FeatureCards from '@/components/ui/FeatureCards';
 
 const benefits = [
   { title: 'Brighter, Whiter Smile', icon: '✨', desc: 'Achieve a noticeably brighter and more confident smile.' },
@@ -447,50 +448,20 @@ export default function TeethWhiteningPage() {
           </div>
         </section>
 
-        {/* ── Suitability Section ── */}
-        <section className="tw-suit-section">
-          <div className="tw-container">
-            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-              <div className="tw-eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
-                <span className="tw-eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-                Who Is This For
-                <span className="tw-eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-              </div>
-              <h2 className="tw-section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
-                The Perfect Smile for You
-              </h2>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
-              {suitability.map((item, i) => {
-                const icons = [
-                  // Special occasions — sparkle
-                  <svg key="0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 3v1m0 16v1M4.22 4.22l.7.7m13.16 13.16.7.7M3 12h1m16 0h1M4.22 19.78l.7-.7m13.16-13.16.7-.7M12 8a4 4 0 100 8 4 4 0 000-8z" />
-                  </svg>,
-                  // Coffee — cup
-                  <svg key="1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 8h1a4 4 0 010 8h-1" /><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" /><line x1="6" y1="1" x2="6" y2="4" /><line x1="10" y1="1" x2="10" y2="4" /><line x1="14" y1="1" x2="14" y2="4" />
-                  </svg>,
-                  // Confidence — star
-                  <svg key="2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>,
-                ];
-                return (
-                  <div key={item.title} className="tw-suit-card">
-                    <div className="tw-suit-icon">{icons[i]}</div>
-                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px' }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: '13.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.7', margin: 0 }}>
-                      {item.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        {/* ── Suitability — Feature Cards ── */}
+        <FeatureCards
+          heading="The Perfect Smile for You"
+          cards={suitability.map((item, i) => ({
+            title: item.title,
+            description: item.desc,
+            icon: [
+              <svg key="0" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1M4.22 4.22l.7.7m13.16 13.16.7.7M3 12h1m16 0h1M4.22 19.78l.7-.7m13.16-13.16.7-.7M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>,
+              <svg key="1" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><path strokeLinecap="round" strokeLinejoin="round" d="M18 8h1a4 4 0 010 8h-1" /><path strokeLinecap="round" strokeLinejoin="round" d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" /></svg>,
+              <svg key="2" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}><path strokeLinecap="round" strokeLinejoin="round" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>,
+            ][i],
+          }))}
+          cols={3}
+        />
 
         {/* ── CTA Banner ── */}
         <section style={{ padding: '64px 0', background: '#fff' }}>

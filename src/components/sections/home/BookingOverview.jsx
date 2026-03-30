@@ -50,9 +50,9 @@ const BookingOverview = () => {
               ))}
             </div>
 
-           <a
-  href="/booking"
-  className="
+            <a
+              href="/booking"
+              className="
     inline-flex items-center justify-center
     px-7 py-2.5
     text-[rgb(202,18,84)]
@@ -64,16 +64,16 @@ const BookingOverview = () => {
     hover:bg-[rgb(202,18,84)]
     hover:text-white
   "
->
-  Book Appointment
-</a>
+            >
+              Book Appointment
+            </a>
           </div>
 
           {/* RIGHT IMAGE */}
           <div className="lg:w-1/2 relative h-[240px] sm:h-[320px] lg:h-auto">
 
             <img
-              src="/booking_overview.png"
+              src="/about.png"
               alt="Booking"
               className="w-full h-full object-cover"
             />

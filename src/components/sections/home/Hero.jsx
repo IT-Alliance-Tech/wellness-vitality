@@ -43,13 +43,9 @@ const Hero = () => {
 
             {/* HEADING */}
             <h1
-              className="text-4xl sm:text-4xl md:text-6xl font-medium leading-[1.1] mb-6"
-              style={{ color: "#FFFFFF" }}
+              className="text-[3.5rem] sm:text-[4rem] md:text-[3.3rem] font-medium leading-[1.1] mb-6 !text-white"
             >
-              Welcome to Wellness {" "}
-              <span style={{ color: "rgb(202,18,84)" }}>
-                Vitality Australia
-              </span>
+              Mobile IV Therapy & Clinical Services in Sydney
             </h1>
 
             {/* PARAGRAPH */}
@@ -87,7 +83,6 @@ const Hero = () => {
 
               {[
                 "REGISTERED NURSES",
-                "TGA APPROVED PRODUCTS",
                 "MOBILE HEALTHCARE",
               ].map((benefit) => (
                 <div key={benefit} className="flex items-center gap-2">
@@ -120,7 +115,7 @@ const Hero = () => {
       </div>
 
       {/* RIGHT IMAGE */}
-      <div className="absolute right-[0%] bottom-5 w-[50%] h-[95%] hidden lg:flex items-end justify-end pointer-events-none">
+      <div className="absolute right-[7%] bottom-3 w-[50%] h-[95%] hidden lg:flex items-end justify-end pointer-events-none">
         <img
           src="/heroim.png"
           alt="Healthcare Professionals"
