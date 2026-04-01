@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
+import HeroImage from "../../../../public/heroim.png";
 
 const Hero = () => {
   return (
@@ -116,10 +118,13 @@ const Hero = () => {
 
       {/* RIGHT IMAGE */}
       <div className="absolute right-[7%] bottom-3 w-[50%] h-[95%] hidden lg:flex items-end justify-end pointer-events-none">
-        <img
-          src="/heroim.png"
+        <Image
+          src={HeroImage}
           alt="Healthcare Professionals"
           className="w-full h-auto max-h-full object-contain object-bottom object-right"
+          width={1000}
+          height={1000}
+          priority
         />
       </div>
     </section>

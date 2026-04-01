@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
+import PreventativeHealthImage from '../../../../public/images/services/preventative-health.png';
 
 const vitaminServices = [
   'B12 injections',
@@ -368,7 +369,7 @@ export default function PreventativeHealthPage() {
               <div style={{ position: 'relative' }}>
                 <div className="about-image-wrap">
                   <Image
-                    src="/images/services/preventative-health.png"
+                    src={PreventativeHealthImage}
                     alt="Wellness and Vitamin Support"
                     width={800}
                     height={1000}

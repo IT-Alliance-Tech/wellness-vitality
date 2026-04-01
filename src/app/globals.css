@@ -24,8 +24,8 @@
   --color-indigo: #3b3f69;
   --color-rose: #ca1254;
 
-  --font-sans: var(--font-mackinac), Georgia, 'Times New Roman', serif;
-  --font-mackinac: var(--font-mackinac), Georgia, 'Times New Roman', serif;
+  --font-sans: "Mackinac", serif;
+  --font-mackinac: "Mackinac", serif;
 }
 
 /* ❌ Removed gradients / color-mix */
@@ -43,7 +43,7 @@ body {
 body {
   background: var(--background);
   color: var(--text-main);
-  font-family: var(--font-mackinac), Georgia, 'Times New Roman', serif;
+  font-family: "Mackinac", serif;
 }
 
 main {
@@ -57,7 +57,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-mackinac), Georgia, 'Times New Roman', serif;
+  font-family: "Mackinac", serif;
   color: var(--primary);
   font-weight: 700;
 }

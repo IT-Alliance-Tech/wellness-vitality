@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
+import AgedCareImage from '../../../../public/images/services/aged-care.png';
 
 const services = [
   'Medication administration',
@@ -379,7 +380,7 @@ export default function AgedCareNDISPage() {
               <div style={{ position: 'relative' }}>
                 <div className="about-image-wrap">
                   <Image
-                    src="/images/services/aged-care.png"
+                    src={AgedCareImage}
                     alt="Compassionate Nursing Care"
                     width={800}
                     height={1000}

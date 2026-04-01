@@ -5,6 +5,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
+import CorporateHealthImage from '../../../../public/images/services/corporate-health.png';
 
 const services = [
   { name: 'Workplace Health Checks', desc: 'Comprehensive health assessments for employees.' },
@@ -408,7 +409,7 @@ export default function CorporateHealthPage() {
               <div style={{ position: 'relative' }}>
                 <div className="ch-about-image-wrap">
                   <Image
-                    src="/images/services/corporate-health.png"
+                    src={CorporateHealthImage}
                     alt="Corporate Workplace Health"
                     width={800}
                     height={1000}
