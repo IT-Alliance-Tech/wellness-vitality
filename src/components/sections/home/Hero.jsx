@@ -8,10 +8,10 @@ import HeroImage from "../../../../public/heroim.png";
 const Hero = () => {
   return (
     <section
-      className="relative pt-29 pb-20 overflow-hidden"
+      className="relative pt-40 pb-20 overflow-hidden"
       style={{ backgroundColor: "rgb(59, 63, 105)" }}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 pt-8 pb-12 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 pt-4 pb-8 relative z-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 

@@ -91,7 +91,7 @@ const TrainingPage = () => {
     <div className="bg-[#f5f4f0] text-[#3b3f69] overflow-x-hidden min-h-screen">
 
       {/* ── HERO ── */}
-      <section className="relative pt-32 md:pt-40 pb-20 md:pb-24 bg-[#3b3f69] overflow-hidden">
+      <section className="relative pt-32 md:pt-30 pb-16 md:pb-24 bg-[#3b3f69] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
         </div>

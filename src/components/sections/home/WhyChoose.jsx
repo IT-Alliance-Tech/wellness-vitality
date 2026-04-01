@@ -15,7 +15,7 @@ const cards = [
     subtitle: 'Qualified & Certified Care',
     description: 'Every nurse meets strict Australian healthcare registration standards.',
     image: ProfessionalCare,
-    link: '/about/ahpra',
+    link: '/about',
     color: 'rgb(211,107,124)',
   },
   {
@@ -23,7 +23,7 @@ const cards = [
     subtitle: 'Tailored Treatments',
     description: 'Every treatment is tailored based on a full clinical assessment.',
     image: PersonalisedCare,
-    link: '/about/personalised-care',
+    link: '/about',
     color: 'rgb(160,166,205)',
   },
   {
@@ -31,7 +31,7 @@ const cards = [
     subtitle: 'Care At Your Doorstep',
     description: 'We bring healthcare to your home, workplace or care facility.',
     image: MobileCare,
-    link: '/about/mobile-healthcare',
+    link: '/about',
     color: 'rgb(102,135,125)',
   },
   {
@@ -39,7 +39,7 @@ const cards = [
     subtitle: 'Dedicated Support Services',
     description: 'Dedicated care for aged care residents and NDIS participants.',
     image: NdisCare,
-    link: '/about/ndis-care',
+    link: '/about',
     color: 'rgb(180,111,123)',
   },
 ];

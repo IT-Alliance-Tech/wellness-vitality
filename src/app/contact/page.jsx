@@ -13,21 +13,21 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-[#3b3f69] overflow-hidden">
+      <section className="relative pt-40 pb-20 bg-[#3b3f69] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
         </div>
-        
+
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#ca1254] animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] !text-white">Contact Team</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold !text-white mb-8 leading-[1.1] tracking-tight">
             Have a Question?
           </h1>
-          
+
           <p className="text-xl !text-white max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light mb-8">
             Our clinical team is here to help with any enquiries regarding our treatments or mobile services.
           </p>
@@ -42,7 +42,7 @@ export default function ContactPage() {
       <section className="py-20 bg-white">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            
+
             {/* Contact Information & WhatsApp */}
             <div className="space-y-12">
               <div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
                 <p className="text-gray-500 mb-8 leading-relaxed max-w-md">
                   If you would like to learn more about our services or request further information, please contact our team via the form or reach out through our clinical email.
                 </p>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-center gap-4 group">
                     <div className="w-12 h-12 rounded-full bg-indigo/5 flex items-center justify-center text-indigo group-hover:bg-rose group-hover:text-white transition-all">
@@ -80,9 +80,9 @@ export default function ContactPage() {
                 <p className="text-gray-500 text-sm mb-8 leading-relaxed">
                   Fast enquire about treatments, mobile availability, or follow-up on your booking via WhatsApp chat.
                 </p>
-                <Button 
-                  href="https://wa.me/yourwhatsappnumber" 
-                  variant="primary" 
+                <Button
+                  href="https://wa.me/yourwhatsappnumber"
+                  variant="primary"
                   className="w-full bg-[#25D366] hover:bg-[#128C7E] border-none shadow-lg shadow-green-500/20"
                 >
                   Start Quick Enquiry
@@ -93,7 +93,7 @@ export default function ContactPage() {
             {/* Contact Form Card */}
             <div className="bg-white p-12 pb-14 rounded-[3rem] border border-gray-100 shadow-2xl shadow-indigo/5 relative overflow-visible">
               <div className="absolute top-0 left-10 w-20 h-2 bg-rose rounded-b-full" />
-              
+
               {!isSubmitted ? (
                 <>
                   <h2 className="text-2xl font-bold text-indigo mb-8">Send an Enquiry</h2>
@@ -132,8 +132,8 @@ export default function ContactPage() {
                   <p className="text-gray-500 mb-10 leading-relaxed">
                     Thank you for reaching out. Our clinical team has received your enquiry and will get back to you shortly.
                   </p>
-                  <Button 
-                    variant="ghost" 
+                  <Button
+                    variant="ghost"
                     onClick={() => setIsSubmitted(false)}
                     className="text-indigo font-bold hover:text-rose transition-all"
                   >

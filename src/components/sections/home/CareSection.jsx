@@ -101,14 +101,14 @@ const CareSection = () => {
                     {features.map((item, index) => (
                         <div
                             key={index}
-                            className="p-10 rounded-xl"
+                            className="p-8 rounded-xl"
                             style={{ backgroundColor: '#f5f5f5' }}
                         >
-                            <div className="mb-8" style={{ color: 'rgb(202,18,84)' }}>
+                            <div className="mb-6" style={{ color: 'rgb(202,18,84)' }}>
                                 {item.icon}
                             </div>
 
-                            <h3 className="text-xl font-medium mb-4" style={{ color: 'rgb(59,63,105)' }}>
+                            <h3 className="text-xl font-medium mb-3" style={{ color: 'rgb(59,63,105)' }}>
                                 {item.title}
                             </h3>
 

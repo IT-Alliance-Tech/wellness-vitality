@@ -9,10 +9,12 @@ const ServiceHero = ({
   ctaHref = '/booking',
   secondaryCtaLabel = 'Enquire Now',
   secondaryCtaHref = '/contact',
+  tertiaryCtaLabel,
+  tertiaryCtaHref,
   accentColor = 'from-indigo via-[#2d2b55] to-[#1e1c3f]',
 }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 bg-[#3b3f69] overflow-hidden">
+    <section className="relative min-h-[75vh] flex items-center pt-40 pb-20 bg-[#3b3f69] overflow-hidden">
       {/* Decorative blurs removed for strict brand compliance */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
@@ -42,6 +44,19 @@ const ServiceHero = ({
             <Button href={secondaryCtaHref} variant="outlineWhite" className="px-8 py-3.5 text-base">
               {secondaryCtaLabel}
             </Button>
+          )}
+          {tertiaryCtaLabel && tertiaryCtaHref && (
+            <a
+              href={tertiaryCtaHref}
+              className="inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold text-white/80 hover:text-white border border-white/20 hover:border-white/50 rounded-md transition-all duration-200 hover:bg-white/5"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+              {tertiaryCtaLabel}
+            </a>
           )}
         </div>
       </div>

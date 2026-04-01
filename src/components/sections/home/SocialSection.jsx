@@ -98,7 +98,7 @@ const socialLinks = [
 const SocialLoopSection = () => {
     return (
         <section
-            className="py-14 md:py-20 overflow-hidden relative"
+            className="py-12 md:py-16 overflow-hidden relative"
             style={{
                 background:
                     "linear-gradient(160deg, #f8f7fc 0%, #fdf5f8 60%, #f5f4f9 100%)",

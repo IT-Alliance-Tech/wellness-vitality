@@ -1,10 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
 
 const MobileServices = () => {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-14 sm:py-20">
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="rounded-[2.5rem] bg-zinc-900 py-16 px-8 sm:px-16 lg:py-24 text-center overflow-hidden relative">
+        <div className="rounded-[2.5rem] bg-zinc-900 py-12 px-8 sm:px-16 lg:py-16 text-center overflow-hidden relative">
           <div className="absolute inset-0 bg-blue-600/10" />
           <div className="relative z-10 mx-auto max-w-3xl">
             <h2 className="text-blue-400 font-semibold tracking-wide uppercase">Healthcare at Your Doorstep</h2>
