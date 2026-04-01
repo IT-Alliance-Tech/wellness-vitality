@@ -3,7 +3,7 @@ import Button from '@/components/ui/Button';
 
 const BookingCTA = () => {
   return (
-    <section id="booking" className="py-20 bg-[#3b3f69] relative overflow-hidden">
+    <section id="booking" className="py-14 bg-[#3b3f69] relative overflow-hidden">
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center relative">
 
         {/* Subtle brand accents */}
@@ -24,7 +24,7 @@ const BookingCTA = () => {
           </h2>
 
           {/* Text */}
-          <p className="text-base md:text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-base md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
             Book your session with qualified healthcare professionals and experience
             personalised, patient-centred care delivered to you.
           </p>

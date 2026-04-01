@@ -7,7 +7,7 @@ export default function BookingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 md:pt-48 pb-20 md:pb-24 bg-[#3b3f69] overflow-hidden">
+      <section className="relative pt-40 pb-20 bg-[#3b3f69] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
         </div>

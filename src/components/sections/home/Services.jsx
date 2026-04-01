@@ -4,11 +4,11 @@ import React from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 
-import IvInfusionImage from "../../../../public/images/services/iv-infusion.png";
-import HealthAssessmentImage from "../../../../public/images/services/health-assessment.png";
+import IvInfusionImage from "../../../../public/images/services/IV Nutrient Therapy.png";
+import HealthAssessmentImage from "../../../../public/images/services/Healthcare.png";
 import TeethWhiteningImage from "../../../../public/images/services/teeth-whitening.png";
-import AgedCareImage from "../../../../public/images/services/aged-care.png";
-import BloodCollectionImage from "../../../../public/images/services/blood-collection.png";
+import AgedCareImage from "../../../../public/images/services/agedcare.png";
+import BloodCollectionImage from "../../../../public/images/services/bloodcollection.png";
 import CorporateHealthImage from "../../../../public/images/services/corporate-health.png";
 
 const services = [

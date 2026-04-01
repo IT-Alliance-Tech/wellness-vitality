@@ -14,7 +14,7 @@ const ServiceHero = ({
   accentColor = 'from-indigo via-[#2d2b55] to-[#1e1c3f]',
 }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 bg-[#3b3f69] overflow-hidden">
+    <section className="relative min-h-[75vh] flex items-center pt-40 pb-20 bg-[#3b3f69] overflow-hidden">
       {/* Decorative blurs removed for strict brand compliance */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
