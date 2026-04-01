@@ -9,6 +9,8 @@ const ServiceHero = ({
   ctaHref = '/booking',
   secondaryCtaLabel = 'Enquire Now',
   secondaryCtaHref = '/contact',
+  tertiaryCtaLabel,
+  tertiaryCtaHref,
   accentColor = 'from-indigo via-[#2d2b55] to-[#1e1c3f]',
 }) => {
   return (
@@ -42,6 +44,19 @@ const ServiceHero = ({
             <Button href={secondaryCtaHref} variant="outlineWhite" className="px-8 py-3.5 text-base">
               {secondaryCtaLabel}
             </Button>
+          )}
+          {tertiaryCtaLabel && tertiaryCtaHref && (
+            <a
+              href={tertiaryCtaHref}
+              className="inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold text-white/80 hover:text-white border border-white/20 hover:border-white/50 rounded-md transition-all duration-200 hover:bg-white/5"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+              {tertiaryCtaLabel}
+            </a>
           )}
         </div>
       </div>

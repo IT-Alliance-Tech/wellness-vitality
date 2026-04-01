@@ -101,7 +101,6 @@ export default function IVInfusionsPage() {
           font-family: 'Cormorant Garamond', serif;
           font-weight: 600;
           line-height: 1.12;
-          color: #3b3f69;
           margin: 0 0 20px;
         }
         .container {
@@ -182,7 +181,7 @@ export default function IVInfusionsPage() {
 
         /* ── Marquee / Nutrients ── */
         .nutrients-section {
-          padding: 96px 0;
+          padding: 64px 0 96px 0;
           background: #fff;
           overflow: hidden;
           position: relative;
@@ -224,7 +223,7 @@ export default function IVInfusionsPage() {
 
         /* ── Treatments ── */
         .treatments-section {
-          padding: 96px 0;
+          padding: 96px 0 48px 0;
           background: linear-gradient(160deg, #f9f5f7 0%, #f5f6fa 100%);
           position: relative;
           overflow: hidden;
@@ -266,7 +265,7 @@ export default function IVInfusionsPage() {
 
         /* ── Steps ── */
         .steps-section {
-          padding: 96px 0;
+          padding: 64px 0 96px 0;
           background: #fff;
           position: relative;
         }
@@ -383,6 +382,8 @@ export default function IVInfusionsPage() {
           ctaHref="/booking"
           secondaryCtaLabel="Enquire Now"
           secondaryCtaHref="/contact"
+          tertiaryCtaLabel="Custom IV Drips"
+          tertiaryCtaHref="/custom-iv-drips"
         />
 
         {/* ── About / Image ── */}
@@ -436,64 +437,61 @@ export default function IVInfusionsPage() {
 
         {/* ── Nutrients Marquee ── */}
         <section className="nutrients-section">
-          <div className="divider" />
-          <div style={{ paddingTop: '96px' }}>
-            <div className="container" style={{ marginBottom: '48px' }}>
-              <div style={{ textAlign: 'center' }}>
-                <div className="eyebrow" style={{ color: '#3b3f69', justifyContent: 'center' }}>
-                  <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
-                  Clinical Formulations
-                  <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
-                </div>
-                <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: '0 0 12px' }}>
-                  Nutrients Used in Infusions
-                </h2>
-                <p style={{ fontSize: '15px', color: '#9ca3af', fontWeight: 300, maxWidth: '520px', margin: '0 auto' }}>
-                  Pharmaceutical-grade vitamins, minerals, and amino acids in every formulation.
-                </p>
+          <div className="container" style={{ marginBottom: '48px' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div className="eyebrow" style={{ color: '#3b3f69', justifyContent: 'center' }}>
+                <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
+                Clinical Formulations
+                <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
+              </div>
+              <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: '0 0 12px' }}>
+                Nutrients Used in Infusions
+              </h2>
+              <p style={{ fontSize: '15px', color: '#9ca3af', fontWeight: 300, maxWidth: '520px', margin: '0 auto' }}>
+                Pharmaceutical-grade vitamins, minerals, and amino acids in every formulation.
+              </p>
+            </div>
+          </div>
+
+          {/* Marquee rows */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', overflow: 'hidden', maskImage: 'linear-gradient(to right, transparent, white 8%, white 92%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, white 8%, white 92%, transparent)' }}>
+            {/* Row 1 — left */}
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <div className="marquee-left" style={{ display: 'flex', gap: '16px', width: 'max-content' }}>
+                {[...row1, ...row1, ...row1, ...row1].map((n, idx) => (
+                  <div key={`r1-${idx}`} className="nutrient-card">
+                    <NutrientIcon accent={n.accent} />
+                    <div>
+                      <div style={{ fontSize: '14px', fontWeight: 700, color: '#3b3f69', marginBottom: '4px' }}>{n.name}</div>
+                      <div style={{ fontSize: '12.5px', color: '#9ca3af', fontWeight: 300, lineHeight: '1.55' }}>{n.desc}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-
-            {/* Marquee rows */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', overflow: 'hidden', maskImage: 'linear-gradient(to right, transparent, white 8%, white 92%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, white 8%, white 92%, transparent)' }}>
-              {/* Row 1 — left */}
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <div className="marquee-left" style={{ display: 'flex', gap: '16px', width: 'max-content' }}>
-                  {[...row1, ...row1, ...row1, ...row1].map((n, idx) => (
-                    <div key={`r1-${idx}`} className="nutrient-card">
-                      <NutrientIcon accent={n.accent} />
-                      <div>
-                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#3b3f69', marginBottom: '4px' }}>{n.name}</div>
-                        <div style={{ fontSize: '12.5px', color: '#9ca3af', fontWeight: 300, lineHeight: '1.55' }}>{n.desc}</div>
-                      </div>
+            {/* Row 2 — right */}
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <div className="marquee-right" style={{ display: 'flex', gap: '16px', width: 'max-content' }}>
+                {[...row2, ...row2, ...row2, ...row2].map((n, idx) => (
+                  <div key={`r2-${idx}`} className="nutrient-card">
+                    <NutrientIcon accent={n.accent} />
+                    <div>
+                      <div style={{ fontSize: '14px', fontWeight: 700, color: '#3b3f69', marginBottom: '4px' }}>{n.name}</div>
+                      <div style={{ fontSize: '12.5px', color: '#9ca3af', fontWeight: 300, lineHeight: '1.55' }}>{n.desc}</div>
                     </div>
-                  ))}
-                </div>
-              </div>
-              {/* Row 2 — right */}
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <div className="marquee-right" style={{ display: 'flex', gap: '16px', width: 'max-content' }}>
-                  {[...row2, ...row2, ...row2, ...row2].map((n, idx) => (
-                    <div key={`r2-${idx}`} className="nutrient-card">
-                      <NutrientIcon accent={n.accent} />
-                      <div>
-                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#3b3f69', marginBottom: '4px' }}>{n.name}</div>
-                        <div style={{ fontSize: '12.5px', color: '#9ca3af', fontWeight: 300, lineHeight: '1.55' }}>{n.desc}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
+          </div>
 
-            {/* Badge */}
-            <div style={{ textAlign: 'center', marginTop: '48px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px', borderRadius: '999px', background: '#fff', border: '1.5px solid #f0f0f5', fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#3b3f69', boxShadow: '0 2px 12px rgba(59,63,105,0.07)' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-                Highest Clinical Standards
-              </div>
+          {/* Badge */}
+          <div style={{ textAlign: 'center', marginTop: '48px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px', borderRadius: '999px', background: '#fff', border: '1.5px solid #f0f0f5', fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#3b3f69', boxShadow: '0 2px 12px rgba(59,63,105,0.07)' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              Highest Clinical Standards
             </div>
           </div>
         </section>
@@ -528,10 +526,36 @@ export default function IVInfusionsPage() {
           </div>
         </section>
 
+        {/* ── Custom Drips CTA ── */}
+        <section className="py-10 md:py-12 bg-[#ca1254] relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-10">
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-white -skew-x-12 translate-x-1/2" />
+          </div>
+          <div className="container relative z-10" style={{ textAlign: 'center' }}>
+            <div className="eyebrow" style={{ color: '#fff', justifyContent: 'center' }}>
+              <span className="eyebrow-line" style={{ background: '#fff', opacity: 0.4 }} />
+              Personalised Therapy
+              <span className="eyebrow-line" style={{ background: '#fff', opacity: 0.4 }} />
+            </div>
+            <h2 className="section-title text-white" style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', marginBottom: '12px' }}>
+              Looking for Custom IV Drips?
+            </h2>
+            <p style={{ fontSize: '15.5px', color: 'rgba(255,255,255,0.85)', fontWeight: 300, marginBottom: '24px', maxWidth: '520px', margin: '0 auto 24px' }}>
+              Explore personalised IV formulations and flexible pricing options tailored to your needs.
+            </p>
+            <a
+              href="/custom-iv-drips"
+              className="inline-block px-8 py-3.5 rounded-md bg-white text-[#ca1254] font-bold text-sm hover:shadow-lg transition hover:-translate-y-0.5 shadow-sm"
+              style={{ minWidth: '220px' }}
+            >
+              View Custom IV Drips
+            </a>
+          </div>
+        </section>
+
         {/* ── Steps ── */}
         <section className="steps-section">
-          <div className="divider" />
-          <div className="container" style={{ paddingTop: '96px' }}>
+          <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
                 <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
@@ -560,11 +584,11 @@ export default function IVInfusionsPage() {
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
               <div>
-                <div className="eyebrow" style={{ color: '#ca1254' }}>
-                  <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.5 }} />
+                <div className="eyebrow" style={{ color: '#fff' }}>
+                  <span className="eyebrow-line" style={{ background: '#fff', opacity: 0.5 }} />
                   Why Choose IV Therapy
                 </div>
-                <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', color: '#fff', margin: '0 0 32px' }}>
+                <h2 className="section-title text-white" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: '0 0 32px' }}>
                   Clinical Benefits
                 </h2>
                 <div>
@@ -588,7 +612,7 @@ export default function IVInfusionsPage() {
                   { val: '17+', label: 'Nutrients Available' },
                 ].map((s) => (
                   <div key={s.val} className="stat-block">
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', fontWeight: 600, color: '#ca1254', lineHeight: 1, marginBottom: '10px' }}>{s.val}</div>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', fontWeight: 600, color: '#fff', lineHeight: 1, marginBottom: '10px' }}>{s.val}</div>
                     <div style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.2em', lineHeight: '1.5' }}>{s.label}</div>
                   </div>
                 ))}

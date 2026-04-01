@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 bg-[#3b3f69] overflow-hidden">
+    <section className="relative pt-40 pb-20 bg-[#3b3f69] overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
       </div>
