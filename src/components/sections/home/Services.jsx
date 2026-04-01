@@ -1,44 +1,52 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
+
+import IvInfusionImage from "../../../../public/images/services/iv-infusion.png";
+import HealthAssessmentImage from "../../../../public/images/services/health-assessment.png";
+import TeethWhiteningImage from "../../../../public/images/services/teeth-whitening.png";
+import AgedCareImage from "../../../../public/images/services/aged-care.png";
+import BloodCollectionImage from "../../../../public/images/services/blood-collection.png";
+import CorporateHealthImage from "../../../../public/images/services/corporate-health.png";
 
 const services = [
   {
     title: "IV Infusions",
     description:
       "Targeted intravenous nutrient therapies designed to support energy, recovery and immune health.",
-    image: "/images/services/iv-infusion.png",
+    image: IvInfusionImage,
   },
   {
     title: "Health Assessments",
     description:
       "Comprehensive wellness checks and preventative health screening for aged care and NDIS clients.",
-    image: "/images/services/health-assessment.png",
+    image: HealthAssessmentImage,
   },
   {
     title: "Teeth Whitening",
     description:
       "Professional teeth whitening treatments delivered by qualified healthcare professionals. Improves smile appearance and can lighten teeth by up to 6–8 shades.",
-    image: "/images/services/teeth-whitening.png",
+    image: TeethWhiteningImage,
   },
   {
     title: "Aged Care & NDIS Nursing",
     description:
       "Professional nursing services supporting ongoing healthcare needs.",
-    image: "/images/services/aged-care.png",
+    image: AgedCareImage,
   },
   {
     title: "Blood Collection",
     description:
       "Convenient blood testing services available at home or care facilities.",
-    image: "/images/services/blood-collection.png",
+    image: BloodCollectionImage,
   },
   {
     title: "Corporate Health Services",
     description:
       "Workplace health checks and corporate IV hydration services.",
-    image: "/images/services/corporate-health.png",
+    image: CorporateHealthImage,
   },
 ];
 
@@ -65,10 +73,12 @@ const Services = () => {
               className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
             >
               {/* IMAGE */}
-              <img
+              <Image
                 src={service.image}
                 alt={service.title}
                 className="w-full h-[160px] sm:h-[200px] lg:h-[300px] object-cover transition-transform duration-500 group-hover:scale-105"
+                width={600}
+                height={600}
               />
 
               {/* TITLE */}

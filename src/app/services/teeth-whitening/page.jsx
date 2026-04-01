@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
+import TeethWhiteningImage from '../../../../public/images/services/teeth-whitening.png';
 
 const benefits = [
   { title: 'Brighter, Whiter Smile', icon: '✨', desc: 'Achieve a noticeably brighter and more confident smile.' },
@@ -347,7 +348,7 @@ export default function TeethWhiteningPage() {
               <div style={{ position: 'relative' }}>
                 <div className="tw-about-image-wrap">
                   <Image
-                    src="/images/services/teeth-whitening.png"
+                    src={TeethWhiteningImage}
                     alt="Professional Teeth Whitening Results"
                     width={800}
                     height={1000}

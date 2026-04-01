@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import FooterLogo from '../../../public/footer.png';
 
 const Footer = () => {
   return (
@@ -10,7 +12,14 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-block mb-6">
-              <img src="/footer.png" alt="Wellness Vitality Australia" className="h-18 w-auto" />
+              <Image 
+                src={FooterLogo} 
+                alt="Wellness Vitality Australia" 
+                className="h-18 w-auto" 
+                width={200}
+                height={72}
+                style={{ width: 'auto' }}
+              />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-8 pr-4">
               Experience elite diagnostic and therapeutic services from the comfort of your home. Premium healthcare, delivered with a personal touch and clinical precision.
@@ -43,7 +52,7 @@ const Footer = () => {
                 { label: 'Booking', path: '/booking' },
                 { label: 'Contact Us', path: '/contact' },
                 { label: 'FAQ', path: '/faq' },
-                { label: 'Testimonials', path: '/testimonials' }
+                
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.path} className="text-white/70 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">

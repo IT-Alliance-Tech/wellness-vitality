@@ -2,13 +2,19 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
+import ProfessionalCare from '../../../../public/healthproffessionals.png';
+import PersonalisedCare from '../../../../public/personalisedcare.png';
+import MobileCare from '../../../../public/mobilehealth.png';
+import NdisCare from '../../../../public/agedcare.png';
 
 const cards = [
   {
     title: 'Healthcare professionals',
     subtitle: 'Qualified & Certified Care',
     description: 'Every nurse meets strict Australian healthcare registration standards.',
-    image: '/about1.png',
+    image: ProfessionalCare,
     link: '/about/ahpra',
     color: 'rgb(211,107,124)',
   },
@@ -16,7 +22,7 @@ const cards = [
     title: 'Personalised Clinical Care',
     subtitle: 'Tailored Treatments',
     description: 'Every treatment is tailored based on a full clinical assessment.',
-    image: '/about2.png',
+    image: PersonalisedCare,
     link: '/about/personalised-care',
     color: 'rgb(160,166,205)',
   },
@@ -24,7 +30,7 @@ const cards = [
     title: 'Mobile Healthcare',
     subtitle: 'Care At Your Doorstep',
     description: 'We bring healthcare to your home, workplace or care facility.',
-    image: '/about3.png',
+    image: MobileCare,
     link: '/about/mobile-healthcare',
     color: 'rgb(102,135,125)',
   },
@@ -32,7 +38,7 @@ const cards = [
     title: 'Aged Care & NDIS Support',
     subtitle: 'Dedicated Support Services',
     description: 'Dedicated care for aged care residents and NDIS participants.',
-    image: '/about4.png',
+    image: NdisCare,
     link: '/about/ndis-care',
     color: 'rgb(180,111,123)',
   },
@@ -68,10 +74,12 @@ const AboutSection = () => {
               <div className="relative rounded-lg md:rounded-xl overflow-hidden">
 
                 {/* IMAGE */}
-                <img
+                <Image
                   src={card.image}
                   alt={card.title}
                   className="w-full h-[160px] md:h-[260px] lg:h-[320px] object-cover transition duration-500 group-hover:scale-105"
+                  width={600}
+                  height={800}
                 />
 
                 {/* OVERLAY */}

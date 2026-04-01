@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import MobileHealthcareVisit from '../../../../public/mobile_healthcare_visit.png';
 
 const MobileConvenience = () => {
   return (
@@ -11,10 +13,12 @@ const MobileConvenience = () => {
           {/* Image Side */}
           <div className="relative group reveal-left delay-100">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl relative">
-              <img 
-                src="/mobile_healthcare_visit.png" 
+              <Image 
+                src={MobileHealthcareVisit} 
                 alt="Mobile Healthcare" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                width={800}
+                height={800}
               />
               <div className="absolute inset-0 bg-indigo/5 group-hover:opacity-0 transition-opacity duration-500" />
             </div>

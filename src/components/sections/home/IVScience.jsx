@@ -1,5 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import IvScienceImage from '../../../../public/iv_science.png';
 
 const points = [
   {
@@ -41,10 +43,12 @@ const IVScience = () => {
           {/* IMAGE */}
           <div className="relative group order-2 lg:order-1 flex justify-center">
             <div className="w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden shadow-lg relative">
-              <img
-                src="/iv_science.png"
+              <Image
+                src={IvScienceImage}
                 alt="Science of IV Therapy"
                 className="w-full h-full object-cover"
+                width={800}
+                height={800}
               />
 
               {/* BADGE */}

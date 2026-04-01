@@ -2,7 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import Logo from '../../../public/logo.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,10 +17,14 @@ const Navbar = () => {
 
         {/* LOGO */}
         <Link href="/" className="flex items-center">
-          <img
-            src="/logo.png"
+          <Image
+            src={Logo}
             alt="Wellness Vitality Australia"
             className="h-9 sm:h-10 md:h-10 lg:h-12 w-auto"
+            width={200}
+            height={48}
+            style={{ width: 'auto' }}
+            priority
           />
         </Link>
 

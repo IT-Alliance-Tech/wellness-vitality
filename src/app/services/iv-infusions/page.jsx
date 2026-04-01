@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
+import IvInfusionImage from '../../../../public/images/services/iv-infusion.png';
 
 const treatments = [
   { name: 'Immune Defence IV', price: '$220 – $260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
@@ -392,7 +393,7 @@ export default function IVInfusionsPage() {
               <div style={{ position: 'relative' }}>
                 <div className="about-image-wrap">
                   <Image
-                    src="/images/services/iv-infusion.png"
+                    src={IvInfusionImage}
                     alt="IV Infusion Wellness"
                     width={800} height={1000}
                     style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}

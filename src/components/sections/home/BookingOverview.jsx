@@ -1,5 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import AboutImage from '../../../../public/about.png';
 
 const features = [
   { title: 'Real-time availability' },
@@ -72,10 +74,12 @@ const BookingOverview = () => {
           {/* RIGHT IMAGE */}
           <div className="lg:w-1/2 relative h-[240px] sm:h-[320px] lg:h-auto">
 
-            <img
-              src="/about.png"
+            <Image
+              src={AboutImage}
               alt="Booking"
               className="w-full h-full object-cover"
+              width={800}
+              height={800}
             />
 
             {/* Overlay */}

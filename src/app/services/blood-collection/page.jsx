@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
+import BloodCollectionImage from '../../../../public/images/services/blood-collection.png';
 
 const steps = [
   { step: '01', title: 'Request Service', desc: 'Book online or call us with your pathology request details.' },
@@ -448,7 +449,7 @@ export default function BloodCollectionPage() {
               <div style={{ position: 'relative' }}>
                 <div className="about-image-wrap">
                   <Image
-                    src="/images/services/blood-collection.png"
+                    src={BloodCollectionImage}
                     alt="Professional Blood Collection"
                     width={800}
                     height={1000}

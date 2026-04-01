@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import HeroHealthcareImage from '../../../../public/hero_healthcare.png';
 
 const AboutIntro = () => {
   return (
@@ -14,10 +16,12 @@ const AboutIntro = () => {
           {/* Image Side */}
           <div className="relative group reveal-left">
             <div className="aspect-[5/4] md:aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
-              <img
-                src="/hero_healthcare.png"
+              <Image
+                src={HeroHealthcareImage}
                 alt="Healthcare service"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                width={800}
+                height={600}
               />
             </div>
 
