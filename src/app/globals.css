@@ -24,8 +24,9 @@
   --color-indigo: #3b3f69;
   --color-rose: #ca1254;
 
-  --font-sans: "Mackinac", serif;
-  --font-mackinac: "Mackinac", serif;
+  --font-serif: var(--font-serif), serif;
+  --font-sans: var(--font-sans), sans-serif;
+  --font-mackinac: var(--font-serif), serif;
 }
 
 /* ❌ Removed gradients / color-mix */
