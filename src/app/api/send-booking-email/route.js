@@ -18,9 +18,16 @@ export async function POST(request) {
     const user = process.env.EMAIL_USER;
     const pass = process.env.EMAIL_PASS;
 
+    // --- DEBUG LOGGING ---
+    console.log("--------------- EMAIL CONFIG SUMMARY ---------------");
+    console.log("EMAIL_USER:", user || "Missing");
+    console.log("EMAIL_PASS:", pass ? "Exists [HIDDEN]" : "Missing");
+    console.log("--------------------------------------------------");
+
     if (!user || !pass) {
-      console.warn('⚠️ EMAIL_USER or EMAIL_PASS variables missing in .env.local.');
-      return NextResponse.json({ success: false, error: 'Email credentials not fully configured on server.' }, { status: 500 });
+      console.error('CRITICAL: EMAIL_USER or EMAIL_PASS variables are undefined.');
+      console.error('If you recently added them to .env.local, YOU MUST STOP AND RESTART YOUR DEV SERVER (npm run dev).');
+      return NextResponse.json({ success: false, error: 'Email credentials missing. Please check .env.local configuration and ensure the server has been restarted.' }, { status: 500 });
     }
 
     const transporter = nodemailer.createTransport({
