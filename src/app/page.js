@@ -25,7 +25,7 @@ export default function Home() {
       <IVTherapy />
       <Training />
       <IVScience />
-      <MobileHealthcare />
+      {/* <MobileHealthcare /> */}
       <TeethWhitening />
       <BookingOverview />
       {/* <SocialSection /> */}

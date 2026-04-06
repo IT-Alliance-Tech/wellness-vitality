@@ -567,6 +567,11 @@ export default function CorporateHealthPage() {
                 <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 600, color: '#3b3f69', marginBottom: '10px', lineHeight: 1.2 }}>
                   Empower Your Workforce
                 </h2>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ca1254', background: 'rgba(202,18,84,0.1)', padding: '4px 10px', borderRadius: '6px' }}>
+                    Starting from $250
+                  </span>
+                </div>
                 <p style={{ fontSize: '15px', color: 'rgba(59,63,105,0.65)', fontWeight: 300 }}>
                   Get in touch for a demonstration or book your first on-site day online.
                 </p>

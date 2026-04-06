@@ -557,6 +557,12 @@ export default function BloodCollectionPage() {
                   Book a Blood Collection Service
                 </h2>
 
+                <div className="flex items-center gap-2 mb-4 justify-center lg:justify-start">
+                  <span className="px-3 py-1 bg-[#ca1254]/10 text-[#ca1254] text-xs font-bold rounded-lg shadow-sm">
+                    Starting from $149
+                  </span>
+                </div>
+
                 <p className="text-sm sm:text-base text-[#3b3f69]/70">
                   Book a convenient blood collection today or enquire with our team.
                 </p>

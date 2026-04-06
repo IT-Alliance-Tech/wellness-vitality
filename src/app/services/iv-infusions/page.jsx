@@ -6,12 +6,12 @@ import FeatureCards from '@/components/ui/FeatureCards';
 import IvInfusionImage from '../../../../public/images/services/iv-infusion.png';
 
 const treatments = [
-  { name: 'Immune Defence IV', price: '$220 – $260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
-  { name: 'Energy & Performance IV', price: '$200 – $240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
-  { name: 'Beauty & Skin Glow IV', price: '$260 – $320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
-  { name: 'Detox & Liver Support IV', price: '$250 – $300', desc: 'Liver-supporting antioxidants and detox nutrients.' },
-  { name: 'Hydration & Recovery IV', price: '$180 – $220', desc: 'Electrolytes and minerals for rapid rehydration.' },
-  { name: 'Athlete Recovery IV', price: '$220 – $260', desc: 'Targeted nutrients to accelerate muscle recovery.' },
+  { name: 'Immune Defence IV', price: '$260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
+  { name: 'Energy & Performance IV', price: '$240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
+  { name: 'Beauty & Skin Glow IV', price: '$320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
+  { name: 'Detox & Liver Support IV', price: '$300', desc: 'Liver-supporting antioxidants and detox nutrients.' },
+  { name: 'Hydration & Recovery IV', price: '$220', desc: 'Electrolytes and minerals for rapid rehydration.' },
+  { name: 'Athlete Recovery IV', price: '$260', desc: 'Targeted nutrients to accelerate muscle recovery.' },
 ];
 
 const nutrients = [
@@ -297,51 +297,72 @@ export default function IVInfusionsPage() {
           margin-bottom: 20px;
         }
 
-        /* ── Benefits Dark ── */
+        /* ── Benefits Atmospheric Redesign ── */
         .benefits-section {
-          padding: 96px 0;
-          background: #3b3f69;
+          padding: 120px 0;
+          background: linear-gradient(160deg, #f8fafc 0%, #eef2f8 100%);
           position: relative; overflow: hidden;
         }
         .benefits-section::before {
           content: '';
-          position: absolute; top: -100px; right: -100px;
-          width: 420px; height: 420px; border-radius: 50%;
-          background: radial-gradient(circle, rgba(202,18,84,0.16) 0%, transparent 65%);
+          position: absolute; top: -100px; right: -5%;
+          width: 50vw; height: 50vw; border-radius: 50%;
+          background: radial-gradient(circle, rgba(59,63,105,0.05) 0%, transparent 70%);
           pointer-events: none;
         }
         .benefits-section::after {
           content: '';
-          position: absolute; bottom: -80px; left: -80px;
-          width: 320px; height: 320px; border-radius: 50%;
-          background: radial-gradient(circle, rgba(202,18,84,0.08) 0%, transparent 65%);
+          position: absolute; bottom: -100px; left: -5%;
+          width: 40vw; height: 40vw; border-radius: 50%;
+          background: radial-gradient(circle, rgba(202,18,84,0.04) 0%, transparent 70%);
           pointer-events: none;
         }
         .benefit-row {
-          display: flex; align-items: center; gap: 16px;
-          padding: 16px 0;
-          border-bottom: 1px solid rgba(255,255,255,0.07);
+          display: flex; align-items: flex-start; gap: 16px;
+          padding: 20px 0;
+          border-bottom: 2px solid rgba(59,63,105,0.06);
         }
         .benefit-row:last-child { border-bottom: none; }
         .benefit-check {
-          width: 34px; height: 34px; border-radius: 10px;
-          background: rgba(202,18,84,0.18);
-          border: 1.5px solid rgba(202,18,84,0.3);
+          width: 24px; height: 24px; border-radius: 50%;
+          background: #ca1254;
           display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+          margin-top: 2px;
+          box-shadow: 0 4px 12px rgba(202,18,84,0.2);
         }
         .stat-block {
-          aspect-ratio: 1;
-          background: rgba(255,255,255,0.05);
+          background: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(12px);
           border-radius: 24px;
-          border: 1.5px solid rgba(255,255,255,0.08);
+          border: 1px solid rgba(255, 255, 255, 0.4);
           display: flex; flex-direction: column;
           align-items: center; justify-content: center;
-          text-align: center; padding: 24px;
-          transition: background 0.3s, border-color 0.3s;
+          text-align: center; padding: 40px 24px;
+          transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+          box-shadow: 0 10px 30px -10px rgba(59, 63, 105, 0.08);
+          position: relative;
         }
         .stat-block:hover {
-          background: rgba(255,255,255,0.09);
-          border-color: rgba(202,18,84,0.35);
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 30px 60px -12px rgba(59, 63, 105, 0.12);
+          border-color: rgba(202, 18, 84, 0.25);
+          background: rgba(255, 255, 255, 0.9);
+        }
+        .stat-icon-wrap {
+          width: 56px; height: 56px; border-radius: 16px;
+          background: #fff;
+          border: 1px solid #f1f5f9;
+          display: flex; align-items: center; justify-content: center;
+          margin-bottom: 20px;
+          color: #3b3f69;
+          transition: all 0.3s;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .stat-block:hover .stat-icon-wrap {
+          background: #ca1254;
+          color: #fff;
+          border-color: #ca1254;
+          transform: rotate(5deg);
         }
 
         /* ── Suitability ── */
@@ -375,9 +396,9 @@ export default function IVInfusionsPage() {
 
       <div className="iv-page">
         <ServiceHero
-          badge="Intravenous Therapy"
-          heading="IV Infusion Therapy"
-          subtext="IV infusions deliver vitamins and nutrients directly into the bloodstream to support recovery, energy and immune health."
+          badge="Nutrient Therapy"
+          heading="IV Infusions"
+          subtext="Targeted intravenous nutrient therapies for energy, immunity, and recovery."
           ctaLabel="Book IV Infusion"
           ctaHref="/booking"
           secondaryCtaLabel="Enquire Now"
@@ -582,41 +603,72 @@ export default function IVInfusionsPage() {
         {/* ── Clinical Benefits ── */}
         <section className="benefits-section">
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr)', gap: '80px', alignItems: 'center' }}>
+              
+              {/* Left Column: Benefits */}
               <div>
-                <div className="eyebrow" style={{ color: '#fff' }}>
-                  <span className="eyebrow-line" style={{ background: '#fff', opacity: 0.5 }} />
-                  How IV Therapy May Support You
+                <div className="eyebrow" style={{ color: '#ca1254' }}>
+                  <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                  Clinical Advantages
                 </div>
-                <h2 className="section-title text-white" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: '0 0 32px' }}>
-  How It May Support You
-</h2>
-                <div>
-                  {benefits.map((b) => (
-                    <div key={b} className="benefit-row">
+                <h2 className="section-title" style={{ fontSize: 'clamp(34px, 4.5vw, 54px)', color: '#3b3f69', marginBottom: '36px' }}>
+                  How IV Therapy <br /><em style={{ color: '#ca1254', fontStyle: 'italic' }}>Supports Your Body</em>
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  {[
+                    { t: 'Direct Bioavailability', d: 'Nutrients bypass the digestive system for immediate 100% absorption.' },
+                    { t: 'Rapid Rehydration', d: 'Instantly restores fluid balance and essential electrolytes at a cellular level.' },
+                    { t: 'Cellular Energy', d: 'Coenzymes and vitamins fuel ATP production for sustained natural energy.' }
+                  ].map((b) => (
+                    <div key={b.t} className="benefit-row">
                       <div className="benefit-check">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 13l4 4L19 7" />
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
-                      <span style={{ fontSize: '15px', fontWeight: 500, color: '#fff' }}>{b}</span>
+                      <div>
+                        <div style={{ fontSize: '18px', fontWeight: 700, color: '#3b3f69', marginBottom: '6px' }}>{b.t}</div>
+                        <div style={{ fontSize: '14.5px', color: '#64748b', fontWeight: 300, lineHeight: '1.6' }}>{b.d}</div>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+
+              {/* Right Column: Stats Grid */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                 {[
-                  { val: '30m', label: 'Typical Session' },
-                  { val: '100%', label: 'Absorption Rate' },
-                  { val: 'AHPRA', label: 'Registered Nurses' },
-                  { val: '17+', label: 'Nutrients Available' },
+                  { 
+                    val: '60m', 
+                    label: 'Typical Session',
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  },
+                  { 
+                    val: '100%', 
+                    label: 'Absorption Rate',
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10A8 8 0 004 12c0 6 8 10 8 10z"/></svg>
+                  },
+                  { 
+                    val: 'Registered', 
+                    label: 'Nursing Staff',
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                  },
+                  { 
+                    val: '17+', 
+                    label: 'Key Nutrients',
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  },
                 ].map((s) => (
-                  <div key={s.val} className="stat-block">
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', fontWeight: 600, color: '#fff', lineHeight: 1, marginBottom: '10px' }}>{s.val}</div>
-                    <div style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.2em', lineHeight: '1.5' }}>{s.label}</div>
+                  <div key={s.label} className="stat-block">
+                    <div className="stat-icon-wrap">
+                      {s.icon}
+                    </div>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', fontWeight: 600, color: '#3b3f69', lineHeight: 1, marginBottom: '8px' }}>{s.val}</div>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(59,63,105,0.45)', textTransform: 'uppercase', letterSpacing: '0.18em', lineHeight: '1.4' }}>{s.label}</div>
                   </div>
                 ))}
               </div>
+
             </div>
           </div>
         </section>

@@ -540,6 +540,12 @@ export default function AgedCareNDISPage() {
                   Personalised Nursing Support
                 </h2>
 
+                <div className="flex items-center gap-2 mb-4 justify-center lg:justify-start">
+                  <span className="px-3 py-1 bg-[#ca1254]/10 text-[#ca1254] text-xs font-bold rounded-lg shadow-sm">
+                    Starting from $160
+                  </span>
+                </div>
+
                 <p className="text-sm sm:text-base text-[#3b3f69]/70">
                   Contact us for personalised nursing support or book a consultation online.
                 </p>
