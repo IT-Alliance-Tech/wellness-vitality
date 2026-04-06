@@ -45,7 +45,7 @@ import {
   ShieldOutlined,
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-// import YooliEmbed from '@/components/booking/YooliEmbed';
+import YooliEmbed from '@/components/booking/YooliEmbed';
 
 /* ═══════════════════════════════════════════════════
    DATA
