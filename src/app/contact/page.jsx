@@ -2,12 +2,88 @@
 import React, { useState } from 'react';
 import Button from '@/components/ui/Button';
 
+// Configure these variables in your .env.local file or directly here to go live
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_placeholder';
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_placeholder';
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'public_key_placeholder';
+
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    enquiry: ''
+  });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrorMsg("");
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    
+    // Validation
+    if (!formData.name || !formData.phone || !formData.email || !formData.enquiry) {
+      setErrorMsg("All fields are required.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setErrorMsg("Please enter a valid email address.");
+      return;
+    }
+    if (!/^\+?[\d\s-]{8,}$/.test(formData.phone)) {
+      setErrorMsg("Please enter a valid phone number.");
+      return;
+    }
+
+    setIsLoading(true);
+    setErrorMsg("");
+
+    try {
+      const payload = {
+        service_id: EMAILJS_SERVICE_ID,
+        template_id: EMAILJS_TEMPLATE_ID,
+        user_id: EMAILJS_PUBLIC_KEY,
+        template_params: {
+          subject: 'New Contact Form Submission',
+          to_email: 'admin@wellnessvitalityaustralia.com.au',
+          from_name: formData.name,
+          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.enquiry,
+          enquiry: formData.enquiry
+        }
+      };
+
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || 'Failed to send');
+      }
+
+      console.log("EmailJS Success Response:", await response.text());
+      setIsSubmitted(true);
+      setFormData({ name: '', phone: '', email: '', enquiry: '' }); // Reset form
+    } catch (err) {
+      console.error("EmailJS Error:", err);
+      setErrorMsg(err.message || "Failed to send message. Please ensure email service is configured.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -100,24 +176,38 @@ export default function ContactPage() {
                   <form className="space-y-6 text-sm" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Your Name</label>
-                        <input type="text" placeholder="Full Name" required className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
+                        <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Your Name *</label>
+                        <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Full Name" required disabled={isLoading} className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all disabled:opacity-50" />
                       </div>
                       <div className="space-y-2">
-                        <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Phone Number</label>
-                        <input type="tel" placeholder="0400 000 000" className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
+                        <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Phone Number *</label>
+                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="0400 000 000" required disabled={isLoading} className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all disabled:opacity-50" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Email Address</label>
-                      <input type="email" placeholder="email@example.com" required className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all" />
+                      <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Email Address *</label>
+                      <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="email@example.com" required disabled={isLoading} className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all disabled:opacity-50" />
                     </div>
                     <div className="space-y-2">
-                      <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Your Message</label>
-                      <textarea rows="4" placeholder="How can we help you?" required className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all resize-none"></textarea>
+                      <label className="font-bold text-indigo/60 uppercase tracking-widest text-[10px]">Your Enquiry *</label>
+                      <textarea name="enquiry" value={formData.enquiry} onChange={handleChange} rows="4" placeholder="How can we help you?" required disabled={isLoading} className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose/20 focus:border-rose transition-all resize-none disabled:opacity-50"></textarea>
                     </div>
-                    <Button type="submit" variant="primary" className="w-full py-5 text-base font-bold shadow-xl shadow-rose/20">
-                      Send My Enquiry
+                    
+                    {errorMsg && (
+                      <div className="p-3 text-[#d32f2f] bg-[#fef5f8] border border-[#ca125440] rounded-lg text-sm font-semibold">
+                        {errorMsg}
+                      </div>
+                    )}
+                    
+                    <Button type="submit" variant="primary" disabled={isLoading} className="w-full py-5 text-base font-bold shadow-xl shadow-rose/20 flex justify-center items-center gap-2">
+                      {isLoading ? (
+                        <>
+                          <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        "Send My Enquiry"
+                      )}
                     </Button>
                   </form>
                 </>
@@ -128,9 +218,9 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold text-indigo mb-4">Message Sent!</h2>
+                  <h2 className="text-3xl font-bold text-indigo mb-4">Success!</h2>
                   <p className="text-gray-500 mb-10 leading-relaxed">
-                    Thank you for reaching out. Our clinical team has received your enquiry and will get back to you shortly.
+                    Your enquiry has been submitted successfully. Our clinical team has received your details and will get back to you shortly.
                   </p>
                   <Button
                     variant="ghost"
