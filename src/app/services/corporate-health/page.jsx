@@ -489,7 +489,7 @@ export default function CorporateHealthPage() {
 
         {/* ── Org Benefits — Feature Cards ── */}
         <FeatureCards
-          heading="Organisational Benefits"
+          heading="How We May Support Your Organisation"
           cards={benefits.map((b) => ({
             title: b.title,
             description: b.desc,
