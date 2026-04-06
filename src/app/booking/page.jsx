@@ -138,15 +138,30 @@ const CUSTOM_DRIP_PACKAGES = [
 ];
 
 const CUSTOM_ADDONS = [
-  { id: 'add-zinc', name: 'Zinc Add-on', price: 40, desc: 'Immune support and cellular recovery.' },
-  { id: 'add-vitc', name: 'High Dose Vitamin C', price: 50, desc: 'Potent antioxidant protection.' },
-  { id: 'add-mag', name: 'Magnesium', price: 40, desc: 'Muscle relaxation and tension relief.' },
-  { id: 'add-bcomp', name: 'B-Complex', price: 45, desc: 'Nervous system support and energy.' },
+  { id: 'add-vitc', name: 'Vitamin C', price: 54, priceLabel: 'From $54', desc: 'Potent antioxidant protection.' },
+  { id: 'add-mag', name: 'Magnesium', price: 35, desc: 'Muscle relaxation and tension relief.' },
+  { id: 'add-zinc', name: 'Zinc', price: 54, desc: 'Immune support and cellular recovery.' },
+  { id: 'add-bcomp', name: 'B complex', price: 54, desc: 'Nervous system support and energy.' },
+  { id: 'add-bcomp-plus', name: 'B Complex Plus', price: 64, desc: 'Enhanced B-vitamin support.' },
+  { id: 'add-sel', name: 'Selenium', price: 70, desc: 'Powerful antioxidant supporting thyroid and metabolic function.' },
+  { id: 'add-gluta', name: 'Glutathione', price: 120, desc: 'Master antioxidant for liver detox and skin brightening.' },
+  { id: 'add-gly', name: 'Glycine', price: 64, desc: 'Supports cellular health, sleep, and joint recovery.' },
+  { id: 'add-gb', name: 'GB Shot', price: 64, desc: 'Potent shot for cellular wellness and recovery.' },
+  { id: 'add-sd', name: 'SD Shot', price: 70, desc: 'Clinical supplemental shot for optimal performance.' },
+  { id: 'add-tau', name: 'Taurine', price: 70, desc: 'Supports cardiovascular health and cellular hydration.' },
+  { id: 'add-nad-100', name: 'NAD Package 100mg', price: 225, desc: 'Critical coenzyme for cellular energy and DNA repair.' },
+  { id: 'add-nad-250', name: 'NAD Package 250mg', price: 475, desc: 'Critical coenzyme for cellular energy and DNA repair.' },
+  { id: 'add-nad-500', name: 'NAD Package 500mg', price: 695, desc: 'Critical coenzyme for cellular energy and DNA repair.' },
 ];
 
 const CUSTOM_BOOSTERS = [
-  { id: 'boost-gluta', name: 'Glutathione Push', price: 75, desc: 'Master antioxidant for glowing skin and detox.' },
-  { id: 'boost-b12', name: 'B12 Shot', price: 45, desc: 'Instant energy and focus boost.' },
+  { id: 'boost-b12', name: 'Vitamin B12 Shot', price: 59, desc: 'Increase metabolism, boost energy, regulate mood, sleep and appetite.' },
+  { id: 'boost-biotin', name: 'Biotin B7', price: 54, desc: 'The elixir for your hair, skin and nails to thrive.' },
+  { id: 'boost-coq10', name: 'COQ10', price: 54, desc: 'Support exercise performance and recovery while helping to reduce fatigue and enhance endurance.' },
+  { id: 'boost-gluta-shot', name: 'Glutathione Shot', price: 99, desc: 'May slow the aging process as you detoxify your liver.' },
+  { id: 'boost-vitd', name: 'Vitamin D', price: 99, desc: 'Helps your immune system against viruses & builds density in your bones.' },
+  { id: 'boost-ala', name: 'ALA Complex', price: 58, desc: 'Powerful anti-oxidant that supports cellular energy, nerve health and metabolic balance.' },
+  { id: 'boost-nad', name: 'NAD Subcutanious', price: 225, desc: 'Powerful coenzymes that enables cells to produce energy, repair DNA and regulate aging.' },
 ];
 
 const OTHER_PACKAGES = {
@@ -458,8 +473,8 @@ export default function BookingPage() {
       case 0:
         return (
           <Fade in timeout={400}>
-            <Box sx={{ maxWidth: 680, mx: 'auto' }}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
+            <Box sx={{ maxWidth: 860, mx: 'auto' }}>
+              <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
                 {SERVICES.map((s) => {
                   const selected = !!bookingData.selectedServices.find((sel) => sel.id === s.id);
                   return (
@@ -468,31 +483,24 @@ export default function BookingPage() {
                       onClick={() => toggleService(s)}
                       elevation={0}
                       sx={{
-                        p: { xs: 2.5, sm: 3 }, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5',
+                        p: 3, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5',
                         bgcolor: selected ? '#fef5f8' : 'white', borderRadius: 4, cursor: 'pointer',
                         transition: 'all 0.25s ease',
-                        display: 'flex', alignItems: { xs: 'flex-start', sm: 'center' }, gap: { xs: 2, sm: 3 },
-                        flexDirection: { xs: 'column', sm: 'row' },
-                        '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 8px 24px rgba(202,18,84,0.08)' },
+                        display: 'flex', flexDirection: 'column', height: '100%',
+                        '&:hover': { borderColor: '#ca1254', transform: 'translateY(-2px)', boxShadow: '0 8px 24px rgba(202,18,84,0.08)' },
                       }}
                     >
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 2, sm: 3 }, width: '100%' }}>
-                        <Box sx={{ width: 60, height: 60, borderRadius: 3, bgcolor: selected ? '#ca125420' : '#f4f4fa', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                          {React.cloneElement(s.icon, { sx: { fontSize: 30, color: selected ? '#ca1254' : '#8888a8' } })}
+                      <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2, mb: 2 }}>
+                        <Box sx={{ width: 44, height: 44, borderRadius: 2, bgcolor: selected ? '#ca125420' : '#f4f4fa', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          {React.cloneElement(s.icon, { sx: { fontSize: 24, color: selected ? '#ca1254' : '#8888a8' } })}
                         </Box>
                         <Box sx={{ flex: 1 }}>
                           <Typography fontWeight={700} color="secondary" fontSize="1.05rem" mb={0.25}>{s.title}</Typography>
                           <Typography variant="body2" color="textSecondary" lineHeight={1.5}>{s.description}</Typography>
                         </Box>
-                        <Box sx={{ textAlign: 'right', display: { xs: 'none', sm: 'block' }, minWidth: 90 }}>
-                          <Typography variant="caption" color="textSecondary" display="block" mb={-0.2}>Starting from</Typography>
-                          <Typography variant="subtitle2" color="primary" fontWeight={800} fontSize="1.05rem">${s.price}</Typography>
-                        </Box>
-                        <Checkbox checked={selected} onChange={(e) => { e.stopPropagation(); toggleService(s); }} color="primary" sx={{ p: 0, ml: { xs: 0, sm: 1 } }} />
+                        <Checkbox checked={selected} onChange={(e) => { e.stopPropagation(); toggleService(s); }} color="primary" sx={{ p: 0, mt: 0.25 }} />
                       </Box>
-                      
-                      {/* Mobile Pricing Block */}
-                      <Box sx={{ display: { xs: 'flex', sm: 'none' }, width: '100%', justifyContent: 'space-between', alignItems: 'center', pt: 1.5, mt: 0.5, borderTop: '1px solid #ededf5' }}>
+                      <Box sx={{ mt: 'auto', pt: 1.5, borderTop: '1px solid #ededf5', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Typography variant="caption" color="textSecondary">Starting from</Typography>
                         <Typography variant="subtitle2" color="primary" fontWeight={800}>${s.price}</Typography>
                       </Box>
@@ -521,72 +529,70 @@ export default function BookingPage() {
       case 1:
         return (
           <Fade in timeout={400}>
-            <Box sx={{ maxWidth: 680, mx: 'auto' }}>
+            <Box sx={{ maxWidth: 860, mx: 'auto' }}>
               <Box sx={{ mb: 4, p: 2, borderRadius: 3, bgcolor: '#e8f4fd', border: '1px solid #b6daed', textAlign: 'center' }}>
                 <Typography variant="body2" sx={{ color: '#1a6fa0', fontWeight: 600 }}>🏷️ Confirm your specific treatments and options. You can select multiple items.</Typography>
               </Box>
               {bookingData.selectedServices.map(service => {
-                let packagesToRender = [];
-                let sectionTitle = `${service.title} Options`;
+                let packageSections = [];
 
                 if (service.id === 'iv-infusions') {
-                  packagesToRender = IV_PACKAGES;
-                  sectionTitle = 'IV Infusion Treatments';
+                  packageSections = [{ title: 'IV Infusion Treatments', items: IV_PACKAGES }];
                 } else if (service.id === 'custom-iv-drips') {
-                  packagesToRender = [...CUSTOM_DRIP_PACKAGES, ...CUSTOM_ADDONS, ...CUSTOM_BOOSTERS];
-                  sectionTitle = 'Custom IV Drips & Add-ons';
+                  packageSections = [
+                    { title: 'Base Formulations', items: CUSTOM_DRIP_PACKAGES },
+                    { title: 'Treatment Add-ons', items: CUSTOM_ADDONS },
+                    { title: 'Boosters Menu', items: CUSTOM_BOOSTERS }
+                  ];
                 } else if (OTHER_PACKAGES[service.id]) {
-                  packagesToRender = OTHER_PACKAGES[service.id];
+                  packageSections = [{ title: `${service.title} Options`, items: OTHER_PACKAGES[service.id] }];
                 }
 
-                if (packagesToRender.length === 0) return null;
+                if (packageSections.length === 0) return null;
 
                 return (
                   <Box key={service.id} mb={5}>
-                    <Typography variant="h6" color="secondary" sx={{ mb: 2.5, fontWeight: 800 }}>{sectionTitle}</Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                      {packagesToRender.map((pkg) => {
-                        const selected = !!bookingData.selectedPackages.find(p => p.id === pkg.id);
-                        return (
-                          <Paper
-                            key={pkg.id}
-                            onClick={() => togglePackage(pkg)}
-                            elevation={0}
-                            sx={{
-                              p: { xs: 2.5, sm: 3 }, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5',
-                              bgcolor: selected ? '#fef5f8' : 'white', cursor: 'pointer', borderRadius: 4,
-                              transition: 'all 0.25s ease',
-                              display: 'flex', alignItems: { xs: 'flex-start', sm: 'center' }, gap: { xs: 2, sm: 3 },
-                              flexDirection: { xs: 'column', sm: 'row' },
-                              '&:hover': { borderColor: '#ca1254', transform: 'translateY(-2px)', boxShadow: '0 8px 24px rgba(202,18,84,0.08)' }
-                            }}
-                          >
-                            <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 2, sm: 3 }, width: '100%' }}>
-                              {/* Central Checkbox Replacement */}
-                              <Box sx={{ 
-                                width: 24, height: 24, borderRadius: '6px', border: selected ? '2px solid #ca1254' : '2px solid #d0d0e0',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                                bgcolor: selected ? '#ca1254' : 'transparent', ml: 0.5
-                              }}>
-                                {selected && <CheckCircle sx={{ fontSize: 18, color: '#fff' }} />}
-                              </Box>
-                              <Box sx={{ flex: 1 }}>
-                                <Typography fontWeight={700} color="secondary" fontSize="1.05rem" mb={0.25}>{pkg.name}</Typography>
-                                <Typography variant="body2" color="textSecondary" lineHeight={1.5}>{pkg.desc}</Typography>
-                              </Box>
-                              <Box sx={{ textAlign: 'right', display: { xs: 'none', sm: 'block' }, minWidth: 90 }}>
-                                <Typography variant="subtitle1" color="primary" fontWeight={800}>{pkg.priceLabel || `$${pkg.price}`}</Typography>
-                              </Box>
-                            </Box>
-
-                            {/* Mobile Pricing Block */}
-                            <Box sx={{ display: { xs: 'flex', sm: 'none' }, width: '100%', justifyContent: 'flex-end', alignItems: 'center', pt: 1.5, mt: 0.5, borderTop: '1px solid #ededf5' }}>
-                              <Typography variant="subtitle1" color="primary" fontWeight={800}>{pkg.priceLabel || `$${pkg.price}`}</Typography>
-                            </Box>
-                          </Paper>
-                        );
-                      })}
-                    </Box>
+                    {packageSections.map((section, idx) => (
+                      <Box key={idx} mb={4}>
+                        <Typography variant="h6" color="secondary" sx={{ mb: 2.5, fontWeight: 800 }}>{section.title}</Typography>
+                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
+                          {section.items.map((pkg) => {
+                            const selected = !!bookingData.selectedPackages.find(p => p.id === pkg.id);
+                            return (
+                              <Paper
+                                key={pkg.id}
+                                onClick={() => togglePackage(pkg)}
+                                elevation={0}
+                                sx={{
+                                  p: 3, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5',
+                                  bgcolor: selected ? '#fef5f8' : 'white', cursor: 'pointer', borderRadius: 4,
+                                  transition: 'all 0.25s ease',
+                                  display: 'flex', flexDirection: 'column', height: '100%',
+                                  '&:hover': { borderColor: '#ca1254', transform: 'translateY(-2px)', boxShadow: '0 8px 24px rgba(202,18,84,0.08)' }
+                                }}
+                              >
+                                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2, mb: 2 }}>
+                                  <Box sx={{
+                                    width: 24, height: 24, borderRadius: '6px', border: selected ? '2px solid #ca1254' : '2px solid #d0d0e0',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                                    bgcolor: selected ? '#ca1254' : 'transparent', mt: 0.25
+                                  }}>
+                                    {selected && <CheckCircle sx={{ fontSize: 18, color: '#fff' }} />}
+                                  </Box>
+                                  <Box sx={{ flex: 1 }}>
+                                    <Typography fontWeight={700} color="secondary" fontSize="1.05rem" mb={0.25}>{pkg.name}</Typography>
+                                    <Typography variant="body2" color="textSecondary" lineHeight={1.5}>{pkg.desc}</Typography>
+                                  </Box>
+                                </Box>
+                                <Box sx={{ mt: 'auto', pt: 1.5, borderTop: '1px solid #ededf5', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+                                  <Typography variant="subtitle1" color="primary" fontWeight={800}>{pkg.priceLabel || `$${pkg.price}`}</Typography>
+                                </Box>
+                              </Paper>
+                            );
+                          })}
+                        </Box>
+                      </Box>
+                    ))}
                   </Box>
                 );
               })}
@@ -631,7 +637,7 @@ export default function BookingPage() {
               {isTeleconsultationOnly && (
                 <Fade in timeout={300}>
                   <Box sx={{ mt: 3, p: 2.5, borderRadius: 3, bgcolor: '#e8f4fd', border: '1px solid #b6daed' }}>
-                    <Typography variant="body2" sx={{ color: '#1a6fa0', fontWeight: 600 }}>📹 Teleconsultation selected — you'll book a time slot via our secure calendar in a later step.</Typography>
+                    <Typography variant="body2" sx={{ color: '#1a6fa0', fontWeight: 600 }}>📹 Teleconsultation selected — you&apos;ll book a time slot via our secure calendar in a later step.</Typography>
                   </Box>
                 </Fade>
               )}
@@ -704,7 +710,7 @@ export default function BookingPage() {
               ) : (
                 <Box sx={{ maxWidth: 840, mx: 'auto' }}>
                   <Grid container spacing={4}>
-                    <Grid item xs={12} md={5}>
+                    <Grid item xs={12} sm={5}>
                       <Paper sx={{ p: 3, borderRadius: 4, border: '1.5px solid #ededf5', bgcolor: 'white', height: '100%' }} elevation={0}>
                         <Typography variant="caption" sx={{ fontWeight: 700, color: '#ca1254', textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 2 }}><CalendarMonth sx={{ fontSize: 18, verticalAlign: 'middle', mr: 0.5, mt: -0.2 }} /> Select Date</Typography>
                         <TextField fullWidth type="date" variant="outlined" value={bookingData.selectedDate} onChange={(e) => updateBookingData('selectedDate', e.target.value)} InputLabelProps={{ shrink: true }} inputProps={{ min: new Date().toISOString().split('T')[0] }} sx={{ '& .MuiOutlinedInput-root': { bgcolor: '#f4f4fa' } }} />
@@ -713,14 +719,14 @@ export default function BookingPage() {
                         </Box>
                       </Paper>
                     </Grid>
-                    <Grid item xs={12} md={7}>
-                      <Paper sx={{ p: 3, borderRadius: 4, border: '1.5px solid #ededf5', bgcolor: 'white' }} elevation={0}>
+                    <Grid item xs={12} sm={7}>
+                      <Paper sx={{ p: 3, borderRadius: 4, border: '1.5px solid #ededf5', bgcolor: 'white', height: '100%' }} elevation={0}>
                         <Typography variant="caption" sx={{ fontWeight: 700, color: '#ca1254', textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 2.5 }}><AccessTime sx={{ fontSize: 18, verticalAlign: 'middle', mr: 0.5, mt: -0.2 }} /> Select Time Slot</Typography>
-                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 1.5 }}>
+                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr' }, gap: 1.5 }}>
                           {TIME_SLOTS.map((slot) => {
                             const selected = bookingData.selectedTime === slot;
                             return (
-                              <Paper key={slot} elevation={0} onClick={() => updateBookingData('selectedTime', slot)} sx={{ py: 1.5, px: 2, textAlign: 'center', cursor: 'pointer', borderRadius: 2, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5', bgcolor: selected ? '#ca1254' : '#f4f4fa', color: selected ? 'white' : '#3b3f69', transition: 'all 0.2s ease', '&:hover': { borderColor: '#ca1254', bgcolor: selected ? '#ca1254' : '#fef5f8', color: selected ? 'white' : '#ca1254' } }}>
+                              <Paper key={slot} elevation={0} onClick={() => updateBookingData('selectedTime', slot)} sx={{ py: 1.5, px: 1, textAlign: 'center', cursor: 'pointer', borderRadius: 2, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5', bgcolor: selected ? '#ca1254' : '#f4f4fa', color: selected ? 'white' : '#3b3f69', transition: 'all 0.2s ease', '&:hover': { borderColor: '#ca1254', bgcolor: selected ? '#ca1254' : '#fef5f8', color: selected ? 'white' : '#ca1254' } }}>
                                 <Typography variant="body2" fontWeight={selected ? 700 : 600} sx={{ fontSize: '0.85rem' }}>{slot}</Typography>
                               </Paper>
                             );
@@ -850,34 +856,41 @@ export default function BookingPage() {
                     <Chip label="All Inclusive" sx={{ bgcolor: 'white', border: '1px solid #ca125430', color: '#ca1254', fontWeight: 700 }} />
                   </Box>
 
-                  <Paper elevation={0} sx={{ p: 3, mb: 2, border: '2px solid #b2fce4', borderRadius: 3, bgcolor: '#f0fdf8', cursor: 'pointer', transition: 'all 0.2s', '&:hover': { borderColor: '#6ee7b7', transform: 'translateY(-1px)', boxShadow: '0 6px 20px rgba(16,185,129,0.1)' } }}>
+                  <Paper 
+                    elevation={0}
+                    onClick={() => !loading && handleCompleteBooking()}
+                    sx={{ p: { xs: 2.5, sm: 3 }, mb: 3, border: '2px solid #e2e8f0', borderRadius: 4, bgcolor: '#f8fafc', cursor: loading ? 'default' : 'pointer', opacity: loading ? 0.7 : 1, transition: 'all 0.2s', '&:hover': !loading ? { borderColor: '#635bff', transform: 'translateY(-2px)', boxShadow: '0 8px 25px rgba(99,91,255,0.15)' } : {} }}
+                  >
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
-                          <Typography fontWeight={800} color="secondary" variant="body1">Afterpay</Typography>
-                          <Chip label="Recommended" size="small" sx={{ bgcolor: '#d1fae5', color: '#065f46', fontWeight: 700, fontSize: '0.65rem', height: 20 }} />
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 0.5 }}>
+                          <Typography fontWeight={800} color="secondary" variant="body1">Pay with Stripe</Typography>
+                          <Chip label="100% Secure" size="small" sx={{ bgcolor: '#ede9fe', color: '#635bff', fontWeight: 700, fontSize: '0.65rem', height: 20 }} />
                         </Box>
-                        <Typography variant="body2" color="textSecondary">
-                          4 interest-free payments of <strong>${(calculateTotal() / 4).toFixed(2)}</strong>
+                        <Typography variant="body2" color="textSecondary" sx={{ mb: 1.5, maxWidth: 350 }}>
+                          Complete your booking safely and instantly using any major credit or debit card.
                         </Typography>
+                        
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                           <Typography variant="caption" sx={{ fontWeight: 600, color: '#64748b', display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                             <CreditCard sx={{ fontSize: 14 }} /> Apple Pay, Google Pay, Visa & Mastercard
+                           </Typography>
+                        </Box>
                       </Box>
-                      <ArrowForward sx={{ fontSize: 18, color: '#065f46' }} />
+                      
+                      {loading ? (
+                        <CircularProgress size={24} sx={{ color: '#635bff' }} />
+                      ) : (
+                        <Box sx={{ width: 44, height: 44, borderRadius: '50%', bgcolor: 'white', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', flexShrink: 0 }}>
+                          <ArrowForward sx={{ fontSize: 20, color: '#635bff' }} />
+                        </Box>
+                      )}
                     </Box>
                   </Paper>
-
-                  <Divider sx={{ my: 3 }}><Typography variant="caption" color="textSecondary" fontWeight={700}>or pay in full</Typography></Divider>
-
-                  <Button fullWidth variant="contained" color="primary" size="large" disabled={loading}
-                    onClick={handleCompleteBooking}
-                    startIcon={loading ? null : <CreditCard sx={{ fontSize: 20 }} />}
-                    sx={{ py: 2, fontSize: '1rem', borderRadius: 50, mb: 2 }}
-                  >
-                    {loading ? <CircularProgress size={22} color="inherit" /> : 'Proceed to Payment'}
-                  </Button>
-
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.75, mt: 1 }}>
-                    <ShieldOutlined sx={{ fontSize: 16, color: '#9999b0' }} />
-                    <Typography variant="caption" color="textSecondary">Payments are encrypted and secure</Typography>
+                  
+                  <Box sx={{ display: 'flex', gap: 1, justifyContent: 'center', alignItems: 'center', color: '#8888a8' }}>
+                    <ShieldOutlined sx={{ fontSize: 14 }} />
+                    <Typography variant="caption" color="textSecondary">Payments are encrypted and processed securely by Stripe</Typography>
                   </Box>
                 </>
               )}
@@ -926,18 +939,18 @@ export default function BookingPage() {
         </Container>
 
         {!confirmed && (
-          <Box sx={{ 
-            position: 'sticky', 
-            bottom: 0, 
-            zIndex: 1000, 
-            py: { xs: 2, sm: 2.5 }, 
+          <Box sx={{
+            position: 'sticky',
+            bottom: 0,
+            zIndex: 1000,
+            py: { xs: 2, sm: 2.5 },
             px: { xs: 2, sm: 3 },
-            bgcolor: 'rgba(247, 247, 252, 0.95)', 
+            bgcolor: 'rgba(247, 247, 252, 0.95)',
             backdropFilter: 'blur(12px)',
             borderTop: '1px solid rgba(200, 200, 220, 0.4)',
-            display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center', 
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             gap: 3,
             boxShadow: '0 -4px 20px rgba(0,0,0,0.03)'
           }}>

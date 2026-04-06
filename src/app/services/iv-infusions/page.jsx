@@ -586,11 +586,11 @@ export default function IVInfusionsPage() {
               <div>
                 <div className="eyebrow" style={{ color: '#fff' }}>
                   <span className="eyebrow-line" style={{ background: '#fff', opacity: 0.5 }} />
-                  Why Choose IV Therapy
+                  How IV Therapy May Support You
                 </div>
                 <h2 className="section-title text-white" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: '0 0 32px' }}>
-                  Clinical Benefits
-                </h2>
+  How It May Support You
+</h2>
                 <div>
                   {benefits.map((b) => (
                     <div key={b} className="benefit-row">
