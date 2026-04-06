@@ -45,7 +45,7 @@ import {
   ShieldOutlined,
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-import CalendlyEmbed from '@/components/booking/CalendlyEmbed';
+// import YooliEmbed from '@/components/booking/YooliEmbed';
 
 /* ═══════════════════════════════════════════════════
    DATA
@@ -709,10 +709,10 @@ export default function BookingPage() {
               {isTeleconsultationOnly ? (
                 <Box>
                   <Box sx={{ mb: 3, textAlign: 'center' }}>
-                    <Chip icon={<Videocam sx={{ fontSize: 16 }} />} label="Teleconsultation — Select an available time slot" sx={{ bgcolor: '#e8f4fd', color: '#1a6fa0', fontWeight: 700, fontSize: '0.8rem', py: 2.5, px: 1.5, '& .MuiChip-icon': { color: '#1a6fa0' } }} />
+                    <Chip icon={<Videocam sx={{ fontSize: 16 }} />} label="Teleconsultation — Select an available time slot via Yooli" sx={{ bgcolor: '#e8f4fd', color: '#1a6fa0', fontWeight: 700, fontSize: '0.8rem', py: 2.5, px: 1.5, '& .MuiChip-icon': { color: '#1a6fa0' } }} />
                   </Box>
                   <Paper sx={{ bgcolor: 'white', p: { xs: 1, md: 4 }, borderRadius: 4, border: '1.5px solid #ededf5', overflow: 'hidden' }}>
-                    <CalendlyEmbed url="https://calendly.com/jlavanya0212/iv-infusion-appointment" />
+                    <YooliEmbed url="https://yooli.com/your-wellness-vitality-link/" />
                   </Paper>
                 </Box>
               ) : (
@@ -779,7 +779,7 @@ export default function BookingPage() {
                   <Grid item xs={12} sm={6}>
                     <Typography variant="caption" sx={{ color: '#ca1254', fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 0.5 }}>Date & Time</Typography>
                     <Typography variant="body1" fontWeight={700} color="secondary">
-                      {isTeleconsultationOnly ? 'Scheduled via Calendly' : bookingData.selectedDate && bookingData.selectedTime ? `${new Date(bookingData.selectedDate).toLocaleDateString('en-AU')} | ${bookingData.selectedTime}` : '—'}
+                      {isTeleconsultationOnly ? 'Scheduled via Yooli' : bookingData.selectedDate && bookingData.selectedTime ? `${new Date(bookingData.selectedDate).toLocaleDateString('en-AU')} | ${bookingData.selectedTime}` : '—'}
                     </Typography>
                   </Grid>
                 </Grid>
