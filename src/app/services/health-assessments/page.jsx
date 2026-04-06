@@ -460,6 +460,12 @@ export default function HealthAssessmentsPage() {
                 Arrange Your Health Assessment
               </h2>
 
+              <div className="flex items-center gap-2 mb-4 justify-center lg:justify-start">
+                <span className="px-3 py-1 bg-[#ca1254]/10 text-[#ca1254] text-xs font-bold rounded-lg shadow-sm">
+                  Starting from $199
+                </span>
+              </div>
+
               <p className="text-sm sm:text-base text-[#3b3f69]/70">
                 Contact us to arrange a health assessment or book directly online.
               </p>

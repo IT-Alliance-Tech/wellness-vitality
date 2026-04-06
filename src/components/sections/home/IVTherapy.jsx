@@ -9,7 +9,7 @@ const ivPacks = [
     description:
       "Typically includes Vitamin C, B Complex, Zinc and Magnesium.",
     points: ["Vitamin C", "B Complex", "Zinc", "Magnesium"],
-    price: "$220–$260",
+    price: "$260",
     accent: "rose",
   },
   {
@@ -17,7 +17,7 @@ const ivPacks = [
     description:
       "Includes B Complex, B12, Magnesium and Vitamin C.",
     points: ["B Complex", "B12", "Magnesium", "Vitamin C"],
-    price: "$200–$240",
+    price: "$240",
     accent: "indigo",
   },
   {
@@ -25,7 +25,7 @@ const ivPacks = [
     description:
       "Often includes Vitamin C, Biotin, Zinc and Glutathione.",
     points: ["Vitamin C", "Biotin", "Zinc", "Glutathione"],
-    price: "$260–$320",
+    price: "$320",
     accent: "rose",
   },
   {
@@ -33,7 +33,7 @@ const ivPacks = [
     description:
       "Commonly includes Glutathione, Vitamin C, Taurine and B vitamins.",
     points: ["Glutathione", "Vitamin C", "Taurine", "B Vitamins"],
-    price: "$250–$300",
+    price: "$300",
     accent: "indigo",
   },
   {
@@ -41,7 +41,7 @@ const ivPacks = [
     description:
       "Saline with electrolytes, Vitamin C, B Complex and Magnesium.",
     points: ["Electrolytes", "Vitamin C", "B Complex", "Magnesium"],
-    price: "$180–$220",
+    price: "$220",
     accent: "rose",
   },
   {
@@ -49,7 +49,7 @@ const ivPacks = [
     description:
       "Magnesium, Taurine, Vitamin C and B vitamins for muscle recovery.",
     points: ["Magnesium", "Taurine", "Vitamin C", "B Vitamins"],
-    price: "$220–$260",
+    price: "$260",
     accent: "indigo",
   },
   {
@@ -110,13 +110,13 @@ const IVTherapy = () => {
             >
 
               {/* PRICE BADGE */}
-              <div
-                className={`absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-medium shadow-sm
-                ${pack.accent === "rose"
-                    ? "bg-[rgb(202,18,84)] text-white"
-                    : "bg-[rgb(59,63,105)] text-white"
-                  }`}
-              >
+             <div
+  className={`absolute top-3 right-3 px-4 py-2 rounded-full text-sm sm:text-base font-semibold shadow-md
+  ${pack.accent === "rose"
+      ? "bg-[rgb(202,18,84)] text-white"
+      : "bg-[rgb(59,63,105)] text-white"
+    }`}
+>
                 {pack.price}
               </div>
 

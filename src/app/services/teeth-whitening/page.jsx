@@ -488,6 +488,11 @@ export default function TeethWhiteningPage() {
                 <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 600, color: '#3b3f69', marginBottom: '10px', lineHeight: 1.2 }}>
                   Ready to Enhance Your Smile?
                 </h2>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ca1254', background: 'rgba(202,18,84,0.1)', padding: '4px 10px', borderRadius: '6px' }}>
+                    $299 per session
+                  </span>
+                </div>
                 <p style={{ fontSize: '15px', color: 'rgba(59,63,105,0.65)', fontWeight: 300 }}>
                   Book online or contact us to begin your whitening journey.
                 </p>

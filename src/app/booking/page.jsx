@@ -57,7 +57,7 @@ const SERVICES = [
     title: 'IV Infusions',
     description: 'Targeted intravenous nutrient therapies for energy, immunity and recovery.',
     icon: <Science />,
-    price: 200,
+    price: 220,
   },
   {
     id: 'custom-iv-drips',
@@ -118,12 +118,12 @@ const SERVICES = [
 ];
 
 const IV_PACKAGES = [
-  { id: 'immune', name: 'Immune Defence IV', price: 220, desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
-  { id: 'energy', name: 'Energy & Performance IV', price: 200, desc: 'B-complex vitamins and amino acids for sustained energy.' },
-  { id: 'beauty', name: 'Beauty & Skin Glow IV', price: 260, desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
-  { id: 'detox', name: 'Detox & Liver Support IV', price: 250, desc: 'Liver-supporting antioxidants and detox nutrients.' },
-  { id: 'hydration', name: 'Hydration & Recovery IV', price: 180, desc: 'Electrolytes and minerals for rapid rehydration.' },
-  { id: 'athlete', name: 'Athlete Recovery IV', price: 220, desc: 'Targeted nutrients to accelerate muscle recovery.' },
+  { id: 'immune', name: 'Immune Defence IV', price: 260, desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
+  { id: 'energy', name: 'Energy & Performance IV', price: 240, desc: 'B-complex vitamins and amino acids for sustained energy.' },
+  { id: 'beauty', name: 'Beauty & Skin Glow IV', price: 320, desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
+  { id: 'detox', name: 'Detox & Liver Support IV', price: 300, desc: 'Liver-supporting antioxidants and detox nutrients.' },
+  { id: 'hydration', name: 'Hydration & Recovery IV', price: 220, desc: 'Electrolytes and minerals for rapid rehydration.' },
+  { id: 'athlete', name: 'Athlete Recovery IV', price: 260, desc: 'Targeted nutrients to accelerate muscle recovery.' },
 ];
 
 const CUSTOM_DRIP_PACKAGES = [
