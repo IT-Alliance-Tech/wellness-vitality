@@ -337,6 +337,7 @@ const TIME_SLOTS = [
 export default function BookingPage() {
   const [activeStep, setActiveStep] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [confirmed, setConfirmed] = useState(false);
 
   const [bookingData, setBookingData] = useState({
@@ -367,8 +368,9 @@ export default function BookingPage() {
 
   const handleCompleteBooking = async () => {
     setLoading(true);
+    setErrorMessage("");
     try {
-      await fetch('/api/booking', {
+      const response = await fetch('/api/send-booking-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -376,11 +378,17 @@ export default function BookingPage() {
           total: calculateTotal()
         })
       });
-      // Proceed to the confirmed screen even if the email config acts up locally
+      
+      const data = await response.json();
+      
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to dispatch booking emails.');
+      }
+
       setConfirmed(true);
     } catch (error) {
-      console.error("Booking mapping error:", error);
-      setConfirmed(true);
+      console.error("Booking submission error:", error);
+      setErrorMessage(error.message || "An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -855,6 +863,12 @@ export default function BookingPage() {
                     </Box>
                     <Chip label="All Inclusive" sx={{ bgcolor: 'white', border: '1px solid #ca125430', color: '#ca1254', fontWeight: 700 }} />
                   </Box>
+
+                  {errorMessage && (
+                    <Box sx={{ p: 2, mb: 3, borderRadius: 2, bgcolor: '#fff0f0', border: '1px solid #ffcccc', color: '#d32f2f' }}>
+                      <Typography variant="body2" fontWeight="bold">{errorMessage}</Typography>
+                    </Box>
+                  )}
 
                   <Paper 
                     elevation={0}
