@@ -10,13 +10,13 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-2 md:py-4">
+    <nav className="fixed top-0 left-0 right-0 z-[2000] bg-white shadow-sm py-2 md:py-4">
 
       {/* CONTAINER */}
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center justify-between">
 
         {/* LOGO */}
-        <Link href="/" className="flex flex-col items-center justify-center py-1 group">
+        <Link href="/" className="flex flex-col items-center justify-center py-1 group shrink-0">
           <Image
             src={Logo}
             alt="Wellness Vitality Australia"
@@ -26,11 +26,11 @@ const Navbar = () => {
             style={{ width: 'auto' }}
             priority
           />
-          <div className="mt-1 flex items-center justify-center gap-2 opacity-90 group-hover:opacity-100 transition-opacity">
-            <span className="text-[#3b3f69] font-bold text-[10px] sm:text-[11px] md:text-[12px] tracking-tight uppercase leading-none">
+          <div className="hidden md:flex mt-1 items-center justify-center gap-2 opacity-90 group-hover:opacity-100 transition-opacity">
+            <span className="text-[#3b3f69] font-bold text-[12px] tracking-tight uppercase leading-none">
               Wellness Vitality
             </span>
-            <span className="text-[#ca1254] font-semibold text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.2em] uppercase leading-none">
+            <span className="text-[#ca1254] font-semibold text-[11px] tracking-[0.2em] uppercase leading-none">
               Australia
             </span>
           </div>
@@ -92,23 +92,23 @@ const Navbar = () => {
         </div>
 
         {/* CTA + MENU */}
-        <div className="flex items-center gap-2 md:gap-3">
+        <div className="flex items-center gap-1.5 md:gap-3 shrink-0">
 
           {/* BUTTON */}
           <Button
             href="/booking"
             variant="primary"
-            className="w-[110px] md:w-[150px] px-2 py-1.5 md:px-4 md:py-3 text-[11px] md:text-sm flex items-center justify-center gap-2"
+            className="w-auto min-w-[80px] md:w-[150px] px-2 py-1.5 md:px-4 md:py-3 text-[10px] md:text-sm flex items-center justify-center gap-1 md:gap-2 whitespace-nowrap"
           >
             Book Now
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <svg className="w-3 h-3 md:w-3.5 md:h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </Button>
 
           {/* MOBILE MENU ICON */}
           <button
-            className="md:hidden p-2 text-[#3b3f69]"
+            className="md:hidden p-1.5 text-[#3b3f69] shrink-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
