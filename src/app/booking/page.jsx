@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import NurseBelleImage from '../../../public/nursebelle.png';
+import NurseEliasImage from '../../../public/IMG_3293.png';
 import {
   ThemeProvider,
   createTheme,
@@ -195,13 +198,29 @@ const APPOINTMENT_TYPES = [
   { id: 'teleconsultation', title: 'Teleconsultation', description: 'Virtual consultation via secure video link', icon: <Videocam />, emoji: '💻' },
 ];
 
+const NURSES = [
+  {
+    id: 'belle',
+    name: 'Registered Nurse Belle',
+    image: NurseBelleImage,
+    desc: 'Registered Nurse with 8 years clinical experience in IV therapy and restorative care.'
+  },
+  {
+    id: 'elias',
+    name: 'Registered Nurse Elias Roumie',
+    image: NurseEliasImage,
+    desc: 'Registered Nurse specialising in clinical health assessments and preventative wellness.'
+  }
+];
+
 const CLINIC_ADDRESS = 'Suite 226, 2–8 Brookhollow Avenue, Norwest NSW 2153';
 
-const STEP_LABELS = ['Services', 'Packages', 'Appointment', 'Details', 'Date & Time', 'Summary', 'Payment'];
+const STEP_LABELS = ['Services', 'Packages', 'Nurse', 'Appointment', 'Details', 'Date & Time', 'Summary', 'Payment'];
 
 const STEP_META = [
   { label: 'Select Services', sub: 'Choose one or more clinical services you need' },
   { label: 'Select Packages', sub: 'Customise your formulations based on the selected services' },
+  { label: 'Select Your Nurse', sub: 'Choose your preferred healthcare professional for this treatment' },
   { label: 'Appointment Type', sub: 'How would you like to receive care?' },
   { label: 'Personal Details', sub: 'Tell us a little about yourself' },
   { label: 'Date & Time', sub: 'Pick your preferred appointment slot' },
@@ -343,6 +362,7 @@ export default function BookingPage() {
   const [bookingData, setBookingData] = useState({
     selectedServices: [],
     selectedPackages: [],
+    selectedNurse: null,
     appointmentType: null,
     userDetails: { name: '', email: '', phone: '', address: '' },
     selectedDate: '',
@@ -358,7 +378,7 @@ export default function BookingPage() {
   }, [activeStep]);
 
   const handleNext = () => {
-    if (activeStep === 2) {
+    if (activeStep === 3) {
       setTouched({ name: false, email: false, phone: false, address: false });
     }
     setActiveStep((prev) => prev + 1);
@@ -378,9 +398,9 @@ export default function BookingPage() {
           total: calculateTotal()
         })
       });
-      
+
       const data = await response.json();
-      
+
       if (!response.ok || !data.success) {
         throw new Error(data.error || 'Failed to dispatch booking emails.');
       }
@@ -427,11 +447,11 @@ export default function BookingPage() {
   const isStepValid = () => {
     switch (activeStep) {
       case 0: return bookingData.selectedServices.length > 0;
-      case 1:
-        return bookingData.selectedPackages.length > 0;
-      case 2: return !!bookingData.appointmentType;
-      case 3: return Object.keys(validateForm()).length === 0;
-      case 4:
+      case 1: return bookingData.selectedPackages.length > 0;
+      case 2: return !!bookingData.selectedNurse;
+      case 3: return !!bookingData.appointmentType;
+      case 4: return Object.keys(validateForm()).length === 0;
+      case 5:
         if (isTeleconsultationOnly) return true;
         return bookingData.selectedDate && bookingData.selectedTime;
       default: return true;
@@ -608,8 +628,51 @@ export default function BookingPage() {
           </Fade>
         );
 
-      /* ─── STEP 2: APPOINTMENT TYPE ─── */
+      /* ─── STEP 2: SELECT NURSE ─── */
       case 2:
+        return (
+          <Fade in timeout={400}>
+            <Box sx={{ maxWidth: 720, mx: 'auto' }}>
+              <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap' }}>
+                {NURSES.map((nurse) => {
+                  const selected = bookingData.selectedNurse?.id === nurse.id;
+                  return (
+                    <Paper
+                      key={nurse.id}
+                      elevation={0}
+                      onClick={() => updateBookingData('selectedNurse', nurse)}
+                      sx={{
+                        p: 4, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5',
+                        bgcolor: selected ? '#fef5f8' : 'white', borderRadius: 5, cursor: 'pointer',
+                        transition: 'all 0.25s ease', flex: '1 1 280px', maxWidth: 320, minHeight: 380,
+                        display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                        '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 12px 32px rgba(202,18,84,0.1)' },
+                      }}
+                    >
+                      <Box sx={{ position: 'relative', width: 160, height: 160, borderRadius: '50%', overflow: 'hidden', mb: 3, flexShrink: 0, border: selected ? '4px solid #ca1254' : '4px solid #ededf5', transition: 'border-color 0.25s ease' }}>
+                        <Image src={nurse.image} alt={nurse.name} fill style={{ objectFit: 'cover' }} />
+                        {selected && (
+                          <Box sx={{ position: 'absolute', bottom: 8, right: 8, bgcolor: '#ca1254', color: 'white', borderRadius: '50%', p: 0.8, display: 'flex', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
+                            <CheckCircle sx={{ fontSize: 22 }} />
+                          </Box>
+                        )}
+                      </Box>
+                      <Typography variant="h6" color="secondary" gutterBottom sx={{ fontWeight: 800 }}>{nurse.name}</Typography>
+                      <Typography variant="body2" color="textSecondary" sx={{ mb: 3, lineHeight: 1.6, px: 1 }}>{nurse.desc}</Typography>
+                      <Box sx={{ mt: 'auto', pt: 2, borderTop: '1px solid #ededf5', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <Typography variant="caption" sx={{ fontWeight: 800, color: '#ca1254', textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: 0.5 }}>Clinical Expert</Typography>
+                        <Radio checked={selected} onChange={() => updateBookingData('selectedNurse', nurse)} color="primary" sx={{ p: 0 }} />
+                      </Box>
+                    </Paper>
+                  );
+                })}
+              </Box>
+            </Box>
+          </Fade>
+        );
+
+      /* ─── STEP 3: APPOINTMENT TYPE ─── */
+      case 3:
         return (
           <Fade in timeout={400}>
             <Box sx={{ maxWidth: 620, mx: 'auto' }}>
@@ -653,8 +716,8 @@ export default function BookingPage() {
           </Fade>
         );
 
-      /* ─── STEP 3: PERSONAL DETAILS ─── */
-      case 3: {
+      /* ─── STEP 4: PERSONAL DETAILS ─── */
+      case 4: {
         const errors = validateForm();
         return (
           <Fade in timeout={400}>
@@ -701,8 +764,8 @@ export default function BookingPage() {
         );
       }
 
-      /* ─── STEP 4: DATE & TIME ─── */
-      case 4:
+      /* ─── STEP 5: DATE & TIME ─── */
+      case 5:
         return (
           <Fade in timeout={400}>
             <Box>
@@ -749,8 +812,8 @@ export default function BookingPage() {
           </Fade>
         );
 
-      /* ─── STEP 5: SUMMARY & REVIEW ─── */
-      case 5:
+      /* ─── STEP 6: SUMMARY & REVIEW ─── */
+      case 6:
         return (
           <Fade in timeout={400}>
             <Box sx={{ maxWidth: 700, mx: 'auto' }}>
@@ -767,6 +830,15 @@ export default function BookingPage() {
                       <Typography variant="body2" fontWeight={700} color="primary">{p.priceLabel || `$${p.price}`}</Typography>
                     </Box>
                   ))}
+                </Box>
+
+                <Divider sx={{ my: 2.5 }} />
+
+                <Box sx={{ mb: 3 }}>
+                  <Typography variant="caption" sx={{ color: '#ca1254', fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 1 }}>Selected Nurse</Typography>
+                  <Typography variant="body1" fontWeight={700} color="secondary">
+                    {bookingData.selectedNurse?.name || '—'}
+                  </Typography>
                 </Box>
 
                 <Divider sx={{ my: 2.5 }} />
@@ -822,8 +894,8 @@ export default function BookingPage() {
           </Fade>
         );
 
-      /* ─── STEP 6: PAYMENT ─── */
-      case 6:
+      /* ─── STEP 7: PAYMENT ─── */
+      case 7:
         return (
           <Fade in timeout={400}>
             <Box sx={{ maxWidth: 520, mx: 'auto' }}>
@@ -845,7 +917,7 @@ export default function BookingPage() {
                       onClick={() => {
                         setActiveStep(0);
                         setConfirmed(false);
-                        setBookingData({ selectedServices: [], selectedPackages: [], appointmentType: null, userDetails: { name: '', email: '', phone: '', address: '' }, selectedDate: '', selectedTime: '' });
+                        setBookingData({ selectedServices: [], selectedPackages: [], selectedNurse: null, appointmentType: null, userDetails: { name: '', email: '', phone: '', address: '' }, selectedDate: '', selectedTime: '' });
                         setTouched({ name: false, email: false, phone: false, address: false });
                       }}
                       sx={{ borderRadius: 50, px: 4, py: 1.5, fontWeight: 700, borderWidth: 2 }}
@@ -870,7 +942,7 @@ export default function BookingPage() {
                     </Box>
                   )}
 
-                  <Paper 
+                  <Paper
                     elevation={0}
                     onClick={() => !loading && handleCompleteBooking()}
                     sx={{ p: { xs: 2.5, sm: 3 }, mb: 3, border: '2px solid #e2e8f0', borderRadius: 4, bgcolor: '#f8fafc', cursor: loading ? 'default' : 'pointer', opacity: loading ? 0.7 : 1, transition: 'all 0.2s', '&:hover': !loading ? { borderColor: '#635bff', transform: 'translateY(-2px)', boxShadow: '0 8px 25px rgba(99,91,255,0.15)' } : {} }}
@@ -884,14 +956,14 @@ export default function BookingPage() {
                         <Typography variant="body2" color="textSecondary" sx={{ mb: 1.5, maxWidth: 350 }}>
                           Complete your booking safely and instantly using any major credit or debit card.
                         </Typography>
-                        
+
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                           <Typography variant="caption" sx={{ fontWeight: 600, color: '#64748b', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                             <CreditCard sx={{ fontSize: 14 }} /> Apple Pay, Google Pay, Visa & Mastercard
-                           </Typography>
+                          <Typography variant="caption" sx={{ fontWeight: 600, color: '#64748b', display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                            <CreditCard sx={{ fontSize: 14 }} /> Apple Pay, Google Pay, Visa & Mastercard
+                          </Typography>
                         </Box>
                       </Box>
-                      
+
                       {loading ? (
                         <CircularProgress size={24} sx={{ color: '#635bff' }} />
                       ) : (
@@ -901,7 +973,7 @@ export default function BookingPage() {
                       )}
                     </Box>
                   </Paper>
-                  
+
                   <Box sx={{ display: 'flex', gap: 1, justifyContent: 'center', alignItems: 'center', color: '#8888a8' }}>
                     <ShieldOutlined sx={{ fontSize: 14 }} />
                     <Typography variant="caption" color="textSecondary">Payments are encrypted and processed securely by Stripe</Typography>
