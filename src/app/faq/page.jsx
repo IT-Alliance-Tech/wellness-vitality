@@ -121,7 +121,7 @@ function AccordionItem({ q, a, isOpen, onToggle }) {
     <div className={`h-fit border rounded-3xl transition-all duration-500 overflow-hidden ${isOpen ? 'border-[#3b3f69]/20 bg-white shadow-xl shadow-gray-100' : 'border-gray-100 bg-gray-50/30 hover:bg-white hover:border-gray-200'}`}>
       <button
         onClick={onToggle}
-        className="w-full px-5 py-5 text-left flex items-start justify-between group"
+        className="w-full px-5 py-5 text-left flex items-start justify-between group cursor-pointer"
       >
         <span className={`text-sm md:text-[15px] font-semibold leading-relaxed transition-colors ${isOpen ? 'text-[#ca1254]' : 'text-[#3b3f69]/90'}`}>
           {q}

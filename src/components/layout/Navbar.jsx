@@ -45,7 +45,7 @@ const Navbar = () => {
 
           {/* SERVICES DROPDOWN */}
           <div className="relative group">
-            <button className="text-sm font-medium text-gray-700 hover:text-[#ca1254] transition flex items-center gap-1">
+            <button className="text-sm font-medium text-gray-700 hover:text-[#ca1254] transition flex items-center gap-1 cursor-pointer">
               Services
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -98,9 +98,12 @@ const Navbar = () => {
           <Button
             href="/booking"
             variant="primary"
-            className="w-[100px] md:w-[130px] px-2 py-1.5 md:px-4 md:py-3 text-[11px] md:text-sm"
+            className="w-[110px] md:w-[150px] px-2 py-1.5 md:px-4 md:py-3 text-[11px] md:text-sm flex items-center justify-center gap-2"
           >
             Book Now
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
           </Button>
 
           {/* MOBILE MENU ICON */}

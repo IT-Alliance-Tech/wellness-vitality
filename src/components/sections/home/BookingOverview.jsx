@@ -39,13 +39,15 @@ const BookingOverview = () => {
             </p>
 
             {/* FEATURES */}
-            <div className="space-y-3 mb-8">
+            <div className="space-y-4 mb-10">
               {features.map((feature) => (
-                <div key={feature.title} className="flex items-center gap-3">
-                  <div className="w-7 h-7 rounded-full bg-[rgb(59,63,105)]/10 flex items-center justify-center">
-                    <div className="w-2 h-2 bg-[rgb(202,18,84)] rounded-full" />
+                <div key={feature.title} className="flex items-center gap-3 group/feat">
+                  <div className="w-8 h-8 rounded-full bg-[rgb(59,63,105)]/5 flex items-center justify-center transition-colors group-hover/feat:bg-[rgb(202,18,84)]/10">
+                    <svg className="w-4 h-4 text-[rgb(202,18,84)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <span className="text-sm text-[rgb(59,63,105)] font-medium">
+                  <span className="text-base text-[rgb(59,63,105)] font-medium">
                     {feature.title}
                   </span>
                 </div>
@@ -55,19 +57,26 @@ const BookingOverview = () => {
             <a
               href="/booking"
               className="
-    inline-flex items-center justify-center
-    px-7 py-2.5
-    text-[rgb(202,18,84)]
-    text-sm font-medium tracking-wide
-    border-2 border-[rgb(202,18,84)]
-    bg-transparent
-    rounded-none
-    transition-all duration-300
-    hover:bg-[rgb(202,18,84)]
-    hover:text-white
-  "
+                inline-flex items-center justify-center
+                gap-3
+                px-8 py-3
+                text-[rgb(202,18,84)]
+                text-base font-bold tracking-wide
+                border-2 border-[rgb(202,18,84)]
+                bg-transparent
+                rounded-none
+                transition-all duration-500
+                hover:bg-[rgb(202,18,84)]
+                hover:text-white
+                hover:gap-4
+                cursor-pointer
+                group/btn
+              "
             >
               Book Appointment
+              <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
 
