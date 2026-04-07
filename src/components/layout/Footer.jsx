@@ -57,7 +57,7 @@ const Footer = () => {
                 { label: 'Booking', path: '/booking' },
                 { label: 'Contact Us', path: '/contact' },
                 { label: 'FAQ', path: '/faq' },
-                
+                { label: 'Refund Policy', path: '/refund-policy' },
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.path} className="text-white/70 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
@@ -135,14 +135,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left w-full">
           <p className="text-white/40 text-xs font-medium">
             @ {new Date().getFullYear()} Wellness & Vitality Australia. All rights reserved.
           </p>
-          {/* <div className="flex gap-8 text-xs font-medium text-white/40">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-          </div> */}
         </div>
       </div>
     </footer>
