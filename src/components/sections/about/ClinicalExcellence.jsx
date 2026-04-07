@@ -26,7 +26,7 @@ const ClinicalExcellence = () => {
     {
       title: 'Mobile First Approach',
       description:
-        'We come to your home, workplace, aged care facility or NDIS residence — clinical care on your terms.',
+        'We come to your home, workplace, aged care facility or NDIS residence, clinical care on your terms.',
       icon: (
         <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

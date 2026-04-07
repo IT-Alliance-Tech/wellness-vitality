@@ -6,7 +6,7 @@ import { HeartPulse, Briefcase, ShieldAlert, Stethoscope } from "lucide-react";
 const training = [
     {
         title: "CPR & First Aid",
-        desc: "Essential life-saving training programs.",
+        desc: "Essential life-saving training programmes.",
         icon: HeartPulse,
     },
     {
@@ -38,7 +38,7 @@ const Training = () => {
                             Training and Services
                         </h2>
                         <p className="text-gray-500 text-sm md:text-base">
-                            Accredited and workplace-focused training programs.
+                            Accredited and workplace-focused training programmes.
                         </p>
                     </div>
 

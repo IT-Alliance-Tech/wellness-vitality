@@ -405,7 +405,7 @@ export default function AgedCareNDISPage() {
                   <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Personal Touch</em>
                 </h2>
                 <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '8px', maxWidth: '440px' }}>
-                  Reliable and compassionate nursing services for aged care residents and NDIS participants — supporting daily healthcare needs with a focus on dignity and quality of life.
+                  Reliable and compassionate nursing services for aged care residents and NDIS participants, supporting daily healthcare needs with a focus on dignity and quality of life.
                 </p>
                 <div className="stat-grid">
                   <div className="stat-card">

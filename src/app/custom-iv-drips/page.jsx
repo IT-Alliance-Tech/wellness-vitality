@@ -35,10 +35,10 @@ const boosters = [
   { name: 'Vitamin B12 Shot', price: '$59', desc: 'Increase metabolism, boost energy, regulate mood, sleep and appetite' },
   { name: 'Biotin B7', price: '$54', desc: 'The elixir for your hair, skin and nails to thrive' },
   { name: 'COQ10', price: '$54', desc: 'Support exercise performance and recovery while helping to reduce fatigue and enhance endurance' },
-  { name: 'Glutathione Shot', price: '$99', desc: 'May slow the aging process as you detoxify your liver' },
+  { name: 'Glutathione Shot', price: '$99', desc: 'May slow the ageing process as you detoxify your liver' },
   { name: 'Vitamin D', price: '$99', desc: 'Helps your immune system against viruses & builds density in your bones' },
-  { name: 'ALA Complex', price: '$58', desc: 'Powerful anti-oxidant that supports cellular energy, nerve health and metabolic balance while helping protect the body from oxidative stress' },
-  { name: 'NAD Subcutanious', price: '$225', desc: 'Powerful coenzymes that enables cells to produce energy, repair DNA and regulate aging' },
+  { name: 'ALA Complex', price: '$58', desc: 'Powerful antioxidant that supports cellular energy, nerve health and metabolic balance while helping protect the body from oxidative stress' },
+  { name: 'NAD Subcutaneous', price: '$225', desc: 'Powerful coenzymes that enable cells to produce energy, repair DNA and regulate ageing' },
 ];
 
 export default function CustomIvDripsPage() {
@@ -580,7 +580,7 @@ export default function CustomIvDripsPage() {
                   Book Consultation
                 </Button>
                 <Button href="/contact" variant="outline" className="cta-btn-outline">
-                  Inquire via Email
+                  Enquire via Email
                 </Button>
               </div>
 

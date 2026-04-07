@@ -7,7 +7,7 @@ import TeethWhiteningImage from '../../../../public/images/services/teeth-whiten
 
 const benefits = [
   { title: 'Brighter, Whiter Smile', icon: '✨', desc: 'Achieve a noticeably brighter and more confident smile.' },
-  { title: 'Up to 6-8 Shades Lighter', icon: '💎', desc: 'Clinically proven whitening that can lighten teeth by 6-8 shades.' },
+  { title: 'Up to 6 to 8 Shades Lighter', icon: '💎', desc: 'Clinically proven whitening that can lighten teeth by 6 to 8 shades.' },
   { title: 'Safe & Professional', icon: '✔️', desc: 'Treatments performed by trained healthcare professionals.' },
   { title: 'Mobile Service', icon: '🏠', desc: 'Convenient treatment delivered directly to your location.' },
 ];

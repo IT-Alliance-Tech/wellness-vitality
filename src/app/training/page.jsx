@@ -99,7 +99,7 @@ const TrainingPage = () => {
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#ca1254] animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Accredited Programs</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Accredited Programmes</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold !text-white mb-8 leading-[1.2] tracking-tight">
@@ -108,7 +108,7 @@ const TrainingPage = () => {
           </h1>
 
           <p className="text-xl text-white w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light">
-            Professional programs designed for individuals, workplaces, and community environments — built around saving lives.
+            Professional programmes designed for individuals, workplaces, and community environments, built around saving lives.
           </p>
 
           <div className="mt-10 md:mt-14 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
@@ -120,7 +120,7 @@ const TrainingPage = () => {
       </section>
 
       {/* ── TRAINING SECTIONS ── */}
-      <div id="programs" className="w-full flex flex-col pb-16">
+      <div id="programmes" className="w-full flex flex-col pb-16">
         {sections.map((section, idx) => {
           const isEven = idx % 2 === 0;
           const bgClass = !isEven ? 'bg-[#ca1254]/[0.04]' : '';
@@ -196,7 +196,7 @@ const TrainingPage = () => {
                   for Your <span className="text-[#ca1254]">Organisation</span>
                 </h3>
                 <p className="text-[#3b3f69]/70 text-sm md:text-lg mb-8 max-w-lg leading-relaxed font-light mx-auto lg:mx-0">
-                  We design flexible training programs based on your organisation’s
+                  We design flexible training programmes based on your organisation’s
                   needs, environment, and compliance requirements.
                 </p>
                 <a href="/contact" className="inline-flex items-center gap-2 bg-[#ca1254] text-white px-10 py-4 rounded font-semibold hover:bg-[#a30f44] transition-all hover:shadow-lg hover:shadow-[#ca1254]/20 hover:-translate-y-0.5">
@@ -213,7 +213,7 @@ const TrainingPage = () => {
                   <ul className="space-y-4">
                     {[
                       'Flexible formats (online & in-person)',
-                      'Industry-specific programs',
+                      'Industry-specific programmes',
                       'Workplace safety compliance',
                       'Scalable team training solutions'
                     ].map((item, i) => (

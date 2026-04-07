@@ -433,7 +433,7 @@ export default function BloodCollectionPage() {
                   <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Home Convenience</em>
                 </h2>
                 <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
-                  Designed for patients who prefer testing outside clinical environments — every sample handled with clinical precision and transported immediately to accredited laboratories.
+                  Designed for patients who prefer testing outside clinical environments, every sample handled with precision and care to ensure accurate, fast results.
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                   {benefits.map((b) => (

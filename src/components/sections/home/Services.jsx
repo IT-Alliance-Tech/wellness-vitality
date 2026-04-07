@@ -27,7 +27,7 @@ const services = [
   {
     title: "Teeth Whitening",
     description:
-      "Professional teeth whitening treatments delivered by qualified healthcare professionals. Improves smile appearance and can lighten teeth by up to 6–8 shades.",
+      "Professional teeth whitening treatments delivered by qualified healthcare professionals. Improves smile appearance and can lighten teeth by up to 6 to 8 shades.",
     image: TeethWhiteningImage,
   },
   {

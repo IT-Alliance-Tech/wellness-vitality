@@ -18,7 +18,7 @@ const benefits = [
   { title: 'Promotes Employee Wellbeing', desc: 'Healthy employees are more engaged and satisfied.' },
   { title: 'Improves Productivity', desc: 'Preventative health supports better performance at work.' },
   { title: 'Supports Workplace Safety', desc: 'Reduce risk and liability through professional health services.' },
-  { title: 'Convenient On-Site Services', desc: 'No time lost to offsite clinic visits — we come to you.' },
+  { title: 'Convenient On-Site Services', desc: 'No time lost to offsite clinic visits, we come to you.' },
 ];
 
 const steps = [
@@ -30,7 +30,7 @@ const steps = [
 
 const corporateBenefits = [
   { title: 'Seamless Integration', desc: 'Minimal disruption to your workplace operations with efficient on-site setup.' },
-  { title: 'Professional Reporting', desc: 'Receive aggregated health insights to inform your organization wellness strategy.' },
+  { title: 'Professional Reporting', desc: 'Receive aggregated health insights to inform your organisation wellness strategy.' },
   { title: 'Employee Engagement', desc: 'Boost morale and productivity by showing a genuine commitment to staff health.' },
 ];
 
@@ -393,7 +393,7 @@ export default function CorporateHealthPage() {
                   <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Healthier Workforce</em>
                 </h2>
                 <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
-                  We provide tailored healthcare services for workplaces to support employee wellbeing and ensure a healthier work environment. Our on-site model minimizes disruption while maximizing health outcomes for your organization.
+                  We provide tailored healthcare services for workplaces to support employee wellbeing and ensure a healthier work environment. Our on-site model minimises disruption while maximising health outcomes for your organisation.
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                   {benefits.slice(0, 4).map((b) => (
