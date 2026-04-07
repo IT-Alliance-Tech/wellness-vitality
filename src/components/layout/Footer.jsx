@@ -1,27 +1,65 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterLogo from '../../../public/footer.png';
 
-const Footer = () => {
+const FooterSection = ({ title, children, id, activeSection, toggleSection }) => {
+  const isOpen = activeSection === id;
+  
   return (
-    <footer className="bg-[#3b3f69] text-white pt-24 pb-12 mt-auto border-t border-[#3b3f69]/20">
-      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+    <div className="border-b border-white/5 md:border-none last:border-none">
+      <button 
+        onClick={() => toggleSection(id)}
+        className="w-full flex items-center justify-between py-5 md:py-0 md:mb-6 text-left group md:cursor-default"
+      >
+        <h3 className="text-[11px] font-bold text-white uppercase tracking-[0.2em] opacity-80 group-hover:opacity-100 transition-opacity">
+          {title}
+        </h3>
+        <span className={`md:hidden transform transition-transform duration-500 ease-in-out ${isOpen ? 'rotate-180 opacity-100' : 'opacity-40'}`}>
+          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </button>
+
+      <div className={`
+        overflow-hidden transition-all duration-500 ease-in-out
+        ${isOpen ? 'max-h-[500px] opacity-100 pb-6' : 'max-h-0 opacity-0 md:max-h-none md:opacity-100'}
+      `}>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+const Footer = () => {
+  const [activeSection, setActiveSection] = useState(null);
+
+  const toggleSection = (id) => {
+    if (window.innerWidth >= 768) return; // Don't toggle on desktop
+    setActiveSection(activeSection === id ? null : id);
+  };
+
+  return (
+    <footer className="bg-[#1a1c3d] text-white pt-16 md:pt-24 pb-8 md:pb-12 mt-auto border-t border-white/5 overflow-hidden">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-2 md:gap-8 mb-10 md:mb-16">
 
           {/* Brand Column */}
-          <div className="lg:col-span-4">
-            <Link href="/" className="inline-block mb-6">
+          <div className="lg:col-span-4 mb-4 md:mb-0">
+            <Link href="/" className="inline-block mb-6 transition-transform hover:scale-[1.02]">
               <Image 
                 src={FooterLogo} 
                 alt="Wellness Vitality Australia" 
-                className="h-18 w-auto" 
-                width={200}
+                className="h-14 md:h-20 w-auto" 
+                width={180}
                 height={72}
                 style={{ width: 'auto' }}
               />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed mb-8 pr-4">
+            <p className="text-white/50 text-sm leading-relaxed mb-6 pr-4 max-w-sm">
               Experience elite diagnostic and therapeutic services from the comfort of your home. Premium healthcare, delivered with a personal touch and clinical precision.
             </p>
 
@@ -38,7 +76,7 @@ const Footer = () => {
                   href={social.href} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#ca1254] hover:text-white transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#ca1254] hover:text-white transition-all duration-300 border border-white/5 hover:border-[#ca1254]"
                 >
                   {social.icon}
                 </a>
@@ -48,97 +86,98 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h3 className="text-xs font-bold mb-6 text-white uppercase tracking-widest opacity-80">Company</h3>
-            <ul className="space-y-4">
-              {[
-                { label: 'Home', path: '/' },
-                { label: 'About Us', path: '/about' },
-                { label: 'Services', path: '/services' },
-                { label: 'Booking', path: '/booking' },
-                { label: 'Contact Us', path: '/contact' },
-                { label: 'FAQ', path: '/faq' },
-                { label: 'Refund Policy', path: '/refund-policy' },
-              ].map((item) => (
-                <li key={item.label}>
-                  <Link href={item.path} className="text-white/70 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <FooterSection title="Company" id="company" activeSection={activeSection} toggleSection={toggleSection}>
+              <ul className="space-y-4">
+                {[
+                  { label: 'Home', path: '/' },
+                  { label: 'About Us', path: '/about' },
+                  { label: 'Services', path: '/services' },
+                  { label: 'Booking', path: '/booking' },
+                  { label: 'Contact Us', path: '/contact' },
+                  { label: 'FAQ', path: '/faq' },
+                  { label: 'Refund Policy', path: '/refund-policy' },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.path} className="text-white/60 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </FooterSection>
           </div>
 
           {/* Services */}
           <div className="lg:col-span-3">
-            <h3 className="text-xs font-bold mb-6 text-white uppercase tracking-widest opacity-80">Our Services</h3>
-            <ul className="space-y-4">
-              {[
-                'IV Infusion Therapy',
-                'Health Assessments',
-                'Blood Collection',
-                'Aged Care & NDIS',
-                'Professional Teeth Whitening',
-                'Corporate Health Services'
-              ].map((item) => (
-                <li key={item}>
-                  <Link href="/services" className="text-white/70 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <FooterSection title="Our Services" id="services" activeSection={activeSection} toggleSection={toggleSection}>
+              <ul className="space-y-4">
+                {[
+                  'IV Infusion Therapy',
+                  'Health Assessments',
+                  'Blood Collection',
+                  'Aged Care & NDIS',
+                  'Professional Teeth Whitening',
+                  'Corporate Health Services'
+                ].map((item) => (
+                  <li key={item}>
+                    <Link href="/services" className="text-white/60 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </FooterSection>
           </div>
 
           {/* Contact */}
           <div className="lg:col-span-3">
-            <h3 className="text-xs font-bold mb-6 text-white uppercase tracking-widest opacity-80">Get In Touch</h3>
-            <ul className="space-y-5">
-              <li className="flex gap-4 text-white/70 text-sm items-start">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                </div>
-                <div className="pt-1.5">
-                  <div className="font-semibold text-white">02 9627 2659</div>
-                </div>
-              </li>
-              <li className="flex gap-4 text-white/70 text-sm items-start">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                </div>
-                <div className="pt-1.5">
-                  <div className="text-xs leading-relaxed text-white">
-                    <span className="font-semibold uppercase tracking-widest text-[9px] text-white/50 block mb-1">Business Hours</span>
-                    <span className="font-bold">6 AM – 9 PM</span> <span className="text-white/40 mx-2">|</span> <span className="font-bold">7 DAYS</span>
+            <FooterSection title="Get In Touch" id="contact" activeSection={activeSection} toggleSection={toggleSection}>
+              <ul className="space-y-4">
+                <li className="flex gap-4 text-white/60 text-sm items-start group">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ca1254]/20 transition-colors">
+                    <svg className="w-4 h-4 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   </div>
-                </div>
-              </li>
-              <li className="flex gap-4 text-white/70 text-sm items-start">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-[#ca1254] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                </div>
-                <div className="pt-1.5">
-                  <a href="mailto:admin@wellnessvitalityaustralia.com.au" className="font-semibold text-white hover:text-[#ca1254] transition-colors">admin@wellnessvitalityaustralia.com.au</a>
-                </div>
-              </li>
-              <li className="flex gap-4 text-white/70 text-sm items-start">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-[#ca1254] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </div>
-                <div className="pt-1.5 leading-relaxed">
-                 {` Suite 226, 2–8 Brookhollow Avenue`} <br />
-                  Norwest NSW 2153
-                </div>
-              </li>
-            </ul>
+                  <div className="pt-1.5 flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-1">Call Us</span>
+                    <a href="tel:0296272659" className="font-bold text-white hover:text-[#ca1254] transition-colors">02 9627 2659</a>
+                  </div>
+                </li>
+                <li className="flex gap-4 text-white/60 text-sm items-start group">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ca1254]/20 transition-colors">
+                    <svg className="w-4 h-4 text-[#ca1254] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  </div>
+                  <div className="pt-1.5 flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-1">Email Us</span>
+                    <a href="mailto:admin@wellnessvitalityaustralia.com.au" className="font-bold text-white hover:text-[#ca1254] transition-colors break-all">admin@wellnessvitalityaustralia.com.au</a>
+                  </div>
+                </li>
+                <li className="flex gap-4 text-white/60 text-sm items-start group">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ca1254]/20 transition-colors">
+                    <svg className="w-4 h-4 text-[#ca1254] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  </div>
+                  <div className="pt-1.5 flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-1">Clinical Suites</span>
+                    <span className="text-white/80 font-medium leading-relaxed">
+                      Suite 226, 2–8 Brookhollow Avenue <br />
+                      Norwest NSW 2153
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </FooterSection>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left w-full">
-          <p className="text-white/40 text-xs font-medium">
-            @ {new Date().getFullYear()} Wellness & Vitality Australia. All rights reserved.
+        <div className="border-t border-white/5 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left w-full">
+          <p className="text-white/30 text-[11px] font-medium tracking-wide">
+            © {new Date().getFullYear()} Wellness & Vitality Australia. Elite Clinical Services.
           </p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="text-white/30 hover:text-white text-[11px] transition-colors font-medium">Privacy Policy</Link>
+            <Link href="/terms" className="text-white/30 hover:text-white text-[11px] transition-colors font-medium">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

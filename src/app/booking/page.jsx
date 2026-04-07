@@ -996,11 +996,31 @@ export default function BookingPage() {
   return (
     <ThemeProvider theme={theme}>
       <main style={{ minHeight: '100vh', backgroundColor: '#f7f7fc', position: 'relative' }}>
-        <Box sx={{ position: 'sticky', top: 110, mt: 0, zIndex: 10, bgcolor: '#ffffff', borderBottom: '1px solid #ededf5', boxShadow: '0 4px 12px rgba(0,0,0,0.03)', pt: 0, pb: 2.5, overflow: 'hidden' }}>
-          <Box sx={{ width: '100%', height: 3, bgcolor: '#f0f0f7', mb: 2.5 }}>
+        <Box sx={{ 
+          position: 'sticky', 
+          top: { xs: 60, sm: 110 }, 
+          mt: 0, 
+          zIndex: 10, 
+          bgcolor: '#ffffff', 
+          borderBottom: '1px solid #ededf5', 
+          boxShadow: '0 4px 12px rgba(0,0,0,0.03)', 
+          pt: 0, 
+          pb: { xs: 1, sm: 2.5 }, 
+          overflow: 'hidden' 
+        }}>
+          <Box sx={{ width: '100%', height: 3, bgcolor: '#f0f0f7', mb: { xs: 0.5, sm: 2.5 } }}>
             <Box sx={{ width: `${((activeStep + 1) / STEP_LABELS.length) * 100}%`, height: '100%', bgcolor: '#ca1254', transition: 'width 0.6s cubic-bezier(0.65, 0, 0.35, 1)', boxShadow: '0 0 10px rgba(202,18,84,0.4)' }} />
           </Box>
-          <Container maxWidth="md">
+          {/* MOBILE PROGRESS INDICATOR */}
+          <Box sx={{ display: { xs: 'flex', sm: 'none' }, px: 3, py: 1, justifyContent: 'space-between', alignItems: 'center' }}>
+            <Typography sx={{ fontWeight: 800, color: '#ca1254', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: 0.5 }}>
+              Stage {activeStep + 1}: {STEP_LABELS[activeStep]}
+            </Typography>
+            <Typography sx={{ fontWeight: 700, color: '#9999b0', fontSize: '0.65rem' }}>
+              {activeStep + 1} / {STEP_LABELS.length}
+            </Typography>
+          </Box>
+          <Container maxWidth="md" sx={{ display: { xs: 'none', sm: 'block' } }}>
             <Stepper activeStep={activeStep} alternativeLabel connector={<CustomConnector />}>
               {STEP_LABELS.map((label, idx) => (
                 <Step key={label}>
@@ -1028,32 +1048,32 @@ export default function BookingPage() {
           <Box sx={{
             position: 'sticky',
             bottom: 0,
-            zIndex: 1000,
-            py: { xs: 2, sm: 2.5 },
+            zIndex: 10,
+            py: { xs: 1.5, sm: 2.5 },
             px: { xs: 2, sm: 3 },
-            bgcolor: 'rgba(247, 247, 252, 0.95)',
+            bgcolor: 'rgba(247, 247, 252, 0.98)',
             backdropFilter: 'blur(12px)',
             borderTop: '1px solid rgba(200, 200, 220, 0.4)',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: 3,
-            boxShadow: '0 -4px 20px rgba(0,0,0,0.03)'
+            gap: { xs: 1.5, sm: 3 },
+            boxShadow: '0 -4px 30px rgba(0,0,0,0.06)'
           }}>
             {activeStep !== 0 && (
-              <Button onClick={handleBack} variant="text" startIcon={<ArrowBack sx={{ fontSize: 16 }} />} sx={{ color: '#9999b0', fontWeight: 700, '&:hover': { color: '#3b3f69', bgcolor: 'transparent' } }}>
+              <Button onClick={handleBack} variant="text" startIcon={<ArrowBack sx={{ fontSize: 16 }} />} sx={{ color: '#9999b0', fontWeight: 700, '&:hover': { color: '#3b3f69', bgcolor: 'transparent' }, px: { xs: 1, sm: 2 } }}>
                 Back
               </Button>
             )}
             {activeStep < STEP_LABELS.length - 1 && (
-              <Button variant="contained" color="primary" onClick={handleNext} disabled={!isStepValid()} endIcon={<ArrowForward sx={{ fontSize: 18 }} />} sx={{ minWidth: 240, py: 1.5, fontSize: '0.95rem', borderRadius: '4px !important', boxShadow: 'none', '&:hover': { boxShadow: 'none', bgcolor: '#a80e47' } }}>
+              <Button variant="contained" color="primary" onClick={handleNext} disabled={!isStepValid()} endIcon={<ArrowForward sx={{ fontSize: 16 }} />} sx={{ minWidth: { xs: 140, sm: 240 }, py: { xs: 1.2, sm: 1.5 }, fontSize: { xs: '0.85rem', sm: '0.95rem' }, borderRadius: '4px !important', boxShadow: 'none', '&:hover': { boxShadow: 'none', bgcolor: '#a80e47' } }}>
                 Continue
               </Button>
             )}
           </Box>
         )}
 
-        <Box sx={{ py: 6, borderTop: '1px solid #ededf5', textAlign: 'center', mt: 0 }}>
+        <Box sx={{ py: 6, borderTop: '1px solid #ededf5', textAlign: 'center', mt: 0, position: 'relative', zIndex: 1 }}>
           <Container>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, mb: 2 }}>
               <Button href="/contact" variant="text" size="small" sx={{ color: '#9999b0', fontWeight: 600, fontSize: '0.82rem' }}>Clinical Support</Button>
@@ -1062,6 +1082,7 @@ export default function BookingPage() {
             <Typography variant="caption" color="textSecondary">All bookings are subject to clinical availability.</Typography>
           </Container>
         </Box>
+        
       </main>
     </ThemeProvider>
   );
