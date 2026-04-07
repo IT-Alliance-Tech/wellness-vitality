@@ -31,7 +31,7 @@ const nutrients = [
   { name: 'Glutathione', desc: 'Master antioxidant for liver detox and skin brightening.', accent: 'rose' },
   { name: 'Coenzyme Q10', desc: 'Vital cellular energy coenzyme powering repair and metabolism.', accent: 'navy' },
   { name: 'Alpha Lipoic Acid', desc: 'Universal antioxidant supporting nerve health and glucose metabolism.', accent: 'rose' },
-  { name: 'NAD+', desc: 'Critical coenzyme for cellular energy, anti-aging, and DNA repair.', accent: 'navy' },
+  { name: 'NAD+', desc: 'Critical coenzyme for cellular energy, anti-ageing, and DNA repair.', accent: 'navy' },
 ];
 
 const midPoint = Math.ceil(nutrients.length / 2);

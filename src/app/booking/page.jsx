@@ -111,7 +111,7 @@ const SERVICES = [
   {
     id: 'corporate-health',
     title: 'Corporate Health Services',
-    description: 'Workplace wellness programs, health checks and team vitality packages.',
+    description: 'Workplace wellness programmes, health checks and team vitality packages.',
     icon: <Business />,
     price: 250,
   },
@@ -158,10 +158,10 @@ const CUSTOM_BOOSTERS = [
   { id: 'boost-b12', name: 'Vitamin B12 Shot', price: 59, desc: 'Increase metabolism, boost energy, regulate mood, sleep and appetite.' },
   { id: 'boost-biotin', name: 'Biotin B7', price: 54, desc: 'The elixir for your hair, skin and nails to thrive.' },
   { id: 'boost-coq10', name: 'COQ10', price: 54, desc: 'Support exercise performance and recovery while helping to reduce fatigue and enhance endurance.' },
-  { id: 'boost-gluta-shot', name: 'Glutathione Shot', price: 99, desc: 'May slow the aging process as you detoxify your liver.' },
+  { id: 'boost-gluta-shot', name: 'Glutathione Shot', price: 99, desc: 'May slow the ageing process as you detoxify your liver.' },
   { id: 'boost-vitd', name: 'Vitamin D', price: 99, desc: 'Helps your immune system against viruses & builds density in your bones.' },
   { id: 'boost-ala', name: 'ALA Complex', price: 58, desc: 'Powerful anti-oxidant that supports cellular energy, nerve health and metabolic balance.' },
-  { id: 'boost-nad', name: 'NAD Subcutanious', price: 225, desc: 'Powerful coenzymes that enables cells to produce energy, repair DNA and regulate aging.' },
+  { id: 'boost-nad', name: 'NAD Subcutanious', price: 225, desc: 'Powerful coenzymes that enables cells to produce energy, repair DNA and regulate ageing.' },
 ];
 
 const OTHER_PACKAGES = {
@@ -181,7 +181,7 @@ const OTHER_PACKAGES = {
     { id: 'pkg-teeth', name: 'Teeth Whitening', price: 299, desc: 'High-performance clinical teeth whitening with protective minerals.' }
   ],
   'corporate-health': [
-    { id: 'pkg-corp', name: 'Corporate Health Services', price: 250, desc: 'Workplace wellness programs, health checks and team vitality packages.' }
+    { id: 'pkg-corp', name: 'Corporate Health Services', price: 250, desc: 'Workplace wellness programmes, health checks and team vitality packages.' }
   ],
   'clinical-legal': [
     { id: 'pkg-legal', name: 'Clinical Legal Services', price: 150, priceLabel: '$150 / hr', desc: 'Expert clinical legal consulting and documentation services (Hourly rate applies).' }

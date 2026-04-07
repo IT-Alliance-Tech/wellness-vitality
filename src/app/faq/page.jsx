@@ -26,7 +26,7 @@ const faqs = [
       },
       {
         q: "Is IV therapy painful?",
-        a: "You may feel a small pinch during cannula insertion — similar to a standard blood test. Most clients find the procedure comfortable and relaxing.",
+        a: "You may feel a small pinch during cannula insertion, similar to a standard blood test. Most clients find the procedure comfortable and relaxing.",
       },
       {
         q: "What can IV therapy support?",
@@ -167,7 +167,7 @@ export default function FAQPage() {
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6">
             <div className="w-2 h-2 rounded-full bg-[#ca1254]" />
-            <span className="text-[9px] font-bold uppercase tracking-[0.2em] !text-white">Help Center</span>
+            <span className="text-[9px] font-bold uppercase tracking-[0.2em] !text-white">Help Centre</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold !text-white mb-6 leading-[1.1] tracking-tight">
