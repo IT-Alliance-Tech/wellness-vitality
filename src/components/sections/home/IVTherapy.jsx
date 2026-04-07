@@ -138,7 +138,9 @@ const IVTherapy = () => {
                     className={`flex items-center gap-2 text-xs sm:text-sm text-[rgb(59,63,105)]/80 ${i > 1 ? "hidden md:flex" : ""
                       }`}
                   >
-                    <span className="w-1.5 h-1.5 bg-[rgb(202,18,84)]"></span>
+                    <svg className="w-3.5 h-3.5 text-[rgb(202,18,84)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                     {point}
                   </li>
                 ))}

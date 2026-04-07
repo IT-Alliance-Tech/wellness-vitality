@@ -56,24 +56,33 @@ export default function RefundPolicyPage() {
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-bold text-[#ca1254] mb-2">More than 24 hours’ notice</h3>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Deposit is fully refundable or can be transferred to a future booking.</li>
-                  </ul>
+                  <h3 className="font-bold text-[#ca1254] mb-3 flex items-center gap-2">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                    More than 24 hours’ notice
+                  </h3>
+                  <div className="pl-6">
+                    <p className="text-sm font-light">Deposit is fully refundable or can be transferred to a future booking.</p>
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-[#ca1254] mb-2">Less than 24 hours’ notice</h3>
-                  <ul className="list-disc pl-5 space-y-1 text-gray-500">
-                    <li>Deposit is non-refundable due to preparation, scheduling, and loss of appointment availability.</li>
-                  </ul>
+                  <h3 className="font-bold text-[#ca1254] mb-3 flex items-center gap-2">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                    Less than 24 hours’ notice
+                  </h3>
+                  <div className="pl-6">
+                    <p className="text-sm font-light text-gray-500">Deposit is non-refundable due to preparation, scheduling, and loss of appointment availability.</p>
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-[#ca1254] mb-2">Same-day cancellation or non-attendance (no-show)</h3>
-                  <ul className="list-disc pl-5 space-y-1 text-gray-400">
-                    <li>Deposit is forfeited.</li>
-                  </ul>
+                  <h3 className="font-bold text-[#ca1254] mb-3 flex items-center gap-2">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                    Same-day cancellation (no-show)
+                  </h3>
+                  <div className="pl-6">
+                    <p className="text-sm font-light text-gray-400">Deposit is forfeited.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -119,8 +128,11 @@ export default function RefundPolicyPage() {
 
             {/* Backlink */}
             <div className="text-center pt-12">
-              <Link href="/contact" className="text-[#ca1254] font-bold hover:underline decoration-2 underline-offset-4">
-                Questions? Contact Our Team
+              <Link href="/contact" className="inline-flex items-center gap-2 text-[#ca1254] font-bold hover:gap-4 transition-all group">
+                <span className="border-b-2 border-transparent group-hover:border-[#ca1254] transition-all pb-0.5">Questions? Contact Our Team</span>
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
             </div>
 

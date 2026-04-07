@@ -112,9 +112,12 @@ const IVScience = () => {
             {/* Button */}
             <Button
               href="/booking"
-              className="px-6 py-2.5 bg-[rgb(202,18,84)] text-white text-sm rounded-none"
+              className="px-8 py-3 bg-[rgb(202,18,84)] text-white text-sm rounded-none flex items-center justify-center gap-2 group cursor-pointer font-bold"
             >
               Book a Session Now
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
             </Button>
 
           </div>

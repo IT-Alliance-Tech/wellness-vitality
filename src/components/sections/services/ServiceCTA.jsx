@@ -16,8 +16,11 @@ const ServiceCTA = ({
         <h2 className="text-3xl md:text-4xl font-bold !text-white mb-4">{heading}</h2>
         {text && <p className="text-white text-lg font-light mb-10 max-w-2xl mx-auto">{text}</p>}
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button href={ctaHref} variant="primary" className="px-8 py-3.5 text-base">
+          <Button href={ctaHref} variant="primary" className="px-8 py-3.5 text-base flex items-center justify-center gap-3 group/cta">
             {ctaLabel}
+            <svg className="w-5 h-5 transition-transform group-hover/cta:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
           </Button>
           {secondaryCtaLabel && (
             <Button href={secondaryCtaHref} variant="outlineWhite" className="px-8 py-3.5 text-base">
@@ -33,8 +36,11 @@ const ServiceCTA = ({
         <h2 className="text-3xl md:text-4xl font-bold text-indigo mb-4">{heading}</h2>
         {text && <p className="text-gray-600 text-lg font-light mb-10 max-w-2xl mx-auto">{text}</p>}
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button href={ctaHref} variant="primary" className="px-8 py-3.5 text-base">
+          <Button href={ctaHref} variant="primary" className="px-8 py-3.5 text-base flex items-center justify-center gap-3 group/cta">
             {ctaLabel}
+            <svg className="w-5 h-5 transition-transform group-hover/cta:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
           </Button>
           {secondaryCtaLabel && (
             <Button href={secondaryCtaHref} variant="outline" className="px-8 py-3.5 text-base">

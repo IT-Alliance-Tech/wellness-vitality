@@ -42,10 +42,13 @@ const Training = () => {
                         </p>
                     </div>
 
-                    <a href="/training" className="mt-3 md:mt-0">
-                        <span className="text-[#ca1254] text-sm font-medium hover:underline">
-                            View All →
+                    <a href="/training" className="mt-3 md:mt-0 flex items-center gap-1.5 text-[#ca1254] group/link cursor-pointer">
+                        <span className="text-sm font-medium hover:underline">
+                            View All Training
                         </span>
+                        <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
                     </a>
                 </div>
 
@@ -57,11 +60,11 @@ const Training = () => {
                         return (
                             <div
                                 key={index}
-                                className="bg-white rounded-lg p-5 border border-[#ca1254] transition hover:shadow-md"
+                                className="bg-white rounded-lg p-5 border border-[#ca1254] transition hover:shadow-md cursor-pointer group/card"
                             >
                                 {/* ICON */}
                                 <div className="mb-4">
-                                    <Icon className="w-8 h-8 text-[#ca1254]" />
+                                    <Icon className="w-8 h-8 text-[#ca1254] transition-transform group-hover/card:scale-110" strokeWidth={1.5} />
                                 </div>
 
                                 {/* TITLE */}

@@ -34,8 +34,11 @@ const TeethWhitening = () => {
 
                 {/* CTA */}
                 <a href="/booking">
-                    <button className="bg-[#ca1254] text-white px-8 py-2.5 rounded-lg text-sm md:text-base hover:bg-[#a30f44] transition">
-                        Book Teeth Whitening →
+                    <button className="bg-[#ca1254] text-white px-8 py-2.5 rounded-lg text-sm md:text-base hover:bg-[#a30f44] transition flex items-center justify-center gap-2 mx-auto group cursor-pointer">
+                        Book Teeth Whitening
+                        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
                     </button>
                 </a>
 
