@@ -16,16 +16,24 @@ const Navbar = () => {
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center justify-between">
 
         {/* LOGO */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex flex-col items-center justify-center py-1 group">
           <Image
             src={Logo}
             alt="Wellness Vitality Australia"
-            className="h-9 sm:h-10 md:h-10 lg:h-12 w-auto"
+            className="h-8 sm:h-9 md:h-10 lg:h-11 w-auto transition-transform duration-300 group-hover:scale-105"
             width={200}
             height={48}
             style={{ width: 'auto' }}
             priority
           />
+          <div className="mt-1 flex items-center justify-center gap-2 opacity-90 group-hover:opacity-100 transition-opacity">
+            <span className="text-[#3b3f69] font-bold text-[10px] sm:text-[11px] md:text-[12px] tracking-tight uppercase leading-none">
+              Wellness Vitality
+            </span>
+            <span className="text-[#ca1254] font-semibold text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.2em] uppercase leading-none">
+              Australia
+            </span>
+          </div>
         </Link>
 
         {/* DESKTOP NAV */}
