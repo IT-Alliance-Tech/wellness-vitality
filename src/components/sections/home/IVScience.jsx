@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
-import IvScienceImage from '../../../../public/iv_science.png';
+import IvScienceImage from '../../../../public/ivdrips.png';
 
 const points = [
   {
