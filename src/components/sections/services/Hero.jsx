@@ -2,16 +2,36 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 bg-[#3b3f69]">
-      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
-        <div className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/20 !text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-6">Our Expertise</div>
-        <h1 className="text-5xl md:text-6xl font-bold !text-white mb-8 leading-tight">
-          Clinical & Wellness Services
+    <section className="relative pt-40 pb-20 bg-[#3b3f69] overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
+      </div>
+
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 text-center reveal-up">
+
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-8">
+          <div className="w-2 h-2 rounded-full bg-[#ca1254] animate-pulse" />
+          <span className="text-[10px] font-semibold uppercase tracking-[0.3em] !text-white">
+            Our Expertise
+          </span>
+        </div>
+
+        {/* Heading */}
+        <h1 className="text-4xl md:text-6xl font-semibold !text-white mb-6 leading-[1.15] tracking-tight">
+          Clinical & <span className="text-[#ca1254] font-semibold">Wellness</span> <br className="hidden md:block" /> Services
         </h1>
-        <p className="text-xl !text-white max-w-2xl mx-auto leading-relaxed font-light">
+
+        {/* Description */}
+        <p className="text-lg !text-white w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light">
           Experience elite healthcare delivered with a personal touch. From clinical assessments to restorative therapies, our services are designed to enhance your vitality.
         </p>
-        <div className="mt-12 w-24 h-1.5 bg-[#ca1254] mx-auto rounded-full" />
+
+        {/* Divider */}
+        <div className="mt-10 w-20 h-1 bg-white/10 mx-auto rounded-full overflow-hidden">
+          <div className="h-full bg-[#ca1254] w-1/3 animate-[slide_2s_infinite_linear]" />
+        </div>
+
       </div>
     </section>
   );

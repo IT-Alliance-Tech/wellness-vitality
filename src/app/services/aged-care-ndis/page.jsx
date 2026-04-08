@@ -72,7 +72,7 @@ export default function AgedCareNDISPage() {
           color: #3b3f69;
           margin: 0 0 20px;
         }
-        .container {
+        .page-container {
           width: 100%;
           max-width: 1080px;
           margin: 0 auto;
@@ -374,7 +374,7 @@ export default function AgedCareNDISPage() {
 
         {/* ── About / Image ── */}
         <section className="about-section">
-          <div className="container">
+          <div className="page-container">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
               {/* Image */}
               <div style={{ position: 'relative' }}>
@@ -424,7 +424,7 @@ export default function AgedCareNDISPage() {
 
         {/* ── Services & Benefits ── */}
         <section className="sb-section">
-          <div className="container">
+          <div className="page-container">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px' }}>
 
               {/* Services */}
@@ -482,7 +482,7 @@ export default function AgedCareNDISPage() {
 
         {/* ── Process Section ── */}
         <section className="process-section">
-          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="page-container" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
                 <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.5 }} />

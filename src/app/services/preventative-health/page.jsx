@@ -338,7 +338,7 @@ export default function PreventativeHealthPage() {
           margin-bottom: 20px;
         }
 
-        .container {
+        .page-container {
           width: 100%;
           max-width: 1080px;
           margin: 0 auto;
@@ -363,7 +363,7 @@ export default function PreventativeHealthPage() {
 
         {/* ── About / Image Section ── */}
         <section className="about-section">
-          <div className="container">
+          <div className="page-container">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
               {/* Image */}
               <div style={{ position: 'relative' }}>
@@ -412,7 +412,7 @@ export default function PreventativeHealthPage() {
 
         {/* ── Services Section ── */}
         <section className="services-section">
-          <div className="container">
+          <div className="page-container">
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <div className="eyebrow" style={{ color: '#3b3f69', justifyContent: 'center' }}>
                 <span className="eyebrow-line" style={{ background: '#3b3f69', opacity: 0.3 }} />
@@ -477,7 +477,7 @@ export default function PreventativeHealthPage() {
 
         {/* ── Steps Section ── */}
         <section className="steps-section">
-          <div className="container">
+          <div className="page-container">
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
                 <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />

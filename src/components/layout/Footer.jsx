@@ -7,10 +7,10 @@ import FooterLogo from '../../../public/footer.png';
 
 const FooterSection = ({ title, children, id, activeSection, toggleSection }) => {
   const isOpen = activeSection === id;
-  
+
   return (
     <div className="border-b border-white/5 md:border-none last:border-none">
-      <button 
+      <button
         onClick={() => toggleSection(id)}
         className="w-full flex items-center justify-between py-5 md:py-0 md:mb-6 text-left group md:cursor-default"
       >
@@ -50,10 +50,10 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4 mb-4 md:mb-0">
             <Link href="/" className="inline-block mb-6 transition-transform hover:scale-[1.02]">
-              <Image 
-                src={FooterLogo} 
-                alt="Wellness Vitality Australia" 
-                className="h-14 md:h-20 w-auto" 
+              <Image
+                src={FooterLogo}
+                alt="Wellness Vitality Australia"
+                className="h-14 md:h-20 w-auto"
                 width={180}
                 height={72}
                 style={{ width: 'auto' }}
@@ -71,11 +71,11 @@ const Footer = () => {
                 { name: 'TikTok', href: 'https://www.tiktok.com/@wellnessvitalityaus?_r=1&_t=ZS-959CqimuxpF', icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.59-1.01V18a7.48 7.48 0 1 1-10.33-6.94c.32-.12.65-.22.99-.29V14.8c-.13.04-.26.09-.38.15a3.45 3.45 0 1 0 3.32 3.44c0-.01 0-.02 0-.03V.02z" /></svg> },
                 { name: 'YouTube', href: 'https://youtube.com/@wellnessvitalityaustralia', icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg> },
               ].map((social) => (
-                <a 
-                  key={social.name} 
-                  href={social.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#ca1254] hover:text-white transition-all duration-300 border border-white/5 hover:border-[#ca1254]"
                 >
                   {social.icon}
@@ -112,16 +112,16 @@ const Footer = () => {
             <FooterSection title="Our Services" id="services" activeSection={activeSection} toggleSection={toggleSection}>
               <ul className="space-y-4">
                 {[
-                  'IV Infusion Therapy',
-                  'Health Assessments',
-                  'Blood Collection',
-                  'Aged Care & NDIS',
-                  'Professional Teeth Whitening',
-                  'Corporate Health Services'
+                  { label: 'IV Infusion Therapy', path: '/services/iv-infusions' },
+                  { label: 'Health Assessments', path: '/services/health-assessments' },
+                  { label: 'Blood Collection', path: '/services/blood-collection' },
+                  { label: 'Aged Care & NDIS', path: '/services/aged-care-ndis' },
+                  { label: 'Professional Teeth Whitening', path: '/services/teeth-whitening' },
+                  { label: 'Corporate Health Services', path: '/services/corporate-health' }
                 ].map((item) => (
-                  <li key={item}>
-                    <Link href="/services" className="text-white/60 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
-                      {item}
+                  <li key={item.label}>
+                    <Link href={item.path} className="text-white/60 hover:text-[#ca1254] hover:translate-x-1 block transition-all text-sm font-medium">
+                      {item.label}
                     </Link>
                   </li>
                 ))}
