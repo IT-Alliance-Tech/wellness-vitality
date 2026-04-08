@@ -1,12 +1,21 @@
-import React from 'react';
+import Image from 'next/image';
 import Hero from '@/components/sections/services/Hero';
 import BookingCTA from '@/components/sections/home/BookingCTA';
 import Button from '@/components/ui/Button';
 import FeatureCards from '@/components/ui/FeatureCards';
 
+// Service Images from Homepage
+import IvInfusionImage from '../../../public/images/services/IV Nutrient Therapy.png';
+import HealthAssessmentImage from '../../../public/images/services/Healthcare.png';
+import TeethWhiteningImage from '../../../public/images/services/teeth-whitening.png';
+import AgedCareImage from '../../../public/images/services/agedcare.png';
+import BloodCollectionImage from '../../../public/images/services/bloodcollection.png';
+import CorporateHealthImage from '../../../public/images/services/coprate.png';
+import PreventativeHealthImage from '../../../public/images/services/healthimage.png';
+
 const whyChooseCards = [
   {
-    title: 'AHPRA Registered',
+    title: 'Registered Nurses',
     description: 'Every service is delivered by fully qualified, AHPRA-registered nurses.',
     icon: (
       <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
@@ -47,110 +56,263 @@ const whyChooseCards = [
 const services = [
   {
     title: 'Health Assessments',
-    description: 'Comprehensive wellness checks and preventative health screening for aged care and NDIS clients.',
+    description: 'Comprehensive wellness checks and preventative health screening for aged care and NDIS clients. Proactive early detection to identify health risks before they escalate.',
     slug: 'health-assessments',
-    image: '/images/services/health-assessment.png',
-    accent: 'indigo'
+    image: HealthAssessmentImage,
+    accent: 'indigo',
+    features: ['Vital Signs Monitoring', 'Cardiovascular Risk', 'Clinical Reporting']
   },
   {
     title: 'Preventative Health & Wellness',
-    description: 'Vitamin injections, nutrition guidance and lifestyle health consultations.',
+    description: 'A proactive approach targeting specific nutrient deficiencies through professional vitamin therapies, nutrition guidance and bespoke lifestyle consultations.',
     slug: 'preventative-health',
-    image: '/images/services/preventative-health.png',
-    accent: 'indigo'
+    image: PreventativeHealthImage,
+    accent: 'rose',
+    features: ['Vitamin Support', 'Nutrition Guidance', 'Ongoing Maintenance']
   },
   {
     title: 'Aged Care & NDIS Nursing',
-    description: 'Professional nursing services supporting ongoing healthcare needs.',
+    description: 'Compassionate, professional nursing services delivering evidence-based care tailored to individual requirements, supporting independent living and long-term health.',
     slug: 'aged-care-ndis',
-    image: '/images/services/aged-care.png',
-    accent: 'rose'
+    image: AgedCareImage,
+    accent: 'indigo',
+    features: ['Dignified Care', 'Medication Management', 'Wound Treatment']
   },
   {
-    title: 'IV Infusions',
-    description: 'Targeted intravenous nutrient therapies designed to support energy, recovery and immune health.',
+    title: 'Custom IV Infusions',
+    description: 'Targeted intravenous nutrient therapies designed specifically to support energy levels, optimise recovery, and strengthen immune health functions systemically.',
     slug: 'iv-infusions',
-    image: '/images/services/iv-infusion.png',
-    accent: 'rose'
+    image: IvInfusionImage,
+    accent: 'rose',
+    features: ['Fast Absorption', 'Personalised Blends', 'Energy Optimisation']
   },
   {
-    title: 'Blood Collection',
-    description: 'Convenient blood testing services available at home or care facilities.',
+    title: 'Clinical Blood Collection',
+    description: 'Fast, reliable, and convenient phlebotomy and blood testing services performed safely at your home, office, or aged care facility by skilled professionals.',
     slug: 'blood-collection',
-    image: '/images/services/blood-collection.png',
-    accent: 'indigo'
+    image: BloodCollectionImage,
+    accent: 'indigo',
+    features: ['Pathology Testing', 'Fast Processing', 'Minimal Discomfort']
   },
   {
-    title: 'Teeth Whitening',
-    description: 'Professional teeth whitening treatments delivered by qualified healthcare professionals.',
+    title: 'Professional Teeth Whitening',
+    description: 'Professional-grade teeth whitening treatments delivered directly to you by qualified healthcare professionals for a safe, noticeably brighter, confident smile.',
     slug: 'teeth-whitening',
-    image: '/images/services/teeth-whitening.png',
-    accent: 'rose'
+    image: TeethWhiteningImage,
+    accent: 'rose',
+    features: ['Clinically Proven', 'Safe Application', 'Significant Lightening']
   },
   {
     title: 'Corporate Health Services',
-    description: 'Workplace health checks and corporate IV hydration services.',
+    description: 'Bespoke workplace health checks, professional reporting and corporate IV hydration services strategically designed to optimise teamwork, safety and energy.',
     slug: 'corporate-health',
-    image: '/images/services/corporate-health.png',
-    accent: 'indigo'
+    image: CorporateHealthImage,
+    accent: 'indigo',
+    features: ['Employee Engagement', 'Confidential Screening', 'On-Site Delivery']
   }
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#fafafa]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+        /* Custom utilities */
+        .service-image-card {
+          box-shadow: 0 40px 80px rgba(59,63,105, 0.1);
+        }
+        
+        .service-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          margin-bottom: 24px;
+        }
+
+        .service-eyebrow-line {
+          display: block;
+          width: 32px;
+          height: 1.5px;
+        }
+
+        .feature-bubble {
+          background: rgba(255,255,255,0.8);
+          backdrop-filter: blur(8px);
+          border: 1px solid rgba(255,255,255,0.4);
+        }
+
+      `}</style>
+
       <Hero />
-      
-      <FeatureCards
-        heading="Why Choose Wellness Vitality"
-        cards={whyChooseCards}
-        cols={4}
-      />
-      
-      <section className="py-16 bg-white border-t border-gray-50">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {services.map((service) => (
-              <div 
-                key={service.slug}
-                className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 flex flex-col h-full"
-              >
-                <div className="aspect-[4/3] overflow-hidden relative border-b border-gray-50">
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className={`absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm ${service.accent === 'rose' ? 'text-[#ca1254]' : 'text-[#3b3f69]'}`}>
-                    Professional Care
-                  </div>
-                </div>
-                
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className={`text-xl font-bold mb-4 transition-colors ${service.accent === 'rose' ? 'text-[#3b3f69] group-hover:text-[#ca1254]' : 'text-[#3b3f69] group-hover:text-[#3b3f69]'}`}>
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-8 flex-grow font-light">
-                    {service.description}
-                  </p>
-                  
-                  <div className="pt-6 border-t border-gray-50 mt-auto">
-                    <Button 
-                      href={`/services/${service.slug}`} 
-                      variant="outline" 
-                      className="w-full text-xs font-bold py-3 uppercase tracking-widest"
-                    >
-                      View Service Details
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
+
+      {/* ── Services alternating list ── */}
+      <section className="py-24 lg:py-32 bg-[#fafafa] relative overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 right-0 w-full md:w-[600px] h-[600px] bg-[#ca1254]/[0.02] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-full md:w-[600px] h-[600px] bg-[#3b3f69]/[0.02] rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
+
+          <div className="text-center mb-20 lg:mb-28">
+            <div className="service-eyebrow text-[#ca1254]">
+              <span className="service-eyebrow-line bg-[#ca1254]/40" />
+              Comprehensive Care
+              <span className="service-eyebrow-line bg-[#ca1254]/40" />
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#3b3f69] max-w-4xl mx-auto leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              Tailored therapies supporting your <br className="hidden md:block" />
+              <span className="italic text-[#ca1254]">long-term vitality.</span>
+            </h2>
           </div>
+
+          <div className="space-y-32 lg:space-y-40">
+            {services.map((service, idx) => {
+              const isEven = idx % 2 === 0;
+              const themeColor = service.accent === 'rose' ? '#ca1254' : '#3b3f69';
+              const secondaryColor = service.accent === 'rose' ? 'rgba(202,18,84,0.1)' : 'rgba(59,63,105,0.1)';
+
+              return (
+                <div key={service.slug} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-24 group`}>
+
+                  {/* Image side */}
+                  <div className="w-full lg:w-1/2 relative">
+                    <div className="relative rounded-[2rem] overflow-hidden service-image-card aspect-[4/3] bg-white group-hover:-translate-y-2 transition-transform duration-700">
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                        />
+                      </div>
+
+                      {/* Decorative gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
+
+                      {/* Floating feature bubbles */}
+                      <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100">
+                        {service.features.map(feat => (
+                          <span key={feat} className="feature-bubble px-4 py-2 rounded-xl text-[11px] font-bold tracking-wide text-gray-800 shadow-sm">
+                            {feat}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    {/* Shadow/Glow decoration behind image */}
+                    <div
+                      className={`absolute -inset-4 rounded-[2.5rem] blur-2xl -z-10 opacity-0 group-hover:opacity-60 transition-opacity duration-700`}
+                      style={{ background: secondaryColor }}
+                    />
+                  </div>
+
+                  {/* Text side */}
+                  <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg" style={{ backgroundColor: secondaryColor, color: themeColor }}>
+                        {String(idx + 1).padStart(2, '0')}
+                      </div>
+                      <span className="text-[11px] tracking-[0.3em] uppercase font-bold text-gray-400">
+                        Clinical Protocol
+                      </span>
+                    </div>
+
+                    <h3 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-[#3b3f69] mb-6 leading-[1.1]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                      {service.title}
+                    </h3>
+
+                    <p className="text-base lg:text-lg text-gray-500 font-light leading-relaxed mb-10 w-full max-w-lg">
+                      {service.description}
+                    </p>
+
+                    <div className="pt-2">
+                      <Button
+                        href={`/services/${service.slug}`}
+                        className="inline-flex items-center px-8 py-4 bg-[#3b3f69] text-white rounded-full font-semibold text-sm tracking-wide shadow-lg hover:bg-[#2a2d4b] transition-all hover:-translate-y-1 group-hover:bg-[#ca1254]"
+                      >
+                        Explore Treatment
+                        <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </Button>
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
         </div>
       </section>
 
-      <BookingCTA />
+      {/* Adding a gentle background separator */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full" />
+
+      {/* Feature cards shifted below the elegant grid to serve as an "Assurance" block */}
+      <div className="bg-white">
+        <FeatureCards
+          heading="Why Choose Wellness Vitality"
+          cards={whyChooseCards}
+          cols={4}
+        />
+      </div>
+
+      {/* Horizontal CTA section styled like homepage newsletter */}
+      <section className="py-16 md:py-24 relative bg-white">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+          <div className="relative overflow-hidden rounded-3xl border border-[#3b3f69]/10 bg-[#3b3f69]/5 backdrop-blur-sm px-8 py-10 md:px-12 md:py-12 shadow-[0_20px_50px_rgba(59,63,105,0.08)]">
+
+            {/* Background accents */}
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#ca1254]/5 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#3b3f69]/5 rounded-full blur-3xl" />
+
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+
+              {/* Left Content */}
+              <div className="text-center lg:text-left max-w-xl">
+                <div className="inline-flex items-center gap-2 mb-4">
+                  <span className="w-2 h-2 rounded-full bg-[#ca1254]" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ca1254]">
+                    Take the first step
+                  </span>
+                </div>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-[#3b3f69] leading-tight mb-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  Ready to reclaim your <span className="italic text-[#ca1254]">vitality?</span>
+                </h2>
+
+                <p className="text-gray-500 font-light text-base md:text-lg leading-relaxed">
+                  Book your session with qualified healthcare professionals and experience personalised, patient-centred care delivered to you.
+                </p>
+              </div>
+
+              {/* Right Actions */}
+              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                <Button
+                  href="/booking"
+                  className="w-full sm:w-auto px-10 py-4 bg-[#ca1254] text-white rounded-xl font-bold text-sm shadow-[0_10px_25px_rgba(202,18,84,0.25)] hover:shadow-[0_15px_30px_rgba(202,18,84,0.35)] hover:-translate-y-1 transition-all duration-300"
+                >
+                  Book a Session
+                </Button>
+
+                <Button
+                  href="/contact"
+                  variant="outline"
+                  className="w-full sm:w-auto px-10 py-4 border-[#3b3f69]/20 text-[#3b3f69] rounded-xl font-bold text-sm hover:bg-white hover:border-[#3b3f69] transition-all duration-300"
+                >
+                  Talk to our team
+                </Button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

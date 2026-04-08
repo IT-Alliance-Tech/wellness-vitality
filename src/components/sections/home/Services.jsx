@@ -9,7 +9,7 @@ import HealthAssessmentImage from "../../../../public/images/services/Healthcare
 import TeethWhiteningImage from "../../../../public/images/services/teeth-whitening.png";
 import AgedCareImage from "../../../../public/images/services/agedcare.png";
 import BloodCollectionImage from "../../../../public/images/services/bloodcollection.png";
-import CorporateHealthImage from "../../../../public/images/services/corporate-health.png";
+import CorporateHealthImage from "../../../../public/images/services/coprate.png";
 
 const services = [
   {
@@ -91,12 +91,12 @@ const Services = () => {
               {/* OVERLAY */}
               <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-4 sm:p-6 opacity-0 group-hover:opacity-100 transition duration-300">
                 <div className="flex items-center gap-2 mb-2">
-                   <div className="w-5 h-5 rounded-full bg-[#ca1254] flex items-center justify-center text-white">
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                   </div>
-                   <h3 className="text-white font-serif font-bold text-lg md:text-xl">{service.title}</h3>
+                  <div className="w-5 h-5 rounded-full bg-[#ca1254] flex items-center justify-center text-white">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-white font-serif font-bold text-lg md:text-xl">{service.title}</h3>
                 </div>
                 <p className="text-white/80 text-xs sm:text-sm mb-6 leading-relaxed">
                   {service.description}
