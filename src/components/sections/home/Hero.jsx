@@ -8,7 +8,7 @@ import HeroImage from "../../../../public/heroim.png";
 const Hero = () => {
   return (
     <section
-      className="relative pt-40 pb-20 overflow-hidden"
+      className="relative pt-32 lg:pt-40 pb-0 lg:pb-20 overflow-hidden"
       style={{ backgroundColor: "rgb(59, 63, 105)" }}
     >
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 pt-4 pb-8 relative z-10">
@@ -45,7 +45,7 @@ const Hero = () => {
 
             {/* HEADING */}
             <h1
-              className="text-[3.5rem] sm:text-[4rem] md:text-[3.3rem] font-medium leading-[1.1] mb-6 !text-white"
+              className="text-[2.2rem] sm:text-[2.8rem] md:text-[3.3rem] font-medium leading-[1.1] mb-6 !text-white"
             >
               Mobile IV Therapy & Clinical Services in Sydney
             </h1>
@@ -113,15 +113,18 @@ const Hero = () => {
 
           </div>
 
+          {/* ADJUSTED SPACING ON MOBILE */}
+          <div className="h-[180px] sm:h-[220px] lg:hidden"></div>
+
         </div>
       </div>
 
-      {/* RIGHT IMAGE */}
-      <div className="absolute right-[7%] bottom-3 w-[50%] h-[95%] hidden lg:flex items-end justify-end pointer-events-none">
+      {/* HERO IMAGE */}
+      <div className="absolute right-0 lg:right-[7%] bottom-0 lg:bottom-3 w-full lg:w-[50%] h-[400px] sm:h-[500px] lg:h-[95%] flex items-end justify-center lg:justify-end pointer-events-none z-0">
         <Image
           src={HeroImage}
           alt="Healthcare Professionals"
-          className="w-full h-auto max-h-full object-contain object-bottom object-right"
+          className="w-full h-auto max-h-full object-contain object-bottom lg:object-right opacity-100 transition-opacity duration-500"
           width={1000}
           height={1000}
           priority
