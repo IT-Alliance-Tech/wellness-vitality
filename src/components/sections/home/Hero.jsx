@@ -45,7 +45,7 @@ const Hero = () => {
 
             {/* HEADING */}
             <h1
-              className="text-[3.5rem] sm:text-[4rem] md:text-[3.3rem] font-medium leading-[1.1] mb-6 !text-white"
+              className="text-[2.5rem] sm:text-[3rem] lg:text-[3.2rem] font-medium leading-[1.1] mb-6 !text-white"
             >
               Mobile IV Therapy & Clinical Services in Sydney
             </h1>
@@ -117,7 +117,7 @@ const Hero = () => {
       </div>
 
       {/* RIGHT IMAGE */}
-      <div className="absolute right-[7%] bottom-3 w-[50%] h-[95%] hidden lg:flex items-end justify-end pointer-events-none">
+      <div className="absolute right-[7%] -bottom-8 w-[50%] h-[95%] hidden lg:flex items-end justify-end pointer-events-none">
         <Image
           src={HeroImage}
           alt="Healthcare Professionals"
