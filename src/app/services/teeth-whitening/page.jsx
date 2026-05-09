@@ -6,15 +6,15 @@ import FeatureCards from '@/components/ui/FeatureCards';
 import TeethWhiteningImage from '../../../../public/images/services/teeth-whitening.png';
 
 const benefits = [
-  { title: 'Brighter, Whiter Smile', icon: '✨', desc: 'Achieve a noticeably brighter and more confident smile.' },
-  { title: 'Up to 6 to 8 Shades Lighter', icon: '💎', desc: 'Clinically proven whitening that can lighten teeth by 6 to 8 shades.' },
-  { title: 'Safe & Professional', icon: '✔️', desc: 'Treatments performed by trained healthcare professionals.' },
-  { title: 'Mobile Service', icon: '🏠', desc: 'Convenient treatment delivered directly to your location.' },
+  { title: 'Ultrasound Technology', icon: '🔊', desc: 'Vibrates stain molecules and improves gel penetration for deeper results.' },
+  { title: 'Dual-Client Treatment', icon: '👥', desc: 'Simultaneous treatment capability for couples or group bookings.' },
+  { title: 'Up to 5 to 14 Shades Lighter', icon: '💎', desc: 'High-end acceleration technology for significantly brighter results.' },
+  { title: 'Reduced Sensitivity', icon: '🛡️', desc: 'Advanced LED & Ultrasonic combination designed to minimize discomfort.' },
 ];
 
 const steps = [
   { title: 'Consultation', desc: 'Our clinical team assesses your teeth and discusses your whitening goals.' },
-  { title: 'Preparation', desc: 'Gingival protection is applied to ensure a safe and comfortable treatment.' },
+  { title: 'Preparation', desc: 'Gingival protection is applied to ensure a safe and comfortable experience.' },
   { title: 'Whitening', desc: 'Professional-grade whitening gel is applied and activated using LED technology.' },
   { title: 'The Reveal', desc: 'Experience an immediate, noticeably brighter smile in just one session.' },
 ];
@@ -342,7 +342,7 @@ export default function TeethWhiteningPage() {
         {/* ── About / Image Section ── */}
         <section className="tw-about-section">
           <div className="tw-container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
 
               {/* Image */}
               <div style={{ position: 'relative' }}>
@@ -369,13 +369,22 @@ export default function TeethWhiteningPage() {
                   <span className="tw-eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
                 </div>
                 <h2 className="tw-section-title" style={{ fontSize: 'clamp(36px, 4vw, 52px)', marginBottom: '24px' }}>
-                  Brighter Smile,<br />
-                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Better Confidence</em>
+                  Clinical Grade Whitening from{' '}
+                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>$250</em>
                 </h2>
                 <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
-                  Our clinical teeth whitening treatments are designed to provide immediate results while maintaining the highest standards of safety and comfort. We use professional-grade systems that are more effective than over-the-counter alternatives.
+                  Wellness Vitality Australia utilizes a professional-grade cosmetic teeth whitening accelerator, considered one of the highest-end portable systems on the market. Featuring advanced Ultrasonic technology and dual LED heads, our system optimizes gel penetration while reducing chair time.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ padding: '20px', background: '#fef2f2', borderRadius: '16px', border: '1px solid #fee2e2', marginBottom: '32px' }}>
+                  <p style={{ fontSize: '13px', color: '#b91c1c', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                    Safety Precaution
+                  </p>
+                  <p style={{ fontSize: '12px', color: '#7f1d1d', lineHeight: '1.5' }}>
+                    Our system's ultrasound feature is highly effective, however, we disable this specific mode for patients with cardiac pacemakers as a standard clinical safety protocol.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {benefits.map((b) => (
                     <div key={b.title} className="tw-benefit-tag">
                       <CheckIcon />
@@ -401,17 +410,22 @@ export default function TeethWhiteningPage() {
                 Real Results, Instantly
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
-                { num: '8+', label: 'Shades Whiter' },
-                { num: '60m', label: 'Treatment Time' },
-                { num: '0', label: 'Downtime' },
+                { num: '5-14', label: 'Shades Lighter' },
+                { num: 'Ultrasonic', label: 'Technology' },
+                { num: 'Dual', label: 'Treatment Heads' },
               ].map((s) => (
                 <div key={s.label} className="tw-stat-card">
                   <div className="tw-stat-big">{s.num}</div>
                   <div className="tw-stat-desc">{s.label}</div>
                 </div>
               ))}
+            </div>
+            <div style={{ marginTop: '40px', textAlign: 'center' }}>
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', fontStyle: 'italic', maxWidth: '600px', margin: '0 auto' }}>
+                *Actual results vary based on gel concentration, enamel condition, existing stains, and lifestyle factors.
+              </p>
             </div>
           </div>
         </section>
@@ -429,7 +443,7 @@ export default function TeethWhiteningPage() {
                 The Whitening Experience
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', position: 'relative' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
               {steps.map((step, i) => (
                 <div key={step.title} style={{ position: 'relative' }}>
                   <div className="tw-step-card">
@@ -464,58 +478,120 @@ export default function TeethWhiteningPage() {
           cols={3}
         />
 
+        {/* ── Pricing Section ── */}
+        <section className="py-20 bg-white border-t border-gray-50">
+          <div className="tw-container">
+            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+              <div className="tw-eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
+                <span className="tw-eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+                Investment
+                <span className="tw-eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
+              </div>
+              <h2 className="tw-section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
+                Whitening Packages
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { title: 'Single Session', price: '$250', features: ['60-minute session', 'Standard whitening', 'Post-care guide'] },
+                { title: 'Triple Session', price: '$259', features: ['3x intensive rounds', 'Deep stain removal', 'Maximum results'], popular: true },
+                { title: 'Couples Session', price: '$499', features: ['Simultaneous treatment', 'Two people, one visit', 'Perfect for pairs'] },
+              ].map((plan) => (
+                <div key={plan.title} style={{
+                  padding: '40px 32px',
+                  borderRadius: '24px',
+                  background: plan.popular ? '#3b3f69' : '#fff',
+                  border: '1.5px solid #f0f0f5',
+                  textAlign: 'center',
+                  boxShadow: plan.popular ? '0 20px 40px rgba(59,63,105,0.15)' : 'none',
+                  position: 'relative'
+                }}>
+                  {plan.popular && (
+                    <div style={{
+                      position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)',
+                      background: '#ca1254', color: '#fff', fontSize: '10px', fontWeight: 800,
+                      padding: '6px 16px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.1em'
+                    }}>Most Popular</div>
+                  )}
+                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: plan.popular ? '#fff' : '#3b3f69', marginBottom: '16px' }}>{plan.title}</h3>
+                  <div style={{ fontSize: '48px', fontWeight: 600, fontFamily: "'Cormorant Garamond', serif", color: plan.popular ? '#fff' : '#ca1254', marginBottom: '24px' }}>{plan.price}</div>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', textAlign: 'left' }}>
+                    {plan.features.map(f => (
+                      <li key={f} style={{ fontSize: '14px', color: plan.popular ? 'rgba(255,255,255,0.7)' : '#6b7280', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <CheckIcon /> {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <a href="/booking" style={{
+                    display: 'block', padding: '14px', borderRadius: '10px',
+                    background: plan.popular ? '#ca1254' : 'rgba(59,63,105,0.05)',
+                    color: plan.popular ? '#fff' : '#3b3f69', fontWeight: 700, fontSize: '14px',
+                    textDecoration: 'none', transition: 'all 0.2s'
+                  }}>Book This Plan</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA Banner ── */}
         <section style={{ padding: '64px 0', background: '#fff' }}>
           <div className="tw-container">
-            <div style={{
-              borderRadius: '28px',
-              background: '#f5f6fa',
-              border: '1.5px solid #eaebf0',
-              padding: '56px 64px',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '32px',
-              position: 'relative',
-              overflow: 'hidden',
-            }}>
+            <div className="
+              rounded-[28px]
+              bg-[#f5f6fa]
+              border border-[#eaebf0]
+              p-8 md:p-14
+              flex flex-col lg:flex-row
+              items-center lg:items-center
+              justify-between
+              gap-8
+              relative
+              overflow-hidden
+            ">
               {/* decorative circle removed */}
-              <div style={{ position: 'relative', zIndex: 1 }}>
+              <div className="relative z-10 text-center lg:text-left">
                 <p style={{ fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(59,63,105,0.5)', marginBottom: '8px', fontWeight: 700 }}>
                   Get Started
                 </p>
                 <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 600, color: '#3b3f69', marginBottom: '10px', lineHeight: 1.2 }}>
                   Ready to Enhance Your Smile?
                 </h2>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px' }}>
                   <span style={{ fontSize: '12px', fontWeight: 700, color: '#ca1254', background: 'rgba(202,18,84,0.1)', padding: '4px 10px', borderRadius: '6px' }}>
-                    $299 per session
+                    Single – $250
+                  </span>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ca1254', background: 'rgba(202,18,84,0.1)', padding: '4px 10px', borderRadius: '6px' }}>
+                    Triple – $259
+                  </span>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ca1254', background: 'rgba(202,18,84,0.1)', padding: '4px 10px', borderRadius: '6px' }}>
+                    Couples – $499
                   </span>
                 </div>
                 <p style={{ fontSize: '15px', color: 'rgba(59,63,105,0.65)', fontWeight: 300 }}>
                   Book online or contact us to begin your whitening journey.
                 </p>
               </div>
-              <div style={{ display: 'flex', gap: '12px', flexShrink: 0, position: 'relative', zIndex: 1 }}>
-                <a href="/booking" style={{
-                  padding: '14px 28px', borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #ca1254, #e84d8a)',
-                  color: '#fff', fontWeight: 600, fontSize: '14px',
-                  textDecoration: 'none', whiteSpace: 'nowrap',
-                  boxShadow: '0 8px 24px rgba(202,18,84,0.3)',
-                  transition: 'opacity 0.2s',
-                }}>
+              <div className="flex flex-col sm:flex-row gap-3 relative z-10 w-full sm:w-auto">
+                <a href="/booking" className="
+                  px-8 py-4 rounded-xl
+                  bg-gradient-to-br from-[#ca1254] to-[#e84d8a]
+                  text-white font-semibold text-sm
+                  text-center
+                  shadow-lg shadow-[#ca1254]/30
+                  hover:opacity-90 transition
+                ">
                   Book Now
                 </a>
-                <a href="/contact" style={{
-                  padding: '14px 28px', borderRadius: '10px',
-                  background: '#fff', color: '#3b3f69',
-                  fontWeight: 600, fontSize: '14px',
-                  textDecoration: 'none', whiteSpace: 'nowrap',
-                  border: '1.5px solid rgba(59,63,105,0.15)',
-                  transition: 'opacity 0.2s',
-                }}>
+                <a href="/contact" className="
+                  px-8 py-4 rounded-xl
+                  bg-white text-[#3b3f69]
+                  font-semibold text-sm
+                  text-center
+                  border border-[#3b3f69]/15
+                  hover:opacity-90 transition
+                ">
                   Enquire Now
                 </a>
               </div>
