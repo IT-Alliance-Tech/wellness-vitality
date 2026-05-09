@@ -2,10 +2,6 @@
 import React, { useState } from 'react';
 import Button from '@/components/ui/Button';
 
-// Configure these variables in your .env.local file or directly here to go live
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_placeholder';
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_placeholder';
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'public_key_placeholder';
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -45,42 +41,25 @@ export default function ContactPage() {
     setErrorMsg("");
 
     try {
-      const payload = {
-        service_id: EMAILJS_SERVICE_ID,
-        template_id: EMAILJS_TEMPLATE_ID,
-        user_id: EMAILJS_PUBLIC_KEY,
-        template_params: {
-          subject: 'New Contact Form Submission',
-          to_email: 'admin@wellnessvitalityaustralia.com.au',
-          from_name: formData.name,
-          from_email: formData.email,
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.enquiry,
-          enquiry: formData.enquiry
-        }
-      };
-
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(formData)
       });
 
+      const result = await response.json();
+
       if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText || 'Failed to send');
+        throw new Error(result.error || 'Failed to send message');
       }
 
-      console.log("EmailJS Success Response:", await response.text());
       setIsSubmitted(true);
       setFormData({ name: '', phone: '', email: '', enquiry: '' }); // Reset form
     } catch (err) {
-      console.error("EmailJS Error:", err);
-      setErrorMsg(err.message || "Failed to send message. Please ensure email service is configured.");
+      console.error("Contact Form Error:", err);
+      setErrorMsg(err.message || "Failed to send message. Please try again later.");
     } finally {
       setIsLoading(false);
     }
