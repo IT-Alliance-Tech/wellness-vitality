@@ -109,7 +109,7 @@ const SERVICES = [
     title: 'Teeth Whitening',
     description: 'High-performance clinical teeth whitening with protective minerals.',
     icon: <AutoFixHigh />,
-    price: 299,
+    price: 250,
   },
   {
     id: 'corporate-health',
@@ -181,7 +181,9 @@ const OTHER_PACKAGES = {
     { id: 'pkg-blood', name: 'Blood Collection', price: 149, desc: 'Convenient, professional blood collection services at your preferred location.' }
   ],
   'teeth-whitening': [
-    { id: 'pkg-teeth', name: 'Teeth Whitening', price: 299, desc: 'High-performance clinical teeth whitening with protective minerals.' }
+    { id: 'pkg-teeth-single', name: 'Single Session', price: 250, desc: '60-minute session including standard whitening and post-care guide.' },
+    { id: 'pkg-teeth-triple', name: 'Triple Session', price: 259, desc: '3x intensive rounds for deep stain removal and maximum results.' },
+    { id: 'pkg-teeth-couples', name: 'Couples Session', price: 499, desc: 'Simultaneous treatment for two people in one visit.' }
   ],
   'corporate-health': [
     { id: 'pkg-corp', name: 'Corporate Health Services', price: 250, desc: 'Workplace wellness programmes, health checks and team vitality packages.' }
@@ -202,13 +204,13 @@ const NURSES = [
     id: 'belle',
     name: 'Registered Nurse Belle',
     image: NurseBelleImage,
-    desc: 'Registered Nurse with 8 years clinical experience in IV therapy and restorative care.'
+    // desc: 'Registered Nurse with 8 years clinical experience in IV therapy and restorative care.'
   },
   {
     id: 'elias',
     name: 'Registered Nurse Elias Roumie',
     image: NurseEliasImage,
-    desc: 'Registered Nurse specialising in clinical health assessments and health & wellness support.'
+    // desc: 'Registered Nurse specialising in clinical health assessments and health & wellness support.'
   }
 ];
 
@@ -388,7 +390,7 @@ export default function BookingPage() {
     setLoading(true);
     setErrorMessage("");
     try {
-      const response = await fetch('/api/send-booking-email', {
+      const response = await fetch('/api/booking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -981,17 +983,17 @@ export default function BookingPage() {
   return (
     <ThemeProvider theme={theme}>
       <main style={{ minHeight: '100vh', backgroundColor: '#f7f7fc', position: 'relative' }}>
-        <Box sx={{ 
-          position: 'sticky', 
-          top: { xs: 60, sm: 110 }, 
-          mt: 0, 
-          zIndex: 10, 
-          bgcolor: '#ffffff', 
-          borderBottom: '1px solid #ededf5', 
-          boxShadow: '0 4px 12px rgba(0,0,0,0.03)', 
-          pt: 0, 
-          pb: { xs: 1, sm: 2.5 }, 
-          overflow: 'hidden' 
+        <Box sx={{
+          position: 'sticky',
+          top: { xs: 60, sm: 110 },
+          mt: 0,
+          zIndex: 10,
+          bgcolor: '#ffffff',
+          borderBottom: '1px solid #ededf5',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+          pt: 0,
+          pb: { xs: 1, sm: 2.5 },
+          overflow: 'hidden'
         }}>
           <Box sx={{ width: '100%', height: 3, bgcolor: '#f0f0f7', mb: { xs: 0.5, sm: 2.5 } }}>
             <Box sx={{ width: `${((activeStep + 1) / STEP_LABELS.length) * 100}%`, height: '100%', bgcolor: '#ca1254', transition: 'width 0.6s cubic-bezier(0.65, 0, 0.35, 1)', boxShadow: '0 0 10px rgba(202,18,84,0.4)' }} />
@@ -1067,7 +1069,7 @@ export default function BookingPage() {
             <Typography variant="caption" color="textSecondary">All bookings are subject to clinical availability.</Typography>
           </Container>
         </Box>
-        
+
       </main>
     </ThemeProvider>
   );

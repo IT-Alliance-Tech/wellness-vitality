@@ -68,7 +68,7 @@ export default function TeethWhiteningPage() {
 
         /* ── About section ── */
         .tw-about-section {
-          padding: 96px 0;
+          padding: 64px 0;
           background: #fff;
           position: relative;
         }
@@ -132,68 +132,72 @@ export default function TeethWhiteningPage() {
 
         /* ── Stats Banner ── */
         .tw-stats-section {
-          padding: 80px 0;
-          background: #3b3f69;
+          padding: 64px 0;
+          background: #fff;
           position: relative;
           overflow: hidden;
         }
-        .tw-stats-section::after {
-          content: '✦';
+        .tw-stats-mesh {
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 400px;
-          color: rgba(255,255,255,0.015);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle at 50% 50%, rgba(202,18,84,0.02) 0%, transparent 70%);
           pointer-events: none;
-          line-height: 1;
         }
         .tw-stat-card {
-          padding: 40px 32px;
-          background: rgba(255,255,255,0.05);
-          border-radius: 24px;
-          border: 1px solid rgba(202,18,84,0.25);
+          padding: 48px 32px;
+          background: #fff;
+          border-radius: 32px;
+          border: 1.5px solid rgba(202,18,84,0.1);
           text-align: center;
-          transition: background 0.3s, border-color 0.3s, transform 0.3s;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
-        }
-        .tw-stat-card::before {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; right: 0;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, #ca1254, transparent);
-          opacity: 0;
-          transition: opacity 0.3s;
+          box-shadow: 0 4px 20px rgba(59,63,105,0.04);
         }
         .tw-stat-card:hover {
-          background: rgba(202,18,84,0.1);
-          border-color: rgba(202,18,84,0.5);
-          transform: translateY(-4px);
+          border-color: #ca1254;
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(202,18,84,0.08);
         }
-        .tw-stat-card:hover::before {
-          opacity: 1;
+        .tw-stat-icon-wrap {
+          width: 64px;
+          height: 64px;
+          border-radius: 20px;
+          background: rgba(202, 18, 84, 0.06);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 24px;
+          color: #ca1254;
+          transition: all 0.3s ease;
+        }
+        .tw-stat-card:hover .tw-stat-icon-wrap {
+          transform: scale(1.1) rotate(5deg);
+          background: #ca1254;
+          color: #fff;
         }
         .tw-stat-big {
           font-family: 'Cormorant Garamond', serif;
-          font-size: 72px;
+          font-size: 44px;
           font-weight: 600;
           color: #ca1254;
           line-height: 1;
-          margin-bottom: 8px;
+          margin-bottom: 10px;
         }
         .tw-stat-desc {
           font-size: 11px;
-          color: rgba(255,255,255,0.5);
-          letter-spacing: 0.25em;
+          color: #3b3f69;
+          letter-spacing: 0.15em;
           text-transform: uppercase;
-          font-weight: 400;
+          font-weight: 700;
         }
 
         /* ── Steps Section ── */
         .tw-steps-section {
-          padding: 96px 0;
+          padding: 64px 0;
           background: #f5f6fa;
           position: relative;
           overflow: hidden;
@@ -399,24 +403,40 @@ export default function TeethWhiteningPage() {
 
         {/* ── Stats Banner ── */}
         <section className="tw-stats-section">
+          <div className="tw-stats-mesh" />
           <div className="tw-container" style={{ position: 'relative', zIndex: 1 }}>
-            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-              <div className="tw-eyebrow" style={{ color: 'rgba(202,18,84,0.7)', justifyContent: 'center' }}>
+            <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+              <div className="tw-eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
                 <span className="tw-eyebrow-line" style={{ background: '#ca1254', opacity: 0.5 }} />
                 The Whitening Difference
                 <span className="tw-eyebrow-line" style={{ background: '#ca1254', opacity: 0.5 }} />
               </div>
-              <h2 className="tw-section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', color: '#fff', margin: 0 }}>
-                Real Results, Instantly
+              <h2 className="tw-section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 42px)', color: '#3b3f69', margin: 0 }}>
+                Real Results, <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Instantly</em>
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {[
-                { num: '5-14', label: 'Shades Lighter' },
-                { num: 'Ultrasonic', label: 'Technology' },
-                { num: 'Dual', label: 'Treatment Heads' },
+                { 
+                  num: '5-14', 
+                  label: 'Shades Lighter',
+                  icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" /></svg>
+                },
+                { 
+                  num: 'Ultrasonic', 
+                  label: 'Technology',
+                  icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                },
+                { 
+                  num: 'Dual', 
+                  label: 'Treatment Heads',
+                  icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                },
               ].map((s) => (
                 <div key={s.label} className="tw-stat-card">
+                  <div className="tw-stat-icon-wrap">
+                    {s.icon}
+                  </div>
                   <div className="tw-stat-big">{s.num}</div>
                   <div className="tw-stat-desc">{s.label}</div>
                 </div>
@@ -479,7 +499,7 @@ export default function TeethWhiteningPage() {
         />
 
         {/* ── Pricing Section ── */}
-        <section className="py-20 bg-white border-t border-gray-50">
+        <section className="py-12 bg-white border-t border-gray-50">
           <div className="tw-container">
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <div className="tw-eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
@@ -536,7 +556,7 @@ export default function TeethWhiteningPage() {
         </section>
 
         {/* ── CTA Banner ── */}
-        <section style={{ padding: '64px 0', background: '#fff' }}>
+        <section style={{ padding: '48px 0', background: '#fff' }}>
           <div className="tw-container">
             <div className="
               rounded-[28px]
