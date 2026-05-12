@@ -491,7 +491,7 @@ export default function PreventativeHealthPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
               {steps.map((step, i) => (
                 <div key={step.title} style={{ position: 'relative' }}>
-                  <div className="step-card">
+                  <div className="step-card flex flex-col items-center text-center lg:items-start lg:text-left">
                     <div className="step-num-bg">{i + 1}</div>
                     <div className="step-badge">{String(i + 1).padStart(2, '0')}</div>
                     <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', position: 'relative', zIndex: 1 }}>
@@ -511,6 +511,7 @@ export default function PreventativeHealthPage() {
         {/* ── Wellness Focus — Feature Cards ── */}
         <FeatureCards
           heading="Our Approach to Health"
+          centered={true}
           cards={wellnessFocus.map((item, i) => ({
             title: item.title,
             description: item.desc,

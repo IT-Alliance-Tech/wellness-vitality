@@ -204,13 +204,13 @@ const NURSES = [
     id: 'belle',
     name: 'Nurse Belle',
     image: NurseBelleImage,
-    // desc: 'Registered Nurse with 8 years clinical experience in IV therapy and restorative care.'
+    calendlyUrl: 'https://calendly.com/belgiiin/wellness-vitality-australia-belle-colak'
   },
   {
     id: 'elias',
     name: 'Nurse Elias',
     image: NurseEliasImage,
-    // desc: 'Registered Nurse specialising in clinical health assessments and health & wellness support.'
+    calendlyUrl: 'https://calendly.com/elias-roumie-jvve/wellness-vitality-australia-elias-roumie'
   }
 ];
 
@@ -452,8 +452,7 @@ export default function BookingPage() {
       case 3: return !!bookingData.appointmentType;
       case 4: return Object.keys(validateForm()).length === 0;
       case 5:
-        if (isTeleconsultationOnly) return true;
-        return bookingData.selectedDate && bookingData.selectedTime;
+        return true; // Calendly handles its own internal validation
       default: return true;
     }
   };
@@ -756,45 +755,22 @@ export default function BookingPage() {
         return (
           <Fade in timeout={400}>
             <Box>
-              {isTeleconsultationOnly ? (
-                <Box>
-                  <Box sx={{ mb: 3, textAlign: 'center' }}>
-                    <Chip icon={<Videocam sx={{ fontSize: 16 }} />} label="Teleconsultation — Select an available time slot via Calendly" sx={{ bgcolor: '#e8f4fd', color: '#1a6fa0', fontWeight: 700, fontSize: '0.8rem', py: 2.5, px: 1.5, '& .MuiChip-icon': { color: '#1a6fa0' } }} />
-                  </Box>
-                  <Paper sx={{ bgcolor: 'white', p: { xs: 1, md: 4 }, borderRadius: 4, border: '1.5px solid #ededf5', overflow: 'hidden' }}>
-                    <CalendlyEmbed url="https://calendly.com/d/cys5-44x-y4h/meeting" />
-                  </Paper>
-                </Box>
-              ) : (
-                <Box sx={{ maxWidth: 840, mx: 'auto' }}>
-                  <Grid container spacing={4}>
-                    <Grid item xs={12} sm={5}>
-                      <Paper sx={{ p: 3, borderRadius: 4, border: '1.5px solid #ededf5', bgcolor: 'white', height: '100%' }} elevation={0}>
-                        <Typography variant="caption" sx={{ fontWeight: 700, color: '#ca1254', textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 2 }}><CalendarMonth sx={{ fontSize: 18, verticalAlign: 'middle', mr: 0.5, mt: -0.2 }} /> Select Date</Typography>
-                        <TextField fullWidth type="date" variant="outlined" value={bookingData.selectedDate} onChange={(e) => updateBookingData('selectedDate', e.target.value)} InputLabelProps={{ shrink: true }} inputProps={{ min: new Date().toISOString().split('T')[0] }} sx={{ '& .MuiOutlinedInput-root': { bgcolor: '#f4f4fa' } }} />
-                        <Box sx={{ mt: 4, p: 2, borderRadius: 2, bgcolor: '#fef5f8', border: '1px dashed #ca125440' }}>
-                          <Typography variant="body2" sx={{ color: '#ca1254', fontWeight: 600, display: 'flex', gap: 1 }}><AccessTime sx={{ fontSize: 18 }} /> Appointments run for approximately 1 hour.</Typography>
-                        </Box>
-                      </Paper>
-                    </Grid>
-                    <Grid item xs={12} sm={7}>
-                      <Paper sx={{ p: 3, borderRadius: 4, border: '1.5px solid #ededf5', bgcolor: 'white', height: '100%' }} elevation={0}>
-                        <Typography variant="caption" sx={{ fontWeight: 700, color: '#ca1254', textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 2.5 }}><AccessTime sx={{ fontSize: 18, verticalAlign: 'middle', mr: 0.5, mt: -0.2 }} /> Select Time Slot</Typography>
-                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr' }, gap: 1.5 }}>
-                          {TIME_SLOTS.map((slot) => {
-                            const selected = bookingData.selectedTime === slot;
-                            return (
-                              <Paper key={slot} elevation={0} onClick={() => updateBookingData('selectedTime', slot)} sx={{ py: 1.5, px: 1, textAlign: 'center', cursor: 'pointer', borderRadius: 2, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5', bgcolor: selected ? '#ca1254' : '#f4f4fa', color: selected ? 'white' : '#3b3f69', transition: 'all 0.2s ease', '&:hover': { borderColor: '#ca1254', bgcolor: selected ? '#ca1254' : '#fef5f8', color: selected ? 'white' : '#ca1254' } }}>
-                                <Typography variant="body2" fontWeight={selected ? 700 : 600} sx={{ fontSize: '0.85rem' }}>{slot}</Typography>
-                              </Paper>
-                            );
-                          })}
-                        </Box>
-                      </Paper>
-                    </Grid>
-                  </Grid>
-                </Box>
-              )}
+              <Box sx={{ mb: 3, textAlign: 'center' }}>
+                <Chip 
+                  icon={<CalendarMonth sx={{ fontSize: 16 }} />} 
+                  label={`Scheduling with ${bookingData.selectedNurse?.name || 'Practitioner'} — Select an available time slot`} 
+                  sx={{ bgcolor: '#e8f4fd', color: '#1a6fa0', fontWeight: 700, fontSize: '0.8rem', py: 2.5, px: 1.5, '& .MuiChip-icon': { color: '#1a6fa0' } }} 
+                />
+              </Box>
+              <Paper sx={{ bgcolor: 'white', p: { xs: 1, md: 4 }, borderRadius: 4, border: '1.5px solid #ededf5', overflow: 'hidden' }}>
+                {(() => {
+                  const baseUrl = bookingData.selectedNurse?.calendlyUrl || "https://calendly.com/d/cys5-44x-y4h/meeting";
+                  const url = new URL(baseUrl);
+                  if (bookingData.userDetails.name) url.searchParams.set('name', bookingData.userDetails.name);
+                  if (bookingData.userDetails.email) url.searchParams.set('email', bookingData.userDetails.email);
+                  return <CalendlyEmbed url={url.toString()} />;
+                })()}
+              </Paper>
             </Box>
           </Fade>
         );
@@ -838,7 +814,7 @@ export default function BookingPage() {
                   <Grid item xs={12} sm={6}>
                     <Typography variant="caption" sx={{ color: '#ca1254', fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 0.5 }}>Date & Time</Typography>
                     <Typography variant="body1" fontWeight={700} color="secondary">
-                      {isTeleconsultationOnly ? 'Scheduled via Calendly' : bookingData.selectedDate && bookingData.selectedTime ? `${new Date(bookingData.selectedDate).toLocaleDateString('en-AU')} | ${bookingData.selectedTime}` : '—'}
+                      Scheduled via Calendly
                     </Typography>
                   </Grid>
                 </Grid>

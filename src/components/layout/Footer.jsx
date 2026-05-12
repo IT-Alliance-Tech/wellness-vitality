@@ -159,13 +159,13 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left w-full">
-          <p className="text-white/30 text-[11px] font-medium tracking-wide">
+          <p className="text-white/30 text-[11px] font-medium tracking-wide" suppressHydrationWarning>
             © {new Date().getFullYear()} Wellness & Vitality Australia. Elite Clinical Services.
           </p>
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
             <Link href="/privacy" className="text-white/30 hover:text-white text-[11px] transition-colors font-medium">Privacy Policy</Link>
             <Link href="/terms" className="text-white/30 hover:text-white text-[11px] transition-colors font-medium">Terms of Service</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

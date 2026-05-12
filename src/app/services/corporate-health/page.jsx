@@ -472,7 +472,7 @@ export default function CorporateHealthPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
               {steps.map((step, i) => (
                 <div key={step.title} style={{ position: 'relative' }}>
-                  <div className="ch-step-card">
+                  <div className="ch-step-card flex flex-col items-center text-center lg:items-start lg:text-left">
                     <div className="ch-step-num-bg">{i + 1}</div>
                     <div className="ch-step-badge">{String(i + 1).padStart(2, '0')}</div>
                     <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', position: 'relative', zIndex: 1 }}>
@@ -492,6 +492,7 @@ export default function CorporateHealthPage() {
         {/* ── Org Benefits — Feature Cards ── */}
         <FeatureCards
           heading="How We May Support Your Organisation"
+          centered={true}
           cards={benefits.map((b) => ({
             title: b.title,
             description: b.desc,
@@ -531,7 +532,7 @@ export default function CorporateHealthPage() {
                   </svg>,
                 ];
                 return (
-                  <div key={item.title} className="ch-partner-card">
+                  <div key={item.title} className="ch-partner-card flex flex-col items-center text-center lg:items-start lg:text-left">
                     <div className="ch-partner-icon">{icons[i]}</div>
                     <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px' }}>
                       {item.title}
@@ -548,18 +549,7 @@ export default function CorporateHealthPage() {
 
         <section className="py-16 bg-white">
           <div className="ch-container">
-            <div className="
-              rounded-[28px]
-              bg-[#f5f6fa]
-              border border-[#eaebf0]
-              p-8 md:p-14
-              flex flex-col lg:flex-row
-              items-center lg:items-center
-              justify-between
-              gap-8
-              relative
-              overflow-hidden
-            ">
+            <div className="rounded-[28px] bg-[#f5f6fa] border border-[#eaebf0] p-8 md:p-14 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-8 relative overflow-hidden">
               <div className="relative z-10 text-center lg:text-left">
                 <p className="text-[10px] tracking-[0.3em] uppercase text-[#3b3f69]/50 mb-2 font-bold">
                   Get Started
@@ -577,24 +567,10 @@ export default function CorporateHealthPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 relative z-10 w-full sm:w-auto">
-                <a href="/booking" className="
-                  px-8 py-4 rounded-xl
-                  bg-gradient-to-br from-[#ca1254] to-[#e84d8a]
-                  text-white font-semibold text-sm
-                  text-center
-                  shadow-lg shadow-[#ca1254]/30
-                  hover:opacity-90 transition
-                ">
+                <a href="/booking" className="px-8 py-4 rounded-xl bg-gradient-to-br from-[#ca1254] to-[#e84d8a] text-white font-semibold text-sm text-center shadow-lg shadow-[#ca1254]/30 hover:opacity-90 transition">
                   Book Now
                 </a>
-                <a href="/contact" className="
-                  px-8 py-4 rounded-xl
-                  bg-white text-[#3b3f69]
-                  font-semibold text-sm
-                  text-center
-                  border border-[#3b3f69]/15
-                  hover:opacity-90 transition
-                ">
+                <a href="/contact" className="px-8 py-4 rounded-xl bg-white text-[#3b3f69] font-semibold text-sm text-center border border-[#3b3f69]/15 hover:opacity-90 transition">
                   Enquire Now
                 </a>
               </div>

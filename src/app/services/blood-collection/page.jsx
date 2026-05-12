@@ -475,6 +475,7 @@ export default function BloodCollectionPage() {
         {/* ── Locations — Feature Cards ── */}
         <FeatureCards
           heading="Where We Collect"
+          centered={true}
           cards={locations.map((item) => ({
             title: item.title,
             description: item.desc,
@@ -498,7 +499,7 @@ export default function BloodCollectionPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((item) => (
-                <div key={item.step} className="step-card">
+                <div key={item.step} className="step-card flex flex-col items-center text-center lg:items-start lg:text-left">
                   <div className="step-bg-num">{item.step}</div>
                   <div className="step-badge">{item.step}</div>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', position: 'relative', zIndex: 1 }}>

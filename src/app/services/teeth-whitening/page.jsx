@@ -466,7 +466,7 @@ export default function TeethWhiteningPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
               {steps.map((step, i) => (
                 <div key={step.title} style={{ position: 'relative' }}>
-                  <div className="tw-step-card">
+                  <div className="tw-step-card flex flex-col items-center text-center lg:items-start lg:text-left">
                     <div className="tw-step-num-bg">{i + 1}</div>
                     <div className="tw-step-badge">{String(i + 1).padStart(2, '0')}</div>
                     <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', position: 'relative', zIndex: 1 }}>
@@ -486,6 +486,7 @@ export default function TeethWhiteningPage() {
         {/* ── Suitability — Feature Cards ── */}
         <FeatureCards
           heading="The Perfect Smile for You"
+          centered={true}
           cards={suitability.map((item, i) => ({
             title: item.title,
             description: item.desc,
