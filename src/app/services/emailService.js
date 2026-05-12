@@ -92,7 +92,8 @@ export const sendDetailedBookingAdminMail = async ({
   selectedDate,
   selectedTime,
   total,
-  isTeleconsultation
+  isTeleconsultation,
+  selectedNurse
 }) => {
   const packagesHtml = selectedPackages.length > 0 
     ? selectedPackages.map(pkg => `<li><b>${pkg.name}</b> - $${pkg.price}</li>`).join('') 
@@ -114,6 +115,7 @@ export const sendDetailedBookingAdminMail = async ({
       <p><strong>Address/Location:</strong> ${addressStr}</p>
       
       <h3 style="border-bottom: 1px solid #eee; padding-bottom: 10px; color: #ca1254; margin-top: 25px;">Appointment Request</h3>
+      <p><strong>Practitioner:</strong> ${selectedNurse?.name || 'Not specified'}</p>
       <p><strong>Type:</strong> ${appointmentType?.title || 'Not specified'}</p>
       ${!isTeleconsultation 
         ? `<p><strong>Preferred Date:</strong> ${selectedDate}</p><p><strong>Preferred Time:</strong> ${selectedTime}</p>` 
@@ -211,7 +213,8 @@ export const sendDetailedBookingUserMail = async ({
   selectedDate,
   selectedTime,
   total,
-  isTeleconsultation
+  isTeleconsultation,
+  selectedNurse
 }) => {
   const packagesHtml = selectedPackages.length > 0 
     ? selectedPackages.map(pkg => `<li><b>${pkg.name}</b> - $${pkg.price}</li>`).join('') 
@@ -228,6 +231,7 @@ export const sendDetailedBookingUserMail = async ({
       <p>We've received your booking request. Our clinical team will review the details and contact you shortly to confirm everything.</p>
       
       <h3 style="border-bottom: 1px solid #eee; padding-bottom: 10px; color: #3b3f69; margin-top: 25px;">Your Appointment Summary</h3>
+      <p><strong>Practitioner:</strong> ${selectedNurse?.name || 'Not specified'}</p>
       <p><strong>Type:</strong> ${appointmentType?.title || 'Not specified'}</p>
       ${!isTeleconsultation 
         ? `<p><strong>Requested Date:</strong> ${selectedDate}</p><p><strong>Requested Time:</strong> ${selectedTime}</p>` 
