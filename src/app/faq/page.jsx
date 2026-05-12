@@ -21,8 +21,8 @@ const faqs = [
         a: "Absolutely. After a thorough clinical assessment, our nurses tailor formulations specifically to your hydration, recovery, or wellness goals.",
       },
       {
-        q: "How long does a session take?",
-        a: "Most IV infusions take between 30–60 minutes, depending on the specific formulation and infusion rate prescribed for you.",
+        q: "How much time does a session take?",
+        a: "Most IV infusions take up to 60 minutes, depending on the specific formulation and infusion rate prescribed for you.",
       },
       {
         q: "Is IV therapy painful?",
@@ -66,7 +66,7 @@ const faqs = [
     items: [
       {
         q: "Do I need a blood test?",
-        a: "Not always. However, for certain services like iron infusions, recent pathology results are required to ensure clinical appropriateness.",
+        a: "Not always. However, for certain services recent pathology results are required to ensure clinical appropriateness.",
       },
       {
         q: "Is it covered by Medicare?",
@@ -145,15 +145,14 @@ function AccordionItem({ q, a, isOpen, onToggle }) {
 }
 
 export default function FAQPage() {
-  const [openItem, setOpenItem] = useState({ cat: 0, item: 0 });
+  const [openIndex, setOpenIndex] = useState(0);
 
-  const toggle = (catIdx, itemIdx) => {
-    if (openItem?.cat === catIdx && openItem?.item === itemIdx) {
-      setOpenItem(null);
-    } else {
-      setOpenItem({ cat: catIdx, item: itemIdx });
-    }
+  const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
+
+  // Flatten all FAQs into a single array
+  const allFaqs = faqs.flatMap(group => group.items);
 
   return (
     <main className="min-h-screen bg-white font-serif text-[#1A1A1A]">
@@ -184,38 +183,21 @@ export default function FAQPage() {
         </div>
       </section>
       
-      {/* CONTENT - Reduced py-24 to py-16 */}
+      {/* CONTENT - Unified List */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           
-          {faqs.map((group, catIdx) => (
-            <div key={group.category} className="mb-14 last:mb-0">
-              
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-9 h-9 rounded-xl bg-[#3b3f69]/5 text-[#3b3f69] flex items-center justify-center flex-shrink-0 scale-90">
-                  {group.icon}
-                </div>
-                <div>
-                  <h2 className="text-[17px] font-semibold text-[#3b3f69]/90 uppercase tracking-widest leading-none mb-1.5 font-serif">
-                    {group.category}
-                  </h2>
-                  <div className="h-1 w-6 bg-[#ca1254] rounded-full" />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                {group.items.map((item, itemIdx) => (
-                  <AccordionItem
-                    key={itemIdx}
-                    q={item.q}
-                    a={item.a}
-                    isOpen={openItem?.cat === catIdx && openItem?.item === itemIdx}
-                    onToggle={() => toggle(catIdx, itemIdx)}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
+          <div className="max-w-3xl mx-auto space-y-4">
+            {allFaqs.map((item, index) => (
+              <AccordionItem
+                key={index}
+                q={item.q}
+                a={item.a}
+                isOpen={openIndex === index}
+                onToggle={() => toggle(index)}
+              />
+            ))}
+          </div>
 
           {/* CTA - Smoother Gap (mt-20 instead of mt-32) */}
           <div className="mt-20">
