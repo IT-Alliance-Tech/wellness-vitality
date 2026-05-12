@@ -435,7 +435,7 @@ export default function IVInfusionsPage() {
                     src={IvInfusionImage}
                     alt="IV Infusion Wellness"
                     width={800} height={1000}
-                    style={{ width: '100%', height: 'auto', maxHeight: '520px', display: 'block', objectFit: 'cover', objectPosition: 'center top' }}
+                    style={{ width: '100%', height: '50%', maxHeight: '520px', display: 'block', objectFit: 'cover', objectPosition: 'center top' }}
                   />
                 </div>
                 <div className="stat-pill">
@@ -616,7 +616,7 @@ export default function IVInfusionsPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {steps.map((step, i) => (
-                <div key={step.title} className="step-card">
+                <div key={step.title} className="step-card flex flex-col items-center text-center lg:items-start lg:text-left">
                   <div className="step-bg-num">{String(i + 1).padStart(2, '0')}</div>
                   <div className="step-badge">{String(i + 1).padStart(2, '0')}</div>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', position: 'relative', zIndex: 1 }}>{step.title}</h3>
@@ -703,6 +703,7 @@ export default function IVInfusionsPage() {
         {/* ── Suitability — Feature Cards ── */}
         <FeatureCards
           heading="Is IV Therapy for You?"
+          centered={true}
           cards={suitability.map((item) => ({
             title: item.group,
             description: item.reason,

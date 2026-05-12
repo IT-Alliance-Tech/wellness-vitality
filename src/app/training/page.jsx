@@ -102,9 +102,9 @@ const TrainingPage = () => {
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Accredited Programmes</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold !text-white mb-8 leading-[1.2] tracking-tight">
-            Training &amp; <br className="hidden md:block" />
-            <span className="text-[#ca1254]">Services</span>
+          <h1 className="text-5xl md:text-6xl font-bold !text-white mb-8 leading-[1.2] tracking-tight">
+            Training &amp;
+            <span className="text-[#ca1254]"> Services</span>
           </h1>
 
           <p className="text-xl text-white w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light">

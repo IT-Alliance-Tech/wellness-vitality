@@ -495,7 +495,7 @@ export default function AgedCareNDISPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((step, i) => (
-                <div key={step.title} className="step-card">
+                <div key={step.title} className="step-card flex flex-col items-center text-center lg:items-start lg:text-left">
                   <div className="step-bg-num">{i + 1}</div>
                   <div className="step-badge">{String(i + 1).padStart(2, '0')}</div>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '10px', position: 'relative', zIndex: 1 }}>
@@ -513,6 +513,7 @@ export default function AgedCareNDISPage() {
         {/* ── Care Benefits — Feature Cards ── */}
         <FeatureCards
           heading="Dedicated to Clinical Excellence"
+          centered={true}
           cards={careBenefits.map((item, i) => ({
             title: item.title,
             description: item.desc,

@@ -14,6 +14,7 @@ const FeatureCards = ({
   cards = [],
   cols = 4,
   bg = '#faf8f5',
+  centered = false,
 }) => {
   const gridCols =
     cols === 3
@@ -29,7 +30,7 @@ const FeatureCards = ({
         {/* Heading */}
         {heading && (
           <h2
-            className="text-3xl md:text-[2.6rem] font-semibold leading-tight mb-14"
+            className={`text-3xl md:text-[2.6rem] font-semibold leading-tight mb-14 ${centered ? 'text-center lg:text-left' : ''}`}
             style={{ color: '#3b3f69' }}
           >
             {heading}
@@ -39,7 +40,7 @@ const FeatureCards = ({
         {/* Cards Grid */}
         <div className={`grid ${gridCols} gap-x-10 gap-y-12`}>
           {cards.map((card, i) => (
-            <div key={i} className="flex flex-col">
+            <div key={i} className={`flex flex-col ${centered ? 'items-center text-center lg:items-start lg:text-left' : ''}`}>
               {/* Icon */}
               {card.icon && (
                 <div className="mb-5" style={{ color: '#ca1254' }}>
