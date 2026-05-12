@@ -11,6 +11,7 @@ export async function POST(request) {
       userDetails = {}, 
       selectedDate = '', 
       selectedTime = '', 
+      selectedNurse = null,
       total = 0 
     } = data;
 
@@ -24,7 +25,8 @@ export async function POST(request) {
       selectedDate,
       selectedTime,
       total,
-      isTeleconsultation
+      isTeleconsultation,
+      selectedNurse
     });
 
     if (adminResponse.error) {
@@ -41,7 +43,8 @@ export async function POST(request) {
         selectedDate,
         selectedTime,
         total,
-        isTeleconsultation
+        isTeleconsultation,
+        selectedNurse
       });
 
       if (userResponse.error) {
