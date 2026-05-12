@@ -12,9 +12,9 @@ export const sendCustomerBookingMail = async ({
 }) => {
   try {
     await resend.emails.send({
-      from: `Wellness Vitality <${process.env.FROM_EMAIL}>`,
+      from: `Wellness Vitality Australia <${process.env.FROM_EMAIL}>`,
       to: customerEmail,
-      subject: "Booking Confirmation - Wellness Vitality",
+      subject: "Booking Confirmation - Wellness Vitality Australia",
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
           <h2 style="color: #3b3f69;">Booking Confirmed</h2>
@@ -28,7 +28,7 @@ export const sendCustomerBookingMail = async ({
           
           <p>If you need to reschedule or have any questions, please contact us.</p>
           <p>Thank you,</p>
-          <p><strong>Wellness Vitality Team</strong></p>
+          <p><strong>Wellness Vitality Australia Team</strong></p>
         </div>
       `,
     });
@@ -45,7 +45,7 @@ export const sendAdminBookingMail = async ({
 }) => {
   try {
     await resend.emails.send({
-      from: `Wellness Vitality <${process.env.FROM_EMAIL}>`,
+      from: `Wellness Vitality Australia <${process.env.FROM_EMAIL}>`,
       to: process.env.ADMIN_EMAIL,
       subject: "New Booking Received",
       html: `
@@ -73,7 +73,7 @@ export const sendAdminBookingMail = async ({
           </table>
           
           <p style="margin-top: 30px; font-size: 12px; color: #777;">
-            This is an automated notification from your website's booking system.
+            This is an automated notification from the Wellness Vitality Australia booking system.
           </p>
         </div>
       `,
@@ -125,14 +125,14 @@ export const sendDetailedBookingAdminMail = async ({
       <ul style="padding-left: 20px;">${packagesHtml}</ul>
       <p style="font-size: 18px; font-weight: bold; margin-top: 20px; color: #3b3f69;">Total Subtotal: $${total}</p>
       
-      <p style="margin-top: 30px; font-size: 12px; color: #777; border-top: 1px solid #eee; pt: 15px;">
-        Sent from the Wellness Vitality Online Booking System
+      <p style="margin-top: 30px; font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 15px;">
+        Sent from the Wellness Vitality Australia Online Booking System
       </p>
     </div>
   `;
 
   return resend.emails.send({
-    from: `Wellness Vitality <${process.env.FROM_EMAIL}>`,
+    from: `Wellness Vitality Australia <${process.env.FROM_EMAIL}>`,
     to: process.env.ADMIN_EMAIL,
     subject: `New Booking Request - ${userDetails.name}`,
     html: html,
@@ -167,13 +167,13 @@ export const sendContactFormAdminMail = async ({ name, email, phone, enquiry }) 
       </table>
       
       <p style="margin-top: 30px; font-size: 12px; color: #777;">
-        Sent from the Wellness Vitality Contact Form
+        Sent from the Wellness Vitality Australia Contact Form
       </p>
     </div>
   `;
 
   return resend.emails.send({
-    from: `Wellness Vitality <${process.env.FROM_EMAIL}>`,
+    from: `Wellness Vitality Australia <${process.env.FROM_EMAIL}>`,
     to: process.env.ADMIN_EMAIL,
     reply_to: email,
     subject: `New Contact Submission - ${name}`,
@@ -186,7 +186,7 @@ export const sendContactFormUserMail = async ({ name, email, enquiry }) => {
     <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
       <h2 style="color: #ca1254;">We've Received Your Message!</h2>
       <p>Hi ${name},</p>
-      <p>Thank you for contacting Wellness Vitality. We've received your enquiry and our team will get back to you as soon as possible.</p>
+      <p>Thank you for contacting Wellness Vitality Australia. We've received your enquiry and our team will get back to you as soon as possible.</p>
       
       <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; margin: 20px 0;">
         <h4 style="margin: 0 0 10px 0; color: #3b3f69;">Your Message:</h4>
@@ -194,14 +194,14 @@ export const sendContactFormUserMail = async ({ name, email, enquiry }) => {
       </div>
       
       <p>If you have any urgent questions, feel free to call us directly.</p>
-      <p>Warm Regards,<br><strong>Wellness Vitality Team</strong></p>
+      <p>Warm Regards,<br><strong>Wellness Vitality Australia Team</strong></p>
     </div>
   `;
 
   return resend.emails.send({
-    from: `Wellness Vitality <${process.env.FROM_EMAIL}>`,
+    from: `Wellness Vitality Australia <${process.env.FROM_EMAIL}>`,
     to: email,
-    subject: "Thank you for contacting Wellness Vitality",
+    subject: "Thank you for contacting Wellness Vitality Australia",
     html: html,
   });
 };
@@ -226,7 +226,7 @@ export const sendDetailedBookingUserMail = async ({
 
   const html = `
     <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-      <h2 style="color: #ca1254;">Thank you for booking with Wellness Vitality!</h2>
+      <h2 style="color: #ca1254;">Thank you for booking with Wellness Vitality Australia!</h2>
       <p>Hi ${userDetails.name},</p>
       <p>We've received your booking request. Our clinical team will review the details and contact you shortly to confirm everything.</p>
       
@@ -244,20 +244,20 @@ export const sendDetailedBookingUserMail = async ({
       
       <div style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
         <p style="margin: 0; font-size: 14px; color: #555;">
-          Questions? Contact us at <a href="mailto:admin@wellnessvitality.com.au" style="color: #ca1254;">admin@wellnessvitality.com.au</a> or call us directly.
+          Questions? Contact us at <a href="mailto:admin@wellnessvitalityaustralia.com.au" style="color: #ca1254;">admin@wellnessvitalityaustralia.com.au</a> or call us directly.
         </p>
       </div>
       
       <p style="margin-top: 30px; font-weight: bold; color: #3b3f69;">
-        Warm Regards,<br>The Wellness Vitality Clinical Team
+        Warm Regards,<br>The Wellness Vitality Australia Clinical Team
       </p>
     </div>
   `;
 
   return resend.emails.send({
-    from: `Wellness Vitality <${process.env.FROM_EMAIL}>`,
+    from: `Wellness Vitality Australia <${process.env.FROM_EMAIL}>`,
     to: userDetails.email,
-    subject: `Your Wellness Vitality Booking Itinerary`,
+    subject: `Your Wellness Vitality Australia Booking Itinerary`,
     html: html,
   });
 };
@@ -276,13 +276,13 @@ export const sendNewsletterAdminMail = async (email) => {
       </div>
       
       <p style="margin-top: 30px; font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 15px;">
-        Sent from the Wellness Vitality Newsletter System
+        Sent from the Wellness Vitality Australia Newsletter System
       </p>
     </div>
   `;
 
   return resend.emails.send({
-    from: `Wellness Vitality <${process.env.FROM_EMAIL}>`,
+    from: `Wellness Vitality Australia <${process.env.FROM_EMAIL}>`,
     to: process.env.ADMIN_EMAIL,
     subject: `New Newsletter Subscriber: ${email}`,
     html: html,
@@ -293,7 +293,7 @@ export const sendNewsletterWelcomeMail = async (email) => {
   const html = `
     <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
       <div style="text-align: center; margin-bottom: 30px;">
-        <h2 style="color: #ca1254; margin-bottom: 10px;">Welcome to Wellness Vitality!</h2>
+        <h2 style="color: #ca1254; margin-bottom: 10px;">Welcome to Wellness Vitality Australia!</h2>
         <p style="color: #3b3f69; font-size: 16px;">Thank you for joining our community.</p>
       </div>
       
@@ -318,9 +318,9 @@ export const sendNewsletterWelcomeMail = async (email) => {
   `;
 
   return resend.emails.send({
-    from: `Wellness Vitality <${process.env.FROM_EMAIL}>`,
+    from: `Wellness Vitality Australia <${process.env.FROM_EMAIL}>`,
     to: email,
-    subject: "Welcome to the Wellness Vitality Newsletter",
+    subject: "Welcome to the Wellness Vitality Australia Newsletter",
     html: html,
   });
 };
