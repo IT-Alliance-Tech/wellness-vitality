@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
-import Logo from '../../../public/logo.png';
+import Logo from '../../../public/logoimg.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center justify-between">
 
         {/* LOGO */}
-        <Link href="/" className="flex flex-col items-center justify-center py-1 group shrink-0">
+        <Link href="/" className="flex flex-row items-center gap-3 py-1 group shrink-0">
           <Image
             src={Logo}
             alt="Wellness Vitality Australia"
@@ -26,11 +26,11 @@ const Navbar = () => {
             style={{ width: 'auto' }}
             priority
           />
-          <div className="hidden md:flex mt-1 items-center justify-center gap-2 opacity-90 group-hover:opacity-100 transition-opacity">
-            <span className="text-[#3b3f69] font-bold text-[12px] tracking-tight uppercase leading-none">
+          <div className="flex flex-col justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+            <span className="text-[#3b3f69] font-bold text-[15px] tracking-tight uppercase leading-tight">
               Wellness Vitality
             </span>
-            <span className="text-[#ca1254] font-semibold text-[11px] tracking-[0.2em] uppercase leading-none">
+            <span className="text-[#ca1254] font-semibold text-[12px] tracking-[0.2em] uppercase leading-tight">
               Australia
             </span>
           </div>
