@@ -112,13 +112,13 @@ const IVTherapy = () => {
             >
 
               {/* PRICE BADGE */}
-             <div
-  className={`absolute top-3 right-3 px-4 py-2 rounded-full text-sm sm:text-base font-semibold shadow-md
+              <div
+                className={`absolute top-3 right-3 px-4 py-2 rounded-full text-sm sm:text-base font-semibold shadow-md
   ${pack.accent === "rose"
-      ? "bg-[rgb(202,18,84)] text-white"
-      : "bg-[rgb(59,63,105)] text-white"
-    }`}
->
+                    ? "bg-[rgb(202,18,84)] text-white"
+                    : "bg-[rgb(59,63,105)] text-white"
+                  }`}
+              >
                 {pack.price}
               </div>
 
@@ -150,7 +150,7 @@ const IVTherapy = () => {
 
               {/* Button */}
               <Button
-                href="/services/iv-infusions"
+                href="/booking"
                 variant="ghost"
                 className={`mt-auto w-full px-6 sm:px-8 py-3 sm:py-5 text-xs sm:text-base !rounded-none font-medium border tracking-wide transition-all duration-300 ${pack.accent === "rose"
                   ? "border-[rgb(202,18,84)] text-[rgb(202,18,84)] hover:bg-[rgb(202,18,84)] hover:text-white"

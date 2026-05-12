@@ -281,6 +281,7 @@ function ServicesSection() {
         <div style={{ margin: '0 -24px' }}>
           <FeatureCards
             heading="What Makes Our Assessments Different"
+            centered={true}
             cards={healthAssessmentBenefits.map((b, i) => ({
               title: b.title,
               description: b.desc,
@@ -418,7 +419,7 @@ export default function HealthAssessmentsPage() {
             {steps.map((step, i) => (
               <div
                 key={step.title}
-                className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#3b3f69]/5 to-[#ca1254]/5 shadow-md hover:shadow-xl transition"
+                className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#3b3f69]/5 to-[#ca1254]/5 shadow-md hover:shadow-xl transition flex flex-col items-center text-center lg:items-start lg:text-left"
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#3b3f69] text-white flex items-center justify-center font-bold text-lg sm:text-xl">
                   {i + 1}
@@ -428,7 +429,7 @@ export default function HealthAssessmentsPage() {
                   {step.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-[#3b3f69]/70">
+                <p className="text-xs sm:text-sm text-[#3b3f69]/70 mt-2">
                   {step.desc}
                 </p>
               </div>
