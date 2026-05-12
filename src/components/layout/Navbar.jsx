@@ -27,7 +27,7 @@ const Navbar = () => {
             priority
           />
           <div className="flex flex-col justify-center opacity-90 group-hover:opacity-100 transition-opacity">
-            <span className="text-[#3b3f69] font-bold text-[15px] tracking-tight uppercase leading-tight">
+            <span className="text-[#3b3f69] font-bold text-[16px] tracking-tight uppercase leading-tight">
               Wellness Vitality
             </span>
             <span className="text-[#ca1254] font-semibold text-[12px] tracking-[0.2em] uppercase leading-tight">
