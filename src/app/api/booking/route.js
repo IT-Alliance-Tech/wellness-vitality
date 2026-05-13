@@ -4,15 +4,15 @@ import { sendDetailedBookingAdminMail, sendDetailedBookingUserMail } from '@/app
 export async function POST(request) {
   try {
     const data = await request.json();
-    const { 
-      selectedServices = [], 
-      selectedPackages = [], 
-      appointmentType = null, 
-      userDetails = {}, 
-      selectedDate = '', 
-      selectedTime = '', 
+    const {
+      selectedServices = [],
+      selectedPackages = [],
+      appointmentType = null,
+      userDetails = {},
+      selectedDate = '',
+      selectedTime = '',
       selectedNurse = null,
-      total = 0 
+      total = 0
     } = data;
 
     const isTeleconsultation = appointmentType?.id === 'teleconsultation';

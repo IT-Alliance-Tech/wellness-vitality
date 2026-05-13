@@ -347,10 +347,13 @@ const theme = createTheme({
 });
 
 const TIME_SLOTS = [
-  '06:00 AM - 07:00 AM', '07:00 AM - 08:00 AM', '08:00 AM - 09:00 AM', '09:00 AM - 10:00 AM',
-  '10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM', '12:00 PM - 01:00 PM', '01:00 PM - 02:00 PM',
-  '02:00 PM - 03:00 PM', '03:00 PM - 04:00 PM', '04:00 PM - 05:00 PM', '05:00 PM - 06:00 PM',
-  '06:00 PM - 07:00 PM', '07:00 PM - 08:00 PM', '08:00 PM - 09:00 PM',
+  '07:00 AM - 09:00 AM',
+  '09:00 AM - 11:00 AM',
+  '11:00 AM - 01:00 PM',
+  '01:00 PM - 03:00 PM',
+  '03:00 PM - 05:00 PM',
+  '05:00 PM - 07:00 PM',
+  '07:00 PM - 09:00 PM',
 ];
 
 export default function BookingPage() {
@@ -759,10 +762,10 @@ export default function BookingPage() {
               {isTeleconsultationOnly ? (
                 <Box>
                   <Box sx={{ mb: 3, textAlign: 'center' }}>
-                    <Chip 
-                      icon={<Videocam sx={{ fontSize: 16 }} />} 
-                      label={`Teleconsultation with ${bookingData.selectedNurse?.name || 'Practitioner'} — Select a time slot via Calendly`} 
-                      sx={{ bgcolor: '#e8f4fd', color: '#1a6fa0', fontWeight: 700, fontSize: '0.8rem', py: 2.5, px: 1.5, '& .MuiChip-icon': { color: '#1a6fa0' } }} 
+                    <Chip
+                      icon={<Videocam sx={{ fontSize: 16 }} />}
+                      label={`Teleconsultation with ${bookingData.selectedNurse?.name || 'Practitioner'} — Select a time slot via Calendly`}
+                      sx={{ bgcolor: '#e8f4fd', color: '#1a6fa0', fontWeight: 700, fontSize: '0.8rem', py: 2.5, px: 1.5, '& .MuiChip-icon': { color: '#1a6fa0' } }}
                     />
                   </Box>
                   <Paper sx={{ bgcolor: 'white', p: { xs: 1, md: 4 }, borderRadius: 4, border: '1.5px solid #ededf5', overflow: 'hidden' }}>
@@ -783,7 +786,7 @@ export default function BookingPage() {
                         <Typography variant="caption" sx={{ fontWeight: 700, color: '#ca1254', textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 2 }}><CalendarMonth sx={{ fontSize: 18, verticalAlign: 'middle', mr: 0.5, mt: -0.2 }} /> Select Date</Typography>
                         <TextField fullWidth type="date" variant="outlined" value={bookingData.selectedDate} onChange={(e) => updateBookingData('selectedDate', e.target.value)} InputLabelProps={{ shrink: true }} inputProps={{ min: new Date().toISOString().split('T')[0] }} sx={{ '& .MuiOutlinedInput-root': { bgcolor: '#f4f4fa' } }} suppressHydrationWarning />
                         <Box sx={{ mt: 4, p: 2, borderRadius: 2, bgcolor: '#fef5f8', border: '1px dashed #ca125440' }}>
-                          <Typography variant="body2" sx={{ color: '#ca1254', fontWeight: 600, display: 'flex', gap: 1 }}><AccessTime sx={{ fontSize: 18 }} /> Appointments run for approximately 2 hour.</Typography>
+                          <Typography variant="body2" sx={{ color: '#ca1254', fontWeight: 600, display: 'flex', gap: 1 }}><AccessTime sx={{ fontSize: 18 }} /> Appointments run for approximately 2 hours.</Typography>
                         </Box>
                       </Paper>
                     </Grid>
