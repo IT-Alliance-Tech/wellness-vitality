@@ -16,6 +16,8 @@
     "@fontsource/fraunces": "^5.2.9",
     "@mui/icons-material": "^7.3.9",
     "@mui/material": "^7.3.9",
+    "@supabase/supabase-js": "^2.105.4",
+    "dotenv": "^17.4.2",
     "lucide-react": "^1.0.1",
     "next": "16.2.0",
     "nodemailer": "^8.0.4",
