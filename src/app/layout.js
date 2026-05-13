@@ -17,8 +17,28 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Wellness Vitality",
-  description: "Wellness and Vitality Services",
+  title: "Wellness Vitality Australia",
+  description: "Holistic wellness services in Australia",
+  icons: {
+    icon: "/logoimg.png",
+    shortcut: "/logoimg.png",
+    apple: "/logoimg.png",
+  },
+  openGraph: {
+    title: "Wellness Vitality Australia",
+    description: "Holistic wellness services in Australia",
+    url: "https://wellnessvitalityaustralia.com.au",
+    siteName: "Wellness Vitality Australia",
+    images: [
+      {
+        url: "/logoimg.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
