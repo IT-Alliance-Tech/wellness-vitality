@@ -376,6 +376,47 @@ export default function BookingPage() {
     name: false, email: false, phone: false, address: false,
   });
 
+  const [bookedSlots, setBookedSlots] = useState([]);
+
+  // Fetch booked slots when date or nurse changes
+  useEffect(() => {
+    const fetchBookedSlots = async () => {
+      const selectedNurse = bookingData.selectedNurse;
+      
+      if (bookingData.selectedDate && selectedNurse?.id) {
+        try {
+          // Convert DD-MM-YYYY to YYYY-MM-DD if needed
+          let formattedDate = bookingData.selectedDate;
+          if (formattedDate.includes('-') && formattedDate.split('-')[0].length === 2) {
+            const parts = formattedDate.split('-');
+            formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+          }
+          
+          console.log("Selected Nurse Object:", selectedNurse);
+          console.log("Using Nurse ID:", selectedNurse?.id);
+          console.log("Formatted date:", formattedDate);
+          
+          const response = await fetch(
+            `/api/booking?date=${formattedDate}&nurseId=${selectedNurse.id}`,
+            { cache: 'no-store' }
+          );
+          const data = await response.json();
+          console.log("Fetched booked slots:", data);
+
+          if (data.success) {
+            setBookedSlots(data.bookedSlots || []);
+          }
+        } catch (error) {
+          console.error("Error fetching booked slots:", error);
+        }
+      } else {
+        setBookedSlots([]);
+      }
+    };
+
+    fetchBookedSlots();
+  }, [bookingData.selectedDate, bookingData.selectedNurse?.id]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeStep]);
@@ -393,11 +434,19 @@ export default function BookingPage() {
     setLoading(true);
     setErrorMessage("");
     try {
+      // Convert DD-MM-YYYY to YYYY-MM-DD for consistency
+      let formattedDate = bookingData.selectedDate;
+      if (formattedDate.includes('-') && formattedDate.split('-')[0].length === 2) {
+        const parts = formattedDate.split('-');
+        formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+      }
+
       const response = await fetch('/api/booking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...bookingData,
+          selectedDate: formattedDate,
           total: calculateTotal()
         })
       });
@@ -794,7 +843,10 @@ export default function BookingPage() {
                       <Paper sx={{ p: 3, borderRadius: 4, border: '1.5px solid #ededf5', bgcolor: 'white', height: '100%' }} elevation={0}>
                         <Typography variant="caption" sx={{ fontWeight: 700, color: '#ca1254', textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 2.5 }}><AccessTime sx={{ fontSize: 18, verticalAlign: 'middle', mr: 0.5, mt: -0.2 }} /> Select Time Slot</Typography>
                         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr' }, gap: 1.5 }}>
-                          {TIME_SLOTS.map((slot) => {
+                          {TIME_SLOTS.filter(slot => {
+                            const isBooked = bookedSlots.some(booked => booked.trim() === slot.trim());
+                            return !isBooked;
+                          }).map((slot) => {
                             const selected = bookingData.selectedTime === slot;
                             return (
                               <Paper key={slot} elevation={0} onClick={() => updateBookingData('selectedTime', slot)} sx={{ py: 1.5, px: 1, textAlign: 'center', cursor: 'pointer', borderRadius: 2, border: '1.5px solid', borderColor: selected ? '#ca1254' : '#ededf5', bgcolor: selected ? '#ca1254' : '#f4f4fa', color: selected ? 'white' : '#3b3f69', transition: 'all 0.2s ease', '&:hover': { borderColor: '#ca1254', bgcolor: selected ? '#ca1254' : '#fef5f8', color: selected ? 'white' : '#ca1254' } }}>

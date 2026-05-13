@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://wellnessvitalityaustralia.com.au"),
   title: "Wellness Vitality Australia",
   description: "Holistic wellness services in Australia",
   icons: {
