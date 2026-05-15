@@ -18,22 +18,6 @@ const Hero = () => {
           {/* LEFT CONTENT */}
           <div>
 
-            {/* TAG */}
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 font-medium mx-auto lg:mx-0"
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.05)",
-                border: "1px solid rgba(255, 255, 255, 0.12)"
-              }}
-            >
-              <div className="w-2 h-2 rounded-full bg-[rgb(202,18,84)] animate-pulse" />
-              <span
-                className="text-[10px] uppercase tracking-[0.25em]"
-                style={{ color: "rgba(255, 255, 255, 0.9)" }}
-              >
-                Mobile Healthcare & IV Wellness
-              </span>
-            </div>
 
             {/* HEADING */}
             <h1
