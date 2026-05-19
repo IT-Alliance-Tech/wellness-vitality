@@ -2,6 +2,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Script from "next/script";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -16,41 +17,13 @@ const inter = Inter({
   display: "swap",
 });
 
-// export const metadata = {
-//   metadataBase: new URL("https://wellnessvitalityaustralia.com.au"),
-//   title: "Wellness Vitality Australia",
-//   description: "Holistic wellness services in Australia",
-//   icons: {
-//     icon: "/logoimg.png",
-//     shortcut: "/logoimg.png",
-//     apple: "/logoimg.png",
-//   },
-//   openGraph: {
-//     title: "Wellness Vitality Australia",
-//     description: "Holistic wellness services in Australia",
-//     url: "https://wellnessvitalityaustralia.com.au",
-//     siteName: "Wellness Vitality Australia",
-//     images: [
-//       {
-//         url: "/logoimg.png",
-//         width: 1200,
-//         height: 630,
-//       },
-//     ],
-//     locale: "en_AU",
-//     type: "website",
-//   },
-// };
-
 
 export const metadata = {
   metadataBase: new URL("https://wellnessvitalityaustralia.com.au"),
   title: "Wellness Vitality Australia",
   description: "Holistic wellness services in Australia",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [{ url: "/favicon.ico", sizes: "48x48" }],
   },
   openGraph: {
     title: "Wellness Vitality Australia",
@@ -59,7 +32,7 @@ export const metadata = {
     siteName: "Wellness Vitality Australia",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/logoimg.png",
         width: 1200,
         height: 630,
       },
@@ -73,7 +46,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body className="antialiased font-serif bg-white text-[#1A1A1A]">
-        <script
+        <Script
+          id="organization-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
