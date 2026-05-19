@@ -123,7 +123,7 @@ const SERVICES = [
 const IV_PACKAGES = [
   { id: 'immune', name: 'Immune Defence IV', price: 260, desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
   { id: 'energy', name: 'Energy & Performance IV', price: 240, desc: 'B-complex vitamins and amino acids for sustained energy.' },
-  { id: 'beauty', name: 'Beauty & Skin Glow IV', price: 320, desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
+  { id: 'beauty', name: 'Beauty & Skin Glow IV', price: 320, desc: 'Biotin and collagen-boosting nutrients.' },
   { id: 'detox', name: 'Detox & Liver Support IV', price: 300, desc: 'Liver-supporting antioxidants and detox nutrients.' },
   { id: 'hydration', name: 'Hydration & Recovery IV', price: 220, desc: 'Electrolytes and minerals for rapid rehydration.' },
   { id: 'athlete', name: 'Athlete Recovery IV', price: 260, desc: 'Targeted nutrients to accelerate muscle recovery.' },
@@ -132,12 +132,12 @@ const IV_PACKAGES = [
 const CUSTOM_DRIP_PACKAGES = [
   { id: 'cd-hydration', name: 'Hydration Revival Infusion', price: 280, desc: 'Vitamin C, Magnesium, B-Complex & Zinc' },
   { id: 'cd-anti', name: 'Restorative & Wellness Infusion', price: 350, desc: 'Vitamin C, Magnesium, B-Complex, Zinc & Taurine' },
-  { id: 'cd-immune', name: 'Immune Defence Infusion', price: 430, desc: 'Vitamin C, B-Complex, Zinc, Selenium & Glutathione' },
+  { id: 'cd-immune', name: 'Immune Defence Infusion', price: 430, desc: 'Vitamin C, B-Complex, Zinc & Selenium' },
   { id: 'cd-recovery', name: 'Recovery & Performance Infusion', price: 455, desc: 'Vitamin C, Magnesium, B-complex, Vitamin B12, Taurine & GB Shot' },
   { id: 'cd-calm', name: 'Calm & Restore Infusion', price: 350, desc: 'Magnesium, GABA, Taurine' },
-  { id: 'cd-liver', name: 'Liver Health Support Infusion', price: 375, desc: 'Vitamin C, B-Complex, Glutathione, Glycine & B12' },
-  { id: 'cd-hair', name: 'Hair, Skin & Nails Infusion', price: 395, desc: 'Vitamin C, Magnesium, B-Complex, Zinc, Biotin, Glutathione' },
-  { id: 'cd-glow', name: 'The Glow Infusion', price: 420, desc: 'Vitamin C, B-Complex, Zinc & High Dose Glutathione' },
+  { id: 'cd-liver', name: 'Liver Health Support Infusion', price: 375, desc: 'Vitamin C, B-Complex, Glycine & B12' },
+  { id: 'cd-hair', name: 'Hair, Skin & Nails Infusion', price: 395, desc: 'Vitamin C, Magnesium, B-Complex, Zinc & Biotin' },
+  { id: 'cd-glow', name: 'The Glow Infusion', price: 420, desc: 'Vitamin C, B-Complex & Zinc' },
 ];
 
 const CUSTOM_ADDONS = [
@@ -147,24 +147,18 @@ const CUSTOM_ADDONS = [
   { id: 'add-bcomp', name: 'B complex', price: 54, desc: 'Nervous system support and energy.' },
   { id: 'add-bcomp-plus', name: 'B Complex Plus', price: 64, desc: 'Enhanced B-vitamin support.' },
   { id: 'add-sel', name: 'Selenium', price: 70, desc: 'Powerful antioxidant supporting thyroid and metabolic function.' },
-  { id: 'add-gluta', name: 'Glutathione', price: 120, desc: 'Master antioxidant for liver detox and skin brightening.' },
   { id: 'add-gly', name: 'Glycine', price: 64, desc: 'Supports cellular health, sleep, and joint recovery.' },
   { id: 'add-gb', name: 'GB Shot', price: 64, desc: 'Potent shot for cellular wellness and recovery.' },
   { id: 'add-sd', name: 'SD Shot', price: 70, desc: 'Clinical supplemental shot for optimal performance.' },
   { id: 'add-tau', name: 'Taurine', price: 70, desc: 'Supports cardiovascular health and cellular hydration.' },
-  { id: 'add-nad-100', name: 'NAD Package 100mg', price: 225, desc: 'Critical coenzyme for cellular energy and DNA repair.' },
-  { id: 'add-nad-250', name: 'NAD Package 250mg', price: 475, desc: 'Critical coenzyme for cellular energy and DNA repair.' },
-  { id: 'add-nad-500', name: 'NAD Package 500mg', price: 695, desc: 'Critical coenzyme for cellular energy and DNA repair.' },
 ];
 
 const CUSTOM_BOOSTERS = [
   { id: 'boost-b12', name: 'Vitamin B12 Shot', price: 59, desc: 'Increase metabolism, boost energy, regulate mood, sleep and appetite.' },
   { id: 'boost-biotin', name: 'Biotin B7', price: 54, desc: 'The elixir for your hair, skin and nails to thrive.' },
   { id: 'boost-coq10', name: 'COQ10', price: 54, desc: 'Support exercise performance and recovery while helping to reduce fatigue and enhance endurance.' },
-  { id: 'boost-gluta-shot', name: 'Glutathione Shot', price: 99, desc: 'May slow the ageing process as you detoxify your liver.' },
   { id: 'boost-vitd', name: 'Vitamin D', price: 99, desc: 'Helps your immune system against viruses & builds density in your bones.' },
   { id: 'boost-ala', name: 'ALA Complex', price: 58, desc: 'Powerful anti-oxidant that supports cellular energy, nerve health and metabolic balance.' },
-  { id: 'boost-nad', name: 'NAD Subcutanious', price: 225, desc: 'Powerful coenzymes that enables cells to produce energy, repair DNA and regulate ageing.' },
 ];
 
 const OTHER_PACKAGES = {

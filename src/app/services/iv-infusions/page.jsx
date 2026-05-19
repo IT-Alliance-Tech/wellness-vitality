@@ -8,7 +8,7 @@ import IvInfusionImage from '../../../../public/ivinfusionservice.png';
 const therapies = [
   { name: 'Immune Defence IV', price: '$260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
   { name: 'Energy & Performance IV', price: '$240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
-  { name: 'Beauty & Skin Glow IV', price: '$320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
+  { name: 'Beauty & Skin Glow IV', price: '$320', desc: 'Biotin and collagen-boosting nutrients.' },
   { name: 'Detox & Liver Support IV', price: '$300', desc: 'Liver-supporting antioxidants and detox nutrients.' },
   { name: 'Hydration & Recovery IV', price: '$220', desc: 'Electrolytes and minerals for rapid rehydration.' },
   { name: 'Athlete Recovery IV', price: '$260', desc: 'Targeted nutrients to accelerate muscle recovery.' },
@@ -28,10 +28,8 @@ const nutrients = [
   { name: 'Glutamine', desc: 'Gut lining repair and immune system fuel source.', accent: 'navy' },
   { name: 'Lysine', desc: 'Collagen synthesis and immune support.', accent: 'rose' },
   { name: 'Ornithine', desc: 'Supports detoxification and growth hormone release.', accent: 'navy' },
-  { name: 'Glutathione', desc: 'Master antioxidant for liver detox and skin brightening.', accent: 'rose' },
   { name: 'Coenzyme Q10', desc: 'Vital cellular energy coenzyme powering repair and metabolism.', accent: 'navy' },
   { name: 'Alpha Lipoic Acid', desc: 'Universal antioxidant supporting nerve health and glucose metabolism.', accent: 'rose' },
-  { name: 'NAD+', desc: 'Critical coenzyme for cellular energy, anti-ageing, and DNA repair.', accent: 'navy' },
 ];
 
 const midPoint = Math.ceil(nutrients.length / 2);

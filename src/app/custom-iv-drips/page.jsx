@@ -8,12 +8,12 @@ import Button from '@/components/ui/Button';
 const featuredPackages = [
   { name: 'Hydration Revival Infusion', price: '$280', desc: 'Vitamin C, Magnesium, B-Complex & Zinc' },
   { name: 'Anti-Inflammatory Infusion', price: '$350', desc: 'Vitamin C, Magnesium, B-Complex, Zinc & Taurine' },
-  { name: 'Immune Defence Infusion', price: '$430', desc: 'Vitamin C, B-Complex, Zinc, Selenium & Glutathione' },
+  { name: 'Immune Defence Infusion', price: '$430', desc: 'Vitamin C, B-Complex, Zinc & Selenium' },
   { name: 'Recovery & Performance Infusion', price: '$455', desc: 'Vitamin C, Magnesium, B-complex, Vitamin B12, Taurine & GB Shot' },
   { name: 'Calm & Restore Infusion', price: '$350', desc: 'Magnesium, GABA, Taurine' },
-  { name: 'Liver Health Support Infusion', price: '$375', desc: 'Vitamin C, B-Complex, Glutathione, Glycine & B12' },
-  { name: 'Hair, Skin & Nails Infusion', price: '$395', desc: 'Vitamin C, Magnesium, B-Complex, Zinc, Biotin, Glutathione' },
-  { name: 'The Glow Infusion', price: '$420', desc: 'Vitamin C, B-Complex, Zinc & High Dose Glutathione' },
+  { name: 'Liver Health Support Infusion', price: '$375', desc: 'Vitamin C, B-Complex, Glycine & B12' },
+  { name: 'Hair, Skin & Nails Infusion', price: '$395', desc: 'Vitamin C, Magnesium, B-Complex, Zinc & Biotin' },
+  { name: 'The Glow Infusion', price: '$420', desc: 'Vitamin C, B-Complex & Zinc' },
 ];
 
 const addOns = [
@@ -23,22 +23,18 @@ const addOns = [
   { name: 'B complex', price: '$54' },
   { name: 'B Complex Plus', price: '$64' },
   { name: 'Selenium', price: '$70' },
-  { name: 'Glutathione', price: '$120' },
   { name: 'Glycine', price: '$64' },
   { name: 'GB Shot', price: '$64' },
   { name: 'SD Shot', price: '$70' },
-  { name: 'Taurine', price: '$70' },
-  { name: 'NAD Packages', price: '100mg $225 | 250mg $475 | 500mg $695' }
+  { name: 'Taurine', price: '$70' }
 ];
 
 const boosters = [
   { name: 'Vitamin B12 Shot', price: '$59', desc: 'Increase metabolism, boost energy, regulate mood, sleep and appetite' },
   { name: 'Biotin B7', price: '$54', desc: 'The elixir for your hair, skin and nails to thrive' },
   { name: 'COQ10', price: '$54', desc: 'Support exercise performance and recovery while helping to reduce fatigue and enhance endurance' },
-  { name: 'Glutathione Shot', price: '$99', desc: 'May slow the ageing process as you detoxify your liver' },
   { name: 'Vitamin D', price: '$99', desc: 'Helps your immune system against viruses & builds density in your bones' },
-  { name: 'ALA Complex', price: '$58', desc: 'Powerful antioxidant that supports cellular energy, nerve health and metabolic balance while helping protect the body from oxidative stress' },
-  { name: 'NAD Subcutaneous', price: '$225', desc: 'Powerful coenzymes that enable cells to produce energy, repair DNA and regulate ageing' },
+  { name: 'ALA Complex', price: '$58', desc: 'Powerful antioxidant that supports cellular energy, nerve health and metabolic balance while helping protect the body from oxidative stress' }
 ];
 
 export default function CustomIvDripsPage() {
