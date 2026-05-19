@@ -18,7 +18,7 @@ const slides = [
   {
     title: "Beauty & Skin Glow IV",
     description:
-      "Promotes radiant skin with glutathione and collagen support.",
+      "Promotes radiant skin with collagen support.",
     points: ["Skin Glow", "Collagen Support", "Detox"]
   }
 ];

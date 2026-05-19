@@ -23,16 +23,16 @@ const ivPacks = [
   {
     title: "Beauty & Skin Glow IV",
     description:
-      "Often includes Vitamin C, Biotin, Zinc and Glutathione.",
-    points: ["Vitamin C", "Biotin", "Zinc", "Glutathione"],
+      "Often includes Vitamin C, Biotin and Zinc.",
+    points: ["Vitamin C", "Biotin", "Zinc"],
     price: "$320",
     accent: "rose",
   },
   {
     title: "Detox & Liver Support IV",
     description:
-      "Commonly includes Glutathione, Vitamin C, Taurine and B vitamins.",
-    points: ["Glutathione", "Vitamin C", "Taurine", "B Vitamins"],
+      "Commonly includes Vitamin C, Taurine and B vitamins.",
+    points: ["Vitamin C", "Taurine", "B Vitamins"],
     price: "$300",
     accent: "indigo",
   },
@@ -52,18 +52,7 @@ const ivPacks = [
     price: "$260",
     accent: "indigo",
   },
-  {
-    title: "NAD+ Therapy",
-    description:
-      "Nicotinamide adenine dinucleotide (NAD+) supports cellular energy, mitochondrial function and metabolic processes.",
-    points: [
-      "Cellular Energy",
-      "Mitochondrial Function",
-      "Metabolic Support",
-    ],
-    price: "$499 (250mg)",
-    accent: "rose",
-  },
+
 ];
 
 const IVTherapy = () => {
@@ -104,10 +93,7 @@ const IVTherapy = () => {
                 transition duration-300 
                 flex flex-col h-full w-full max-w-sm
 
-                ${index === ivPacks.length - 1
-                  ? "lg:col-span-3 lg:mx-auto"
-                  : ""
-                }
+
               `}
             >
 
